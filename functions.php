@@ -105,6 +105,8 @@ add_action( 'widgets_init', 'amberadvocate_widgets_init' );
  * Enqueue scripts and styles.
  */
 function amberadvocate_scripts() {
+
+	wp_enqueue_style('bootstrap-theme.min',get_template_directory_uri().'/css/bootstrap/css/bootstrap.min.css');
 	wp_enqueue_style( 'amberadvocate-style', get_stylesheet_uri() );
 
 	wp_enqueue_script( 'amberadvocate-navigation', get_template_directory_uri() . '/js/navigation.js', array(), '20151215', true );
