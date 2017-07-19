@@ -4,6 +4,7 @@
  *
  * @package amberadvocate
  */
+get_header();
 ?>
 <style type="text/css">
 	input[type="text"].um_login_field, input[type="password"].um_pass_field{
@@ -17,7 +18,7 @@
 
 	<div class="entry-content">
 		<?php the_content(); ?>
-		<aside id="tribal_column-8" class="widget widget_tribal_column">
+		<aside>
 			<div class="eq-ht-wrapper clearfix">
 				<div class="eq-ht col-2" style="height: 250px;">
 					<a href=" #"> <h3>Member Login</h3></a>
@@ -50,5 +51,5 @@
 		</aside>
 
 	</div><!-- .entry-content -->
-	<?php edit_post_link( __( 'Edit', 'tribaldb' ), '<footer class="entry-footer"><span class="edit-link">', '</span></footer>' ); ?>
+	<?php edit_post_link( __( 'Edit', 'amberadvocate' ), '<footer class="entry-footer"><span class="edit-link">', '</span></footer>' ); ?>
 </article><!-- #post-## -->
