@@ -182,7 +182,30 @@ hr {
 /* ==========================================================
 2. HEADER STYLES
 ========================================================== */
-/*------ NAVIGATION-------*/
+.login-seach-social-wrapper{
+	width: 100%;
+  min-height: 50px;
+  position: relative;
+}
+.login-seach-social{
+  position: absolute;
+	right: 0;
+}
+.login-seach-social .login{
+	text-transform: uppercase;
+  min-width: 300px;
+}
+.login-seach-social .login a, .login-seach-social .login a:hover, .login-seach-social .login a:focus{
+  color: #666;
+}
+
+.login-seach-social .social{
+
+}
+.site-title a img{
+	max-width: 45%;
+}
+/*------ NAVIGATION -------*/
 .header-banner-top .primary-wrapper {
   margin: 0 auto;
   max-width: 900px;

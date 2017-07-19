@@ -21,15 +21,31 @@
 
 <body <?php body_class(); ?>>
 <div id="page" class="site">
-	<a class="skip-link screen-reader-text" href="#content"><?php esc_html_e( 'Skip to content', 'amberadvocate' ); ?></a>
+	<a class="skip-link screen-reader-text hidden" href="#content"><?php esc_html_e( 'Skip to content', 'amberadvocate' ); ?></a>
 
 	<header id="masthead" class="site-header header-banner-top" role="banner">
+		<div class="login-seach-social-wrapper">
+			<div class="login-seach-social">
+				<div class="login">
+					<a href="">Sign In</a> | <a href="">Join The Email List</a>
+				</div>
+				<div class="social">
+					<i class="fa fa-facebook-square fa-2x"></i>
+					<i class="fa fa- fa-2x"></i>
+					<i class="fa fa- fa-2x"></i>				
+					<i class="fa fa- fa-2x"></i>
+					<i class="fa fa- fa-2x"></i>
+					<i class="fa fa- fa-2x"></i>
+				</div>
+			</div>
+		</div>
+		
 		<div class="site-branding">
 			<?php
 			if ( is_front_page() && is_home() ) : ?>
-				<h1 class="site-title"><a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a></h1>
+				<h1 class="site-title"><a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><img src="http://amberadvocate.org/wp-content/uploads/2017/07/amber-advocate-logo.jpg"></a></h1>
 			<?php else : ?>
-				<p class="site-title"><a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a></p>
+				<p class="site-title"><a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><img src="http://amberadvocate.org/wp-content/uploads/2017/07/amber-advocate-logo.jpg"></a></p>
 			<?php
 			endif;
 
