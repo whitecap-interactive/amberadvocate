@@ -106,6 +106,7 @@ add_action( 'widgets_init', 'amberadvocate_widgets_init' );
  */
 function amberadvocate_scripts() {
 
+	wp_enqueue_style('font-awesome',get_template_directory_uri().'/fonts/font-awesome-4.7.0/css/font-awesome.min.css');
 	wp_enqueue_style('bootstrap-theme.min',get_template_directory_uri().'/css/bootstrap/css/bootstrap.min.css');
 	wp_enqueue_style( 'amberadvocate-style', get_stylesheet_uri() );
 

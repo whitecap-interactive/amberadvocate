@@ -26,16 +26,24 @@
 	<header id="masthead" class="site-header header-banner-top" role="banner">
 		<div class="login-seach-social-wrapper">
 			<div class="login-seach-social">
-				<div class="login">
-					<a href="">Sign In</a> | <a href="">Join The Email List</a>
-				</div>
 				<div class="social">
-					<i class="fa fa-facebook-square fa-2x"></i>
-					<i class="fa fa- fa-2x"></i>
-					<i class="fa fa- fa-2x"></i>				
-					<i class="fa fa- fa-2x"></i>
-					<i class="fa fa- fa-2x"></i>
-					<i class="fa fa- fa-2x"></i>
+					<span class="search">
+						<form action="<?php echo site_url(); ?>" role="search" method="get" id="searchform" class="searchform">
+							<i class="fa fa-search fa-1x"> 
+								<input type="text" value="" name="s" id="s" placeholder="What're we looking for ?"/> 
+							</i>
+							<i class="fa fa-search fa-1x"> 
+								<input type="submit" id="searchsubmit" value="Search" />
+							</i> 
+						</form>
+					</span>
+					<i class="fa fa-facebook fa-1x"></i>
+					<i class="fa fa-instagram fa-1x"></i>
+					<i class="fa fa-twitter fa-1x"></i>				
+					<i class="fa fa-envelope-o fa-1x"></i>
+				</div>
+				<div class="login">
+					<a href="">Welcome, Guest</a> | <a href="">Login</a>
 				</div>
 			</div>
 		</div>
@@ -43,9 +51,9 @@
 		<div class="site-branding">
 			<?php
 			if ( is_front_page() && is_home() ) : ?>
-				<h1 class="site-title"><a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><img src="http://amberadvocate.org/wp-content/uploads/2017/07/amber-advocate-logo.jpg"></a></h1>
+				<h1 class="site-title"><a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><img src="http://amberadvocate.org/wp-content/uploads/2017/07/amber-logo-1.png"></a></h1>
 			<?php else : ?>
-				<p class="site-title"><a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><img src="http://amberadvocate.org/wp-content/uploads/2017/07/amber-advocate-logo.jpg"></a></p>
+				<p class="site-title"><a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><img src="http://amberadvocate.org/wp-content/uploads/2017/07/amber-logo-1.png"></a></p>
 			<?php
 			endif;
 
