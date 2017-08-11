@@ -958,7 +958,7 @@ object {
 .nav-bar {
 	width: 100%;
 	text-align: center;
-	display: block;
+	display: none;
 	margin: 20px 0;
 	/*height: 60px;*/
 	background: #ccc;
@@ -1023,9 +1023,6 @@ object {
     	display: block;
 		text-align: left;
 	}
-	.social-links {
-		display: inline-block;
-	}
 	.header-logos div {
 		float: left;
 	}
@@ -1052,6 +1049,7 @@ ul#primary-menu li {
 	padding: 6px 12px;
 	margin: 0;
 	display: inline-block;
+	vertical-align: middle;
 }
 
 ul#primary-menu a {
@@ -1061,6 +1059,7 @@ ul#primary-menu a {
 	height: 100%;
 	text-transform: uppercase;
 	font-size: 0.9em;
+	line-height: 1.2em;
 }
 
 ul#primary-menu a:hover {
@@ -1094,6 +1093,119 @@ ul#primary-menu ul.active {
 	padding: 0 10px 0 0;
 	font-size: 0.8em;
 }
+
+.mobile-nav-toggle {
+	display: block;
+}
+
+@media screen and (min-width: 901px) and (max-width: 1150px) {
+    ul#primary-menu li {
+		max-width: 140px;
+	}	
+}
+
+@media screen and (min-width: 901px) {
+    .mobile-nav-toggle {
+		display: none;
+	}	
+	.nav-bar {
+		display: block;
+	}
+	.social-links {
+		display: inline-block;
+		float: right;
+	}	
+}
+
+
+
+
+
+/*--------------------------------------------------------------
+## NAV ICON ANIMATION
+--------------------------------------------------------------*/
+
+* {
+  margin: 0;
+  padding: 0; 
+}
+
+
+
+#nav-icon3 {
+  width: 40px;
+  height: 30px;
+  position: relative;
+  margin: 30px auto;
+  -webkit-transform: rotate(0deg);
+  -moz-transform: rotate(0deg);
+  -o-transform: rotate(0deg);
+  transform: rotate(0deg);
+  -webkit-transition: .5s ease-in-out;
+  -moz-transition: .5s ease-in-out;
+  -o-transition: .5s ease-in-out;
+  transition: .5s ease-in-out;
+  cursor: pointer;
+}
+
+#nav-icon3 span {
+  display: block;
+  position: absolute;
+  height: 6px;
+  width: 100%;
+  background: #d3531a;
+  border-radius: 6px;
+  opacity: 1;
+  left: 0;
+  -webkit-transform: rotate(0deg);
+  -moz-transform: rotate(0deg);
+  -o-transform: rotate(0deg);
+  transform: rotate(0deg);
+  -webkit-transition: .25s ease-in-out;
+  -moz-transition: .25s ease-in-out;
+  -o-transition: .25s ease-in-out;
+  transition: .25s ease-in-out;
+}
+/* Icon 3 */
+
+#nav-icon3 span:nth-child(1) {
+  top: 0px;
+}
+
+#nav-icon3 span:nth-child(2),#nav-icon3 span:nth-child(3) {
+  top: 12px;
+}
+
+#nav-icon3 span:nth-child(4) {
+  top: 24px;
+}
+
+#nav-icon3.open span:nth-child(1) {
+  top: 12px;
+  width: 0%;
+  left: 50%;
+}
+
+#nav-icon3.open span:nth-child(2) {
+  -webkit-transform: rotate(45deg);
+  -moz-transform: rotate(45deg);
+  -o-transform: rotate(45deg);
+  transform: rotate(45deg);
+}
+
+#nav-icon3.open span:nth-child(3) {
+  -webkit-transform: rotate(-45deg);
+  -moz-transform: rotate(-45deg);
+  -o-transform: rotate(-45deg);
+  transform: rotate(-45deg);
+}
+
+#nav-icon3.open span:nth-child(4) {
+  top: 12px;
+  width: 0%;
+  left: 50%;
+}
+
 
 
 /*--------------------------------------------------------------

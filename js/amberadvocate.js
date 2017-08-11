@@ -27,5 +27,28 @@ jQuery(function() {
 	    event.stopPropagation();
 	});
 
+
+
+
+
+	jQuery('#nav-icon3').click(function(){
+		jQuery(this).toggleClass('open');
+		jQuery('.nav-bar').toggle();
+	});
+
+
+	jQuery( window ).resize(function() {
+	  var browserWidth = jQuery( window ).width();
+	  if ( browserWidth > 900 ) {
+	  	jQuery('.nav-bar').show();
+	  } else {
+	  	jQuery('.nav-bar').hide();
+	  }
+	});
+
+});
+
+jQuery(document).ready(function(){
+
 });
 

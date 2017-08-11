@@ -33,8 +33,16 @@
 			<div class="col-sm-6 main-logo">
 				<div class="logo-advocate"><img src="<?php bloginfo('stylesheet_directory'); ?>/images/logo-advocate-large.png" width="500" height="70" border="0" alt="AMBER Advocate" /></div>
 			</div>
-			<div class="col-sm-3 social-links">
-				Social Stuff.
+			<div class="col-sm-3">
+				<div class="social-links">Social Stuff.</div>
+				<div class="mobile-nav-toggle">
+					<div id="nav-icon3">
+						<span></span>
+						<span></span>
+						<span></span>
+						<span></span>
+					</div>
+				</div>
 			</div>
 		</div>
 
