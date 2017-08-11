@@ -15,15 +15,28 @@
 
 	<footer id="colophon" class="site-footer" role="contentinfo">
 		<div class="site-info">
-			<a href="<?php echo esc_url( __( 'https://wordpress.org/', 'amberadvocate' ) ); ?>"><?php
-				/* translators: %s: CMS name, i.e. WordPress. */
-				printf( esc_html__( 'Proudly powered by %s', 'amberadvocate' ), 'WordPress' );
-			?></a>
-			<span class="sep"> | </span>
-			<?php
-				/* translators: 1: Theme name, 2: Theme author. */
-				printf( esc_html__( 'Theme: %1$s by %2$s.', 'amberadvocate' ), 'amberadvocate', '<a href="https://automattic.com/" rel="designer">Underscores.me</a>' );
-			?>
+			<div class="footer-links">
+				<div class="content-channel row">
+					<nav id="bottom-nav" role="navigation">
+						<?php wp_nav_menu( array( 
+							'theme_location' 	=> 'footer', 
+							'menu_class' 		=> 'bottom-menu menu-trigger',
+							'container' 		=> false,
+							'before'      => '<h3>',
+							'after'       => '</h3>',
+							'items_wrap'    => '<ul id="%1$s" class="%2$s" rel="bottom">%3$s</ul>'
+						) ); ?>
+					</nav>
+				</div>
+			</div>
+			<div class="footer-logos">
+				<div class="footer-logo-justice"><img src="<?php bloginfo('stylesheet_directory'); ?>/images/logo-justice.png" width="73" height="73" border="0" alt="Department of Justice - Office of Justice Programs" /></div>
+				<div class="footer-logo-amber"><img src="<?php bloginfo('stylesheet_directory'); ?>/images/logo-amber.png" width="100" height="60" border="0" alt="AMBER Alert" /></div>
+				<div class="footer-logo-advocate"><img src="<?php bloginfo('stylesheet_directory'); ?>/images/logo-advocate.png" width="154" height="21" border="0" alt="AMBER Advocate" /></div>
+			</div>
+			<div class="footer-copyright">
+				&copy; <?php echo date("Y");?> AMBER Alert Technical Training & Assistance Program
+			</div>
 		</div><!-- .site-info -->
 	</footer><!-- #colophon -->
 </div><!-- #page -->

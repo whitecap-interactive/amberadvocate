@@ -44,7 +44,8 @@ function amberadvocate_setup() {
 
 	// This theme uses wp_nav_menu() in one location.
 	register_nav_menus( array(
-		'menu-1' => esc_html__( 'Primary', 'amberadvocate' ),
+		'primary' => esc_html__( 'Primary Menu', 'amberadvocate' ),
+		'footer' => esc_html__( 'Footer Menu', 'amberadvocate' ),
 	) );
 
 	/*
@@ -111,8 +112,8 @@ function amberadvocate_scripts() {
 	wp_enqueue_style( 'amberadvocate-style', get_stylesheet_uri() );
 
 	/*wp_enqueue_script( 'amberadvocate-navigation', get_template_directory_uri() . '/js/navigation.js', array(), '20151215', true );*/
-
-	wp_enqueue_script( 'amberadvocate-navigation', get_template_directory_uri() . '/js/wc-navigation.js', array(), '20151215', true );
+	wp_enqueue_script('jquery');
+	wp_enqueue_script( 'amberadvocate-global', get_template_directory_uri() . '/js/amberadvocate.js', array(), '20170811', true );
 
 
 	wp_enqueue_script( 'amberadvocate-skip-link-focus-fix', get_template_directory_uri() . '/js/skip-link-focus-fix.js', array(), '20151215', true );

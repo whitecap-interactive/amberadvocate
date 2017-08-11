@@ -21,63 +21,45 @@
 
 <body <?php body_class(); ?>>
 <div id="page" class="site">
-	<a class="skip-link screen-reader-text hidden" href="#content"><?php esc_html_e( 'Skip to content', 'amberadvocate' ); ?></a>
+	<a class="skip-link screen-reader-text" href="#content"><?php esc_html_e( 'Skip to content', 'amberadvocate' ); ?></a>
 
-	<header id="masthead" class="site-header header-banner-top" role="banner">
-		<div class="login-seach-social-wrapper">
-			<div class="login-seach-social">
-				<div class="social">
-					<span class="search">
-						<form action="<?php echo site_url(); ?>" role="search" method="get" id="searchform" class="searchform">
-							<i class="fa fa-search fa-1x"> 
-								<input type="text" value="" name="s" id="s" placeholder="What're we looking for ?"/> 
-							</i>
-							<i class="fa fa-search fa-1x"> 
-								<input type="submit" id="searchsubmit" value="Search" />
-							</i> 
-						</form>
-					</span>
-					<i class="fa fa-facebook fa-1x"></i>
-					<i class="fa fa-instagram fa-1x"></i>
-					<i class="fa fa-twitter fa-1x"></i>				
-					<i class="fa fa-envelope-o fa-1x"></i>
-				</div>
-				<div class="login">
-					<a href="">Welcome, Guest</a> | <a href="">Login</a>
-				</div>
+	<header id="masthead" class="site-header" role="banner">
+
+		<div class="content-channel row">
+			<div class="col-sm-3 header-logos">
+				<div class="logo-justice"> </div>
+				<div class="logo-amber"> </div>
+			</div>
+			<div class="col-sm-6 main-logo">
+				<div class="logo-advocate"><img src="<?php bloginfo('stylesheet_directory'); ?>/images/logo-advocate-large.png" width="500" height="70" border="0" alt="AMBER Advocate" /></div>
+			</div>
+			<div class="col-sm-3 social-links">
+				Social Stuff.
 			</div>
 		</div>
-		
-		<div class="site-branding">
-			<?php
-			if ( is_front_page() && is_home() ) : ?>
-				<h1 class="site-title"><a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><img src="http://amberadvocate.org/wp-content/uploads/2017/07/amber-logo-1.png"></a></h1>
-			<?php else : ?>
-				<p class="site-title"><a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><img src="http://amberadvocate.org/wp-content/uploads/2017/07/amber-logo-1.png"></a></p>
-			<?php
-			endif;
 
-			$description = get_bloginfo( 'description', 'display' );
-			if ( $description || is_customize_preview() ) : ?>
-				<p class="site-description"><?php echo $description; /* WPCS: xss ok. */ ?></p>
+		<!-- <div class="content-channel row">
+			<div class="login">
+
+				Welcome, Dusty Bottoms. | <a href="#">Profile</a>
+
+			</div>
+
+		</div> -->
+
+		<div class="nav-bar">
+
 			<?php
-			endif; ?>
-		</div><!-- .site-branding -->
-		<!-- <button class="menu-toggle" aria-controls="primary-menu" aria-expanded="false"><?php esc_html_e( 'Primary Menu', 'amberadvocate' ); ?></button> -->
-		<div class="main-navigation">
-			<input type="checkbox" name="mobile-menu-toggle" id="mobile-menu-toggle" class="mobile-menu-box" />
-			<nav id="site-navigation" class="horizontal-nav primary-wrapper" role="navigation">
-			
-				<?php
 					wp_nav_menu( array(
-						'theme_location' => 'menu-1',
+						'theme_location' => 'primary',
 						'menu_id'        => 'primary-menu',
 					) );
 				?>
-			</nav><!-- #site-navigation -->
-			<label for="mobile-menu-toggle" class="mobile-menu-label hidden"></label>
+
 		</div>
 
 	</header><!-- #masthead -->
 
 	<div id="content" class="site-content">
+
+
