@@ -102,6 +102,38 @@ function amberadvocate_widgets_init() {
 }
 add_action( 'widgets_init', 'amberadvocate_widgets_init' );
 
+
+/**
+* Add custom post types.
+*/
+
+add_action( 'init', 'create_post_type' );
+function create_post_type() {
+	register_post_type( 'state',
+		array(
+			'labels' => array(
+				'name' => __( 'States' ),
+				'singular_name' => __( 'State' )
+			),
+		'public' => true,
+		'has_archive' => true,
+		'capability_type' => 'post',
+		'rewrite' => array('slug' => 'states'),  
+		'supports' => array(
+            'title',
+            'excerpt',
+            'editor',
+            'custom-fields',
+            'revisions',
+            'thumbnail',
+            'author'),
+        'taxonomies' => array('category', 'post_tag'),
+        /*'show_in_nav_menus' => true*/
+		)
+	);
+} 
+
+
 /**
  * Enqueue scripts and styles.
  */
