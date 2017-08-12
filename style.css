@@ -1003,7 +1003,7 @@ object {
 
 .main-logo {
 	text-align: center;
-	padding: 20px 20px 10px 20px;
+	padding: 20px 80px 10px 20px;
 }
 
 .social-links {
@@ -1025,6 +1025,9 @@ object {
 	}
 	.header-logos div {
 		float: left;
+	}
+	.main-logo {
+		padding: 20px 20px 10px 20px;
 	}
 }
 @media screen and (min-width: 941px) {
@@ -1096,6 +1099,9 @@ ul#primary-menu ul.active {
 
 .mobile-nav-toggle {
 	display: block;
+	position: fixed;
+	right: 12px;
+	top: 40px;
 }
 
 @media screen and (min-width: 901px) and (max-width: 1150px) {
@@ -1153,7 +1159,7 @@ ul#primary-menu ul.active {
   position: absolute;
   height: 6px;
   width: 100%;
-  background: #d3531a;
+  background: #ccc;
   border-radius: 6px;
   opacity: 1;
   left: 0;
