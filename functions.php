@@ -156,6 +156,36 @@ function amberadvocate_scripts() {
 }
 add_action( 'wp_enqueue_scripts', 'amberadvocate_scripts' );
 
+//ADD DROPDOWN TO USER PROFILE THAT DISPLAYS STATES
+add_filter( 'user_meta_field_config', 'user_meta_field_config_populate_categories', 10, 3 );
+function user_meta_field_config_populate_categories( $field, $fieldID, $formName){ 
+	//get list of states
+	$args = array(
+		'posts_per_page'   => -1,
+		'offset'           => 0,
+		'orderby'          => 'title',
+		'order'            => 'ASC',
+		'post_type'        => 'state',
+		'post_status'      => 'publish',
+		'suppress_filters' => true 
+	);
+	$posts_array = get_posts( $args );
+
+    if( $fieldID != '14') // This has to match the Field ID of the User Meta Dropdown
+        return $field;
+ 	
+    $output = null;
+    $output .= 'other=Other,';
+    foreach( $posts_array as $post ):
+        $output .= $post->ID.'='.$post->post_name.',';
+    endforeach;
+    $output = ',' . trim( $output, ',' );
+ 
+    $field['options'] = $output;
+ 
+    return $field;
+}	
+
 /**
  * Implement the Custom Header feature.
  */
