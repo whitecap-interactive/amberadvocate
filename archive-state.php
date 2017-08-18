@@ -29,7 +29,7 @@ get_header(); ?>
 
                     // set up our archive arguments
                     $archive_args = array(
-                        post_type => 'state',    // get only posts
+                        'post_type' => 'state',    // get only posts
                         'posts_per_page'=> -1,   // this will display all posts on one page
                         'orderby' => 'title',
                         'order'   => 'ASC',
