@@ -43,14 +43,14 @@ get_header(); ?>
                 <?php /* Start the Loop */ ?>
                 <?php while ( $archive_query->have_posts() ) : $archive_query->the_post(); // run the custom loop ?>
 
-                    <?php get_template_part( 'content', 'state-list' ); ?>
+                    <?php get_template_part( 'template-parts/content', 'state-list' ); ?>
 
                 <?php endwhile; ?>
                 </table>
 
         <?php else : ?>
 
-            <?php get_template_part( 'content', 'none' ); ?>
+            <?php get_template_part( 'template-parts/content', 'none' ); ?>
 
         <?php endif; ?>
 
