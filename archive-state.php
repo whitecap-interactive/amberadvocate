@@ -22,26 +22,37 @@ get_header(); ?>
 				?>
 			</header><!-- .page-header -->
 
-			<?php
-			/* Start the Loop */
-			while ( have_posts() ) : the_post();
 
-				/*
-				 * Include the Post-Format-specific template for the content.
-				 * If you want to override this in a child theme, then include a file
-				 * called content-___.php (where ___ is the Post Format name) and that will be used instead.
-				 */
-				get_template_part( 'template-parts/content', 'state-list' );
 
-			endwhile;
+			<table id="organization-table" class="organization-list">
+			    <?php
 
-			the_posts_navigation();
+                    // set up our archive arguments
+                    $archive_args = array(
+                        post_type => 'state',    // get only posts
+                        'posts_per_page'=> -1,   // this will display all posts on one page
+                        'orderby' => 'title',
+                        'order'   => 'ASC',
+                    );
 
-		else :
+                    // new instance of WP_Quert
+                    $archive_query = new WP_Query( $archive_args );
 
-			get_template_part( 'template-parts/content', 'none' );
+                  ?>
 
-		endif; ?>
+                <?php /* Start the Loop */ ?>
+                <?php while ( $archive_query->have_posts() ) : $archive_query->the_post(); // run the custom loop ?>
+
+                    <?php get_template_part( 'content', 'state-list' ); ?>
+
+                <?php endwhile; ?>
+                </table>
+
+        <?php else : ?>
+
+            <?php get_template_part( 'content', 'none' ); ?>
+
+        <?php endif; ?>
 
 		</main><!-- #main -->
 	</div><!-- #primary -->
