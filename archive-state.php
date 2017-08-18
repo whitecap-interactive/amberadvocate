@@ -44,7 +44,7 @@ get_header(); ?>
                 <?php while ( $archive_query->have_posts() ) : $archive_query->the_post(); // run the custom loop ?>
 
                     <?php get_template_part( 'template-parts/content', 'state-list' ); ?>
-
+                   
                 <?php endwhile; ?>
                 </table>
 
