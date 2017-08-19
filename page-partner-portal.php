@@ -21,7 +21,10 @@ get_header();
 
 		<?php echo do_shortcode('[user-meta-login]');?>
 
+		<div><a href="<?php echo site_url(); ?>/states/">View States</a></div>
+		<div><a href="<?php echo site_url(); ?>/request-access/">Request Access</a></div>
 	</div><!-- .entry-content -->
+	
 	<?php edit_post_link( __( 'Edit', 'amberadvocate' ), '<footer class="entry-footer"><span class="edit-link">', '</span></footer>' ); ?>
 </article><!-- #post-## -->
 <?php
