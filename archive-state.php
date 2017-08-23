@@ -15,6 +15,8 @@ get_header(); ?>
 		<?php
 		if ( have_posts() ) : ?>
 
+		<div class="content-channel channel-padding">
+
 			<header class="page-header">
 				<?php
 					the_archive_title( '<h1 class="page-title">', '</h1>' );
@@ -53,6 +55,8 @@ get_header(); ?>
             <?php get_template_part( 'template-parts/content', 'none' ); ?>
 
         <?php endif; ?>
+
+    </div>
 
 		</main><!-- #main -->
 	</div><!-- #primary -->

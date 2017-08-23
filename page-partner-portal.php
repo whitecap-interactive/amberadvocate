@@ -12,20 +12,29 @@ get_header();
 	}
 </style>
 <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
-	<header class="entry-header">
-		<h2 class="page-title"><?php the_title(); ?></h2>
-	</header><!-- .entry-header -->
+	<div class="content-channel channel-padding">
+		<header class="entry-header">
+			<h2 class="page-title"><?php the_title(); ?></h2>
+		</header><!-- .entry-header -->
 
-	<div class="entry-content">
-		<?php the_content(); ?>
+		<div class="entry-content">
+			<?php the_content(); ?>
 
-		<?php echo do_shortcode('[user-meta-login]');?>
+			<div class="col-sm-6">
 
-		<div><a href="<?php echo site_url(); ?>/states/">View States</a></div>
-		<div><a href="<?php echo site_url(); ?>/request-access/">Request Access</a></div>
-	</div><!-- .entry-content -->
+				<?php echo do_shortcode('[user-meta-login]');?>
+
+			</div>
+
+			<div class="col-sm-6">
+
+				<div><a href="<?php echo site_url(); ?>/states/">View States</a></div>
+				<div><a href="<?php echo site_url(); ?>/request-access/">Request Access</a></div>
+			</div>
+		</div><!-- .entry-content -->
 	
-	<?php edit_post_link( __( 'Edit', 'amberadvocate' ), '<footer class="entry-footer"><span class="edit-link">', '</span></footer>' ); ?>
+		<?php edit_post_link( __( 'Edit', 'amberadvocate' ), '<footer class="entry-footer"><span class="edit-link">', '</span></footer>' ); ?>
+	</div>
 </article><!-- #post-## -->
 <?php
 get_sidebar();

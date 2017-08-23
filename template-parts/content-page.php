@@ -10,6 +10,8 @@
 ?>
 
 <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
+
+	<div class="content-channel channel-padding">
 	<header class="entry-header">
 		<?php the_title( '<h1 class="entry-title">', '</h1>' ); ?>
 	</header><!-- .entry-header -->
@@ -24,6 +26,7 @@
 			) );
 		?>
 	</div><!-- .entry-content -->
+</div>
 
 	<?php if ( get_edit_post_link() ) : ?>
 		<footer class="entry-footer">
