@@ -29,13 +29,13 @@
 
 					<table cellpadding="0" cellspacing="0" border="0">
 						<tr>
-							<td>Partner's Region</td>
+							<td>AMBER Alert Region</td>
 							<td><?php echo rwmb_meta('amber_region');?></td>
 						</tr>
-						<!-- <tr>
-							<td>Partner's Employing Agency</td>
-							<td><?php echo rwmb_meta('amber_employing_agency');?></td>
-						</tr> -->
+						<tr>
+							<td>Agency</td>
+							<td><?php echo rwmb_meta('amber_agency');?></td>
+						</tr>
 						<tr>
 							<td>Primary AMBER Alert Program or  Missing Persons Clearinghouse Program Phone Number</td>
 							<td><?php echo rwmb_meta('amber_primary_phone');?></td>
@@ -62,11 +62,13 @@
 
 			<div class="col-sm-3">
 				<h3>Partner Portal Links</h3>
-				<ul>
-					<li><a href="#">Partner Dashboard</a></li>
-					<li><a href="#">State Directory</a></li>
-					<li><a href="#">Submit a Document</a></li>
-					<li><a href="#">Contact Us</a></li>
+
+				<ul class="partner-links">
+					<li><i class="fa fa-cog" aria-hidden="true"></i><a href="#">Partner Dashboard</a></li>
+					<li><i class="fa fa-address-book" aria-hidden="true"></i><a href="#">Partner Listing</a></li>
+					<li><i class="fa fa-folder-open" aria-hidden="true"></i><a href="#">State Directory</a></li>
+					<li><i class="fa fa-file-o" aria-hidden="true"></i><a href="#">Submit a Document</a></li>
+					<li><i class="fa fa-inbox" aria-hidden="true"></i><a href="#">Contact Us</a></li>
 				</ul>
 			</div>
 				

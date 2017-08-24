@@ -1113,7 +1113,7 @@ ul#primary-menu ul.active {
 	top: 40px;
 }
 
-@media screen and (min-width: 901px) and (max-width: 1150px) {
+@media screen and (min-width: 901px) {
     ul#primary-menu li {
 		max-width: 140px;
 	}	
@@ -1307,7 +1307,8 @@ ul#menu-footer-navigation ul.sub-menu li {
 
 .entry-header {
 	width: 100%;
-	padding: 0 1em;
+	padding: 0 20px;
+    margin: 20px 0 0 0;
 
 }
 
@@ -1329,6 +1330,21 @@ ul#menu-footer-navigation ul.sub-menu li {
 .red {
 	background: #c42619;
 	color: #fff;
+}
+
+ul.partner-links {
+	list-style: none;
+	margin: 0;
+	padding: 0;
+}
+
+ul.partner-links li {
+	padding: 4px;
+}
+
+ul.partner-links i {
+	padding: 0 10px 0 0;
+	font-size: 1.3em;
 }
 
 

@@ -235,11 +235,11 @@ function amber_register_meta_boxes( $meta_boxes ) {
 				'multiple'    => false,
 				'placeholder' => esc_html__( 'Select a Region', $prefix ),
 			),// TEXT
-			/*array(
-				'name' => __( 'Partner\'s Employing Agency', $prefix ),
-				'id'   => "{$prefix}employing_agency",
+			array(
+				'name' => __( 'Agency', $prefix ),
+				'id'   => "{$prefix}agency",
 				'type' => 'text',
-			),*/
+			),
 			// TEXT
 			array(
 				'name' => __( 'Primary AMBER Alert Program or  Missing Persons Clearinghouse Program Phone Number', $prefix ),
