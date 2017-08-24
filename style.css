@@ -557,17 +557,17 @@ textarea {
 ## Links
 --------------------------------------------------------------*/
 a {
-	color: #009a07;
+	color: #2e803a;
 }
 
 a:visited {
-	color: #009a07;
+	color: #2e803a;
 }
 
 a:hover,
 a:focus,
 a:active {
-	color: #009a07;
+	color: #2e803a;
 }
 
 a:focus {
@@ -951,15 +951,24 @@ object {
 --------------------------------------------------------------*/
 
 .content-channel {
-	max-width: 1100px;
+	max-width: 1024px;
 	margin: 0 auto;
+}
+
+.full-width-channel {
+	width: 100%;
+	text-align: center;
+}
+
+.channel-padding {
+	padding: 0 16px;
 }
 
 .nav-bar {
 	width: 100%;
 	text-align: center;
 	display: none;
-	margin: 20px 0;
+	margin: 20px 0 0 0;
 	/*height: 60px;*/
 	background: #ccc;
 	opacity: 1;
@@ -1049,7 +1058,7 @@ ul#primary-menu {
 }
 
 ul#primary-menu li {
-	padding: 6px 12px;
+	padding: 12px;
 	margin: 0;
 	display: inline-block;
 	vertical-align: middle;
@@ -1074,14 +1083,14 @@ ul#primary-menu a:hover {
 ul#primary-menu ul.sub-menu {
 	display: none;
 	position: absolute;
-	margin: 0 0 0 -10px;
+	margin: 6px 0 0 -10px;
 	padding: 0;
 	background: #ccc;
 }
 
 ul#primary-menu ul.sub-menu li {
 	margin: 0;
-	padding: 6px 10px;
+	padding: 12px;
 	display: block;
 	text-align: left;
 	min-width: 126px;
@@ -1104,7 +1113,7 @@ ul#primary-menu ul.active {
 	top: 40px;
 }
 
-@media screen and (min-width: 901px) and (max-width: 1150px) {
+@media screen and (min-width: 901px) {
     ul#primary-menu li {
 		max-width: 140px;
 	}	
@@ -1292,3 +1301,139 @@ ul#menu-footer-navigation ul.sub-menu li {
 		display: inline;
 	}
 }
+
+
+
+
+.entry-header {
+	width: 100%;
+	padding: 0 20px;
+    margin: 20px 0 0 0;
+
+}
+
+.orange {
+	background: #ff9c3d;
+	color: #fff;
+}
+
+.green {
+	background: #2e803a;
+	color: #fff;
+}
+
+.yellow {
+	background: #ffbf34;
+	color: #fff;
+}
+
+.red {
+	background: #c42619;
+	color: #fff;
+}
+
+.btn {
+  background: #db5d20;
+  background-image: -webkit-linear-gradient(top, #db5d20, #c9311a);
+  background-image: -moz-linear-gradient(top, #db5d20, #c9311a);
+  background-image: -ms-linear-gradient(top, #db5d20, #c9311a);
+  background-image: -o-linear-gradient(top, #db5d20, #c9311a);
+  background-image: linear-gradient(to bottom, #db5d20, #c9311a);
+  -webkit-border-radius: 7;
+  -moz-border-radius: 7;
+  border-radius: 7px;
+  font-family: Arial;
+  color: #ffffff;
+  font-size: 20px;
+  padding: 10px 20px 10px 20px;
+  text-decoration: none;
+}
+
+.btn:hover {
+  background: #db5d20;
+  background-image: -webkit-linear-gradient(top, #db5d20, #db5d20);
+  background-image: -moz-linear-gradient(top, #db5d20, #db5d20);
+  background-image: -ms-linear-gradient(top, #db5d20, #db5d20);
+  background-image: -o-linear-gradient(top, #db5d20, #db5d20);
+  background-image: linear-gradient(to bottom, #db5d20, #db5d20);
+  text-decoration: none;
+}
+
+ul.partner-links {
+	list-style: none;
+	margin: 0;
+	padding: 0;
+}
+
+ul.partner-links li {
+	padding: 4px;
+}
+
+ul.partner-links i {
+	padding: 0 10px 0 0;
+	font-size: 1.3em;
+}
+
+
+/*--------------------------------------------------------------
+## PARTNER LIST
+--------------------------------------------------------------*/
+
+table.partner-table {
+	font-size: 1em;
+	line-height: 1.6em;
+	border: 1px solid #ddd;
+	margin: 0 0 60px 0;
+}
+
+table.partner-table tr:nth-child(odd) {
+	background: #ddd;
+}
+
+table.partner-table td {
+	padding: 0.5em 0.8em;
+}
+
+/*--------------------------------------------------------------
+## STATE DETAIL PAGE
+--------------------------------------------------------------*/
+
+.state-meta {
+}
+
+.state-meta table {
+	font-size: 1em;
+	line-height: 1.6em;
+	border: 1px solid #ddd;
+	margin: 0 0 60px 0;
+}
+
+.state-meta table tr:nth-child(odd) {
+	background: #ddd;
+}
+
+.state-meta table td {
+	padding: 0.5em 0.8em;
+}
+
+.state-meta table td:nth-child(odd) {
+	width: 70%;
+	padding: 0.5em 2em 0.5em 0.8em;
+}
+.state-meta table td:nth-child(even) {
+	width: 30%;
+}
+
+.state-meta strong {
+	font-size: 1.3em;
+}
+
+.select-a-state {
+	padding: 40px 0 0 0;
+	background: #ddd;
+}
+
+.select-a-state h2 {
+	padding: 20px 0;
+}
+
