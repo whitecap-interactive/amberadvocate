@@ -1332,6 +1332,33 @@ ul#menu-footer-navigation ul.sub-menu li {
 	color: #fff;
 }
 
+.btn {
+  background: #db5d20;
+  background-image: -webkit-linear-gradient(top, #db5d20, #c9311a);
+  background-image: -moz-linear-gradient(top, #db5d20, #c9311a);
+  background-image: -ms-linear-gradient(top, #db5d20, #c9311a);
+  background-image: -o-linear-gradient(top, #db5d20, #c9311a);
+  background-image: linear-gradient(to bottom, #db5d20, #c9311a);
+  -webkit-border-radius: 7;
+  -moz-border-radius: 7;
+  border-radius: 7px;
+  font-family: Arial;
+  color: #ffffff;
+  font-size: 20px;
+  padding: 10px 20px 10px 20px;
+  text-decoration: none;
+}
+
+.btn:hover {
+  background: #db5d20;
+  background-image: -webkit-linear-gradient(top, #db5d20, #db5d20);
+  background-image: -moz-linear-gradient(top, #db5d20, #db5d20);
+  background-image: -ms-linear-gradient(top, #db5d20, #db5d20);
+  background-image: -o-linear-gradient(top, #db5d20, #db5d20);
+  background-image: linear-gradient(to bottom, #db5d20, #db5d20);
+  text-decoration: none;
+}
+
 ul.partner-links {
 	list-style: none;
 	margin: 0;

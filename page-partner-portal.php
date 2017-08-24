@@ -22,7 +22,7 @@ get_header();
 
 			<div class="row">
 
-				<div class="col-sm-4">
+				<div class="col-sm-5">
 
 					<?php echo do_shortcode('[user-meta-login]');?>
 
@@ -31,9 +31,10 @@ get_header();
 				<div class="col-sm-4">
 
 					
+					
 				</div>
 
-				<div class="col-sm-4">
+				<div class="col-sm-3">
 					<h3>Partner Portal Links</h3>
 
 					<ul class="partner-links">
@@ -44,6 +45,7 @@ get_header();
 						<li><i class="fa fa-inbox" aria-hidden="true"></i><a href="#">Contact Us</a></li>
 					</ul>
 				</div>
+			</div>
 		</div><!-- .entry-content -->
 	
 	</div>
