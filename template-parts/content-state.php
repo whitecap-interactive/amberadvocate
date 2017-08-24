@@ -27,7 +27,7 @@
 			<div class="state-meta row">
 				<div class="col-sm-9">
 
-					<table cellpadding="0" cellspacing="0" border="0">
+					<table cellpadding="0" cellspacing="0" border="0" class="partner-table">
 						<tr>
 							<td>AMBER Alert Region</td>
 							<td><?php echo rwmb_meta('amber_region');?></td>

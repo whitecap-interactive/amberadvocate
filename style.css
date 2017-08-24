@@ -1376,9 +1376,23 @@ ul.partner-links i {
 
 
 /*--------------------------------------------------------------
-## STATE
+## PARTNER LIST
 --------------------------------------------------------------*/
 
+table.partner-table {
+	font-size: 1em;
+	line-height: 1.6em;
+	border: 1px solid #ddd;
+	margin: 0 0 60px 0;
+}
+
+table.partner-table tr:nth-child(odd) {
+	background: #ddd;
+}
+
+table.partner-table td {
+	padding: 0.5em 0.8em;
+}
 
 /*--------------------------------------------------------------
 ## STATE DETAIL PAGE

@@ -17,22 +17,35 @@
 	</header><!-- .entry-header -->
 
 	<div class="entry-content">
-		<table>
-		<?php
-			the_content();
+		<div class="row">
+			<div class="col-sm-6">
+				<table class="partner-table">
+				<?php
+					the_content();
 
-			$partners = get_users( 'blog_id=1&orderby=nicename&role=partner' );
-			$partner_contacts = array();  
+					$partners = get_users( 'blog_id=1&orderby=nicename&role=partner' );
+					$partner_contacts = array();  
 
-		    foreach ( $partners as $partner ) {
-		    	$partner_contacts[$partner->user_nicename] = $partner->user_firstname . ' ' . $partner->user_lastname ;
-		    	echo '<tr><td>' . $partner->user_firstname . ' ' . $partner->user_lastname . '</td></tr>';
-		    }    
-    
-			//var_dump($partner_contacts);
+				    foreach ( $partners as $partner ) {
+				    	$partner_contacts[$partner->user_nicename] = $partner->user_firstname . ' ' . $partner->user_lastname ;
+				    	echo '<tr>' .
+				    		 '<td>' . $partner->user_firstname . ' ' . $partner->user_lastname . '</td>' .
+				    		 '<td>NEED STATE</td>' . 
+				    		 '<td>NEED REGION</td>' .
+				    		 '</tr>';
 
-		?>
-	</table>
+				    	// NEED TO GET STATE USER IS ASSIGNED TO
+
+				    	// NEED TO GET REGION STATE IS ASSOCIATED WITH
+
+				    }    
+		    
+					//var_dump($partner_contacts);
+
+				?>
+				</table>
+			</div>
+		</div>
 	</div><!-- .entry-content -->
 </div>
 
