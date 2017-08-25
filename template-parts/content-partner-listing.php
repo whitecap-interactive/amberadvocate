@@ -25,21 +25,26 @@
 
 					$partners = get_users( 'blog_id=1&orderby=nicename&role=partner' );
 					$partner_contacts = array();  
-
 				    foreach ( $partners as $partner ) {
 				    	$partner_contacts[$partner->user_nicename] = $partner->user_firstname . ' ' . $partner->user_lastname ;
+				    	$partner_state = get_user_meta($partner->ID, 'your_state', true);
+				    	foreach ($partner_state as $state_id) {
+				    		if ( $post = get_page_by_path( $state_id, OBJECT, 'state' ) )
+								    $id = $post->ID;
+								else
+								    $id = 0;
+				    	}
 				    	echo '<tr>' .
 				    		 '<td>' . $partner->user_firstname . ' ' . $partner->user_lastname . '</td>' .
-				    		 '<td>NEED STATE</td>' . 
-				    		 '<td>NEED REGION</td>' .
+				    		 '<td>Partner ID: ' . $partner->ID . '</td>' .
+				    		 '<td>' . $partner_state . '</td>' . 
+				    		 '<td>' . get_user_meta($partner->ID, 'your_state', true) . '</td>' .
 				    		 '</tr>';
-
-				    	// NEED TO GET STATE USER IS ASSIGNED TO
 
 				    	// NEED TO GET REGION STATE IS ASSOCIATED WITH
 
-				    }    
-		    
+				    }  
+
 					//var_dump($partner_contacts);
 
 				?>

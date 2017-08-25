@@ -305,7 +305,7 @@ function user_meta_field_config_populate_categories( $field, $fieldID, $formName
 	);
 	$posts_array = get_posts( $args );
 
-    if( $fieldID != '14') // This has to match the Field ID of the User Meta Dropdown
+    if( $fieldID != '52') // This has to match the Field ID of the User Meta Dropdown
         return $field;
  	
     $output = null;
