@@ -212,7 +212,7 @@ function amber_register_meta_boxes( $meta_boxes ) {
 			),
         )
     );
-    // META BOXES FOR ORGANIZATION CUSTOM POST TYPE
+    // META BOXES FOR STATE CUSTOM POST TYPE
     $meta_boxes[] = array(
         'title'      => __( 'State Details', 'amber' ),
         'post_types' => 'State',
@@ -234,41 +234,47 @@ function amber_register_meta_boxes( $meta_boxes ) {
 				// Select multiple values, optional. Default is false.
 				'multiple'    => false,
 				'placeholder' => esc_html__( 'Select a Region', $prefix ),
-			),// TEXT
-			array(
-				'name' => __( 'Agency', $prefix ),
-				'id'   => "{$prefix}agency",
-				'type' => 'text',
 			),
 			// TEXT
 			array(
-				'name' => __( 'Primary AMBER Alert Program or  Missing Persons Clearinghouse Program Phone Number', $prefix ),
-				'id'   => "{$prefix}primary_phone",
+				'name' => __( 'AMBER Alert Program Phone Number', $prefix ),
+				'id'   => "{$prefix}amber_phone",
 				'type' => 'text',
 			),
-			// TEXT
+			// EMAIL
 			array(
-				'name' => __( 'Secondary or Alternate AMBER Alert Program or Missing Persons Clearinghouse Program Phone Number', $prefix ),
-				'id'   => "{$prefix}secondary_phone",
-				'type' => 'text',
-			),
-			// TEXT
-			array(
-				'name' => __( 'Alert Program or  Missing Persons Clearinghouse Program Email', $prefix ),
-				'id'   => "{$prefix}email",
-				'type' => 'text',
-			),
-			// TEXT
-			array(
-				'name'  => esc_html__( 'Missing Persons Clearinghouse Program Website', $prefix ),
-				'id'    => "{$prefix}mpcp_website",
-				'type'  => 'text',
+				'name' => __( 'AMBER Alert Program Email', $prefix ),
+				'id'   => "{$prefix}amber_email",
+				'type' => 'email',
 			),
 			// TEXT
 			array(
 				'name'  => esc_html__( 'AMBER Alert Program Website', $prefix ),
 				// Field ID, i.e. the meta key
 				'id'    => "{$prefix}program_website",
+				'type'  => 'text',
+			),
+			// DIVIDER
+			array(
+				'type' => 'divider',
+				'id'   => 'fake_divider_id', // Not used, but needed
+			),
+			// TEXT
+			array(
+				'name' => __( 'Missing Persons Clearinghouse Program Phone Number', $prefix ),
+				'id'   => "{$prefix}clearinghouse_phone",
+				'type' => 'text',
+			),
+			// EMAIL
+			array(
+				'name' => __( 'Missing Persons Clearinghouse Program Email', $prefix ),
+				'id'   => "{$prefix}clearinghouse_email",
+				'type' => 'email',
+			),
+			// TEXT
+			array(
+				'name'  => esc_html__( 'Missing Persons Clearinghouse Program Website', $prefix ),
+				'id'    => "{$prefix}mpcp_website",
 				'type'  => 'text',
 			),
         )
