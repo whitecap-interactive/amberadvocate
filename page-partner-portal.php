@@ -48,6 +48,9 @@ get_header();
 					</ul>
 				</div>
 			</div>
+			<div class="row">
+				<?php echo do_shortcode('[usahtml5map id="0"]');?>
+			</div>
 		</div><!-- .entry-content -->
 	
 	</div>
