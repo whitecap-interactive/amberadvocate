@@ -25,6 +25,9 @@ get_header(); ?>
 			</header><!-- .page-header -->
 
 
+            <div class="row">
+                <?php echo do_shortcode('[usahtml5map id="0"]');?>
+            </div>
 
 			<table id="organization-table" class="organization-list">
 			    <?php
