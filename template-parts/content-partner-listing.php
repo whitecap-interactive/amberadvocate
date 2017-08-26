@@ -22,31 +22,25 @@
 				<table class="partner-table">
 				<?php
 					the_content();
-
 					$partners = get_users( 'blog_id=1&orderby=nicename&role=partner' );
-					$partner_contacts = array(); 
 				    foreach ( $partners as $partner ) {
-				    	/*$partner_contacts[$partner->user_nicename] = $partner->user_firstname . ' ' . $partner->user_lastname ;*/
 				    	$partner_state_name = get_user_meta($partner->ID, 'your_state', true);
 			    		if ( $post = get_page_by_path( $partner_state_name, OBJECT, 'state' ) ){
-			    			$id = $post->ID;
+			    			$state_id = $post->ID;
 			    		}    
 						else{
-							$id = 0;
-						}	  
+							$state_id = 0;
+						}	
+						$region = rwmb_meta( 'amber_region', $args = array(), $state_id );
 				    	echo '<tr>' .
 				    		 '<td>' . $partner->user_firstname . ' ' . $partner->user_lastname . '</td>' .
 				    		 '<td>Partner ID: ' . $partner->ID . '</td>' .
 				    		 '<td>State Name: ' . $partner_state_name . '</td>' . 
-				    		 '<td>State ID: ' . $id/*get_user_meta($partner->ID, 'your_state', true)*/ . '</td>' .
+				    		 '<td>State ID: ' . $state_id . '</td>' .
+				    		 '<td>Region: ' . $region . '</td>' .
 				    		 '</tr>';
 
-				    	// NEED TO GET REGION STATE IS ASSOCIATED WITH
-
 				    }  
-
-					//var_dump($partner_contacts);
-
 				?>
 				</table>
 			</div>
