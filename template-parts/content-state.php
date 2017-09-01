@@ -45,7 +45,9 @@
 						</tr>
 						<tr>
 							<td>AMBER Alert Program Website</td>
-							<td><button><a href="<?php echo rwmb_meta('amber_program_website');?>">Website</a></button></td>
+							<td>
+								<?php if (!empty(rwmb_meta('amber_program_website'))) { echo '<a class="button light-orange" href="' . rwmb_meta('amber_program_website') . '">Website</a>'; } ?>
+							</td>
 						</tr>
 					</table>
 					<table cellpadding="0" cellspacing="0" border="0" class="partner-table">
@@ -62,7 +64,9 @@
 						</tr>
 						<tr>
 							<td>Missing Persons Clearinghouse Program Website</td>
-							<td><button><a href="<?php echo rwmb_meta('amber_mpch_website');?>">Website</a></button></td>
+							<td>
+								<?php if (!empty(rwmb_meta('amber_mpch_website'))) { echo '<a class="button light-orange" href="' . rwmb_meta('amber_mpch_website') . '">Website</a>'; } ?>
+							</td>
 						</tr>
 					</table>
 

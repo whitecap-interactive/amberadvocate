@@ -975,6 +975,20 @@ object {
 	text-transform: capitalize;
 }
 
+a.button {
+	padding: 6px;
+	background: #646566;
+	color: #fff;
+}
+
+a.button:visited {
+	color:#fff;
+}
+
+.light-orange {
+	background: #FBA026 !important;
+}
+
 /*--------------------------------------------------------------
 ## HEADER
 --------------------------------------------------------------*/
@@ -1417,6 +1431,10 @@ table.partner-table td {
 .state-meta {
 }
 
+.state-meta button {
+	background: #FBA026;
+}
+
 .region {
 	font-size: 70%;
 	line-height: 3em;
@@ -1430,11 +1448,12 @@ table.partner-table td {
 }
 
 .state-meta table tr:nth-child(odd) {
-	background: #ddd;
+	background: #eee;
 }
 
 .state-meta table td, .state-meta table th {
 	padding: 0.5em 0.8em;
+	border: 1px solid #ddd;
 }
 
 .state-meta table th {
@@ -1448,6 +1467,7 @@ table.partner-table td {
 }
 .state-meta table td:nth-child(even) {
 	width: 30%;
+	text-align: center;
 }
 
 .state-meta strong {
