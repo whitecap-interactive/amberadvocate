@@ -73,15 +73,7 @@
 			</div>
 
 			<div class="col-sm-3">
-				<h3>Partner Portal Links</h3>
-
-				<ul class="partner-links">
-					<li><i class="fa fa-cog" aria-hidden="true"></i><a href="#">Partner Dashboard</a></li>
-					<li><i class="fa fa-address-book" aria-hidden="true"></i><a href="#">Partner Listing</a></li>
-					<li><i class="fa fa-folder-open" aria-hidden="true"></i><a href="#">State Directory</a></li>
-					<li><i class="fa fa-file-o" aria-hidden="true"></i><a href="#">Submit a Document</a></li>
-					<li><i class="fa fa-inbox" aria-hidden="true"></i><a href="#">Contact Us</a></li>
-				</ul>
+				<?php get_sidebar('portal'); ?>
 			</div>
 				
 		</div><!-- .entry-content -->

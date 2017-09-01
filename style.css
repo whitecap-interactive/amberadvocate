@@ -976,9 +976,10 @@ object {
 }
 
 a.button {
-	padding: 6px;
+	padding: 6px 20px;
 	background: #646566;
 	color: #fff;
+	border-radius: 3px;
 }
 
 a.button:visited {
@@ -1444,7 +1445,7 @@ table.partner-table td {
 	font-size: 1em;
 	line-height: 1.6em;
 	border: 1px solid #ddd;
-	margin: 20px 0 20px 0;
+	margin: 0 0 20px 0;
 }
 
 .state-meta table tr:nth-child(odd) {

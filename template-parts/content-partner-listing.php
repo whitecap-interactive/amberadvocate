@@ -43,6 +43,9 @@
 				?>
 				</table>
 			</div>
+			<div class="col-sm-6">
+
+			</div>
 		</div>
 	</div><!-- .entry-content -->
 </div>
