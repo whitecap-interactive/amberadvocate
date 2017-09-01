@@ -34,12 +34,11 @@
 						$region = rwmb_meta( 'amber_region', $args = array(), $state_id );
 				    	echo '<tr>' .
 				    		 '<td>' . $partner->user_firstname . ' ' . $partner->user_lastname . '</td>' .
-				    		 '<td>Partner ID: ' . $partner->ID . '</td>' .
-				    		 '<td>State Name: ' . $partner_state_name . '</td>' . 
-				    		 '<td>State ID: ' . $state_id . '</td>' .
+				    		 //'<td>Partner ID: ' . $partner->ID . '</td>' .
+				    		 '<td>State: ' . $partner_state_name . '</td>' . 
+				    		 //'<td>State ID: ' . $state_id . '</td>' .
 				    		 '<td>Region: ' . $region . '</td>' .
 				    		 '</tr>';
-
 				    }  
 				?>
 				</table>

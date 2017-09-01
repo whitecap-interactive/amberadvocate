@@ -131,8 +131,49 @@ function create_post_type() {
         /*'show_in_nav_menus' => true*/
 		)
 	);
+	register_post_type( 'partner_resources',
+		array(
+			'labels' => array(
+				'name' => __( 'Partner Resources' ),
+				'singular_name' => __( 'Partner Resource' )
+			),
+		'public' => true,
+		'has_archive' => true,
+		'capability_type' => 'post',
+		'rewrite' => array('slug' => 'partner_resources'),  
+		'supports' => array(
+            'title',
+            'excerpt',
+            'editor',
+            'custom-fields',
+            'revisions',
+            'thumbnail',
+            'author'),
+        'taxonomies' => array('category', 'post_tag'),
+        /*'show_in_nav_menus' => true*/
+		)
+	);
 } 
+/**
+ * Change the post type labels
+ */
+function change_post_type_labels() {
+  global $wp_post_types;
 
+  // Get the post labels
+  $postLabels = $wp_post_types['partner_resources']->labels;
+  $postLabels->name = 'Partner Resources';
+  $postLabels->singular_name = 'Partner Resources';
+  $postLabels->add_new = 'Add New Partner Resource';
+  $postLabels->add_new_item = 'Add New Partner Resource';
+  $postLabels->edit_item = 'Edit Partner Resource';
+  $postLabels->new_item = 'Partner Resources';
+  $postLabels->view_item = 'View Partner Resources';
+  $postLabels->search_items = 'Search Partner Resources';
+  $postLabels->not_found = 'No Partner Resources found';
+  $postLabels->not_found_in_trash = 'No Partner Resources found in Trash';
+}
+add_action( 'init', 'change_post_type_labels' );
 
 /**
  * Enqueue scripts and styles.
@@ -293,6 +334,20 @@ function amber_register_meta_boxes( $meta_boxes ) {
 			),
         )
     );
+    // ALLOW ATTACHMENT OF FILES TO ORGANIZATION CUSTOM POST TYPE
+    $meta_boxes[] = array(
+        'title'      => __( 'Assessments & Attached Files', 'amber' ),
+        'post_types' => 'State',
+        'fields'     => array(
+            // FILE ADVANCED (WP 3.5+)
+			array(
+				'name'             => __( 'File Upload', 'amber' ),
+				'id'               => "{$prefix}file_advanced",
+				'type'             => 'file_advanced',
+				'mime_type'        => 'application,audio,video', // Leave blank for all file types
+			),
+        )
+    );
     return $meta_boxes;
 }
 
@@ -325,6 +380,14 @@ function user_meta_field_config_populate_categories( $field, $fieldID, $formName
  
     return $field;
 }	
+
+//List of admin email notification recipients
+function changeUMPAdminEmail( $adminEmails ) {
+    //return array( 'amberadvocate@ncjtc.org' );
+    return array( 'brian@whitecap.io' );
+}
+add_filter( 'user_meta_admin_email_recipient', 'changeUMPAdminEmail' );	
+
 
 /**
  * Implement the Custom Header feature.
