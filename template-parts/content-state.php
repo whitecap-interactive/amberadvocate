@@ -13,7 +13,7 @@
 
 	<div class="content-channel channel-padding">
 		<header class="entry-header green">
-			<?php the_title( '<h1 class="entry-title">', '</h1>' ); ?>
+			<?php the_title( '<h1 class="entry-title">', '<span class="region alignright">Region: ' . rwmb_meta('amber_region') . '</span></h1>' ); ?>
 		</header><!-- .entry-header -->
 
 		<div class="entry-content">
@@ -28,33 +28,45 @@
 				<div class="col-sm-9">
 
 					<table cellpadding="0" cellspacing="0" border="0" class="partner-table">
-						<tr>
+						<!-- <tr>
 							<td>AMBER Alert Region</td>
 							<td><?php echo rwmb_meta('amber_region');?></td>
+						</tr> -->
+						<tr>
+							<th colspan="2"><strong>AMBER Alert Program</strong></th>
 						</tr>
 						<tr>
-							<td>Agency</td>
-							<td><?php echo rwmb_meta('amber_agency');?></td>
+							<td>AMBER Alert Program Phone Number</td>
+							<td><?php echo rwmb_meta('amber_program_phone');?></td>
 						</tr>
 						<tr>
-							<td>Primary AMBER Alert Program or  Missing Persons Clearinghouse Program Phone Number</td>
-							<td><?php echo rwmb_meta('amber_primary_phone');?></td>
-						</tr>
-						<tr>
-							<td>Secondary or Alternate AMBER Alert Program or  Missing Persons Clearinghouse Program Phone Number</td>
-							<td><?php echo rwmb_meta('amber_secondary_phone');?></td>
-						</tr>
-						<tr>
-							<td>Alert Program or  Missing Persons Clearinghouse Program Email</td>
-							<td><?php echo rwmb_meta('amber_email');?></td>
-						</tr>
-						<tr>
-							<td>Missing Persons Clearinghouse Program Website</td>
-							<td><a href="<?php echo rwmb_meta('amber_mpcp_website');?>" target="_blank"><?php echo rwmb_meta('amber_mpcp_website');?></a></td>
+							<td>AMBER Alert Program Email</td>
+							<td><?php echo rwmb_meta('amber_program_email');?></td>
 						</tr>
 						<tr>
 							<td>AMBER Alert Program Website</td>
-							<td><a href="<?php echo rwmb_meta('amber_program_website');?>" target="_blank"><?php echo rwmb_meta('amber_program_website');?></a></td>
+							<td>
+								<?php if (!empty(rwmb_meta('amber_program_website'))) { echo '<a class="button light-orange" href="' . rwmb_meta('amber_program_website') . '">Website</a>'; } ?>
+							</td>
+						</tr>
+					</table>
+					<table cellpadding="0" cellspacing="0" border="0" class="partner-table">
+						<tr>
+							<th colspan="2"><strong>Missing Persons Clearinghouse Program</strong></th>
+						</tr>
+						<tr>
+							<td>Missing Persons Clearinghouse Program Phone Number</td>
+							<td><?php echo rwmb_meta('amber_mpch_phone');?></td>
+						</tr>
+						<tr>
+							<td>Missing Persons Clearinghouse Program Email</td>
+							<td><?php echo rwmb_meta('amber_mpch_email');?></td>
+						</tr>
+						<tr>
+							<td>Missing Persons Clearinghouse Program Website</td>
+							<td>
+								<?php if (!empty(rwmb_meta('amber_mpch_website'))) { echo '<a class="button light-orange" href="' . rwmb_meta('amber_mpch_website') . '">Website</a>'; } ?>
+							</td>
 						</tr>
 					</table>
 

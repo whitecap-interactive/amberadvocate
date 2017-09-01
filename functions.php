@@ -279,13 +279,13 @@ function amber_register_meta_boxes( $meta_boxes ) {
 			// TEXT
 			array(
 				'name' => __( 'AMBER Alert Program Phone Number', $prefix ),
-				'id'   => "{$prefix}amber_phone",
+				'id'   => "{$prefix}program_phone",
 				'type' => 'text',
 			),
 			// EMAIL
 			array(
 				'name' => __( 'AMBER Alert Program Email', $prefix ),
-				'id'   => "{$prefix}amber_email",
+				'id'   => "{$prefix}program_email",
 				'type' => 'email',
 			),
 			// TEXT
@@ -303,20 +303,21 @@ function amber_register_meta_boxes( $meta_boxes ) {
 			// TEXT
 			array(
 				'name' => __( 'Missing Persons Clearinghouse Program Phone Number', $prefix ),
-				'id'   => "{$prefix}clearinghouse_phone",
+				'id'   => "{$prefix}mpch_phone",
 				'type' => 'text',
 			),
 			// EMAIL
 			array(
 				'name' => __( 'Missing Persons Clearinghouse Program Email', $prefix ),
-				'id'   => "{$prefix}clearinghouse_email",
+				'id'   => "{$prefix}mpch_email",
 				'type' => 'email',
 			),
 			// TEXT
 			array(
 				'name'  => esc_html__( 'Missing Persons Clearinghouse Program Website', $prefix ),
-				'id'    => "{$prefix}mpcp_website",
+				'id'    => "{$prefix}mpch_website",
 				'type'  => 'text',
+				'desc'  => 'Please include http:// or https:// in the URL',
 			),
         )
     );
