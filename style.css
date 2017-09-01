@@ -1444,7 +1444,7 @@ table.partner-table td {
 	font-size: 1em;
 	line-height: 1.6em;
 	border: 1px solid #ddd;
-	margin: 0 0 40px 0;
+	margin: 20px 0 20px 0;
 }
 
 .state-meta table tr:nth-child(odd) {
