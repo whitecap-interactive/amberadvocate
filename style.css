@@ -1064,6 +1064,10 @@ ul#primary-menu li {
 	vertical-align: middle;
 }
 
+ul#primary-menu li:hover {
+	/*background: #ddd;*/
+}
+
 ul#primary-menu a {
 	color: #7c7b7b;
 	display: block;
@@ -1072,20 +1076,26 @@ ul#primary-menu a {
 	text-transform: uppercase;
 	font-size: 0.9em;
 	line-height: 1.2em;
+	outline:0;
 }
 
 ul#primary-menu a:hover {
 	color: #363636;    
-    transition-delay: 100ms;
+    /*transition-delay: 100ms;*/
     text-decoration: none;
+}
+
+ul#primary-menu li:focus {
+	text-decoration:none;
 }
 
 ul#primary-menu ul.sub-menu {
 	display: none;
 	position: absolute;
-	margin: 6px 0 0 -10px;
+	margin: 12px 0 0 -10px;
 	padding: 0;
 	background: #ccc;
+	z-index: 1;
 }
 
 ul#primary-menu ul.sub-menu li {
@@ -1094,10 +1104,16 @@ ul#primary-menu ul.sub-menu li {
 	display: block;
 	text-align: left;
 	min-width: 126px;
+	max-width: 180px;
+}
+
+ul#primary-menu ul.sub-menu li:hover {
+	/*background: #ddd;*/
 }
 
 ul#primary-menu ul.active {
 	display: block;
+	text-decoration: none;
 }
 
 .login {
@@ -1401,19 +1417,29 @@ table.partner-table td {
 .state-meta {
 }
 
+.region {
+	font-size: 70%;
+	line-height: 3em;
+}
+
 .state-meta table {
 	font-size: 1em;
 	line-height: 1.6em;
 	border: 1px solid #ddd;
-	margin: 0 0 60px 0;
+	margin: 0 0 40px 0;
 }
 
 .state-meta table tr:nth-child(odd) {
 	background: #ddd;
 }
 
-.state-meta table td {
+.state-meta table td, .state-meta table th {
 	padding: 0.5em 0.8em;
+}
+
+.state-meta table th {
+	background: #646566;
+	color: #fff;
 }
 
 .state-meta table td:nth-child(odd) {

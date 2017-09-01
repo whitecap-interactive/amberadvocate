@@ -43,7 +43,7 @@ get_header();
 						<li><i class="fa fa-folder-open" aria-hidden="true"></i><a href="#">State Directory</a></li>
 						<li><i class="fa fa-file-o" aria-hidden="true"></i><a href="#">Submit a Document</a></li>
 						<li><i class="fa fa-inbox" aria-hidden="true"></i><a href="#">Contact Us</a></li>
-						<li><i class="fa fa-map-o" aria-hidden="true"></i><a href="<?php echo site_url(); ?>/states/">View States</a></li>
+						<li><i class="fa fa-map-o" aria-hidden="true"></i><a href="<?php echo site_url(); ?>/amber-alert-network/meet-our-partners/">View States</a></li>
 						<li><i class="fa fa-key" aria-hidden="true"></i><a href="<?php echo site_url(); ?>/patner-portal/request-access/">Request Access</a></li>
 					</ul>
 				</div>
