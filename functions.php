@@ -385,7 +385,7 @@ function user_meta_field_config_populate_categories( $field, $fieldID, $formName
 //List of admin email notification recipients
 function changeUMPAdminEmail( $adminEmails ) {
     //return array( 'amberadvocate@ncjtc.org' );
-    return array( 'brian@whitecap.io', 'david@whitecap.io' );
+    return array( 'brian@whitecap.io', 'david@whitecap.io', 'amberadvocate@ncjtc.org' );
 }
 add_filter( 'user_meta_admin_email_recipient', 'changeUMPAdminEmail' );	
 
