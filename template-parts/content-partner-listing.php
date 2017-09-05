@@ -11,7 +11,6 @@
 
 <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
 
-	<div class="content-channel channel-padding">
 	<header class="entry-header green">
 		<?php the_title( '<h1 class="entry-title">', '</h1>' ); ?>
 	</header><!-- .entry-header -->
@@ -33,8 +32,7 @@
 						}	
 						$region = rwmb_meta( 'amber_region', $args = array(), $state_id );
 				    	echo '<tr>' .
-				    		 '<td>' . $partner->user_firstname . ' ' . $partner->user_lastname . '</td>' .
-				    		 //'<td>Partner ID: ' . $partner->ID . '</td>' .
+				    		 '<td><a href="' . get_author_posts_url( $partner->ID ) . '">' . $partner->user_firstname . ' ' . $partner->user_lastname . '</a></td>'.
 				    		 '<td>State: ' . $partner_state_name . '</td>' . 
 				    		 //'<td>State ID: ' . $state_id . '</td>' .
 				    		 '<td>Region: ' . $region . '</td>' .
@@ -48,6 +46,5 @@
 			</div>
 		</div>
 	</div><!-- .entry-content -->
-</div>
 
 </article><!-- #post-## -->
