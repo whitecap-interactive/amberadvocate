@@ -31,7 +31,7 @@
 				<div class="logo-amber"> </div>
 			</div>
 			<div class="col-sm-6 main-logo">
-				<div class="logo-advocate"><img src="<?php bloginfo('stylesheet_directory'); ?>/images/logo-advocate-large.png" width="500" height="70" border="0" alt="AMBER Advocate" /></div>
+				<div class="logo-advocate"><a href="/"><img src="<?php bloginfo('stylesheet_directory'); ?>/images/logo-advocate-large.png" width="500" height="70" border="0" alt="AMBER Advocate" /></a></div>
 			</div>
 			<div class="col-sm-3">
 				<div class="social-links">Social Stuff.</div>
