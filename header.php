@@ -34,7 +34,10 @@
 				<div class="logo-advocate"><a href="/"><img src="<?php bloginfo('stylesheet_directory'); ?>/images/logo-advocate-large.png" width="500" height="70" border="0" alt="AMBER Advocate" /></a></div>
 			</div>
 			<div class="col-sm-3">
-				<div class="social-links">Social Stuff.</div>
+				<div class="social-links">
+					<!-- <a href="#"><i class="fa fa-facebook-square fa-2x" aria-hidden="true"></i></a> -->
+					<a href="#"><img src="<?php bloginfo('stylesheet_directory'); ?>/images/FB-FindUsonFacebook-online-100.png" /></a>
+				</div>
 				<div class="mobile-nav-toggle">
 					<div id="nav-icon3">
 						<span></span>
@@ -45,15 +48,6 @@
 				</div>
 			</div>
 		</div>
-
-		<!-- <div class="content-channel row">
-			<div class="login">
-
-				Welcome, Dusty Bottoms. | <a href="#">Profile</a>
-
-			</div>
-
-		</div> -->
 
 		<div class="nav-bar">
 
