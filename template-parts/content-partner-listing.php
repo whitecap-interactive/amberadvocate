@@ -17,33 +17,41 @@
 
 	<div class="entry-content">
 		<div class="row">
-			<div class="col-sm-6">
-				<table class="partner-table">
-				<?php
-					the_content();
-					$partners = get_users( 'blog_id=1&orderby=nicename&role=partner' );
-				    foreach ( $partners as $partner ) {
-				    	$partner_state_name = get_user_meta($partner->ID, 'your_state', true);
-			    		if ( $post = get_page_by_path( $partner_state_name, OBJECT, 'state' ) ){
-			    			$state_id = $post->ID;
-			    		}    
-						else{
-							$state_id = 0;
-						}	
-						$region = rwmb_meta( 'amber_region', $args = array(), $state_id );
-				    	echo '<tr>' .
-				    		 '<td><a href="' . get_author_posts_url( $partner->ID ) . '">' . $partner->user_firstname . ' ' . $partner->user_lastname . '</a></td>'.
-				    		 '<td>State: ' . $partner_state_name . '</td>' . 
-				    		 //'<td>State ID: ' . $state_id . '</td>' .
-				    		 '<td>Region: ' . $region . '</td>' .
-				    		 '</tr>';
-				    }  
-				?>
-				</table>
-			</div>
-			<div class="col-sm-6">
+			<?php if ( is_user_logged_in() ) { ?>
 
-			</div>
+				<div class="col-sm-6">
+					<table class="partner-table">
+					<?php
+						the_content();
+						$partners = get_users( 'blog_id=1&orderby=nicename&role=partner' );
+					    foreach ( $partners as $partner ) {
+					    	$partner_state_name = get_user_meta($partner->ID, 'your_state', true);
+				    		if ( $post = get_page_by_path( $partner_state_name, OBJECT, 'state' ) ){
+				    			$state_id = $post->ID;
+				    		}    
+							else{
+								$state_id = 0;
+							}	
+							$region = rwmb_meta( 'amber_region', $args = array(), $state_id );
+					    	echo '<tr>' .
+					    		 '<td><a href="' . get_author_posts_url( $partner->ID ) . '">' . $partner->user_firstname . ' ' . $partner->user_lastname . '</a></td>'.
+					    		 '<td>State: ' . $partner_state_name . '</td>' . 
+					    		 //'<td>State ID: ' . $state_id . '</td>' .
+					    		 '<td>Region: ' . $region . '</td>' .
+					    		 '</tr>';
+					    }  
+					?>
+					</table>
+				</div>
+				<div class="col-sm-6">
+
+				</div>
+				
+			<?php } else { 
+				get_sidebar('authenticate'); 
+			}
+			?>
+				
 		</div>
 	</div><!-- .entry-content -->
 

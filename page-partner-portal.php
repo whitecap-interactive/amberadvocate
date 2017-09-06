@@ -24,8 +24,6 @@ get_header(); ?>
 				</header><!-- .entry-header -->
 
 				<div class="entry-content">
-					<?php the_content(); ?>
-
 					<div class="row">
 
 						<div class="col-sm-9">
@@ -43,6 +41,10 @@ get_header(); ?>
 						</div>
 					</div>
 					<div class="row">
+
+						<?php the_content(); ?>
+
+					
 						<?php echo do_shortcode('[usahtml5map id="0"]');?>
 					</div>
 				</div><!-- .entry-content -->
