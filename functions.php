@@ -161,7 +161,7 @@ function change_post_type_labels() {
   global $wp_post_types;
 
   // Get the post labels
-  $postLabels = $wp_post_types['partner_resources']->labels;
+  $postLabels = $wp_post_types['partner-resources']->labels;
   $postLabels->name = 'Partner Resources';
   $postLabels->singular_name = 'Partner Resources';
   $postLabels->add_new = 'Add New Partner Resource';
