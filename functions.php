@@ -131,7 +131,7 @@ function create_post_type() {
         /*'show_in_nav_menus' => true*/
 		)
 	);
-	register_post_type( 'partner_resources',
+	register_post_type( 'partner-resource',
 		array(
 			'labels' => array(
 				'name' => __( 'Partner Resources' ),
@@ -140,7 +140,7 @@ function create_post_type() {
 		'public' => true,
 		'has_archive' => true,
 		'capability_type' => 'post',
-		'rewrite' => array('slug' => 'partner_resources'),  
+		'rewrite' => array('slug' => 'partner-resources'),  
 		'supports' => array(
             'title',
             'excerpt',
@@ -321,7 +321,7 @@ function amber_register_meta_boxes( $meta_boxes ) {
 			),
         )
     );
-    // ALLOW ATTACHMENT OF FILES TO ORGANIZATION CUSTOM POST TYPE
+    // ALLOW ATTACHMENT OF FILES TO State CUSTOM POST TYPE
     $meta_boxes[] = array(
         'title'      => __( 'Assessments & Attached Files', 'amber' ),
         'post_types' => 'State',
@@ -335,10 +335,10 @@ function amber_register_meta_boxes( $meta_boxes ) {
 			),
         )
     );
-    // ALLOW ATTACHMENT OF FILES TO ORGANIZATION CUSTOM POST TYPE
+    // ALLOW ATTACHMENT OF FILES TO Partner Resources CUSTOM POST TYPE
     $meta_boxes[] = array(
-        'title'      => __( 'Assessments & Attached Files', 'amber' ),
-        'post_types' => 'State',
+        'title'      => __( 'Partner Resource File Attachment', 'amber' ),
+        'post_types' => 'partner-resource',
         'fields'     => array(
             // FILE ADVANCED (WP 3.5+)
 			array(
