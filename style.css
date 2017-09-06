@@ -1546,7 +1546,7 @@ table.partner-table strong {
 }
 .state-meta table td:nth-child(even) {
 	width: 30%;
-	text-align: center;
+	text-align: left;
 }
 
 .state-meta strong {
