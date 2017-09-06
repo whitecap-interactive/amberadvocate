@@ -17,16 +17,22 @@
 		<div class="site-info">
 			<div class="footer-links">
 				<div class="content-channel row">
-					<nav id="bottom-nav" role="navigation">
-						<?php wp_nav_menu( array( 
-							'theme_location' 	=> 'footer', 
-							'menu_class' 		=> 'bottom-menu menu-trigger',
-							'container' 		=> false,
-							'before'      => '<h3>',
-							'after'       => '</h3>',
-							'items_wrap'    => '<ul id="%1$s" class="%2$s" rel="bottom">%3$s</ul>'
-						) ); ?>
-					</nav>
+					<div class="col-sm-8">
+						<nav id="bottom-nav" role="navigation">
+							<?php wp_nav_menu( array( 
+								'theme_location' 	=> 'footer', 
+								'menu_class' 		=> 'bottom-menu menu-trigger',
+								'container' 		=> false,
+								'before'      => '<h3>',
+								'after'       => '</h3>',
+								'items_wrap'    => '<ul id="%1$s" class="%2$s" rel="bottom">%3$s</ul>'
+							) ); ?>
+						</nav>
+					</div>
+					<div class="col-sm-4 footer-login">
+						<h3>Partner Portal Login</h3>
+						<?php echo do_shortcode('[user-meta-login]');?>
+					</div>
 				</div>
 			</div>
 			<div class="footer-logos">
@@ -35,7 +41,7 @@
 				<div class="footer-logo-advocate"><img src="<?php bloginfo('stylesheet_directory'); ?>/images/logo-advocate.png" width="154" height="21" border="0" alt="AMBER Advocate" /></div>
 			</div>
 			<div class="footer-copyright">
-				&copy; <?php echo date("Y");?> AMBER Alert Technical Training & Assistance Program
+				&copy; <?php echo date("Y");?> AMBER Alert Technical Training &amp; Assistance Training and Technical Assistance Program
 			</div>
 		</div><!-- .site-info -->
 	</footer><!-- #colophon -->

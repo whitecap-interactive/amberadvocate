@@ -472,15 +472,15 @@ button,
 input[type="button"],
 input[type="reset"],
 input[type="submit"] {
-	border: 1px solid;
-	border-color: #ccc #ccc #bbb;
+	border: 0;
+	/*border-color: #ccc #ccc #bbb;*/
 	border-radius: 3px;
-	background: #e6e6e6;
-	color: rgba(0, 0, 0, .8);
-	font-size: 12px;
-	font-size: 0.75rem;
+	background: #2e803a;
+	color: #fff;
+	/*font-size: 12px;
+	font-size: 0.75rem;*/
 	line-height: 1;
-	padding: .6em 1em .4em;
+	padding: 0.5em 1em;
 }
 
 button:hover,
@@ -977,7 +977,7 @@ object {
 
 a.button {
 	padding: 6px 20px;
-	background: #646566;
+	background: #2e803a;
 	color: #fff;
 	border-radius: 3px;
 }
@@ -1266,7 +1266,7 @@ ul#menu-footer-navigation > li {
 	display: inline-block;
 	text-align: left;
 	vertical-align: top;
-	margin: 0 4em;
+	margin: 0 8em 0 0;
 }
 
 ul#menu-footer-navigation h3 {
@@ -1303,7 +1303,7 @@ ul#menu-footer-navigation ul.sub-menu li {
 
 .site-footer {
 	color: #fff;
-	padding: 0 0 400px 0;
+	padding: 0 0 100px 0;
 	background: #000;
 	text-align: center;
 }
@@ -1311,6 +1311,7 @@ ul#menu-footer-navigation ul.sub-menu li {
 .footer-links {
 	background: #363636;
 	padding: 40px 0;
+	text-align: left;
 }
 
 .footer-logos {
@@ -1327,11 +1328,57 @@ ul#menu-footer-navigation ul.sub-menu li {
 	padding: 40px 0;
 }
 
+.footer-login {
+	text-align: left;
+}
+
+.footer-login h3 {
+	padding: 0 0 8px 0;
+}
+
+.footer-login p {
+	margin-bottom: 0;
+}
+
+
+/* USER META OVERRIDES/HACKS */
+
+.footer-login .pf_label {
+	display: inline-block;
+	width:25%;
+	padding: 0 10px 0 0;
+}
+
+.footer-login .um_input {
+	display: inline-block;
+	width: 70% !important;
+	line-height: 1.2em;
+}
+
+.footer-login p:nth-child(3) {
+    /*display: none;*/
+}
+
+.footer-login input[type="submit"] {
+	float: right;
+	margin: -30px 12px 0 0;
+	clear: both;
+	width: 100px;
+}
+
+.footer-login a {
+	/*display: none;*/
+}
+
+
+
 @media (min-width: 500px) {
 	.footer-logos div {
 		display: inline;
 	}
 }
+
+
 
 
 
@@ -1363,6 +1410,11 @@ ul#menu-footer-navigation ul.sub-menu li {
 	color: #fff;
 }
 
+.gray {
+	background: #646566;
+	color: #fff;
+}
+
 .btn {
   background: #db5d20;
   background-image: -webkit-linear-gradient(top, #db5d20, #c9311a);
@@ -1372,11 +1424,11 @@ ul#menu-footer-navigation ul.sub-menu li {
   background-image: linear-gradient(to bottom, #db5d20, #c9311a);
   -webkit-border-radius: 7;
   -moz-border-radius: 7;
-  border-radius: 7px;
+  border-radius: 3px;
   font-family: Arial;
   color: #ffffff;
-  font-size: 20px;
-  padding: 10px 20px 10px 20px;
+  font-size: 16px;
+  padding: 0.5em 1em;
   text-decoration: none;
 }
 
@@ -1406,23 +1458,49 @@ ul.partner-links i {
 }
 
 
+
 /*--------------------------------------------------------------
 ## PARTNER LIST
 --------------------------------------------------------------*/
+
+
+
+table.partner-table td {
+	padding: 0.5em 0.8em;
+}
 
 table.partner-table {
 	font-size: 1em;
 	line-height: 1.6em;
 	border: 1px solid #ddd;
-	margin: 0 0 60px 0;
+	margin: 0 0 20px 0;
 }
 
 table.partner-table tr:nth-child(odd) {
-	background: #ddd;
+	background: #eee;
 }
 
-table.partner-table td {
+table.partner-table td, table.partner-table th {
 	padding: 0.5em 0.8em;
+	border: 1px solid #ddd;
+}
+
+table.partner-table td:nth-child(odd) {
+	width: auto;
+	padding: 0.5em 2em 0.5em 0.8em;
+}
+table.partner-table td:nth-child(even) {
+	width: auto;
+	text-align: left;
+}
+
+table.partner-table th {
+	background: #646566;
+	color: #fff;
+}
+
+table.partner-table strong {
+	font-size: 1.3em;
 }
 
 /*--------------------------------------------------------------
@@ -1482,5 +1560,31 @@ table.partner-table td {
 
 .select-a-state h2 {
 	padding: 20px 0;
+}
+
+/*--------------------------------------------------------------
+## PARTNER PORTAL HOME/LOGIN
+--------------------------------------------------------------*/
+
+.partner-portal-login {
+	width: 100%;
+	padding: 1.5em;
+	min-height: 180px;
+}
+
+.partner-portal-login a {
+	color: #fff;
+}
+
+.logged-out-links {
+
+	width: 100%;
+	text-align: center;
+	display: inline-block;
+}
+
+
+.home .entry-title {
+	display: none;
 }
 

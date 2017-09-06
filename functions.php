@@ -373,7 +373,7 @@ function user_meta_field_config_populate_categories( $field, $fieldID, $formName
     $output = null;
     $output .= 'other=Other,';
     foreach( $posts_array as $post ):
-        $output .= $post->ID.'='.$post->post_name.',';
+        $output .= $post->ID.'='.$post->post_title.',';
     endforeach;
     $output = ',' . trim( $output, ',' );
  
@@ -381,6 +381,14 @@ function user_meta_field_config_populate_categories( $field, $fieldID, $formName
  
     return $field;
 }	
+
+
+// change base of author pages- need to save permalinks to take effect
+function wpa_82004(){
+    global $wp_rewrite;
+    $wp_rewrite->author_base = 'partner'; // or whatever
+}
+add_action('init','wpa_82004');
 
 //List of admin email notification recipients
 function changeUMPAdminEmail( $adminEmails ) {

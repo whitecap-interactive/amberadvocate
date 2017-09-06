@@ -12,7 +12,7 @@
 <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
 
 	
-	<header class="entry-header green">
+	<header class="entry-header orange">
 		<?php the_title( '<h1 class="entry-title">', '<span class="region alignright">Region: ' . rwmb_meta('amber_region') . '</span></h1>' ); ?>
 	</header><!-- .entry-header -->
 
@@ -25,7 +25,7 @@
 		?>
 
 		<div class="state-meta row">
-			<div class="col-sm-9">
+			<div class="col-sm-12">
 
 				<table cellpadding="0" cellspacing="0" border="0" class="partner-table">
 					<!-- <tr>
@@ -72,9 +72,9 @@
 
 			</div>
 
-			<div class="col-sm-3">
+			<!-- <div class="col-sm-3">
 				<?php get_sidebar('portal'); ?>
-			</div>
+			</div> -->
 
 		</div>
 			

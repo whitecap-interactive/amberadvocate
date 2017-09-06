@@ -20,24 +20,20 @@ get_header(); ?>
 			<article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
 				
 				<header class="entry-header green">
-					<h2 class="page-title"><?php the_title(); ?></h2>
+					<h1 class="entry-title"><?php the_title(); ?></h1>
 				</header><!-- .entry-header -->
 
 				<div class="entry-content">
-					<?php the_content(); ?>
-
 					<div class="row">
 
-						<div class="col-sm-5">
+						<div class="col-sm-9">
 
-							<?php echo do_shortcode('[user-meta-login]');?>
+							<div class="partner-portal-login gray">
 
-						</div>
+								<?php echo do_shortcode('[user-meta-login]');?>
 
-						<div class="col-sm-4">
+							</div>
 
-							
-							
 						</div>
 
 						<div class="col-sm-3">
@@ -45,10 +41,17 @@ get_header(); ?>
 						</div>
 					</div>
 					<div class="row">
-						<?php echo do_shortcode('[usahtml5map id="0"]');?>
+
+						<?php the_content(); ?>
+
 					</div>
 				</div><!-- .entry-content -->
-				
+				<br clear="all" />
+				<div class="full-width-channel select-a-state">
+					<h2>Select a state below to see the AMBER Alert Partner information for that state</h2>
+					<?php echo do_shortcode( '[usahtml5map id="0"]' );?>
+				</div>				
+
 			</article><!-- #post-## -->
 
 		</div>
