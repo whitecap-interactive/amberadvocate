@@ -1343,30 +1343,31 @@ ul#menu-footer-navigation ul.sub-menu li {
 
 /* USER META OVERRIDES/HACKS */
 
-.footer-login label {
+.footer-login .pf_label {
 	display: inline-block;
 	width:25%;
 	padding: 0 10px 0 0;
 }
 
-.footer-login input {
+.footer-login .um_input {
 	display: inline-block;
 	width: 70% !important;
 	line-height: 1.2em;
 }
 
 .footer-login p:nth-child(3) {
-    display: none;
+    /*display: none;*/
 }
 
 .footer-login input[type="submit"] {
 	float: right;
-	margin: 0 12px 0 0;
+	margin: -30px 12px 0 0;
 	clear: both;
+	width: 100px;
 }
 
 .footer-login a {
-	display: none;
+	/*display: none;*/
 }
 
 
@@ -1567,7 +1568,8 @@ table.partner-table strong {
 
 .partner-portal-login {
 	width: 100%;
-	padding: 1em;
+	padding: 1.5em;
+	min-height: 180px;
 }
 
 .partner-portal-login a {
