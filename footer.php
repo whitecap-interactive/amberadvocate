@@ -17,16 +17,22 @@
 		<div class="site-info">
 			<div class="footer-links">
 				<div class="content-channel row">
-					<nav id="bottom-nav" role="navigation">
-						<?php wp_nav_menu( array( 
-							'theme_location' 	=> 'footer', 
-							'menu_class' 		=> 'bottom-menu menu-trigger',
-							'container' 		=> false,
-							'before'      => '<h3>',
-							'after'       => '</h3>',
-							'items_wrap'    => '<ul id="%1$s" class="%2$s" rel="bottom">%3$s</ul>'
-						) ); ?>
-					</nav>
+					<div class="col-sm-8">
+						<nav id="bottom-nav" role="navigation">
+							<?php wp_nav_menu( array( 
+								'theme_location' 	=> 'footer', 
+								'menu_class' 		=> 'bottom-menu menu-trigger',
+								'container' 		=> false,
+								'before'      => '<h3>',
+								'after'       => '</h3>',
+								'items_wrap'    => '<ul id="%1$s" class="%2$s" rel="bottom">%3$s</ul>'
+							) ); ?>
+						</nav>
+					</div>
+					<div class="col-sm-4 footer-login">
+						<h3>Partner Portal Login</h3>
+						<?php echo do_shortcode('[user-meta-login]');?>
+					</div>
 				</div>
 			</div>
 			<div class="footer-logos">

@@ -28,16 +28,14 @@ get_header(); ?>
 
 					<div class="row">
 
-						<div class="col-sm-5">
+						<div class="col-sm-9">
 
-							<?php echo do_shortcode('[user-meta-login]');?>
+							<div class="partner-portal-login gray">
 
-						</div>
+								<?php echo do_shortcode('[user-meta-login]');?>
 
-						<div class="col-sm-4">
+							</div>
 
-							
-							
 						</div>
 
 						<div class="col-sm-3">
