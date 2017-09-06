@@ -1303,7 +1303,7 @@ ul#menu-footer-navigation ul.sub-menu li {
 
 .site-footer {
 	color: #fff;
-	padding: 0 0 400px 0;
+	padding: 0 0 100px 0;
 	background: #000;
 	text-align: center;
 }
@@ -1550,7 +1550,7 @@ table.partner-table td {
 }
 
 .logged-out-links {
-	
+
 	width: 100%;
 	text-align: center;
 	display: inline-block;
