@@ -89,7 +89,7 @@ get_header(); ?>
                         </tr>
                         <?php
                             the_content();
-                            $partners = get_users( 'blog_id=1&orderby=nicename&role=partner' );
+                            $partners = get_users( 'blog_id=1&orderby=nicename' );
                             foreach ( $partners as $partner ) {
                                 $partner_state_name = get_user_meta($partner->ID, 'state', true);
                                 if ( $post = get_page_by_path( $partner_state_name, OBJECT, 'state' ) ){

@@ -155,7 +155,7 @@
                         </tr>
                         <tr>
                             <td>Email</td>
-                            <td><?php echo $curauth->user_email; ?></td>
+                            <td><?php echo $user->user_email; ?></td>
                         </tr>
                         <tr>
                             <td>Rank or Title</td>
