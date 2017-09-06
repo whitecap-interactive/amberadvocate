@@ -1556,3 +1556,8 @@ table.partner-table td {
 	display: inline-block;
 }
 
+
+.home .entry-title {
+	display: none;
+}
+
