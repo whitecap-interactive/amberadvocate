@@ -264,7 +264,7 @@ th {
 /* ----- Font Includes ---------*/
 
 @font-face {
-  font-family: 'Encode Sans Condensed';
+  font-family: 'Encode Sans Condensed Black';
   src: url('fonts/EncodeSansCondensed-Black.eot');
   src: url('fonts/EncodeSansCondensed-Black.eot?#iefix') format('embedded-opentype'),
     url('fonts/EncodeSansCondensed-Black.woff2') format('woff2'),
@@ -1582,6 +1582,36 @@ table.partner-table strong {
 	text-align: center;
 	display: inline-block;
 }
+
+
+
+/*--------------------------------------------------------------
+## PARTNER DETAIL PANEL
+--------------------------------------------------------------*/
+
+.partner-detail-panel {
+	background: #646566;
+	padding: 1em;
+	color: #fff;
+	line-height:2.4em;
+}
+
+.partner-detail-panel h2 {
+	font-family: 'Encode Sans Condensed', sans-serif;
+	font-size: 2.5em;
+}
+
+.partner-detail-panel h2 span {
+	float: right;
+	font-size: 0.5em;
+}
+
+.partner-detail-panel a {
+	color: #fff;
+}
+
+
+
 
 
 .home .entry-title {

@@ -1,6 +1,6 @@
 <?php
 /**
- * The Partner Portal sidebar
+ * The Partner Portal List
  *
  * @link https://developer.wordpress.org/themes/basics/template-files/#template-partials
  *

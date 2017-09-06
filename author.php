@@ -22,9 +22,9 @@ get_header(); ?>
                     <div class="col-sm-6">
 
                         <?php
-                            $curauth = (isset($_GET['author_name'])) ? get_user_by('slug', $author_name) : get_userdata(intval($author));
-                            //var_dump ( $curauth );
-                            $partner = $curauth->id;
+                            $user = (isset($_GET['author_name'])) ? get_user_by('slug', $author_name) : get_userdata(intval($author));
+                            //var_dump ( $user );
+                            $partner = $user->id;
                             $partner_state = get_user_meta($partner, 'state', true);
                             $partner_role =  get_user_meta($partner, 'partner_role', true);
                             $partner_bio =  get_user_meta($partner, 'description', true);
@@ -34,7 +34,23 @@ get_header(); ?>
                             $partner_employing_agency =  get_user_meta($partner, 'employing_agency', true);
                         ?>
 
-                        <table cellpadding="0" cellspacing="0" border="0" class="partner-table">
+                    <div class="partner-detail-panel">
+                        <h2><?php echo $user->first_name . ' ' . $user->last_name; ?><span><?php echo $partner_state; ?></span></h2>
+                        <div class="partner-role"><?php echo $partner_role; ?></div>
+                        <hr />
+                        <p>
+                            <i class="fa fa-phone" aria-hidden="true"></i> &nbsp;  <?php echo $partner_office_phone; ?> &nbsp;  | &nbsp;  <i class="fa fa-mobile" aria-hidden="true"></i> &nbsp;  <?php echo $partner_mobile_phone; ?>
+                            <br />
+                            <i class="fa fa-envelope" aria-hidden="true"></i> &nbsp;  <a href="mailto:<?php echo $user->user_email; ?>" target="_blank"><?php echo $user->user_email; ?></a>
+                        </p>
+                        <hr />
+                        <p>Rank or Title:<br /><?php echo $partner_rank_or_title; ?></p>
+                        <p>Employing Agency:<br /><?php echo $partner_employing_agency; ?></p>
+                        <hr />
+                        <p>Bio:<?php echo wpautop( get_the_author_meta( 'description' ) ); ?></p>
+                    </div>
+
+                        <!-- <table cellpadding="0" cellspacing="0" border="0" class="partner-table">
                             <tr>
                                 <th colspan="2"><strong><?php echo $curauth->first_name . ' ' . $curauth->last_name; ?></strong></th>
                             </tr>
@@ -70,7 +86,7 @@ get_header(); ?>
                                 <td>Employing Agency</td>
                                 <td><?php echo $partner_employing_agency; ?></td>
                             </tr>
-                        </table>
+                        </table> -->
 
 
 

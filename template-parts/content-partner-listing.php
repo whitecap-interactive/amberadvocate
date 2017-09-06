@@ -37,45 +37,22 @@
                         $partner_employing_agency =  get_user_meta($partner, 'employing_agency', true);
                     ?>
 
-                    <table cellpadding="0" cellspacing="0" border="0" class="partner-table">
-                        <tr>
-                            <th colspan="2"><strong>My Profile: <?php echo $user->first_name . ' ' . $user->last_name; ?></strong></th>
-                        </tr>
-                        <tr>
-                            <td>State</td>
-                            <td><?php echo $partner_state; ?></td>
-                        </tr>
-                        <tr>
-                            <td>Role</td>
-                            <td><?php echo $partner_role; ?></td>
-                        </tr>
-                        <tr>
-                            <td>Bio</td>
-                            <td><?php echo wpautop( get_the_author_meta( 'description' ) ); ?></td>
-                        </tr>
-                        <tr>
-                            <td>Office Phone</td>
-                            <td><?php echo $partner_office_phone; ?></td>
-                        </tr>
-                        <tr>
-                            <td>Mobile/Secondary Phone</td>
-                            <td><?php echo $partner_mobile_phone; ?></td>
-                        </tr>
-                        <tr>
-                            <td>Email</td>
-                            <td><?php echo $user->user_email; ?></td>
-                        </tr>
-                        <tr>
-                            <td>Rank or Title</td>
-                            <td><?php echo $partner_rank_or_title; ?></td>
-                        </tr>
-                        <tr>
-                            <td>Employing Agency</td>
-                            <td><?php echo $partner_employing_agency; ?></td>
-                        </tr>
-                    </table>
-
-                    <a class="button" href="/partner-portal/profile">Edit Profile</a>
+                    <div class="partner-detail-panel">
+                        <h2><?php echo $user->first_name . ' ' . $user->last_name; ?><span><?php echo $partner_state; ?></span></h2>
+                        <div class="partner-role"><?php echo $partner_role; ?></div>
+                        <hr />
+                        <p>
+                            <i class="fa fa-phone" aria-hidden="true"></i> &nbsp;  <?php echo $partner_office_phone; ?> &nbsp;  | &nbsp;  <i class="fa fa-mobile" aria-hidden="true"></i> &nbsp;  <?php echo $partner_mobile_phone; ?>
+                            <br />
+                            <i class="fa fa-envelope" aria-hidden="true"></i> &nbsp;  <a href="mailto:<?php echo $user->user_email; ?>" target="_blank"><?php echo $user->user_email; ?></a>
+                        </p>
+                        <hr />
+                        <p>Rank or Title:<br /><?php echo $partner_rank_or_title; ?></p>
+                        <p>Employing Agency:<br /><?php echo $partner_employing_agency; ?></p>
+                        <hr />
+                        <p>Bio:<?php echo wpautop( get_the_author_meta( 'description' ) ); ?></p>
+                        <p><a class="button" href="/partner-portal/profile">Edit Profile</a></p>
+                    </div>
 
 				</div>
 
