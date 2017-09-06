@@ -1462,19 +1462,44 @@ ul.partner-links i {
 ## PARTNER LIST
 --------------------------------------------------------------*/
 
+
+
+table.partner-table td {
+	padding: 0.5em 0.8em;
+}
+
 table.partner-table {
 	font-size: 1em;
 	line-height: 1.6em;
 	border: 1px solid #ddd;
-	margin: 0 0 60px 0;
+	margin: 0 0 20px 0;
 }
 
 table.partner-table tr:nth-child(odd) {
-	background: #ddd;
+	background: #eee;
 }
 
-table.partner-table td {
+table.partner-table td, table.partner-table th {
 	padding: 0.5em 0.8em;
+	border: 1px solid #ddd;
+}
+
+table.partner-table td:nth-child(odd) {
+	width: auto;
+	padding: 0.5em 2em 0.5em 0.8em;
+}
+table.partner-table td:nth-child(even) {
+	width: auto;
+	text-align: left;
+}
+
+table.partner-table th {
+	background: #646566;
+	color: #fff;
+}
+
+table.partner-table strong {
+	font-size: 1.3em;
 }
 
 /*--------------------------------------------------------------

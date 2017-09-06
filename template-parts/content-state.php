@@ -12,7 +12,7 @@
 <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
 
 	
-	<header class="entry-header green">
+	<header class="entry-header orange">
 		<?php the_title( '<h1 class="entry-title">', '<span class="region alignright">Region: ' . rwmb_meta('amber_region') . '</span></h1>' ); ?>
 	</header><!-- .entry-header -->
 
