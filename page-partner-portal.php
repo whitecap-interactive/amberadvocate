@@ -44,14 +44,14 @@ get_header(); ?>
 
 						<?php the_content(); ?>
 
-					
-						<div class="full-width-channel select-a-state">
-							<h2>Select a state below to see the AMBER Alert Partner information for that state</h2>
-							<?php echo do_shortcode( '[usahtml5map id="0"]' );?>
-						</div>
 					</div>
 				</div><!-- .entry-content -->
-				
+				<br clear="all" />
+				<div class="full-width-channel select-a-state">
+					<h2>Select a state below to see the AMBER Alert Partner information for that state</h2>
+					<?php echo do_shortcode( '[usahtml5map id="0"]' );?>
+				</div>				
+
 			</article><!-- #post-## -->
 
 		</div>

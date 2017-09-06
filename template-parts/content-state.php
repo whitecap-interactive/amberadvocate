@@ -25,7 +25,7 @@
 		?>
 
 		<div class="state-meta row">
-			<div class="col-sm-6">
+			<div class="col-sm-12">
 
 				<table cellpadding="0" cellspacing="0" border="0" class="partner-table">
 					<!-- <tr>
@@ -50,8 +50,6 @@
 						</td>
 					</tr>
 				</table>
-			</div>
-			<div class="col-sm-6">
 				<table cellpadding="0" cellspacing="0" border="0" class="partner-table">
 					<tr>
 						<th colspan="2"><strong>Missing Persons Clearinghouse Program</strong></th>
