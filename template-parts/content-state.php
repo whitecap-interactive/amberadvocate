@@ -25,7 +25,7 @@
 		?>
 
 		<div class="state-meta row">
-			<div class="col-sm-9">
+			<div class="col-sm-6">
 
 				<table cellpadding="0" cellspacing="0" border="0" class="partner-table">
 					<!-- <tr>
@@ -50,6 +50,8 @@
 						</td>
 					</tr>
 				</table>
+			</div>
+			<div class="col-sm-6">
 				<table cellpadding="0" cellspacing="0" border="0" class="partner-table">
 					<tr>
 						<th colspan="2"><strong>Missing Persons Clearinghouse Program</strong></th>
@@ -72,9 +74,9 @@
 
 			</div>
 
-			<div class="col-sm-3">
+			<!-- <div class="col-sm-3">
 				<?php get_sidebar('portal'); ?>
-			</div>
+			</div> -->
 
 		</div>
 			
