@@ -54,7 +54,7 @@
 						//echo $user->id;
                         $partner = $user->id;
                         $partner_state = get_user_meta($partner, 'state', true);
-                        $partner_role =  get_user_meta($partner, 'role', true);
+                        $partner_role =  get_user_meta($partner, 'partner_role', true);
                         $partner_bio =  get_user_meta($partner, 'description', true);
                         $partner_office_phone =  get_user_meta($partner, 'office_phone', true);
                         $partner_mobile_phone =  get_user_meta($partner, 'cellular_or_alternate_number', true);
