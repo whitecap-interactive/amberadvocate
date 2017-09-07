@@ -42,9 +42,9 @@
                         <div class="partner-role"><?php echo $partner_role; ?></div>
                         <hr />
                         <p>
-                            <i class="fa fa-phone" aria-hidden="true"></i> &nbsp;  <?php echo $partner_office_phone; ?> &nbsp;  | &nbsp;  <i class="fa fa-mobile" aria-hidden="true"></i> &nbsp;  <?php echo $partner_mobile_phone; ?>
+                            <i class="fa fa-phone fa-lg" aria-hidden="true"></i> &nbsp;  <?php echo $partner_office_phone; ?> &nbsp;  | &nbsp;  <i class="fa fa-mobile fa-lg" aria-hidden="true"></i> &nbsp;  <?php echo $partner_mobile_phone; ?>
                             <br />
-                            <i class="fa fa-envelope" aria-hidden="true"></i> &nbsp;  <a href="mailto:<?php echo $user->user_email; ?>" target="_blank"><?php echo $user->user_email; ?></a>
+                            <i class="fa fa-envelope fa-lg" aria-hidden="true"></i> &nbsp;  <a href="mailto:<?php echo $user->user_email; ?>" target="_blank"><?php echo $user->user_email; ?></a>
                         </p>
                         <hr />
                         <p>Rank or Title:<br /><?php echo $partner_rank_or_title; ?></p>
