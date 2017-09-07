@@ -17,28 +17,27 @@ get_header(); ?>
 				<?php
 				if ( have_posts() ) : ?>
 
-					<header class="page-header">
+					<header class="entry-header green">
 						<h1>Partner Resources</h1>
 						<?php
 							//the_archive_title( '<h1 class="page-title">', '</h1>' );
 							the_archive_description( '<div class="archive-description">', '</div>' );
 						?>
 					</header><!-- .page-header -->
+					<table id="partner-table" class="partner-table">
+					    <tr>
+					        <th><input type="text" id="partner-name-search" onkeyup="partnerSearch('name')" placeholder="Search By Name" title="Type in a name"></th>
+					    </tr>  
+						<?php
+						/* Start the Loop */
+						while ( have_posts() ) : the_post();
 
+							get_template_part( 'template-parts/content', 'partner-resources' );
+
+						endwhile;
+						?>
+					</table>
 					<?php
-					/* Start the Loop */
-					while ( have_posts() ) : the_post();
-
-						/*
-						 * Include the Post-Format-specific template for the content.
-						 * If you want to override this in a child theme, then include a file
-						 * called content-___.php (where ___ is the Post Format name) and that will be used instead.
-						 */
-
-						get_template_part( 'template-parts/content', 'partner-resources' );
-
-					endwhile;
-
 					the_posts_navigation();
 
 				else :

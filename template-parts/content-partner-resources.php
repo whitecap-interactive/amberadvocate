@@ -9,31 +9,30 @@
 
 ?>
 
-<article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
-	<header class="entry-header ">
-		<?php
 
-			$files = rwmb_meta( 'amber_file_advanced',  $post_id = get_the_ID() ); // Since 4.8.0
-						
-			if ( !empty( $files ) ) {
-		        foreach ($files as $key => $ids) {
-		        	$doc_url = $ids["url"];
-		        }
-			}
+<?php
+
+	$files = rwmb_meta( 'amber_file_advanced',  $post_id = get_the_ID() ); // Since 4.8.0
+				
+	if ( !empty( $files ) ) {
+        foreach ($files as $key => $ids) {
+        	$doc_url = $ids["url"];
+        }
+	}
+
+	
+	if ($doc_url) {
+		the_title( '<tr><td><a target="_blank" href="' . esc_url( $doc_url ) . '" rel="bookmark">', '</a></td></tr>' );
+	}else{
+		the_title( '<tr><td>', ' - No Attachment Found</td></tr>' );
+	}
 
 
-			if ( is_single() ) :
-				the_title( '<h1 class="entry-title">', '</h1>' );
-			else :
+	if ( 'post' === get_post_type() ) : ?>
+		<div class="entry-meta">
+			<?php amberadvocate_posted_on(); ?>
+		</div><!-- .entry-meta -->
+	<?php
+	endif; 
+?>
 
-				the_title( '<h2 class="entry-title"><a target="_blank" href="' . esc_url( $doc_url ) . '" rel="bookmark">', '</a></h2>' );
-			endif;
-
-			if ( 'post' === get_post_type() ) : ?>
-			<div class="entry-meta">
-				<?php amberadvocate_posted_on(); ?>
-			</div><!-- .entry-meta -->
-		<?php
-		endif; ?>
-	</header><!-- .entry-header -->
-</article><!-- #post-## -->
