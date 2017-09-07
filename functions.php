@@ -329,7 +329,7 @@ function amber_register_meta_boxes( $meta_boxes ) {
             // FILE ADVANCED (WP 3.5+)
 			array(
 				'name'             => __( 'File Upload', 'amber' ),
-				'id'               => "{$prefix}file_advanced",
+				'id'               => "{$prefix}state_file_advanced",
 				'type'             => 'file_advanced',
 				'mime_type'        => 'application,audio,video', // Leave blank for all file types
 			),
@@ -346,6 +346,7 @@ function amber_register_meta_boxes( $meta_boxes ) {
 				'id'               => "{$prefix}file_advanced",
 				'type'             => 'file_advanced',
 				'mime_type'        => 'application,audio,video', // Leave blank for all file types
+				'max_file_uploads' => 1,
 			),
         )
     );
