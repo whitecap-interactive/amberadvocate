@@ -41,7 +41,7 @@
 				<div class="footer-logo-advocate"><img src="<?php bloginfo('stylesheet_directory'); ?>/images/logo-advocate.png" width="154" height="21" border="0" alt="AMBER Advocate" /></div>
 			</div>
 			<div class="footer-copyright">
-				&copy; <?php echo date("Y");?> AMBER Alert Technical Training &amp; Assistance Training and Technical Assistance Program
+				&copy; <?php echo date("Y");?> AMBER Alert Training and Technical Assistance Program
 			</div>
 		</div><!-- .site-info -->
 	</footer><!-- #colophon -->
