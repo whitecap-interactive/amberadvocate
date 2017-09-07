@@ -13,6 +13,17 @@
     <tr>
         <th><input type="text" id="partner-name-search" onkeyup="partnerSearch('name')" placeholder="Search for Partner Name" title="Type in a name"></th>
         <th>
+            <select id="partner-role-search" onchange="partnerSearch('role')">
+                <option value="">Role</option>
+                <option value="1">1</option>
+                <option value="2">2</option>
+                <option value="3">3</option>
+                <option value="4">4</option>
+                <option value="5">5</option>
+                <option value="na">N/A</option>
+            </select>
+        </th>
+        <th>
             <select id="partner-state-search" onchange="partnerSearch('state')">
                 <option value="">Select a State</option>
                 <option value="AL">Alabama</option>
@@ -68,7 +79,7 @@
                 <option value="WY">Wyoming</option>
             </select>	                                          
         </th>
-        <th>
+        <!-- <th>
             <select id="partner-region-search" onchange="partnerSearch('region')">
                 <option value="">Region</option>
                 <option value="1">1</option>
@@ -78,7 +89,7 @@
                 <option value="5">5</option>
                 <option value="na">N/A</option>
             </select>
-        </th>
+        </th> -->
     </tr>
 
 
@@ -86,6 +97,7 @@
 	$partners = get_users( 'blog_id=1&orderby=nicename' );
     foreach ( $partners as $partner ) {
     	$partner_state_name = get_user_meta($partner->ID, 'state', true);
+        $partner_role = get_user_meta($partner, 'partner_role', true);
 		if ( $post = get_page_by_path( $partner_state_name, OBJECT, 'state' ) ){
 			$state_id = $post->ID;
 		}    
@@ -95,9 +107,10 @@
 		$region = rwmb_meta( 'amber_region', $args = array(), $state_id );
     	echo '<tr>' .
     		 '<td class="partner-name"><a href="' . get_author_posts_url( $partner->ID ) . '">' . $partner->user_firstname . ' ' . $partner->user_lastname . '</a></td>'.
-    		 '<td class="partner-state"><a href="/states/' . $partner_state_name . '">' . $partner_state_name . '</a></td>' . 
+    		 '<td class="partner-role">' . $partner->partner_role . '</td>' .
+             '<td class="partner-state"><a href="/states/' . $partner_state_name . '">' . $partner_state_name . '</a></td>' . 
     		 //'<td>State ID: ' . $state_id . '</td>' .
-    		 '<td class="partner-region">' . $region . '</td>' .
+    		 // '<td class="partner-region">' . $region . '</td>' .
     		 '</tr>';
     }  
 ?>

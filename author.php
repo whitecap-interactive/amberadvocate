@@ -47,7 +47,7 @@ get_header(); ?>
                         <p>Rank or Title:<br /><?php echo $partner_rank_or_title; ?></p>
                         <p>Employing Agency:<br /><?php echo $partner_employing_agency; ?></p>
                         <hr />
-                        <p>Bio:<?php echo wpautop( get_the_author_meta( 'description' ) ); ?></p>
+                        <p>Bio:<br /><?php echo $partner_bio; ?></p>
                     </div>
 
                         <!-- <table cellpadding="0" cellspacing="0" border="0" class="partner-table">

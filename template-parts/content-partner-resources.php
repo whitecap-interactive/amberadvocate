@@ -31,13 +31,13 @@
 
 	if ($doc_url) {
 		//the_title( '<tr><td><a target="_blank" href="' . esc_url( $doc_url ) . '" rel="bookmark">', '</a></td></tr>' );
-		echo '<tr><td><a target="_blank" href="' . esc_url( $doc_url ) . '" rel="bookmark">';
+		echo '<tr><td class="partner-name"><a target="_blank" href="' . esc_url( $doc_url ) . '" rel="bookmark">';
 		the_title();
 		echo '</a></td>';
-		echo '<td>';
+		echo '<td class="partner-state">';
 		echo $doc_state;
 		echo '</td>';
-		echo '<td>';
+		echo '<td class="partner-region">';
 		echo $doc_region;
 		echo '</td>';
 		echo '<td>';
