@@ -149,11 +149,14 @@ function create_post_type() {
             'revisions',
             'thumbnail',
             'author'),
-        'taxonomies' => array('category', 'post_tag'),
+        'taxonomies' => array(),
         /*'show_in_nav_menus' => true*/
 		)
 	);
 } 
+
+
+
 /**
  * Change the post type labels
  */
@@ -347,6 +350,110 @@ function amber_register_meta_boxes( $meta_boxes ) {
 				'type'             => 'file_advanced',
 				'mime_type'        => 'application,audio,video', // Leave blank for all file types
 				'max_file_uploads' => 1,
+			),
+			// STATE SELECT BOX
+			array(
+				'name'        => __( 'State', 'amber' ),
+				'id'          => "{$prefix}state_select",
+				'type'        => 'select',
+				// Array of 'value' => 'Label' pairs for select box
+				'options'     => array(
+					'AL' => __( 'Alabama', 'amber' ),
+					'AK' => __( 'Alaska', 'amber' ),
+					'AZ' => __( 'Arizona', 'amber' ),
+					'AR' => __( 'Arkansas', 'amber' ),
+					'CA' => __( 'California', 'amber' ),
+					'CO' => __( 'Colorado', 'amber' ),
+					'CT' => __( 'Connecticut', 'amber' ),
+					'DE' => __( 'Delaware', 'amber' ),
+					'DC' => __( 'District Of Columbia', 'amber' ),
+					'FL' => __( 'Florida', 'amber' ),
+					'GA' => __( 'Georgia', 'amber' ),
+					'HI' => __( 'Hawaii', 'amber' ),
+					'ID' => __( 'Idaho', 'amber' ),
+					'IL' => __( 'Illinois', 'amber' ),
+					'IN' => __( 'Indiana', 'amber' ),
+					'IA' => __( 'Iowa', 'amber' ),
+					'KS' => __( 'Kansas', 'amber' ),
+					'KY' => __( 'Kentucky', 'amber' ),
+					'LA' => __( 'Louisiana', 'amber' ),
+					'ME' => __( 'Maine', 'amber' ),
+					'MD' => __( 'Maryland', 'amber' ),
+					'MA' => __( 'Massachusetts', 'amber' ),
+					'MI' => __( 'Michigan', 'amber' ),
+					'MN' => __( 'Minnesota', 'amber' ),
+					'MS' => __( 'Mississippi', 'amber' ),
+					'MO' => __( 'Missouri', 'amber' ),
+					'MT' => __( 'Montana', 'amber' ),
+					'NE' => __( 'Nebraska', 'amber' ),
+					'NV' => __( 'Nevada', 'amber' ),
+					'NH' => __( 'New Hampshire', 'amber' ),
+					'NJ' => __( 'New Jersey', 'amber' ),
+					'NM' => __( 'New Mexico', 'amber' ),
+					'NY' => __( 'New York', 'amber' ),
+					'NC' => __( 'North Carolina', 'amber' ),
+					'ND' => __( 'North Dakota', 'amber' ),
+					'OH' => __( 'Ohio', 'amber' ),
+					'OK' => __( 'Oklahoma', 'amber' ),
+					'OR' => __( 'Oregon', 'amber' ),
+					'PA' => __( 'Pennsylvania', 'amber' ),
+					'RI' => __( 'Rhode Island', 'amber' ),
+					'SC' => __( 'South Carolina', 'amber' ),
+					'SD' => __( 'South Dakota', 'amber' ),
+					'TN' => __( 'Tennessee', 'amber' ),
+					'TX' => __( 'Texas', 'amber' ),
+					'UT' => __( 'Utah', 'amber' ),
+					'VT' => __( 'Vermont', 'amber' ),
+					'VA' => __( 'Virginia', 'amber' ),
+					'WA' => __( 'Washington', 'amber' ),
+					'WV' => __( 'West Virginia', 'amber' ),
+					'WI' => __( 'Wisconsin', 'amber' ),
+					'WY' => __( 'Wyoming', 'amber' ),
+				),
+				// Select multiple values, optional. Default is false.
+				'multiple'    => false,
+				'std'         => 'value2',
+				'placeholder' => __( 'Select State', 'amber' ),
+			),
+			// REGION SELECT BOX
+			array(
+				'name'        => __( 'Region', 'amber' ),
+				'id'          => "{$prefix}region_select",
+				'type'        => 'select',
+				// Array of 'value' => 'Label' pairs for select box
+				'options'     => array(
+					'1' => __( '1', 'amber' ),
+					'2' => __( '2', 'amber' ),
+					'3' => __( '3', 'amber' ),
+					'4' => __( '4', 'amber' ),
+					'5' => __( '5', 'amber' ),
+					'na' => __( 'N/A', 'amber' ),
+				),
+				// Select multiple values, optional. Default is false.
+				'multiple'    => false,
+				'std'         => 'value2',
+				'placeholder' => __( 'Select Region', 'amber' ),
+			),
+			// DATE
+			array(
+				'name'       => __( 'Date Uploaded', 'amber' ),
+				'id'         => "{$prefix}submitted_date",
+				'type'       => 'date',
+				// jQuery date picker options. See here http://api.jqueryui.com/datepicker
+				'js_options' => array(
+					'appendText'      => __( '(yyyy-mm-dd)', 'amber' ),
+					'dateFormat'      => __( 'yy-mm-dd', 'amber' ),
+					'changeMonth'     => true,
+					'changeYear'      => true,
+					'showButtonPanel' => true,
+				),
+			),
+			// TEXT
+			array(
+				'name'  => __( 'Uploaded by:', 'amber' ),
+				'id'    => "{$prefix}uploaded_by_text",
+				'desc'  => __( 'Name of person that submitted this document', 'amber' ),
+				'type'  => 'text',
 			),
         )
     );
