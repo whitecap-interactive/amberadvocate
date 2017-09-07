@@ -19,10 +19,10 @@
 		<div class="row">
 			<?php if ( is_user_logged_in() ) { ?>
 
-				<div class="col-sm-6">
+				<div class="col-sm-7">
 					<?php get_sidebar('partner-table'); ?> 
 				</div>
-				<div class="col-sm-6">
+				<div class="col-sm-5">
 
 			        <?php
 			        	$user = wp_get_current_user();

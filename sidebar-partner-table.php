@@ -15,12 +15,15 @@
         <th>
             <select id="partner-role-search" onchange="partnerSearch('role')">
                 <option value="">Role</option>
-                <option value="1">1</option>
-                <option value="2">2</option>
-                <option value="3">3</option>
-                <option value="4">4</option>
-                <option value="5">5</option>
-                <option value="na">N/A</option>
+                <option value="AAC and CHM">AAC and CHM</option>
+                <option value="AAC">AAC</option>
+                <option value="CHM">CHM</option>
+                <option value="NCMECT">NCMECT</option>
+                <option value="ICMEC">ICMEC</option>
+                <option value="USDOJ">USDOJ</option>
+                <option value="AA/NCJTC-STAFF">AA/NCJTC-STAFF</option>
+                <option value="AA/NCJTC-ASSOC">AA/NCJTC-ASSOC</option>
+                <option value="OTHER">OTHER</option>
             </select>
         </th>
         <th>
@@ -97,7 +100,20 @@
 	$partners = get_users( 'blog_id=1&orderby=nicename' );
     foreach ( $partners as $partner ) {
     	$partner_state_name = get_user_meta($partner->ID, 'state', true);
-        $partner_role = get_user_meta($partner, 'partner_role', true);
+        $partner_role = get_user_meta($partner->ID, 'partner_role', true);
+
+        if ($partner_role == 'AMBER Alert Coordinator/Co-Coordinator and Missing Person Clearinghouse Manager') { $partner_role_abbr = 'AAC and CHM'; }
+        else if ($partner_role == 'AMBER Alert Coordinator/Co-Coordinator') { $partner_role_abbr = 'AAC'; }
+        else if ($partner_role == 'Missing Person Clearinghouse Manager') { $partner_role_abbr = 'CHM'; }
+        else if ($partner_role == 'NCMEC Partner') { $partner_role_abbr = 'NCMEC'; }
+        else if ($partner_role == 'ICMEC Partner') { $partner_role_abbr = '(ICMEC)'; }
+        else if ($partner_role == 'US-DOJ-OJJDP Partner') { $partner_role_abbr = 'USDOJ'; }
+        else if ($partner_role == 'AATTAP-NCJTC Staff') { $partner_role_abbr = 'AA/NCJTC-STAFF'; }
+        else if ($partner_role == 'AATTAP-NCJTC Associate') { $partner_role_abbr = 'AA/NCJTC-ASSOC'; }
+        else if ($partner_role == 'OTHER-NCJTC Partner') { $partner_role_abbr = 'OTHER'; }
+        else { $partner_role_abbr = ''; }
+
+
 		if ( $post = get_page_by_path( $partner_state_name, OBJECT, 'state' ) ){
 			$state_id = $post->ID;
 		}    
@@ -107,7 +123,7 @@
 		$region = rwmb_meta( 'amber_region', $args = array(), $state_id );
     	echo '<tr>' .
     		 '<td class="partner-name"><a href="' . get_author_posts_url( $partner->ID ) . '">' . $partner->user_firstname . ' ' . $partner->user_lastname . '</a></td>'.
-    		 '<td class="partner-role">' . $partner->partner_role . '</td>' .
+    		 '<td class="partner-role">' . $partner_role_abbr . '</td>' .
              '<td class="partner-state"><a href="/states/' . $partner_state_name . '">' . $partner_state_name . '</a></td>' . 
     		 //'<td>State ID: ' . $state_id . '</td>' .
     		 // '<td class="partner-region">' . $region . '</td>' .

@@ -14,12 +14,12 @@ get_header(); ?>
             <div class="entry-content">
 
                 <div class="row state-meta">
-                    <div class="col-sm-6">
+                    <div class="col-sm-7">
 
                         <?php get_sidebar('partner-table'); ?>
 
                     </div>
-                    <div class="col-sm-6">
+                    <div class="col-sm-5">
 
                         <?php
                             $user = (isset($_GET['author_name'])) ? get_user_by('slug', $author_name) : get_userdata(intval($author));
