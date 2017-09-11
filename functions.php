@@ -519,7 +519,7 @@ function amber_register_meta_boxes( $meta_boxes ) {
 }
 
 //ADD DROPDOWN TO USER PROFILE THAT DISPLAYS STATES
-add_filter( 'user_meta_field_config', 'user_meta_field_config_populate_categories', 10, 3 );
+/*add_filter( 'user_meta_field_config', 'user_meta_field_config_populate_categories', 10, 3 );
 function user_meta_field_config_populate_categories( $field, $fieldID, $formName){ 
 	//get list of states
 	$args = array(
@@ -547,7 +547,7 @@ function user_meta_field_config_populate_categories( $field, $fieldID, $formName
  
     return $field;
 }	
-
+*/
 
 // change base of author pages- need to save permalinks to take effect
 function wpa_82004(){
