@@ -24,9 +24,15 @@ get_header(); ?>
 							the_archive_description( '<div class="archive-description">', '</div>' );
 						?>
 					</header><!-- .page-header -->
+					
+
 					<table id="partner-table" class="partner-table">
 					    <tr>
-					        <th><input type="text" id="partner-name-search" onkeyup="partnerSearch('name')" placeholder="Search for Doc Name" title="Type in a name"></th>
+					    	<th>
+					    		<button id="reset-button"><i class="fa fa-refresh" aria-hidden="true"></i></button>
+					    	</th>
+					        <th>
+					        <input type="text" id="partner-name-search" onkeyup="partnerSearch('name')" placeholder="Search for Doc Name" title="Type in a name"></th>
 					        <th>
 					            <select id="partner-state-search" onchange="partnerSearch('state')">
 					                <option value="">Select a State</option>
