@@ -557,17 +557,17 @@ textarea {
 ## Links
 --------------------------------------------------------------*/
 a {
-	color: #2e803a;
+	color: #1954db;
 }
 
 a:visited {
-	color: #2e803a;
+	color: #1954db;
 }
 
 a:hover,
 a:focus,
 a:active {
-	color: #2e803a;
+	color: #1954db;
 }
 
 a:focus {
@@ -980,6 +980,14 @@ a.button {
 	background: #2e803a;
 	color: #fff;
 	border-radius: 3px;
+}
+
+a.button-lg {
+	padding: 10px 20px;
+	background: #2e803a;
+	color: #fff;
+	border-radius: 3px;
+	margin: 0 20px;
 }
 
 a.button:visited {
@@ -1667,5 +1675,62 @@ ul.home-page-menu {
 
 .home .entry-header {
 	display: none;
+}
+
+
+/*--------------------------------------------------------------
+## POST TEMPLATES
+--------------------------------------------------------------*/
+
+.post-entry-header h1 {
+	margin: 0;
+	text-align: center;
+    padding: 20px 0 30px;
+    font-family: 'Encode Sans Condensed';
+    font-size: 36px;
+}
+
+.post-entry-header h1 span {
+	padding: 0 2em 0.2em;
+    border-bottom: 1px solid #fff;
+}
+
+.post-entry-header h3 {
+    text-align: center;
+    padding: 0 0 30px 0;
+    margin: -30px 0 0 0;
+}
+
+.post-list {
+	margin: 20px 0;
+}
+
+.post-list h2 {
+	padding: 0.4em 0.8em;
+	margin: 0 0 1em 0;
+}
+
+.post-list article {
+	border-bottom: 1px solid #ccc;
+	margin: 2em;
+}
+
+.post-list img {
+	margin: 0 0 1em 0
+}
+
+
+
+
+.question-sidebar-container {
+	width: 100%;
+	background: url(https://www.amberadvocate.org/wp-content/uploads/2017/08/question-bkg.png);
+	color:#fff;
+	text-align: center;
+	padding: 50px 0;
+}
+
+.question-sub-headline {
+	margin: 30px 20%;
 }
 
