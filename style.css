@@ -1430,6 +1430,10 @@ ul#menu-footer-navigation ul.sub-menu li {
 	color: #fff;
 }
 
+.button-center {
+	text-align: center;
+}
+
 .btn {
   background: #db5d20;
   background-image: -webkit-linear-gradient(top, #db5d20, #c9311a);
@@ -1478,7 +1482,20 @@ ul.partner-links i {
 ## PARTNER LIST
 --------------------------------------------------------------*/
 
+.partner-table-container {
+	max-height: 500px;
+	overflow: scroll;
+}
 
+     	
+
+/*table.partner-table th.state-select {
+	max-width: 180px;
+}
+
+table.partner-table th.state-select select {
+	width: 160px;
+}*/
 
 table.partner-table td {
 	padding: 0.5em 0.8em;

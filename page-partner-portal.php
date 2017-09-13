@@ -24,6 +24,16 @@ get_header(); ?>
 				</header><!-- .entry-header -->
 
 				<div class="entry-content">
+
+					<?php if (have_posts()) : while (have_posts()) : the_post(); ?>
+						<div class="row">
+							<div class="col-sm-12">
+								<?php the_content(); ?>
+							</div>
+						</div>
+					<?php endwhile; endif; ?>
+							
+
 					<div class="row">
 
 						<div class="col-sm-9">
@@ -42,7 +52,7 @@ get_header(); ?>
 					</div>
 					<div class="row">
 
-						<?php the_content(); ?>
+						
 
 					</div>
 				</div><!-- .entry-content -->
