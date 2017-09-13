@@ -8,9 +8,9 @@
  */
 
 ?>
-
+<div class="partner-table-container">
 <table id="partner-table" class="partner-table">
-    <tr>
+    <thead><tr>
         <th><input type="text" id="partner-name-search" onkeyup="partnerSearch('name')" placeholder="Search for Partner Name" title="Type in a name"></th>
         <th>
             <select id="partner-role-search" onchange="partnerSearch('role')">
@@ -26,7 +26,7 @@
                 <option value="OTHER">OTHER</option>
             </select>
         </th>
-        <th>
+        <th class="state-select">
             <select id="partner-state-search" onchange="partnerSearch('state')">
                 <option value="">Select a State</option>
                 <option value="AMBER Alert Staff/Associates">AMBER Alert Staff/Associates</option>
@@ -151,13 +151,15 @@
                 <option value="na">N/A</option>
             </select>
         </th> -->
-    </tr>
+    </tr></thead>
+    <tbody>
 
 
 <?php
 	$partners = get_users( 'blog_id=1&orderby=nicename' );
     foreach ( $partners as $partner ) {
     	$partner_state_name = get_user_meta($partner->ID, 'state', true);
+
         $partner_role = get_user_meta($partner->ID, 'partner_role', true);
 
         if ($partner_role == 'AMBER Alert Coordinator/Co-Coordinator and Missing Person Clearinghouse Manager') { $partner_role_abbr = 'AAC and CHM'; }
@@ -188,5 +190,6 @@
     		 '</tr>';
     }  
 ?>
+</tbody>
 </table>
-
+</div>
