@@ -63,11 +63,12 @@ get_header(); ?>
 				</div>				
 
 			</article><!-- #post-## -->
-
+<br clear="all"/>
 		</div>
 	</main>
 </div>
 
 <?php
 get_sidebar();
+get_sidebar('questions');
 get_footer();

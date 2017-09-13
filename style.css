@@ -1724,10 +1724,10 @@ ul.home-page-menu {
 
 .question-sidebar-container {
 	width: 100%;
-	background: url(https://www.amberadvocate.org/wp-content/uploads/2017/08/question-bkg.png);
+	background: url(https://www.amberadvocate.org/wp-content/uploads/2017/08/question-bkg.png) no-repeat center;
 	color:#fff;
 	text-align: center;
-	padding: 50px 0;
+	padding: 30px 0 50px;
 }
 
 .question-sub-headline {
