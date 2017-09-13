@@ -2,10 +2,10 @@
 jQuery(function() {
 	/*Reset Partner Resources Table Filter*/
 	jQuery('#reset-button').click(function(){ 
-		console.log('button clicked');
 		jQuery('#partner-name-search').val('').trigger('change');
 	    jQuery('#partner-state-search').val('').trigger('change');
-	    jQuery('#partner-region-search').val('').trigger('change');
+	    /*jQuery('#partner-region-search').val('').trigger('change');*/
+	    jQuery('#partner-topic-search').val('').trigger('change');
 	})
 
     jQuery('ul#primary-menu > li').click(function(event) {

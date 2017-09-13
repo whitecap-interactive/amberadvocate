@@ -19,6 +19,7 @@
         	$doc_url = $ids["url"];
         	$doc_state = rwmb_meta( 'amber_state_select',  $post_id = $ids["ID"] ); 
         	$doc_region = rwmb_meta( 'amber_region_select',  $post_id = $ids["ID"] );
+        	$doc_topic = rwmb_meta( 'amber_topic_select',  $post_id = $ids["ID"] );
         	$doc_date = rwmb_meta( 'amber_submitted_date',  $post_id = $ids["ID"] );
         	$doc_submitter = rwmb_meta( 'amber_uploaded_by_text',  $post_id = $ids["ID"] ); 
         }
@@ -31,7 +32,6 @@
 
 	if ($doc_url) {
 		//the_title( '<tr><td><a target="_blank" href="' . esc_url( $doc_url ) . '" rel="bookmark">', '</a></td></tr>' );
-		
 		echo '<tr><td></td><td class="partner-name"><a target="_blank" href="' . esc_url( $doc_url ) . '" rel="bookmark">';
 		the_title();
 		echo '</a></td>';
@@ -40,6 +40,9 @@
 		echo '</td>';
 		echo '<td class="partner-region">';
 		echo $doc_region;
+		echo '</td>';
+		echo '<td class="partner-topic">';
+		echo $doc_topic;
 		echo '</td>';
 		echo '<td>';
 		echo $doc_date;

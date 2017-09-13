@@ -26,14 +26,14 @@ get_header(); ?>
 					</header><!-- .page-header -->
 					
 
-					<table id="partner-table" class="partner-table">
-					    <tr>
+					<table id="partner-table" class="partner-table">				    
+						<tr>
 					    	<th>
 					    		<button id="reset-button"><i class="fa fa-refresh" aria-hidden="true"></i></button>
 					    	</th>
 					        <th>
 					        <input type="text" id="partner-name-search" onkeyup="partnerSearch('name')" placeholder="Search for Doc Name" title="Type in a name"></th>
-					        <th>
+					        <th class="partner-state-header">
 					            <select id="partner-state-search" onchange="partnerSearch('state')">
 					                <option value="">Select a State</option>
 					                <option value="AMBER Alert Staff/Associates">AMBER Alert Staff/Associates</option>
@@ -156,6 +156,17 @@ get_header(); ?>
 					                <option value="4">4</option>
 					                <option value="5">5</option>
 					                <option value="na">N/A</option>
+					            </select>
+					        </th>
+					        <th>
+					        	<select id="partner-topic-search" onchange="partnerSearch('topic')">
+					                <option value="">Topic</option>
+					                <option value="AMBER Alert Plan">AMBER Alert Plan</option>
+					                <option value="Operational Checklist or Tool">Operational Checklist or Tool</option>
+					                <option value="Program Publication">Program Publication</option>
+					                <option value="Map or Diagram">Map or Diagram</option>
+					                <option value="Model Policy or Procedure">Model Policy or Procedure</option>
+					                <option value="Other">Other</option>
 					            </select>
 					        </th>
 					        <th>

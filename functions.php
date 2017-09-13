@@ -492,6 +492,25 @@ function amber_register_meta_boxes( $meta_boxes ) {
 				'std'         => 'value2',
 				'placeholder' => __( 'Select Region', 'amber' ),
 			),
+			// TOPIC SELECT BOX
+			array(
+				'name'        => __( 'Topic', 'amber' ),
+				'id'          => "{$prefix}topic_select",
+				'type'        => 'select',
+				// Array of 'value' => 'Label' pairs for select box
+				'options'     => array(
+					'AMBER Alert Plan' => __( 'AMBER Alert Plan', 'amber' ),
+					'Operational Checklist or Tool' => __( ' Operational Checklist or Tool', 'amber' ),
+					'Program Publication' => __( 'Program Publication', 'amber' ),
+					'Map or Diagram' => __( 'Map or Diagram', 'amber' ),
+					'Model Policy or Procedure' => __( 'Model Policy or Procedure', 'amber' ),
+					'Other' => __( 'Other', 'amber' ),
+				),
+				// Select multiple values, optional. Default is false.
+				'multiple'    => false,
+				'std'         => 'value2',
+				'placeholder' => __( 'Select Topic', 'amber' ),
+			),
 			// DATE
 			array(
 				'name'       => __( 'Date Uploaded', 'amber' ),
