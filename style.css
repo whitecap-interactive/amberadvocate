@@ -1465,9 +1465,18 @@ ul#menu-footer-navigation ul.sub-menu li {
   text-decoration: none;
 }
 
+.partner-links-container {
+	margin:0 0 2em 0;
+}
+
+.partner-links-container h3 {
+	border-bottom: 1px solid #646566;
+    margin: 0 0 0.4em;
+}
+
 ul.partner-links {
 	list-style: none;
-	margin: 0;
+	margin: 0 0 0 0.5em;
 	padding: 0;
 }
 
@@ -1592,7 +1601,7 @@ table.partner-table strong {
 .partner-portal-login {
 	width: 100%;
 	padding: 1.5em;
-	min-height: 180px;
+	min-height: 240px;
 }
 
 .partner-portal-login a {
@@ -1687,7 +1696,7 @@ header.post-entry-header {
 }
 
 .post-entry-header h1 {
-	margin: 0;
+	margin: 0 0 1em 0;
 	text-align: center;
     padding: 20px 0 30px;
     font-family: 'Encode Sans Condensed';

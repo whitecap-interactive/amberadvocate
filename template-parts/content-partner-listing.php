@@ -54,6 +54,8 @@
                         <p><a class="button light-orange" href="/partner-portal/profile">Update My Profile Info</a></p>
                     </div>
 
+                     <?php get_sidebar('portal'); ?>
+
 				</div>
 
 			<?php } else { 

@@ -50,6 +50,8 @@ get_header(); ?>
                         <p>Bio:<br /><?php echo $partner_bio; ?></p>
                     </div>
 
+                    <?php get_sidebar('portal'); ?>
+
                         <!-- <table cellpadding="0" cellspacing="0" border="0" class="partner-table">
                             <tr>
                                 <th colspan="2"><strong><?php echo $curauth->first_name . ' ' . $curauth->last_name; ?></strong></th>
