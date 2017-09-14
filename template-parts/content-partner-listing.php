@@ -51,7 +51,7 @@
                         <p>Employing Agency:<br /><?php echo $partner_employing_agency; ?></p>
                         <hr />
                         <p>Bio:<br /><?php echo $partner_bio; ?></p>
-                        <p><a class="button" href="/partner-portal/profile">Edit Profile</a></p>
+                        <p><a class="button light-orange" href="/partner-portal/profile">Update My Profile Info</a></p>
                     </div>
 
 				</div>
