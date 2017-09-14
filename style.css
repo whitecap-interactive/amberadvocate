@@ -1399,42 +1399,42 @@ ul#menu-footer-navigation ul.sub-menu li {
 }
 
 .orange {
-	background: #ff9c3d;
+	background: #ff9c3d !important;
 	color: #fff;
 }
 
 .blue {
-	background: #1954db;
+	background: #1954db !important;
 	color: #fff;
 }
 
 .purple {
-	background: #5b3160;
+	background: #5b3160 !important;
 	color: #fff;
 }
 
 .dark-orange {
-	background: #ce6615;
+	background: #ce6615 !important;
 	color: #fff;
 }
 
 .green {
-	background: #2e803a;
+	background: #2e803a !important;
 	color: #fff;
 }
 
 .yellow {
-	background: #ffbf34;
+	background: #ffbf34 !important;
 	color: #fff;
 }
 
 .red {
-	background: #c42619;
+	background: #c42619 !important;
 	color: #fff;
 }
 
 .gray {
-	background: #646566;
+	background: #646566 !important;
 	color: #fff;
 }
 
@@ -1682,12 +1682,17 @@ ul.home-page-menu {
 ## POST TEMPLATES
 --------------------------------------------------------------*/
 
+header.post-entry-header {
+	background: #ff9c3d;
+}
+
 .post-entry-header h1 {
 	margin: 0;
 	text-align: center;
     padding: 20px 0 30px;
     font-family: 'Encode Sans Condensed';
     font-size: 36px;
+	color: #fff;
 }
 
 .post-entry-header h1 span {
@@ -1699,6 +1704,7 @@ ul.home-page-menu {
     text-align: center;
     padding: 0 0 30px 0;
     margin: -30px 0 0 0;
+    color: #fff;
 }
 
 .post-list {
@@ -1738,6 +1744,16 @@ ul.home-page-menu {
 
 body.category-on-the-front-lines header.post-entry-header {
 	background: #c42619 !important;
-	color: #fff;
 }
 
+body.category-amber-news header.post-entry-header {
+	background: #1954db !important;
+}
+
+body.category-amber-speaks header.post-entry-header {
+	background: #5b3160 !important;
+}
+
+body.category-briefs header.post-entry-header {
+	background: #646566 !important;
+}

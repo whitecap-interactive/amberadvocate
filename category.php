@@ -27,7 +27,7 @@ get_header(); ?>
 
 					<div class="entry-content row">
 
-						<div class="col-sm-9">
+						<div class="col-sm-9 post-list">
 
 
 						<?php while ( have_posts() ) : the_post();
