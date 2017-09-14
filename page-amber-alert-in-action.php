@@ -24,7 +24,7 @@ get_header(); ?>
 				<article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
 
 					<header class="post-entry-header orange">
-						<?php the_title( '<h1 class="entry-title"><span>', '</span></h1>' ); ?>
+						<?php the_title( '<h1 class="entry-title">', '</h1>' ); ?>
 					</header><!-- .entry-header -->
 
 					<div class="content-channel channel-padding">

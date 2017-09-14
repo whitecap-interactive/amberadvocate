@@ -1465,6 +1465,43 @@ ul#menu-footer-navigation ul.sub-menu li {
   text-decoration: none;
 }
 
+/*--------------------------------------------------------------
+## POST SIDEBAR
+--------------------------------------------------------------*/
+
+.post-links-container {
+	margin:3.3em 0 2em 0;
+}
+
+.post-links-container h3 {
+	border-bottom: 1px solid #646566;
+    margin: 0 0 0.4em;
+}
+
+ul.post-links {
+	list-style: none;
+	margin: 0 0 0 0.5em;
+	padding: 0;
+}
+
+ul.post-links li {
+	padding: 6px;
+	margin: 5px 0;
+}
+
+ul.post-links li a {
+	color: #fff;
+}
+
+ul.post-links i {
+	padding: 0 10px 0 4px;
+	font-size: 1.3em;
+}
+
+/*--------------------------------------------------------------
+## PARTNER SIDEBAR
+--------------------------------------------------------------*/
+
 .partner-links-container {
 	margin:0 0 2em 0;
 }
@@ -1682,7 +1719,7 @@ ul.home-page-menu {
 	margin: 0 10px 0 0;
 }
 
-.home .entry-header {
+.home .post-entry-header {
 	display: none;
 }
 
@@ -1692,11 +1729,12 @@ ul.home-page-menu {
 --------------------------------------------------------------*/
 
 header.post-entry-header {
+	margin: 0 0 1em 0;
 	background: #ff9c3d;
 }
 
 .post-entry-header h1 {
-	margin: 0 0 1em 0;
+	margin: 0;
 	text-align: center;
     padding: 20px 0 30px;
     font-family: 'Encode Sans Condensed';
@@ -1705,7 +1743,7 @@ header.post-entry-header {
 }
 
 .post-entry-header h1 span {
-	padding: 0 4em 0.6em;
+	padding: 0 4em 0.2em;
     border-bottom: 1px solid #fff;
 }
 
