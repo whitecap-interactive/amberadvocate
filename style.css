@@ -1149,7 +1149,7 @@ ul#primary-menu ul.active {
 	display: block;
 	position: fixed;
 	right: 12px;
-	top: 40px;
+	top: 10px;
 }
 
 @media screen and (min-width: 901px) {
@@ -1765,4 +1765,9 @@ body.category-amber-speaks header.post-entry-header {
 
 body.category-briefs header.post-entry-header {
 	background: #646566 !important;
+}
+
+
+.sow-video-wrapper iframe { 
+	width: 100%; 
 }
