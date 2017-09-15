@@ -13,7 +13,8 @@
 
 	
 	<header class="post-entry-header orange">
-		<?php the_title( '<h1 class="entry-title">', '<span class="region alignright">Region: ' . rwmb_meta('amber_region') . '</span></h1>' ); ?>
+		<?php the_title( '<h1 class="entry-title"><span>', '</span></h1>' ); ?>
+		<?php echo '<h3>Region: ' . rwmb_meta('amber_region') . '</h3>'; ?>
 	</header><!-- .entry-header -->
 
 	<div class="content-channel channel-padding">
