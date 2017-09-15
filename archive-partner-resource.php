@@ -14,7 +14,9 @@ get_header(); ?>
 
 			<div class="content-channel channel-padding">
 
+ 
 				<?php
+
 				if ( have_posts() ) : ?>
 
 					<header class="entry-header green">
@@ -26,6 +28,61 @@ get_header(); ?>
 					</header><!-- .page-header -->
 					
 
+
+						<?php
+						/* Start the Loop */
+						while ( have_posts() ) : the_post();
+
+							get_template_part( 'template-parts/content', 'partner-resources' );
+
+						endwhile;
+						?>
+					
+					<?php
+					the_posts_navigation();
+
+				else :
+
+					get_template_part( 'template-parts/content', 'none' );
+
+				endif; ?>
+				<?php
+
+					/*Create our own loop before getting into the real loop so we can sort by User Meta State Name*/
+					$args = array( 'post_type' => 'partner-resource');
+
+					$loop = new WP_Query( $args );
+					while ( $loop->have_posts() ) : $loop->the_post();
+					 
+					 	$files[] = rwmb_meta( 'amber_file_advanced',  $post_id = get_the_ID() );
+					 	
+						if ( !empty( $files ) ) {
+
+			        		$doc_state = rwmb_meta( 'amber_state_select',  $post_id = $files["ID"] ); 
+				        	//echo $doc_state . '<br/>';
+				        	$doc_region = rwmb_meta( 'amber_region_select',  $post_id = $files["ID"] );
+				        	$doc_topic = rwmb_meta( 'amber_topic_select',  $post_id = $files["ID"] );
+				        	$doc_date = rwmb_meta( 'amber_submitted_date',  $post_id = $files["ID"] );
+				        	$doc_submitter = rwmb_meta( 'amber_uploaded_by_text',  $post_id = $files["ID"] ); 
+				        	$doc_url_array = rwmb_meta( 'amber_file_advanced' );
+				        	$document_id = $files["ID"];
+				        	foreach ( $doc_url_array as $docs ) {
+						        $doc_url = $docs['url'];
+						    }
+							$title = get_the_title();
+						}
+
+						$docArray[] = array("state"=>$doc_state,"region"=>$doc_region, "topic"=>$doc_topic, "url"=>$doc_url, "date"=>$doc_date, "submitter"=>$doc_submitter, "title"=>$title);	
+					endwhile;
+
+					/*echo '<pre>';
+					var_dump($files);
+					echo '</pre>';*/
+					usort($docArray, create_function('$a, $b', 'return strnatcasecmp($a["state"], $b["state"]);'));
+					/*echo '<pre>';
+					var_dump($docArray);
+					echo '</pre>';*/
+					?>
 					<table id="partner-table" class="partner-table">				    
 						<tr>
 					    	<th>
@@ -176,24 +233,38 @@ get_header(); ?>
 					        	Submitted By
 					        </th>
 					    </tr>
-						<?php
-						/* Start the Loop */
-						while ( have_posts() ) : the_post();
+					    <?php
 
-							get_template_part( 'template-parts/content', 'partner-resources' );
-
-						endwhile;
-						?>
-					</table>
-					<?php
-					the_posts_navigation();
-
-				else :
-
-					get_template_part( 'template-parts/content', 'none' );
-
-				endif; ?>
-
+							if ($docArray) {
+								foreach ($docArray as $doc) {
+									echo '<tr><td></td><td class="partner-name"><a target="_blank" href="' . esc_url( $doc['url'] ) . '" rel="bookmark">';
+									echo $doc['title'];
+									//get_the_title($doc['docID']);
+									echo '</a></td>';
+									echo '<td class="partner-state">';
+									echo $doc['state'];
+									echo '</td>';
+									echo '<td class="partner-region">';
+									echo $doc['region'];
+									echo '</td>';
+									echo '<td class="partner-topic">';
+									echo $doc['topic'];
+									echo '</td>';
+									echo '<td>';
+									echo $doc['date'];
+									echo '</td>';
+									echo '<td>';
+									echo $doc['submitter'];
+									echo '</td>';
+									echo '</tr>';
+								}
+								
+								
+							}else{
+								the_title( '<tr><td>', ' - No Attachment Found</td></tr>' );
+							}
+			    		?>
+			  		</table> 
 			</div>
 
 		</main><!-- #main -->
