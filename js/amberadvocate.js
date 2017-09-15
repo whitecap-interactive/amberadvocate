@@ -59,6 +59,10 @@ jQuery(document).ready(function(){
 
 });
 
+function stateSelect(state) {
+	window.location.href = '/states/' + state;
+}
+
 function partnerSearch(searchParam) {
     var input, filter, table, tr, td, i;
     if (searchParam == 'name') { jQuery('select#partner-region-search').val(""); jQuery('select#partner-state-search').val(""); }

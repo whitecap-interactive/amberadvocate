@@ -9,10 +9,21 @@
 
 ?>
 
+<?php
+	$region = rwmb_meta('amber_region'); 
+	if ( $region == '1') { $region_color = 'red'; }
+	else if ( $region == '2') { $region_color = 'green'; }
+	else if ( $region == '3') { $region_color = 'dark-orange'; }
+	else if ( $region == '4') { $region_color = 'blue'; }
+	else if ( $region == '5') { $region_color = 'purple'; }	
+	else { $region_color = 'orange'; }
+
+?>
+
 <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
 
 	
-	<header class="post-entry-header orange">
+	<header class="post-entry-header <?php echo $region_color; ?>">
 		<?php the_title( '<h1 class="entry-title"><span>', '</span></h1>' ); ?>
 		<?php echo '<h3>Region: ' . rwmb_meta('amber_region') . '</h3>'; ?>
 	</header><!-- .entry-header -->
@@ -46,7 +57,7 @@
 					</tr>
 					<tr>
 						<td>AMBER Alert Program Website</td>
-						<td style="text-align:center;">
+						<td>
 							<?php if (!empty(rwmb_meta('amber_program_website'))) { echo '<a class="button light-orange" href="' . rwmb_meta('amber_program_website') . '" target="_blank">Website</a>'; } ?>
 						</td>
 					</tr>
@@ -65,7 +76,7 @@
 					</tr>
 					<tr>
 						<td>Missing Persons Clearinghouse Program Website</td>
-						<td style="text-align:center;">
+						<td>
 							<?php if (!empty(rwmb_meta('amber_mpch_website'))) { echo '<a class="button light-orange" href="' . rwmb_meta('amber_mpch_website') . '" target="_blank">Website</a>'; } ?>
 						</td>
 					</tr>
@@ -83,7 +94,8 @@
 	
 
 	<div class="full-width-channel select-a-state">
-		<h2>Select a state below to see the AMBER Alert Partner information for that state</h2>
+		<h2>Select a state from the map or the dropdown below to see the AMBER Alert Partner information for that state</h2>
+		<?php get_sidebar('state-select'); ?>
 		<?php echo do_shortcode( '[usahtml5map id="0"]' );?>
 	</div>
 	

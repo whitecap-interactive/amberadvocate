@@ -28,6 +28,12 @@ get_header(); ?>
             <div class="content-channel channel-padding">
 
                 <div class="row">
+
+                    <?php get_sidebar('state-select'); ?>
+
+                </div>                    
+
+                <div class="row">
                     <?php echo do_shortcode('[usahtml5map id="0"]');?>
                 </div>
 
