@@ -9,22 +9,25 @@
 
 ?>
 
-<h3>Partner Portal Links</h3>
+<div class="partner-links-container">
 
-<?php if ( is_user_logged_in() ) { ?>
+	<h3>Partner Portal Links</h3>
 
-	<ul class="partner-links">
-		<li><i class="fa fa-address-book" aria-hidden="true"></i><a href="/partner-portal/partner-listing">Partner Listing</a></li>
-		<li><i class="fa fa-folder-open" aria-hidden="true"></i><a href="/amber-alert-network/meet-our-partners">State Directory</a></li>
-		<li><i class="fa fa-file-o" aria-hidden="true"></i><a href="/partner-portal/submit-a-document">Submit a Document</a></li>
-		<li><i class="fa fa-inbox" aria-hidden="true"></i><a href="/partner-portal/contact-us">Contact Us</a></li>
-		<li><i class="fa fa-wrench" aria-hidden="true"></i></i><a href="/partner-portal/contact-us">Submit a Correction</a></li>
-	</ul>
+	<?php if ( is_user_logged_in() ) { ?>
 
-<?php } else { ?>
-&nbsp;<br />
-	<p><a class="button logged-out-links" href="/patner-portal/request-access/">Request Access</a></p>
-	<p><a class="button logged-out-links" href="/patner-portal/contact-us/">Contact us</a></p>
+		<ul class="partner-links">
+			<li><i class="fa fa-address-book" aria-hidden="true"></i><a href="/partner-portal/partner-listing">Partner Listing</a></li>
+			<li><i class="fa fa-folder-open" aria-hidden="true"></i><a href="/partner-resources/">Partner Resources</a></li>
+			<li><i class="fa fa-file-o" aria-hidden="true"></i><a href="/partner-portal/submit-a-document">Submit a Document</a></li>
+			<li><i class="fa fa-inbox" aria-hidden="true"></i><a href="/partner-portal/what-say-you-partner-discussions">Partner Discussion Board</a></li>
+			<li><i class="fa fa-wrench" aria-hidden="true"></i></i><a href="/partner-portal/contact-us">Submit a Correction</a></li>
+		</ul>
 
-<?php } ?>
+	<?php } else { ?>
+	&nbsp;<br />
+		<p><a class="button logged-out-links" href="/patner-portal/request-access/">Request Access</a></p>
+		<p><a class="button logged-out-links" href="/patner-portal/contact-us/">Contact us</a></p>
 
+	<?php } ?>
+
+</div>

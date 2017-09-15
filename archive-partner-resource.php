@@ -48,7 +48,7 @@ get_header(); ?>
 				endif; ?>
 				<?php
 
-					/*Create our own loop before getting into the real loop so we can sort by User Meta State Name*/
+					/*Create our own loop after the real loop so we can sort by User Meta State Name*/
 					$args = array( 'post_type' => 'partner-resource');
 
 					$loop = new WP_Query( $args );

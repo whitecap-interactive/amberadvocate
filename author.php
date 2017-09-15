@@ -5,13 +5,13 @@ get_header(); ?>
 <div id="primary" class="content-area">
     <main id="main" class="site-main" role="main">
 
-        <div class="content-channel channel-padding">
+        
 
-            <header class="entry-header green">
-                <h1 class="entry-title">Partner Listing</h1>
+            <header class="post-entry-header green">
+                <h1 class="entry-title">Partner Listing & Contact Info</h1>
             </header><!-- .entry-header --> 
 
-            <div class="entry-content">
+            <div class="content-channel channel-padding">
 
                 <div class="row state-meta">
                     <div class="col-sm-7">
@@ -49,6 +49,8 @@ get_header(); ?>
                         <hr />
                         <p>Bio:<br /><?php echo $partner_bio; ?></p>
                     </div>
+
+                    <?php get_sidebar('portal'); ?>
 
                         <!-- <table cellpadding="0" cellspacing="0" border="0" class="partner-table">
                             <tr>
@@ -99,7 +101,7 @@ get_header(); ?>
                 </div>
 
             </div>
-        </div>
+        
 
     </main>
 </div>

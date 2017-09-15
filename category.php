@@ -27,7 +27,7 @@ get_header(); ?>
 
 					<div class="entry-content row">
 
-						<div class="col-sm-9 post-list">
+						<div class="col-sm-8 post-list">
 
 
 						<?php while ( have_posts() ) : the_post();
@@ -54,8 +54,8 @@ get_header(); ?>
 
 						</div>
 
-						<div class="col-sm-3">
-
+						<div class="col-sm-4">
+							<?php get_sidebar('posts'); ?>
 						</div>
 
 					</div>

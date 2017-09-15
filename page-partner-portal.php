@@ -15,24 +15,15 @@ get_header(); ?>
 
 <div id="primary" class="content-area">
 	<main id="main" class="site-main" role="main">
-		<div class="content-channel channel-padding">
+		
 
 			<article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
 				
-				<header class="entry-header green">
+				<header class="post-entry-header green">
 					<h1 class="entry-title"><?php the_title(); ?></h1>
 				</header><!-- .entry-header -->
 
-				<div class="entry-content">
-
-					<?php if (have_posts()) : while (have_posts()) : the_post(); ?>
-						<div class="row">
-							<div class="col-sm-12">
-								<?php the_content(); ?>
-							</div>
-						</div>
-					<?php endwhile; endif; ?>
-							
+				<div class="content-channel channel-padding">
 
 					<div class="row">
 
@@ -41,6 +32,10 @@ get_header(); ?>
 							<div class="partner-portal-login gray">
 
 								<?php echo do_shortcode('[user-meta-login]');?>
+
+								<?php if (have_posts()) : while (have_posts()) : the_post(); ?>
+									<?php the_content(); ?>
+								<?php endwhile; endif; ?>
 
 							</div>
 
@@ -63,8 +58,7 @@ get_header(); ?>
 				</div>				
 
 			</article><!-- #post-## -->
-<br clear="all"/>
-		</div>
+		
 	</main>
 </div>
 
