@@ -1850,6 +1850,11 @@ header.post-entry-header {
 	padding: 30px 0 50px;
 }
 
+.question-line {
+	width:70%;
+	margin: 0 auto;
+	border-top: 1px solid #fff;
+}
 
 .question-sub-headline {
 	margin: 30px 10%;

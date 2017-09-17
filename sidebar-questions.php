@@ -1,7 +1,8 @@
 
 <div class="question-sidebar-container">
 
-	<h1 class='question-headline'><span>Questions?</span></h1>					
+	<h1 class='question-headline'><span>Questions?</span></h1>	
+	<div class="question-line"></div>				
 	<h3 class='question-sub-headline'>For questions about using the site or your existing membership, please use the 'Contact Us' button. </h3>
 
 	<div class="question-button">
