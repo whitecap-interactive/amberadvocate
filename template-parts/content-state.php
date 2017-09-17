@@ -53,7 +53,7 @@
 					</tr>
 					<tr>
 						<td>AMBER Alert Program Email</td>
-						<td><?php echo rwmb_meta('amber_program_email');?></td>
+						<td><a href="mailto:<?php echo rwmb_meta('amber_program_email');?>" target="_blank"><?php echo rwmb_meta('amber_program_email');?></a></td>
 					</tr>
 					<tr>
 						<td>AMBER Alert Program Website</td>
@@ -72,7 +72,7 @@
 					</tr>
 					<tr>
 						<td>Missing Persons Clearinghouse Program Email</td>
-						<td><?php echo rwmb_meta('amber_mpch_email');?></td>
+						<td><a href="mailto:<?php echo rwmb_meta('amber_mpch_email');?>" target="_blank"><?php echo rwmb_meta('amber_mpch_email');?></a></td>
 					</tr>
 					<tr>
 						<td>Missing Persons Clearinghouse Program Website</td>
