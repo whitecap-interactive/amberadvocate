@@ -16,7 +16,7 @@
 	</header><!-- .entry-header -->
 
 	<div class="content-channel channel-padding">
-		<div class="row">
+		<div class="row change-direction">
 			<?php if ( is_user_logged_in() ) { ?>
 
 				<div class="col-sm-7">

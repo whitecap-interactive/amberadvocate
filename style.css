@@ -1288,7 +1288,7 @@ ul#menu-footer-navigation > li {
 	display: inline-block;
 	text-align: left;
 	vertical-align: top;
-	margin: 0 8em 0 0;
+	margin: 0 8em 3em 0;
 }
 
 ul#menu-footer-navigation h3 {
@@ -1582,6 +1582,27 @@ table.partner-table th {
 	color: #fff;
 }
 
+table.partner-table th.name-search input {
+	min-width: 120px;
+}
+
+table.partner-table th.state-select select {
+	width: 80px !important;
+}
+
+table.partner-table th.role-select select {
+	width: 80px;
+}
+
+@media (min-width: 500px) {
+
+	table.partner-table th.state-select select {
+		width: 100%;
+		max-width: 120px;
+	}
+
+}
+
 table.partner-table strong {
 	font-size: 1.3em;
 }
@@ -1694,6 +1715,7 @@ table.partner-table strong {
 	color: #fff;
 }
 
+
 /*--------------------------------------------------------------
 ## PARTNER RRESOURCES TABLE
 --------------------------------------------------------------*/
@@ -1750,7 +1772,7 @@ header.post-entry-header {
 .post-entry-header h1 {
 	margin: 0;
 	text-align: center;
-    padding: 20px 0 30px;
+    padding: 20px 40px 30px;
     font-family: 'Encode Sans Condensed';
     font-size: 36px;
 	color: #fff;
@@ -1758,7 +1780,8 @@ header.post-entry-header {
 }
 
 .post-entry-header h1 span {
-	padding: 0 4em 0.2em;
+	white-space: nowrap;
+	padding: 0 1em 0.2em;
     border-bottom: 1px solid #fff;
 }
 
@@ -1789,6 +1812,14 @@ header.post-entry-header {
 }
 
 
+
+@media (min-width: 500px) {
+
+	.post-entry-header h1 span {
+		padding: 0 3em 0.2em;
+	}
+
+}
 
 
 .question-sidebar-container {

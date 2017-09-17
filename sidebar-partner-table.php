@@ -11,8 +11,8 @@
 <div class="partner-table-container">
 <table id="partner-table" class="partner-table">
     <thead><tr>
-        <th><input type="text" id="partner-name-search" onkeyup="partnerSearch('name')" placeholder="Search for Partner Name" title="Type in a name"></th>
-        <th>
+        <th class="name-search"><input type="text" id="partner-name-search" onkeyup="partnerSearch('name')" placeholder="Search for Partner Name" title="Type in a name"></th>
+        <th class="role-select">
             <select id="partner-role-search" onchange="partnerSearch('role')">
                 <option value="">Role</option>
                 <option value="AAC and CHM">AAC and CHM</option>

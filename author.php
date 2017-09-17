@@ -14,12 +14,10 @@ get_header(); ?>
             <div class="content-channel channel-padding">
 
                 <div class="row state-meta">
-                    <div class="col-sm-7">
-
-                        <?php get_sidebar('partner-table'); ?>
-
+                    <div class="col-sm-7" id="partner-list">
+                        <?php get_sidebar('partner-table'); ?> 
                     </div>
-                    <div class="col-sm-5">
+                    <div class="col-sm-5" id="partner-info">
 
                         <?php
                             $user = (isset($_GET['author_name'])) ? get_user_by('slug', $author_name) : get_userdata(intval($author));

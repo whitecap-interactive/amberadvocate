@@ -56,6 +56,20 @@ jQuery(function() {
 });
 
 jQuery(document).ready(function(){
+	var browserWidth = jQuery( window ).width();
+	if ( browserWidth < 900 ) {
+		jQuery( "#partner-list" ).insertAfter( jQuery( "#partner-info" ) );
+	}
+
+	jQuery( window ).resize(function() {
+		browserWidth = jQuery( window ).width();
+	 	if ( browserWidth < 900 ) {
+	   		jQuery( "#partner-list" ).insertAfter( jQuery( "#partner-info" ) );
+	   	} else {
+	   		jQuery( "#partner-info" ).insertAfter( jQuery( "#partner-list" ) );
+	   	}
+	});
+
 
 });
 
@@ -66,8 +80,8 @@ function stateSelect(state) {
 function partnerSearch(searchParam) {
     var input, filter, table, tr, td, i;
     if (searchParam == 'name') { jQuery('select#partner-region-search').val(""); jQuery('select#partner-state-search').val(""); }
-    if (searchParam == 'region') { jQuery('input#partner-name-search').attr('placeholder', "Search for Organization Name"); jQuery('select#partner-state-search').val(""); }
-    if (searchParam == 'state') { jQuery('input#partner-name-search').attr('placeholder', "Search for Organization Name"); jQuery('select#partner-region-search').val(""); }
+    if (searchParam == 'region') { jQuery('input#partner-name-search').attr('placeholder', "Search for Partner Name"); jQuery('select#partner-state-search').val(""); }
+    if (searchParam == 'state') { jQuery('input#partner-name-search').attr('placeholder', "Search for Partner Name"); jQuery('select#partner-region-search').val(""); }
     input = document.getElementById("partner-" + searchParam + "-search");
     filter = input.value.toUpperCase();
     table = document.getElementById("partner-table");
