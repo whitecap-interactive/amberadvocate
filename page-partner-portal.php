@@ -53,7 +53,8 @@ get_header(); ?>
 				</div><!-- .entry-content -->
 				<br clear="all" />
 				<div class="full-width-channel select-a-state">
-					<h2>Select a state below to see the AMBER Alert Partner information for that state</h2>
+					<h2>Select a state from the map or the dropdown below to see the AMBER Alert Partner information for that state</h2>
+					<?php get_sidebar('state-select'); ?>
 					<?php echo do_shortcode( '[usahtml5map id="0"]' );?>
 				</div>				
 

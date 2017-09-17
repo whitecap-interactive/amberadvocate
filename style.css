@@ -1035,7 +1035,7 @@ a.button:visited {
 
 .main-logo {
 	text-align: center;
-	padding: 20px 80px 10px 20px;
+	padding: 20px 80px 20px 20px;
 }
 
 .social-links {
@@ -1081,10 +1081,12 @@ ul#primary-menu {
 }
 
 ul#primary-menu li {
-	padding: 12px;
+	padding: 16px 0;
 	margin: 0;
 	display: inline-block;
 	vertical-align: middle;
+	width: 100%;
+	border-bottom: 1px solid #aaa;
 }
 
 ul#primary-menu li:hover {
@@ -1114,7 +1116,7 @@ ul#primary-menu li:focus {
 
 ul#primary-menu ul.sub-menu {
 	display: none;
-	position: absolute;
+	position: relative;
 	margin: 12px 0 0 -10px;
 	padding: 0;
 	background: #ccc;
@@ -1125,9 +1127,8 @@ ul#primary-menu ul.sub-menu li {
 	margin: 0;
 	padding: 12px;
 	display: block;
-	text-align: left;
-	min-width: 126px;
-	max-width: 180px;
+	text-align: center;
+	width: 100%;
 }
 
 ul#primary-menu ul.sub-menu li:hover {
@@ -1155,10 +1156,21 @@ ul#primary-menu ul.active {
 @media screen and (min-width: 901px) {
     ul#primary-menu li {
 		max-width: 140px;
+		border: 0;
+		padding: 12px;
+		width: auto;
 	}	
-}
 
-@media screen and (min-width: 901px) {
+	ul#primary-menu ul.sub-menu {
+		position: absolute;
+	}
+
+	ul#primary-menu ul.sub-menu li {
+		text-align: left;
+		min-width: 126px;
+		max-width: 180px;
+	}	
+
     .mobile-nav-toggle {
 		display: none;
 	}	
@@ -1190,7 +1202,7 @@ ul#primary-menu ul.active {
   width: 40px;
   height: 30px;
   position: relative;
-  margin: 30px auto;
+  margin: 18px auto;
   -webkit-transform: rotate(0deg);
   -moz-transform: rotate(0deg);
   -o-transform: rotate(0deg);
