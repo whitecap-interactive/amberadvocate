@@ -1553,7 +1553,7 @@ ul.partner-links li {
 
 ul.partner-links i {
 	padding: 0 10px 0 0;
-	font-size: 1.3em;
+	font-size: 1.5em;
 }
 
 
@@ -1803,10 +1803,10 @@ header.post-entry-header {
 
 .post-entry-header h3 {
     text-align: center;
-    padding: 0 0 14px 0;
+    padding: 14px 24px;
     margin: -40px 0 0 0;
     color: #fff;
-    line-height: 4em;
+    line-height: 1.6em;
 }
 
 .post-list {
