@@ -968,7 +968,7 @@ object {
 	width: 100%;
 	text-align: center;
 	display: none;
-	margin: 20px 0 0 0;
+	margin: 0;
 	/*height: 60px;*/
 	background: #ccc;
 	opacity: 1;
@@ -1177,6 +1177,7 @@ ul#primary-menu ul.active {
 	}	
 	.nav-bar {
 		display: block;
+		margin: 20px 0 0 0;
 	}
 	.social-links {
 		display: inline-block;
@@ -1753,6 +1754,7 @@ header.post-entry-header {
     font-family: 'Encode Sans Condensed';
     font-size: 36px;
 	color: #fff;
+	line-height: 1.2em;
 }
 
 .post-entry-header h1 span {
@@ -1765,6 +1767,7 @@ header.post-entry-header {
     padding: 0 0 30px 0;
     margin: -30px 0 0 0;
     color: #fff;
+    line-height: 4em;
 }
 
 .post-list {
