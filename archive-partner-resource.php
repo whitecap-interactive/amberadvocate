@@ -12,14 +12,14 @@ get_header(); ?>
 	<div id="primary" class="content-area">
 		<main id="main" class="site-main" role="main">
 
-			<div class="content-channel channel-padding">
+			
 
  
 				<?php
 
 				if ( have_posts() ) : ?>
 
-					<header class="entry-header green">
+					<header class="post-entry-header green">
 						<h1>Partner Resources</h1>
 						<?php
 							//the_archive_title( '<h1 class="page-title">', '</h1>' );
@@ -27,7 +27,7 @@ get_header(); ?>
 						?>
 					</header><!-- .page-header -->
 					
-
+					<div class="content-channel channel-padding">
 
 						<?php
 						/* Start the Loop */
