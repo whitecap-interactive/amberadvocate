@@ -41,6 +41,8 @@ jQuery(function() {
 	jQuery('#nav-icon3').click(function(){
 		jQuery(this).toggleClass('open');
 		jQuery('.nav-bar').toggle();
+		jQuery('.nav-bar').toggleClass('mobile-nav');
+		jQuery('.main-logo').toggleClass('main-logo-mobile-nav');
 	});
 
 
