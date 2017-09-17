@@ -1086,7 +1086,7 @@ ul#primary-menu li {
 	display: inline-block;
 	vertical-align: middle;
 	width: 100%;
-	border-bottom: 1px solid #aaa;
+	border-top: 1px solid #aaa;
 }
 
 ul#primary-menu li:hover {
@@ -1119,13 +1119,13 @@ ul#primary-menu ul.sub-menu {
 	position: relative;
 	margin: 12px 0 0 -10px;
 	padding: 0;
-	background: #ccc;
+	background: #ddd;
 	z-index: 1;
 }
 
 ul#primary-menu ul.sub-menu li {
 	margin: 0;
-	padding: 12px;
+	padding: 16px 0;
 	display: block;
 	text-align: center;
 	width: 100%;
@@ -1169,6 +1169,7 @@ ul#primary-menu ul.active {
 		text-align: left;
 		min-width: 126px;
 		max-width: 180px;
+		padding: 12px;
 	}	
 
     .mobile-nav-toggle {
