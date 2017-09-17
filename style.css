@@ -1428,17 +1428,17 @@ ul#menu-footer-navigation ul.sub-menu li {
 
 }
 
-.orange {
+.orange, .category-indian-country header.post-entry-header {
 	background: #ff9c3d !important;
 	color: #fff;
 }
 
-.blue {
+.blue, .category-amber-news header.post-entry-header {
 	background: #1954db !important;
 	color: #fff;
 }
 
-.purple {
+.purple, .category-amber-speaks header.post-entry-header {
 	background: #5b3160 !important;
 	color: #fff;
 }
@@ -1453,17 +1453,17 @@ ul#menu-footer-navigation ul.sub-menu li {
 	color: #fff;
 }
 
-.yellow {
+.yellow, .category-international header.post-entry-header {
 	background: #ffbf34 !important;
 	color: #fff;
 }
 
-.red {
+.red, .category-on-the-front-lines header.post-entry-header {
 	background: #c42619 !important;
 	color: #fff;
 }
 
-.gray {
+.gray, .category-briefs header.post-entry-header {
 	background: #646566 !important;
 	color: #fff;
 }
@@ -1788,7 +1788,7 @@ header.post-entry-header {
 .post-entry-header h1 {
 	margin: 0;
 	text-align: center;
-    padding: 20px 40px 30px;
+    padding: 40px;
     font-family: 'Encode Sans Condensed';
     font-size: 36px;
 	color: #fff;
@@ -1797,13 +1797,13 @@ header.post-entry-header {
 
 .post-entry-header h1 span {
 	white-space: nowrap;
-	padding: 0 1em 0.2em;
+	padding: 0 1em 0.4em;
     border-bottom: 1px solid #fff;
 }
 
 .post-entry-header h3 {
     text-align: center;
-    padding: 0 0 30px 0;
+    padding: 0 0 14px 0;
     margin: -30px 0 0 0;
     color: #fff;
     line-height: 4em;
@@ -1832,7 +1832,7 @@ header.post-entry-header {
 @media (min-width: 500px) {
 
 	.post-entry-header h1 span {
-		padding: 0 3em 0.2em;
+		padding: 0 3em 0.4em;
 	}
 
 }

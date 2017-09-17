@@ -10,45 +10,46 @@
 ?>
 
 <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
-	<header class="entry-header orange">
+	<header class="post-entry-header">
 		<?php
-		if ( is_single() ) :
-			the_title( '<h1 class="entry-title">', '</h1>' );
-		else :
-			the_title( '<h2 class="entry-title"><a href="' . esc_url( get_permalink() ) . '" rel="bookmark">', '</a></h2>' );
-		endif;
+			$subhead = rwmb_meta('amber_subhead');
+			if (!empty($subhead)) { 
+				the_title( '<h1 class="entry-title"><span>', '</span></h1>' ); 
+				echo '<h3>' . rwmb_meta('amber_subhead') . '</h3>'; 
+			} else { the_title( '<h1 class="entry-title">', '</h1>' ); }
 
-		if ( 'post' === get_post_type() ) : ?>
-		<div class="entry-meta">
-			<?php amberadvocate_posted_on(); ?>
-		</div><!-- .entry-meta -->
-		<?php
-		endif; ?>
+
+		?>
+
 	</header><!-- .entry-header -->
 
-	<div class="entry-content">
-		<?php
-			the_content( sprintf(
-				wp_kses(
-					/* translators: %s: Name of current post. */
-					__( 'Continue reading %s <span class="meta-nav">&rarr;</span>', 'amberadvocate' ),
-					array(
-						'span' => array(
-							'class' => array(),
-						),
-					)
-				),
-				the_title( '<span class="screen-reader-text">"', '"</span>', false )
-			) );
+	<div class="content-channel channel-padding">
+		<div class="row">
+			<div class="col-sm-9">
+			<?php
+				the_content( sprintf(
+					wp_kses(
+						/* translators: %s: Name of current post. */
+						__( 'Continue reading %s <span class="meta-nav">&rarr;</span>', 'amberadvocate' ),
+						array(
+							'span' => array(
+								'class' => array(),
+							),
+						)
+					),
+					the_title( '<span class="screen-reader-text">"', '"</span>', false )
+				) );
 
-			/*wp_link_pages( array(
-				'before' => '<div class="page-links">' . esc_html__( 'Pages:', 'amberadvocate' ),
-				'after'  => '</div>',
-			) );*/
-		?>
+				/*wp_link_pages( array(
+					'before' => '<div class="page-links">' . esc_html__( 'Pages:', 'amberadvocate' ),
+					'after'  => '</div>',
+				) );*/
+			?>
+			</div>
+			<div class="col-sm-3">
+				<?php get_sidebar('posts'); ?>
+			</div>
+
 	</div><!-- .entry-content -->
 
-	<footer class="entry-footer">
-		<?php //amberadvocate_entry_footer(); ?>
-	</footer><!-- .entry-footer -->
 </article><!-- #post-## -->

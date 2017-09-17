@@ -338,6 +338,26 @@ function amber_register_meta_boxes( $meta_boxes ) {
 			),
         )
     );
+
+    // Add Subhead Metabox for Page/Post
+    $meta_boxes[] = array(
+        'id'         => 'subhead',
+        'title'      => __( 'Subhead', 'amber' ),
+        'post_types' => array( 'post','page' ),
+        'context'    => 'normal',
+        'priority'   => 'high',
+        'fields' => array(
+			// SUBHEAD TEXT
+			array(
+				'name' => __( 'Subhead', 'amber' ),
+				'id'   => "{$prefix}subhead",
+				'type' => 'textarea',
+				'cols' => 10,
+				'rows' => 1,
+			),
+        )
+    );
+
     // ALLOW ATTACHMENT OF FILES TO Partner Resources CUSTOM POST TYPE
     $meta_boxes[] = array(
         'title'      => __( 'Partner Resource File Attachment', 'amber' ),
