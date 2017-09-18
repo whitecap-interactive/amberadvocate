@@ -556,6 +556,15 @@ function amber_register_meta_boxes( $meta_boxes ) {
     );
     return $meta_boxes;
 }
+//ADD DESCRIPTION TEXT TO SINGLE FORUM PAGES
+//filter to add description after forums titles on forum index
+function rw_singleforum_description() {
+  echo '<div class="bbp-forum-content">';
+  echo bbp_forum_content();
+  echo '</div>';
+}
+add_action( 'bbp_template_before_single_forum' , 'rw_singleforum_description');
+
 
 //ADD DROPDOWN TO USER PROFILE THAT DISPLAYS STATES
 /*add_filter( 'user_meta_field_config', 'user_meta_field_config_populate_categories', 10, 3 );

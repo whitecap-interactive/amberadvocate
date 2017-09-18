@@ -1743,6 +1743,16 @@ th.partner-state-header, td.partner-state{
 #partner-name-search, #partner-state-search{
 	width: 100%;
 }
+
+/*--------------------------------------------------------------
+## FORUM PAGE
+--------------------------------------------------------------*/
+#bbpress-forums div.bbp-forum-content {
+  clear: both !important;
+  margin-left: 0 !important;
+  padding: 0  !important;
+}
+
 /*--------------------------------------------------------------
 ## HOME PAGE
 --------------------------------------------------------------*/
