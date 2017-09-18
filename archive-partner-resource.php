@@ -89,7 +89,16 @@ get_header(); ?>
 					    		<button id="reset-button"><i class="fa fa-refresh" aria-hidden="true"></i></button>
 					    	</th>
 					        <th>
-					        <input type="text" id="partner-name-search" onkeyup="partnerSearch('name')" placeholder="Search for Doc Name" title="Type in a name"></th>
+					            <select id="partner-region-search" onchange="partnerSearch('region')">
+					                <option value="">Region</option>
+					                <option value="1">1</option>
+					                <option value="2">2</option>
+					                <option value="3">3</option>
+					                <option value="4">4</option>
+					                <option value="5">5</option>
+					                <option value="na">N/A</option>
+					            </select>
+					        </th>
 					        <th class="partner-state-header">
 					            <select id="partner-state-search" onchange="partnerSearch('state')">
 					                <option value="">Select a State</option>
@@ -205,17 +214,6 @@ get_header(); ?>
 					            </select>	                                          
 					        </th>
 					        <th>
-					            <select id="partner-region-search" onchange="partnerSearch('region')">
-					                <option value="">Region</option>
-					                <option value="1">1</option>
-					                <option value="2">2</option>
-					                <option value="3">3</option>
-					                <option value="4">4</option>
-					                <option value="5">5</option>
-					                <option value="na">N/A</option>
-					            </select>
-					        </th>
-					        <th>
 					        	<select id="partner-topic-search" onchange="partnerSearch('topic')">
 					                <option value="">Topic</option>
 					                <option value="AMBER Alert Plan">AMBER Alert Plan</option>
@@ -225,6 +223,9 @@ get_header(); ?>
 					                <option value="Model Policy or Procedure">Model Policy or Procedure</option>
 					                <option value="Other">Other</option>
 					            </select>
+					        </th>
+					        <th>
+					        	<input type="text" id="partner-name-search" onkeyup="partnerSearch('name')" placeholder="Search for Doc Name" title="Type in a name">
 					        </th>
 					        <th>
 					        	Upload Date
@@ -237,19 +238,18 @@ get_header(); ?>
 
 							if ($docArray) {
 								foreach ($docArray as $doc) {
-									echo '<tr><td></td><td class="partner-name"><a target="_blank" href="' . esc_url( $doc['url'] ) . '" rel="bookmark">';
-									echo $doc['title'];
-									//get_the_title($doc['docID']);
-									echo '</a></td>';
-									echo '<td class="partner-state">';
-									echo $doc['state'];
-									echo '</td>';
+									echo '<tr>';
+									echo '<td></td>';
 									echo '<td class="partner-region">';
 									echo $doc['region'];
+									echo '</td>';
+									echo '<td class="partner-state">';
+									echo $doc['state'];
 									echo '</td>';
 									echo '<td class="partner-topic">';
 									echo $doc['topic'];
 									echo '</td>';
+									echo '<td class="partner-name"><a target="_blank" href="' . esc_url( $doc['url'] ) . '" rel="bookmark">' . $doc['title'] . '</a></td>';
 									echo '<td>';
 									echo $doc['date'];
 									echo '</td>';
