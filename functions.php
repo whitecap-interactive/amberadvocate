@@ -322,6 +322,14 @@ function amber_register_meta_boxes( $meta_boxes ) {
 				'type'  => 'text',
 				'desc'  => 'Please include http:// or https:// in the URL',
 			),
+			// SUBHEAD TEXT
+			array(
+				'name' => __( 'Additional Notes', $prefix ),
+				'id'   => "{$prefix}notes",
+				'type' => 'textarea',
+				'cols' => 10,
+				'rows' => 6,
+			),
         )
     );
     // ALLOW ATTACHMENT OF FILES TO State CUSTOM POST TYPE

@@ -81,6 +81,16 @@
 						</td>
 					</tr>
 				</table>
+				<?php if (!empty(rwmb_meta('amber_notes'))) { ?>
+				<table cellpadding="0" cellspacing="0" border="0" class="partner-table">
+					<tr>
+						<th><strong>Additional Notes</strong></th>
+					</tr>
+					<tr>
+						<td><?php echo rwmb_meta('amber_notes');?></td>
+					</tr>
+				</table>
+				<?php } ?>
 
 			</div>
 
