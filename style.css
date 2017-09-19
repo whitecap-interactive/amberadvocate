@@ -1752,7 +1752,12 @@ th.partner-state-header, td.partner-state{
   margin-left: 0 !important;
   padding: 0  !important;
 }
-
+.bbp-search-form{
+	margin-bottom: 14px;
+}
+#bbp_search{
+	margin-right: 5px;
+}
 /*--------------------------------------------------------------
 ## HOME PAGE
 --------------------------------------------------------------*/
