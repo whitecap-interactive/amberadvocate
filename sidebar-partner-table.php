@@ -156,7 +156,7 @@
 
 
 <?php
-	$partners = get_users( 'blog_id=1' );
+	$partners = get_users( 'blog_id=1&role=partner&exclude=1' );
     usort($partners, create_function('$a, $b', 'return strnatcasecmp($a->last_name, $b->last_name);'));
     foreach ( $partners as $partner ) {
     	$partner_state_name = get_user_meta($partner->ID, 'state', true);
