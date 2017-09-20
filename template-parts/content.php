@@ -22,7 +22,11 @@
 
 	<div class="content-channel channel-padding">
 		<div class="row">
-			<div class="col-sm-9">
+			<?php if( in_category( 'issue' ) ){ ?>
+				<div class="col-sm-12">
+			<?php } else { ?>
+				<div class="col-sm-9">
+			<?php } ?>
 			<?php
 				the_content( sprintf(
 					wp_kses(
@@ -43,9 +47,16 @@
 				) );*/
 			?>
 			</div>
-			<div class="col-sm-3">
-				<?php get_sidebar('posts'); ?>
-			</div>
+			<?php if( in_category( 'issue' ) ){ ?>
+				</div>
+			<?php } else { ?>
+				<div class="col-sm-3">
+					<?php get_sidebar('posts'); ?>
+				</div>
+			<?php } ?>			
+			
+				
+			
 
 	</div><!-- .entry-content -->
 
