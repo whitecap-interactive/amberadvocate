@@ -1107,7 +1107,8 @@ ul#primary-menu li:hover {
 }
 
 ul#primary-menu a {
-	color: #7c7b7b;
+	/*color: #7c7b7b;*/
+	color: #363636;
 	display: block;
 	width: 100%;
 	height: 100%;
@@ -1118,7 +1119,7 @@ ul#primary-menu a {
 }
 
 ul#primary-menu a:hover {
-	color: #363636;    
+	color: #000;    
     /*transition-delay: 100ms;*/
     text-decoration: none;
 }
