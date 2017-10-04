@@ -27,8 +27,8 @@
 
 		<div class="content-channel row">
 			<div class="col-sm-3 header-logos">
-				<div class="logo-justice"> </div>
-				<div class="logo-amber"> </div>
+				<div class="logo-justice" title="Department of Justice - Office of Justice Programs Logo"> </div>
+				<div class="logo-amber" title="AMBER Alert Logo"> </div>
 			</div>
 			<div class="col-sm-6 main-logo">
 				<div class="logo-advocate"><a href="/"><img src="<?php bloginfo('stylesheet_directory'); ?>/images/logo-advocate-large.png" width="500" height="70" border="0" alt="AMBER Advocate" /></a></div>
