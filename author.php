@@ -13,7 +13,7 @@ get_header(); ?>
 
             <div class="content-channel channel-padding">
 
-                <div class="row state-meta">
+                <div class="row">
                     <div class="col-sm-7" id="partner-list">
                         <?php get_sidebar('partner-table'); ?> 
                     </div>
