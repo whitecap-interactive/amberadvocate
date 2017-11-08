@@ -36,7 +36,7 @@
 			<div class="col-sm-3">
 				<div class="social-links">
 					<!-- <a href="#"><i class="fa fa-facebook-square fa-2x" aria-hidden="true"></i></a> -->
-					<a href="https://www.facebook.com/AMBERAdvocate/" target="_blank" title="Find us on Facebook"><img src="<?php bloginfo('stylesheet_directory'); ?>/images/FB-FindUsonFacebook-online-144.png" width="72" /></a>
+					<a href="https://www.facebook.com/AMBERAdvocate/" target="_blank" title="Find us on Facebook"><img src="<?php bloginfo('stylesheet_directory'); ?>/images/FB-FindUsonFacebook-online-144.png" width="72" alt="Find us on Facebook"/></a>
 				</div>
 				<div class="mobile-nav-toggle">
 					<div id="nav-icon3">

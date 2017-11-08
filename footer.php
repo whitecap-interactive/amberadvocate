@@ -42,6 +42,11 @@
 			</div>
 			<div class="footer-copyright">
 				&copy; <?php echo date("Y");?> AMBER Alert Training and Technical Assistance Program
+				<?php 
+					if (is_front_page()){
+						echo '<p><a href="/terms-of-use-and-privacy-policy/">Terms of Use and Privacy Policy</a></p>';
+					}
+				?>
 			</div>
 		</div><!-- .site-info -->
 	</footer><!-- #colophon -->
