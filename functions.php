@@ -641,6 +641,31 @@ add_filter( 'get_the_archive_title', function ($title) {
 });
 
 
+
+function new_modify_user_table( $column ) {
+    $column['state'] = 'State';
+    //$column['xyz'] = 'XYZ';
+    return $column;
+}
+add_filter( 'manage_users_columns', 'new_modify_user_table' );
+
+function new_modify_user_table_row( $val, $column_name, $user_id ) {
+    switch ($column_name) {
+        case 'state' :
+            return get_the_author_meta( 'state', $user_id );
+            break;
+        //case 'xyz' :
+        //    return '';
+        //    break;
+        default:
+    }
+    return $val;
+}
+add_filter( 'manage_users_custom_column', 'new_modify_user_table_row', 10, 3 );
+
+
+
+
 /**
  * Implement the Custom Header feature.
  */
