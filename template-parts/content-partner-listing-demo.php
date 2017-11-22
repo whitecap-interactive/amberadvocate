@@ -15,6 +15,10 @@
     header.post-entry-header.green.survey-section{
         text-align: center;
         padding-top: 23px;
+        margin-bottom: 1em;
+    }
+    header.post-entry-header{
+        margin-bottom: 0px;
     }
 </style>
 <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
