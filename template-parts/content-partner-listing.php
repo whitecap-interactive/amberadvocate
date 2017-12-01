@@ -28,9 +28,6 @@
             } else { the_title( '<h1 class="entry-title">', '</h1>' ); }
         ?>
     </header><!-- .entry-header -->
-    <header class="post-entry-header green survey-section">
-        <script>(function(t,e,s,n){var o,a,c;t.SMCX=t.SMCX||[],e.getElementById(n)||(o=e.getElementsByTagName(s),a=o[o.length-1],c=e.createElement(s),c.type="text/javascript",c.async=!0,c.id=n,c.src=["https:"===location.protocol?"https://":"http://","widget.surveymonkey.com/collect/website/js/tRaiETqnLgj758hTBazgdw6wwMZ8LW8ULyMBQgqiDwGEk5LL7_2Fy_2FFd_2BveD1_2FnKlI.js"].join(""),a.parentNode.insertBefore(c,a))})(window,document,"script","smcx-sdk");</script><a style="font: 12px Helvetica, sans-serif; color: #999; text-decoration: none;" href=https://www.surveymonkey.com> Create your own user feedback survey </a>
-    </header><!-- .entry-header -->
 
 
 	<div class="content-channel channel-padding">
