@@ -8,15 +8,7 @@
  */
 
 ?>
-<style type="text/css">
-    .smcx-widget.smcx-embed{
-        margin:0 auto !important;
-    }
-    header.post-entry-header.green.survey-section{
-        text-align: center;
-        padding-top: 23px;
-    }
-</style>
+
 <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
 
     <header class="post-entry-header green">
@@ -28,9 +20,22 @@
             } else { the_title( '<h1 class="entry-title">', '</h1>' ); }
         ?>
     </header><!-- .entry-header -->
+    <style type="text/css">
+        .survey-link-section{
+            text-align: center;
+            margin-bottom: 1em;
+        }
 
-
+    </style>
 	<div class="content-channel channel-padding">
+        <div class="row survey-link-section">
+            AMBER Partners Question of the Week 
+            <a href="/partner-portal/partner-survey/" class="question-button button-lg light-orange">
+                <span>
+                    Tell Us What you Think      
+                </span>
+            </a>
+        </div>
 		<div class="row change-direction">
 			<?php if ( is_user_logged_in() ) { ?>
 
