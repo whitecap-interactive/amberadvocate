@@ -29,7 +29,7 @@
     </style>
 	<div class="content-channel channel-padding">
         <div class="row survey-link-section">
-            AMBER Partners Question of the Week 
+            AMBER Partners Question of the Month 
             <a href="/partner-portal/partner-survey/" class="question-button button-lg light-orange">
                 <span>
                     Tell Us What you Think      
