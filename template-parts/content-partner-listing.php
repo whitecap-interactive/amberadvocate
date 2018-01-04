@@ -25,10 +25,6 @@
     </style>
 	<div class="content-channel channel-padding">
 
-
-
-
-
         <?php
             $settings = get_option( 'amberadvocate' );
             $field_id = 'standard';
