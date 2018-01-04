@@ -21,21 +21,39 @@
         ?>
     </header><!-- .entry-header -->
     <style type="text/css">
-        .survey-link-section{
-            text-align: center;
-            margin-bottom: 1em;
-        }
-
+        
     </style>
 	<div class="content-channel channel-padding">
-        <div class="row survey-link-section">
-            AMBER Partners Question of the Week 
-            <a href="/partner-portal/partner-survey/" class="question-button button-lg light-orange">
-                <span>
-                    Tell Us What you Think      
-                </span>
-            </a>
-        </div>
+
+
+
+
+
+        <?php
+            $settings = get_option( 'amberadvocate' );
+            $field_id = 'standard';
+            $alert_group_fields = $settings[$field_id];
+        ?>
+
+        <?php if ( is_user_logged_in() ) { ?>
+            <?php if ( !empty( $alert_group_fields ) ) { ?>
+                <div class="survey-link-section">
+                    <section class="lazy slider" data-sizes="50vw">
+                        <?php
+                            foreach ( $alert_group_fields as $alert_group_field ) {
+                                echo '<div>';
+                                echo $alert_group_field['text-alert'];
+                                echo '<a href="' . $alert_group_field['text-url'] . '" class="question-button button-lg light-orange"><span>';
+                                echo $alert_group_field['text-button'];
+                                echo '</span></a></div>';
+                            }
+                            
+                        ?>
+                    </section>
+                </div>
+            <?php } ?> <!-- end if !empty( $alert_group_fields ) -->
+        <?php } ?> <!-- end if ( is_user_logged_in() ) -->   
+
 		<div class="row change-direction">
 			<?php if ( is_user_logged_in() ) { ?>
 

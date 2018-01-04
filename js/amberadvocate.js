@@ -100,3 +100,13 @@ function partnerSearch(searchParam) {
     }
     //jQuery('table.partner-list tr:visible').removeClass('odd').filter(':odd').addClass('odd');
 }
+jQuery(document).on('ready', function() {
+    jQuery(".lazy").slick({
+        accessibility: true, 
+        autoplay: true,
+        autoplaySpeed: 3000,
+        arrows: true,
+        lazyLoad: 'progressive', // ondemand progressive anticipated
+        infinite: true
+    });
+});
