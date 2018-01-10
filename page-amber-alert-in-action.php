@@ -27,6 +27,28 @@ get_header(); ?>
 						<?php the_title( '<h1 class="entry-title">', '</h1>' ); ?>
 					</header><!-- .entry-header -->
 
+					<style type="text/css">
+
+						header.post-entry-header {
+							margin: 0;
+						}
+
+						.large-counter-container {
+							text-align: center;
+							width: 100%;
+							background: #2f2f2f;
+							padding: 1em;
+							margin: 0;
+						}
+
+					</style>
+
+					<div class="large-counter-container">
+						<img src="https://www.amberadvocate.org/wp-content/uploads/2018/01/910-NCMEC.jpg" width="995" height="400" srcset="https://www.amberadvocate.org/wp-content/uploads/2018/01/910-NCMEC.jpg 995w, https://www.amberadvocate.org/wp-content/uploads/2018/01/910-NCMEC-300x121.jpg 300w, https://www.amberadvocate.org/wp-content/uploads/2018/01/910-NCMEC-768x309.jpg 768w" sizes="(max-width: 995px) 100vw, 995px" alt="910 Children Recovered With the Help of AMBER Alert"/>
+						<h1 style="text-align: center;"><span style="color: #ffffff;">CHILDREN RECOVERED WITH THE HELP OF</span></h1>
+						<img src="https://www.amberadvocate.org/wp-content/uploads/2018/01/NEW-AMBER-ALERT-LOGO.png" alt="" width="169" height="136" border="0" alt="AMBER Alert" /></p>
+					</div>				
+
 					<div class="content-channel channel-padding">
 
 						<div class="entry-content row">
