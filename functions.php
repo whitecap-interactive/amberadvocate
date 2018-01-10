@@ -183,6 +183,8 @@ add_action( 'init', 'change_post_type_labels' );
  */
 function amberadvocate_scripts() {
 
+	wp_enqueue_style('slick',get_template_directory_uri().'/css/slick/slick.css');
+	wp_enqueue_style('slick-theme',get_template_directory_uri().'/css/slick/slick-theme.css');
 	wp_enqueue_style('font-awesome',get_template_directory_uri().'/fonts/font-awesome-4.7.0/css/font-awesome.min.css');
 	wp_enqueue_style('bootstrap-theme.min',get_template_directory_uri().'/css/bootstrap/css/bootstrap.min.css');
 	wp_enqueue_style( 'amberadvocate-style', get_stylesheet_uri() );
@@ -190,9 +192,8 @@ function amberadvocate_scripts() {
 	/*wp_enqueue_script( 'amberadvocate-navigation', get_template_directory_uri() . '/js/navigation.js', array(), '20151215', true );*/
 	wp_enqueue_script('jquery');
 	wp_enqueue_script( 'amberadvocate-global', get_template_directory_uri() . '/js/amberadvocate.js', array(), '20170811', true );
-
-
 	wp_enqueue_script( 'amberadvocate-skip-link-focus-fix', get_template_directory_uri() . '/js/skip-link-focus-fix.js', array(), '20151215', true );
+	wp_enqueue_script( 'slick-js', get_template_directory_uri() . '/js/slick.min.js', array('jquery'), '20151215', true );
 
 	if ( is_singular() && comments_open() && get_option( 'thread_comments' ) ) {
 		wp_enqueue_script( 'comment-reply' );
@@ -564,6 +565,67 @@ function amber_register_meta_boxes( $meta_boxes ) {
     );
     return $meta_boxes;
 }
+
+
+//ADD SETTINGS PAGE FOR PARTNER LISTINGS ALERTS
+add_filter( 'mb_settings_pages', 'global_docs_page' );
+function global_docs_page( $settings_pages )
+{
+	$settings_pages[] = array(
+		'id'          => 'amberadvocate',
+		'option_name' => 'amberadvocate',
+		'menu_title'  => __( 'Partner Alerts', 'amberadvocate' ),
+		//'parent'      => 'themes.php',
+	);
+	return $settings_pages;
+}
+
+add_filter( 'rwmb_meta_boxes', 'global_settings_meta_boxes' );
+function global_settings_meta_boxes( $meta_boxes )
+{
+    $meta_boxes[] = array(
+        'id'         => 'global-settings',
+        'title'      => __( 'Partner Alerts', 'amberadvocate' ),
+        'settings_pages' => 'amberadvocate',
+		'icon_url'      => 'dashicons-admin-page',
+		'submit_button' => 'Save Alerts',
+        'fields' => array(
+            array(
+                'id'     => 'standard',
+                // Group field
+                'type'   => 'group',
+                // Clone whole group?
+                'clone'  => true,
+                // Drag and drop clones to reorder them?
+                'sort_clone' => true,
+                // Sub-fields
+                'fields' => array(
+                    array(
+                        'name' => 'Alert Text',
+                        'id'   => 'text-alert',
+                        'type' => 'text',
+                    ),
+                    array(
+                        'name' => 'Button Text',
+                        'id'   => 'text-button',
+                        'type' => 'text',
+                    ),
+                    array(
+                        'name' => 'Link URL',
+                        'id'   => 'text-url',
+                        'type' => 'text',
+                    ),
+                ),
+            ),
+        ),
+    );    
+    
+	return $meta_boxes;
+}
+
+
+
+
 //ADD DESCRIPTION TEXT TO SINGLE FORUM PAGES
 //filter to add description after forums titles on forum index
 function rw_singleforum_description() {
