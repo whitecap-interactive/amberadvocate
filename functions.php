@@ -529,10 +529,11 @@ function amber_register_meta_boxes( $meta_boxes ) {
 				// Array of 'value' => 'Label' pairs for select box
 				'options'     => array(
 					'AMBER Alert Plan' => __( 'AMBER Alert Plan', 'amber' ),
-					'Operational Checklist or Tool' => __( ' Operational Checklist or Tool', 'amber' ),
-					'Program Publication' => __( 'Program Publication', 'amber' ),
+					'AMBER in Indian Country' => __( 'AMBER in Indian Country', 'amber' ),
 					'Map or Diagram' => __( 'Map or Diagram', 'amber' ),
 					'Model Policy or Procedure' => __( 'Model Policy or Procedure', 'amber' ),
+					'Operational Checklist or Tool' => __( ' Operational Checklist or Tool', 'amber' ),
+					'Program Publication' => __( 'Program Publication', 'amber' ),
 					'Other' => __( 'Other', 'amber' ),
 				),
 				// Select multiple values, optional. Default is false.

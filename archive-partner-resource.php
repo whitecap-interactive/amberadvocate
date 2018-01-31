@@ -217,10 +217,11 @@ get_header(); ?>
 					        	<select id="partner-topic-search" onchange="partnerSearch('topic')">
 					                <option value="">Topic</option>
 					                <option value="AMBER Alert Plan">AMBER Alert Plan</option>
-					                <option value="Operational Checklist or Tool">Operational Checklist or Tool</option>
-					                <option value="Program Publication">Program Publication</option>
+					                <option value="AMBER in Indian Country">AMBER in Indian Country</option>
 					                <option value="Map or Diagram">Map or Diagram</option>
 					                <option value="Model Policy or Procedure">Model Policy or Procedure</option>
+					                <option value="Operational Checklist or Tool">Operational Checklist or Tool</option>
+					                <option value="Program Publication">Program Publication</option>
 					                <option value="Other">Other</option>
 					            </select>
 					        </th>
