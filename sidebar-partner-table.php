@@ -18,10 +18,10 @@
                 <option value="AAC and CHM">AAC and CHM</option>
                 <option value="AAC">AAC</option>
                 <option value="CHM">CHM</option>
+                <option value="CART">CART Commander/Coordinator</option>
                 <option value="NCMEC">NCMEC</option>
                 <option value="ICMEC">ICMEC</option>
                 <option value="USDOJ">USDOJ</option>
-                <option value="CART Commander/Coordinator">CART Commander/Coordinator</option>
                 <option value="AA/NCJTC-STAFF">AA/NCJTC-STAFF</option>
                 <option value="AA/NCJTC-ASSOC">AA/NCJTC-ASSOC</option>
                 <option value="OTHER">OTHER</option>
@@ -170,7 +170,7 @@
         else if ($partner_role == 'NCMEC Partner') { $partner_role_abbr = 'NCMEC'; }
         else if ($partner_role == 'ICMEC Partner') { $partner_role_abbr = '(ICMEC)'; }
         else if ($partner_role == 'US-DOJ-OJJDP Partner') { $partner_role_abbr = 'USDOJ'; }
-        else if ($partner_role == 'CART Commander/Coordinator') { $partner_role_abbr = 'CART Commander/Coordinator'; }
+        else if ($partner_role == 'CART Commander/Coordinator') { $partner_role_abbr = 'CART'; }
         else if ($partner_role == 'AATTAP-NCJTC Staff') { $partner_role_abbr = 'AA/NCJTC-STAFF'; }
         else if ($partner_role == 'AATTAP-NCJTC Associate') { $partner_role_abbr = 'AA/NCJTC-ASSOC'; }
         else if ($partner_role == 'OTHER-NCJTC Partner') { $partner_role_abbr = 'OTHER'; }
