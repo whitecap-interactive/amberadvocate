@@ -21,6 +21,7 @@
                 <option value="CART">CART Commander/Coordinator</option>
                 <option value="NCMEC">NCMEC</option>
                 <option value="ICMEC">ICMEC</option>
+                <option value="International Partner-AMBER Alert/Missing Persons">International Partner-AMBER Alert/Missing Persons</option>
                 <option value="USDOJ">USDOJ</option>
                 <option value="AA/NCJTC-STAFF">AA/NCJTC-STAFF</option>
                 <option value="AA/NCJTC-ASSOC">AA/NCJTC-ASSOC</option>
@@ -169,6 +170,7 @@
         else if ($partner_role == 'Missing Person Clearinghouse Manager') { $partner_role_abbr = 'CHM'; }
         else if ($partner_role == 'NCMEC Partner') { $partner_role_abbr = 'NCMEC'; }
         else if ($partner_role == 'ICMEC Partner') { $partner_role_abbr = '(ICMEC)'; }
+        else if ($partner_role == 'International Partner-AMBER Alert/Missing Persons') { $partner_role_abbr = 'International Partner-AMBER Alert/Missing Persons'; }
         else if ($partner_role == 'US-DOJ-OJJDP Partner') { $partner_role_abbr = 'USDOJ'; }
         else if ($partner_role == 'CART Commander/Coordinator') { $partner_role_abbr = 'CART'; }
         else if ($partner_role == 'AATTAP-NCJTC Staff') { $partner_role_abbr = 'AA/NCJTC-STAFF'; }
