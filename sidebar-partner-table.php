@@ -167,7 +167,7 @@
 
         if ($partner_role == 'AMBER Alert Coordinator/Co-Coordinator and Missing Person Clearinghouse Manager') { $partner_role_abbr = 'AAC and CHM'; }
         else if ($partner_role == 'AMBER Alert Coordinator/Co-Coordinator') { $partner_role_abbr = 'AAC'; }
-        else if ($partner_role == 'Missing Person Clearinghouse Manager' || 'Missing Person Clearinghouse Manager/Coordinator') { $partner_role_abbr = 'CHM'; }
+        else if ($partner_role == 'Missing Person Clearinghouse Manager' || $partner_role == 'Missing Person Clearinghouse Manager/Coordinator') { $partner_role_abbr = 'CHM'; }
         else if ($partner_role == 'NCMEC Partner') { $partner_role_abbr = 'NCMEC'; }
         else if ($partner_role == 'ICMEC Partner') { $partner_role_abbr = '(ICMEC)'; }
         else if ($partner_role == 'International Partner-AMBER Alert/Missing Persons') { $partner_role_abbr = 'International Partner'; }
