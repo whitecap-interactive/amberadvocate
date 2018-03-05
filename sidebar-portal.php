@@ -18,8 +18,9 @@
 		<ul class="partner-links">
 			<li><i class="fa fa-address-book" aria-hidden="true"></i><a href="/partner-portal/partner-listing">Partner Listing</a></li>
 			<li><i class="fa fa-folder-open" aria-hidden="true"></i><a href="/partner-resources/">Partner Resources</a></li>
-			<li><i class="fa fa-file-o" aria-hidden="true"></i><a href="/partner-portal/submit-a-document">Submit a Document</a></li>
+			<li><i class="fa fa-play-circle" aria-hidden="true"></i><a href="/partner-portal/videos-and-webinars/">Partner Videos & Webinars</a></li>
 			<li><i class="fa fa-inbox" aria-hidden="true"></i><a href="/forums">Partner Discussion Board</a></li>
+			<li><i class="fa fa-file-o" aria-hidden="true"></i><a href="/partner-portal/submit-a-document">Submit a Document</a></li>
 			<li><i class="fa fa-wrench" aria-hidden="true"></i></i><a href="/partner-portal/contact-us">Submit a Correction</a></li>
 		</ul>
 
