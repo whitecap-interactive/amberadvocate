@@ -18,7 +18,7 @@
                 <option value="AAC and CHM">AAC and CHM</option>
                 <option value="AAC">AAC</option>
                 <option value="CHM">CHM</option>
-                <option value="CART">CART Commander/Coordinator</option>
+                <option value="CART">CART Program Member</option>
                 <option value="NCMEC">NCMEC</option>
                 <option value="ICMEC">ICMEC</option>
                 <option value="International Partner-AMBER Alert/Missing Persons">International Partner-AMBER Alert/Missing Persons</option>
@@ -167,12 +167,12 @@
 
         if ($partner_role == 'AMBER Alert Coordinator/Co-Coordinator and Missing Person Clearinghouse Manager') { $partner_role_abbr = 'AAC and CHM'; }
         else if ($partner_role == 'AMBER Alert Coordinator/Co-Coordinator') { $partner_role_abbr = 'AAC'; }
-        else if ($partner_role == 'Missing Person Clearinghouse Manager') { $partner_role_abbr = 'CHM'; }
+        else if ($partner_role == 'Missing Person Clearinghouse Manager' || $partner_role == 'Missing Person Clearinghouse Manager/Coordinator') { $partner_role_abbr = 'CHM'; }
         else if ($partner_role == 'NCMEC Partner') { $partner_role_abbr = 'NCMEC'; }
         else if ($partner_role == 'ICMEC Partner') { $partner_role_abbr = '(ICMEC)'; }
         else if ($partner_role == 'International Partner-AMBER Alert/Missing Persons') { $partner_role_abbr = 'International Partner'; }
         else if ($partner_role == 'US-DOJ-OJJDP Partner') { $partner_role_abbr = 'USDOJ'; }
-        else if ($partner_role == 'CART Commander/Coordinator') { $partner_role_abbr = 'CART'; }
+        else if ($partner_role == 'CART Program Member') { $partner_role_abbr = 'CART'; }
         else if ($partner_role == 'AATTAP-NCJTC Staff') { $partner_role_abbr = 'AA/NCJTC-STAFF'; }
         else if ($partner_role == 'AATTAP-NCJTC Associate') { $partner_role_abbr = 'AA/NCJTC-ASSOC'; }
         else if ($partner_role == 'OTHER-NCJTC Partner') { $partner_role_abbr = 'OTHER'; }
