@@ -198,8 +198,21 @@ function amberadvocate_scripts() {
 	if ( is_singular() && comments_open() && get_option( 'thread_comments' ) ) {
 		wp_enqueue_script( 'comment-reply' );
 	}
+
+	wp_enqueue_script( 'amberadvocate-flipclock', get_template_directory_uri() . '/js/flipclock.js', array(), '20170811', true );
+    wp_enqueue_style('flipclock-css',get_template_directory_uri().'/css/flipclock.css');
+
 }
 add_action( 'wp_enqueue_scripts', 'amberadvocate_scripts' );
+
+/*function counter_scripts() {
+    if( is_page( array( 'home' ) ){
+        wp_enqueue_script( 'amberadvocate-flipclock', get_template_directory_uri() . '/js/flipclock.js', array(), '20170811', true );
+    	wp_enqueue_style('flipclock-css',get_template_directory_uri().'/css/flipclock.css');
+    }
+}
+add_action( 'wp_enqueue_scripts', 'counter_scripts' );*/
+
 
 
 /**

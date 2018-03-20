@@ -110,3 +110,23 @@ jQuery(document).on('ready', function() {
         infinite: true
     });
 });
+
+// Flip Clock Counter For Home Page
+// http://flipclockjs.com/faces/counter
+var clock;
+jQuery(document).ready(function() {
+	// Instantiate a counter
+	clock = new FlipClock(jQuery('.clock'), {
+		clockFace: 'Counter',
+		autoStart: true,
+		minimumDigits: 3,
+		callbacks: {
+            interval: function() {
+                var time = clock.getTime().time;
+                if(time > 922) { //change this number
+                clock.stop();
+                } 
+            }
+        }
+	});
+});
