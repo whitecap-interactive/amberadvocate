@@ -44,7 +44,8 @@ get_header(); ?>
 					</style>
 
 					<div class="large-counter-container">
-						<img src="https://www.amberadvocate.org/wp-content/uploads/2018/01/910-NCMEC.jpg" width="300" alt="910 Children Recovered With the Help of AMBER Alert"/>
+						<!-- <img src="https://www.amberadvocate.org/wp-content/uploads/2018/01/910-NCMEC.jpg" width="300" alt="910 Children Recovered With the Help of AMBER Alert"/> -->
+						<div class="clock" style="margin: 0 auto; max-width: 210px;"></div>
 						<h1 style="text-align: center;"><span style="color: #ffffff;">CHILDREN SAFELY RECOVERED WITH THE HELP OF</span></h1>
 						<img src="https://www.amberadvocate.org/wp-content/uploads/2018/01/NEW-AMBER-ALERT-LOGO.png" alt="" width="169" height="136" border="0" alt="AMBER Alert" />
 					</div>				
