@@ -1861,9 +1861,9 @@ var FlipClock;
 		 
 		_setInterval: function(callback) {
 			var t = this;
-	
+		
 			/*t._interval(callback);*/
-			t.interval = 5;
+			t.interval = 1; //EDITED BY BRIAN @ WHITECAP
 
 
 			t.timer = setInterval(function() {		
