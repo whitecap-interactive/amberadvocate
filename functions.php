@@ -543,6 +543,7 @@ function amber_register_meta_boxes( $meta_boxes ) {
 				'options'     => array(
 					'AMBER Alert Plan' => __( 'AMBER Alert Plan', 'amber' ),
 					'AMBER in Indian Country' => __( 'AMBER in Indian Country', 'amber' ),
+					'CART Resource' => __( 'CART Resource', 'amber' ),
 					'Map or Diagram' => __( 'Map or Diagram', 'amber' ),
 					'Model Policy or Procedure' => __( 'Model Policy or Procedure', 'amber' ),
 					'Operational Checklist or Tool' => __( ' Operational Checklist or Tool', 'amber' ),
