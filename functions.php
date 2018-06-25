@@ -153,6 +153,28 @@ function create_post_type() {
         /*'show_in_nav_menus' => true*/
 		)
 	);
+	register_post_type( 'spanish-partner',
+		array(
+			'labels' => array(
+				'name' => __( 'Spanish Speaking Partners' ),
+				'singular_name' => __( 'Spanish Speaking Partner' )
+			),
+		'public' => true,
+		'has_archive' => true,
+		'capability_type' => 'post',
+		'rewrite' => array('slug' => 'spanish-partner'),  
+		'supports' => array(
+            'title',
+            'excerpt',
+            'editor',
+            'custom-fields',
+            'revisions',
+            'thumbnail',
+            'author'),
+        'taxonomies' => array(),
+        
+		)
+	);
 } 
 
 
@@ -163,7 +185,7 @@ function create_post_type() {
 function change_post_type_labels() {
   global $wp_post_types;
 
-  // Get the post labels
+  // Change the partner resource post labels
   $postLabels = $wp_post_types['partner-resource']->labels;
   $postLabels->name = 'Partner Resources';
   $postLabels->singular_name = 'Partner Resources';
@@ -175,8 +197,23 @@ function change_post_type_labels() {
   $postLabels->search_items = 'Search Partner Resources';
   $postLabels->not_found = 'No Partner Resources found';
   $postLabels->not_found_in_trash = 'No Partner Resources found in Trash';
+
+
+  // Change the spanish partner post labels
+  $postLabels = $wp_post_types['spanish-partner']->labels;
+  $postLabels->name = 'Spanish Speaking Partners';
+  $postLabels->singular_name = 'Spanish Speaking Partners';
+  $postLabels->add_new = 'Add New Spanish Speaking Partner';
+  $postLabels->add_new_item = 'Add New Spanish Speaking Partner';
+  $postLabels->edit_item = 'Edit Spanish Speaking Partner';
+  $postLabels->new_item = 'Spanish Speaking Partners';
+  $postLabels->view_item = 'View Spanish Speaking Partners';
+  $postLabels->search_items = 'Search Spanish Speaking Partners';
+  $postLabels->not_found = 'No Spanish Speaking Partners found';
+  $postLabels->not_found_in_trash = 'No Spanish Speaking Partners found in Trash';
 }
 add_action( 'init', 'change_post_type_labels' );
+
 
 /**
  * Enqueue scripts and styles.
@@ -576,6 +613,81 @@ function amber_register_meta_boxes( $meta_boxes ) {
 				'desc'  => __( 'Name of person that submitted this document', 'amber' ),
 				'type'  => 'text',
 			),
+        )
+    );
+
+    // Spanish Speaking Partner CUSTOM POST TYPE meta fields
+    $meta_boxes[] = array(
+        'title'      => __( 'Spanish Speaking Partner Information', 'amber' ),
+        'post_types' => 'spanish-partner',
+        'fields'     => array(
+
+			// Name TEXT
+			array(
+				'name'  => __( 'Name', 'amber' ),
+				'id'    => "{$prefix}ss_name_text",
+				'desc'  => __( 'Partner Name', 'amber' ),
+				'type'  => 'text',
+			),
+			// Email TEXT
+			array(
+				'name'  => __( 'Email', 'amber' ),
+				'id'    => "{$prefix}ss_email_text",
+				'desc'  => __( 'Partner Email Address', 'amber' ),
+				'type'  => 'text',
+			),
+			// STATE SELECT BOX
+			array(
+				'name'        => __( 'State', 'amber' ),
+				'id'          => "{$prefix}ss_state_select",
+				'type'        => 'select',
+				// Array of 'value' => 'Label' pairs for select box
+				'options'     => array(
+					'AMBER Alert Staff/Associates' => __('AMBER Alert Staff/Associates', 'amber'),
+					'Internation Centre for Missing and Exploited Children' => __('Internation Centre for Missing and Exploited Children', 'amber'),
+					'National Criminal Justice Training Center Staff/Associates' => __('National Criminal Justice Training Center Staff/Associates', 'amber'),
+					'National Center for Missing and Exploited Children' => __('National Center for Missing and Exploited Children', 'amber'),
+					'US Department of Justice Officials/Staff' => __('US Department of Justice Officials/Staff', 'amber'),
+
+					'Aguascalientes' => __('Aguascalientes', 'amber'),
+					'Baja California' => __('Baja California', 'amber'),
+					'Baja California Sur' => __('Baja California Sur', 'amber'),
+					'Campeche' => __('Campeche', 'amber'),
+					'Chiapas' => __('Chiapas', 'amber'),
+					'Chihuahua' => __('Chihuahua', 'amber'),
+					'Coahuila' => __('Coahuila', 'amber'),
+					'Colima' => __('Colima', 'amber'),
+					'Mexico City' => __('Mexico City', 'amber'),
+					'Durango' => __('Durango', 'amber'),
+					'Guanajuato' => __('Guanajuato', 'amber'),
+					'Guerrero' => __('Guerrero', 'amber'),
+					'Hidalgo' => __('Hidalgo', 'amber'),
+					'Jalisco' => __('Jalisco', 'amber'),
+					'México' => __('México', 'amber'),
+					'Michoacán' => __('Michoacán', 'amber'),
+					'Morelos' => __('Morelos', 'amber'),
+					'Nayarit' => __('Nayarit', 'amber'),
+					'Nuevo León' => __('Nuevo León', 'amber'),
+					'Oaxaca' => __('Oaxaca', 'amber'),
+					'Puebla' => __('Puebla', 'amber'),
+					'Querétaro' => __('Querétaro', 'amber'),
+					'Quintana Roo' => __('Quintana Roo', 'amber'),
+					'San Luis Potosí' => __('San Luis Potosí', 'amber'),
+					'Sinaloa' => __('Sinaloa', 'amber'),
+					'Sonora' => __('Sonora', 'amber'),
+					'Tabasco' => __('Tabasco', 'amber'),
+					'Tamaulipas' => __('Tamaulipas', 'amber'),
+					'Tlaxcala' => __('Tlaxcala', 'amber'),
+					'Veracruz' => __('Veracruz', 'amber'),
+					'Yucatán' => __('Yucatán', 'amber'),
+					'Zacateca' => __('Zacateca', 'amber'),
+				),
+				// Select multiple values, optional. Default is false.
+				'multiple'    => false,
+				'std'         => 'value2',
+				'placeholder' => __( 'Select State', 'amber' ),
+			),
+
         )
     );
     return $meta_boxes;
