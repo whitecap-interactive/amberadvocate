@@ -13,20 +13,7 @@
     <thead><tr>
         <th class="name-search"><input type="text" id="partner-name-search" onkeyup="partnerSearch('name')" placeholder="Search for Partner Name" title="Type in a name"></th>
         <th class="role-select">
-            <select id="partner-role-search" onchange="partnerSearch('role')">
-                <option value="">Role</option>
-                <option value="AAC and CHM">AAC and CHM</option>
-                <option value="AAC">AAC</option>
-                <option value="CHM">CHM</option>
-                <option value="CART">CART Program Member</option>
-                <option value="NCMEC">NCMEC</option>
-                <option value="ICMEC">ICMEC</option>
-                <option value="International Partner-AMBER Alert/Missing Persons">International Partner-AMBER Alert/Missing Persons</option>
-                <option value="USDOJ">USDOJ</option>
-                <option value="AA/NCJTC-STAFF">AA/NCJTC-STAFF</option>
-                <option value="AA/NCJTC-ASSOC">AA/NCJTC-ASSOC</option>
-                <option value="OTHER">OTHER</option>
-            </select>
+            <!-- email column -->
         </th>
         <th class="state-select">
             <select id="partner-state-search" onchange="partnerSearch('state')">
@@ -73,99 +60,34 @@
     </tr></thead>
     <tbody>
 
-
-
-
-
-
-
-
-
-
 <?php
-    /*Taken From Partner Resources*/
+
     /*Create our own loop after the real loop so we can sort by User Meta State Name*/
-    $args = array( 'post_type' => 'partner-resource');
+    $args = array( 'post_type' => 'spanish-partner');
 
     $loop = new WP_Query( $args );
     while ( $loop->have_posts() ) : $loop->the_post();
-     
-        $files[] = rwmb_meta( 'amber_file_advanced',  $post_id = get_the_ID() );
-        
-        if ( !empty( $files ) ) {
 
-            $doc_state = rwmb_meta( 'amber_state_select',  $post_id = $files["ID"] ); 
-            //echo $doc_state . '<br/>';
-            $doc_region = rwmb_meta( 'amber_region_select',  $post_id = $files["ID"] );
-            $doc_topic = rwmb_meta( 'amber_topic_select',  $post_id = $files["ID"] );
-            $doc_date = rwmb_meta( 'amber_submitted_date',  $post_id = $files["ID"] );
-            $doc_submitter = rwmb_meta( 'amber_uploaded_by_text',  $post_id = $files["ID"] ); 
-            $doc_url_array = rwmb_meta( 'amber_file_advanced' );
-            $document_id = $files["ID"];
-            foreach ( $doc_url_array as $docs ) {
-                $doc_url = $docs['url'];
-            }
-            $title = get_the_title();
-        }
+        //as of PHP 7 you can use
+        //$var = $array["key"] ?? "default-value";
+        // which is synonymous to:
+        //$var = isset($array["key"]) ? $array["key"] : "default-value";
+        //$ss_name = rwmb_meta( 'amber_ss_name_text' ) ?? "";
+        $ss_name = get_the_title();
+        $ss_email = rwmb_meta( 'amber_ss_email_text' ) ?? "";
+        $ss_state = rwmb_meta( 'amber_ss_state_select' ) ?? "";
+        $ss_contact_array[] = array("name"=>$ss_name,"email"=>$ss_email, "state"=>$ss_state);   
 
-        $docArray[] = array("state"=>$doc_state,"region"=>$doc_region, "topic"=>$doc_topic, "url"=>$doc_url, "date"=>$doc_date, "submitter"=>$doc_submitter, "title"=>$title);  
     endwhile;
 
-    /*echo '<pre>';
-    var_dump($files);
-    echo '</pre>';*/
-    usort($docArray, create_function('$a, $b', 'return strnatcasecmp($a["state"], $b["state"]);'));
-    /*echo '<pre>';
-    var_dump($docArray);
-    echo '</pre>';*/
-?>
-
-
-
-
-   
-
-
-
-
-
-
-<?php
-	/*$partners = get_users( 'blog_id=1&role=partner&exclude=1' );*/
-    $partners = $docArray;
-    usort($partners, create_function('$a, $b', 'return strnatcasecmp($a->last_name, $b->last_name);'));
+    usort($ss_contact_array, create_function('$a, $b', 'return strnatcasecmp($a["name"], $b["name"]);'));
+    
+    $partners = $ss_contact_array;
     foreach ( $partners as $partner ) {
-    	$partner_state_name = get_user_meta($partner->ID, 'state', true);
-
-        $partner_role = get_user_meta($partner->ID, 'partner_role', true);
-
-        if ($partner_role == 'AMBER Alert Coordinator/Co-Coordinator and Missing Person Clearinghouse Manager') { $partner_role_abbr = 'AAC and CHM'; }
-        else if ($partner_role == 'AMBER Alert Coordinator/Co-Coordinator') { $partner_role_abbr = 'AAC'; }
-        else if ($partner_role == 'Missing Person Clearinghouse Manager' || $partner_role == 'Missing Person Clearinghouse Manager/Coordinator') { $partner_role_abbr = 'CHM'; }
-        else if ($partner_role == 'NCMEC Partner') { $partner_role_abbr = 'NCMEC'; }
-        else if ($partner_role == 'ICMEC Partner') { $partner_role_abbr = '(ICMEC)'; }
-        else if ($partner_role == 'International Partner-AMBER Alert/Missing Persons') { $partner_role_abbr = 'International Partner'; }
-        else if ($partner_role == 'US-DOJ-OJJDP Partner') { $partner_role_abbr = 'USDOJ'; }
-        else if ($partner_role == 'CART Program Member') { $partner_role_abbr = 'CART'; }
-        else if ($partner_role == 'AATTAP-NCJTC Staff') { $partner_role_abbr = 'AA/NCJTC-STAFF'; }
-        else if ($partner_role == 'AATTAP-NCJTC Associate') { $partner_role_abbr = 'AA/NCJTC-ASSOC'; }
-        else if ($partner_role == 'OTHER-NCJTC Partner') { $partner_role_abbr = 'OTHER'; }
-        else { $partner_role_abbr = ''; }
-
-
-		if ( $post = get_page_by_path( $partner_state_name, OBJECT, 'state' ) ){
-			$state_id = $post->ID;
-		}    
-		else{
-			$state_id = 0;
-		}	
-		$region = rwmb_meta( 'amber_region', $args = array(), $state_id );
     	echo '<tr>' .
-    		 '<td class="partner-name"><a href="' . get_author_posts_url( $partner->ID ) . '">' . $partner->user_firstname . ' ' . $partner->user_lastname . '</a></td>'.
-    		 '<td class="partner-role">' . $partner_role_abbr . '</td>' .
-             '<td class="partner-state"><a href="/states/' . $partner_state_name . '">' . $partner_state_name . '</a></td>' . 
-    		 //'<td>State ID: ' . $state_id . '</td>' .
-    		 // '<td class="partner-region">' . $region . '</td>' .
+    		 '<td class="partner-name">' . $partner['name'] . '</td>'.
+    		 '<td class="partner-role">' . $partner['email'] . '</td>' .
+             '<td class="partner-state">' . $partner['state'] . '</td>' . 
     		 '</tr>';
     }  
 ?>

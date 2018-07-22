@@ -211,6 +211,17 @@ function change_post_type_labels() {
   $postLabels->search_items = 'Search Spanish Speaking Partners';
   $postLabels->not_found = 'No Spanish Speaking Partners found';
   $postLabels->not_found_in_trash = 'No Spanish Speaking Partners found in Trash';
+
+
+  //Remove unnecessary fields
+  remove_post_type_support( 'spanish-partner', 'editor');
+  remove_post_type_support( 'spanish-partner', 'thumbnail');
+  remove_post_type_support( 'spanish-partner', 'excerpt');
+  remove_post_type_support( 'spanish-partner', 'trackbacks');
+  remove_post_type_support( 'spanish-partner', 'custom-fields');
+  remove_post_type_support( 'spanish-partner', 'comments');
+  remove_post_type_support( 'spanish-partner', 'page-attributes');
+  remove_post_type_support( 'spanish-partner', 'post-formats');
 }
 add_action( 'init', 'change_post_type_labels' );
 
@@ -623,12 +634,12 @@ function amber_register_meta_boxes( $meta_boxes ) {
         'fields'     => array(
 
 			// Name TEXT
-			array(
-				'name'  => __( 'Name', 'amber' ),
-				'id'    => "{$prefix}ss_name_text",
-				'desc'  => __( 'Partner Name', 'amber' ),
-				'type'  => 'text',
-			),
+			// array(
+			// 	'name'  => __( 'Name', 'amber' ),
+			// 	'id'    => "{$prefix}ss_name_text",
+			// 	'desc'  => __( 'Partner Name', 'amber' ),
+			// 	'type'  => 'text',
+			// ),
 			// Email TEXT
 			array(
 				'name'  => __( 'Email', 'amber' ),
