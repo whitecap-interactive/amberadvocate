@@ -8,7 +8,7 @@ get_header(); ?>
         
 
             <header class="post-entry-header green">
-                <h1 class="entry-title">Spanish Speaking Contact Listing</h1>
+                <h1 class="entry-title">Contactos</h1>
             </header><!-- .entry-header --> 
 
             <div class="content-channel channel-padding">
