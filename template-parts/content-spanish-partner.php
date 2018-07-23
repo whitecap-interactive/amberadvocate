@@ -20,13 +20,14 @@ get_header(); ?>
                     <div class="col-sm-5" id="partner-info">
 
                 	<?php
-                		$ss_id = get_the_ID();
-				        $ss_name = get_the_title();
-				        $ss_email = rwmb_meta( 'amber_ss_email_text' ) ?? "";
-				        $ss_state = rwmb_meta( 'amber_ss_state_select' ) ?? "";
+                        $ss_id = $wp_query->post->ID; 
+				        $ss_name = get_the_title($ss_id);
+				        $ss_email = rwmb_meta( 'amber_ss_email_text', $args = '', $post_id = $ss_id ) ?? "";
+				        $ss_state = rwmb_meta( 'amber_ss_state_select', $args = '', $post_id = $ss_id ) ?? "";
                 	?>
-
-
+                   
+                    <div>
+                    </div>
                     <div class="partner-detail-panel">
                         <h2><?php echo $ss_name; ?><span><?php echo $ss_state; ?></span></h2>
                         <div class="partner-role"><?php echo $partner_role; ?></div>
