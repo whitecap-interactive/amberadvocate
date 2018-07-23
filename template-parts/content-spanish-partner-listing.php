@@ -29,8 +29,7 @@
                 <?php get_sidebar('spanish-partner-table'); ?> 
             </div>
             <div class="col-sm-5">
-                <h2 style="color:red">What content goes here?</h2>
-                 <?php get_sidebar('portal'); ?>
+                 <?php //get_sidebar('portal'); ?>
             </div>
 		</div>
 	</div><!-- .entry-content -->

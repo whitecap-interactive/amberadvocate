@@ -73,10 +73,11 @@
         // which is synonymous to:
         //$var = isset($array["key"]) ? $array["key"] : "default-value";
         //$ss_name = rwmb_meta( 'amber_ss_name_text' ) ?? "";
+        $ss_id = get_the_ID();
         $ss_name = get_the_title();
         $ss_email = rwmb_meta( 'amber_ss_email_text' ) ?? "";
         $ss_state = rwmb_meta( 'amber_ss_state_select' ) ?? "";
-        $ss_contact_array[] = array("name"=>$ss_name,"email"=>$ss_email, "state"=>$ss_state);   
+        $ss_contact_array[] = array("post_id" => $ss_id, "name"=>$ss_name, "email"=>$ss_email, "state"=>$ss_state);   
 
     endwhile;
 
@@ -85,7 +86,7 @@
     $partners = $ss_contact_array;
     foreach ( $partners as $partner ) {
     	echo '<tr>' .
-    		 '<td class="partner-name">' . $partner['name'] . '</td>'.
+    		 '<td class="partner-name"><a href="' . get_permalink( $partner['post_id'] ) . '">' . $partner['name'] . '</a></td>'.
     		 '<td class="partner-role">' . $partner['email'] . '</td>' .
              '<td class="partner-state">' . $partner['state'] . '</td>' . 
     		 '</tr>';

@@ -162,7 +162,7 @@ function create_post_type() {
 		'public' => true,
 		'has_archive' => true,
 		'capability_type' => 'post',
-		'rewrite' => array('slug' => 'spanish-partner'),  
+		'rewrite' => array('slug' => 'socio'),  
 		'supports' => array(
             'title',
             'excerpt',
