@@ -24,6 +24,8 @@
         
     </style>
 	<div class="content-channel channel-padding">
+        <h3>Cómo usar la lista de información de contacto con los socios:</h3>
+        <p>Haga clic en un nombre para ver la información completa de la persona a la derecha de esta lista. Puede ordenar la lista por estado o comenzar a escribir un nombre en la sección “Buscar” para buscar a una persona si no está seguro del nombre completo o de la ortografía.</p>
 		<div class="row change-direction">
             <div class="col-sm-7">
                 <?php get_sidebar('spanish-partner-table'); ?> 
