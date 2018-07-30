@@ -22,8 +22,13 @@ get_header(); ?>
                 	<?php
                         $ss_id = $wp_query->post->ID; 
 				        $ss_name = get_the_title($ss_id);
-				        $ss_email = rwmb_meta( 'amber_ss_email_text', $args = '', $post_id = $ss_id ) ?? "";
 				        $ss_state = rwmb_meta( 'amber_ss_state_select', $args = '', $post_id = $ss_id ) ?? "";
+                        $ss_email = rwmb_meta( 'amber_ss_email_text', $args = '', $post_id = $ss_id ) ?? "";
+                        $ss_office_phone = rwmb_meta( 'amber_ss_office_phone_text', $args = '', $post_id = $ss_id ) ?? "";
+                        $ss_cellular = rwmb_meta( 'amber_ss_cellular_text', $args = '', $post_id = $ss_id ) ?? "";
+                        $ss_rank = rwmb_meta( 'amber_ss_rank_text', $args = '', $post_id = $ss_id ) ?? "";
+                        $ss_agency = rwmb_meta( 'amber_ss_agency_text', $args = '', $post_id = $ss_id ) ?? "";
+                        $ss_bio = rwmb_meta( 'amber_ss_bio_wysiwyg', $args = '', $post_id = $ss_id ) ?? "";
                 	?>
                    
                     <div>
@@ -33,15 +38,15 @@ get_header(); ?>
                         <div class="partner-role"><?php echo $partner_role; ?></div>
                         <hr />
                         <p>
-                            <i class="fa fa-phone fa-lg" aria-hidden="true"></i> &nbsp;  <?php echo $partner_office_phone; ?> &nbsp;  | &nbsp;  <i class="fa fa-mobile fa-lg" aria-hidden="true"></i> &nbsp;  <?php echo $partner_mobile_phone; ?>
+                            <i class="fa fa-phone fa-lg" aria-hidden="true"></i> &nbsp;  <?php echo $ss_office_phone; ?> &nbsp;  | &nbsp;  <i class="fa fa-mobile fa-lg" aria-hidden="true"></i> &nbsp;  <?php echo $ss_cellular; ?>
                             <br />
-                            <i class="fa fa-envelope fa-lg" aria-hidden="true"></i> &nbsp;  <a href="mailto:<?php echo $user->user_email; ?>" target="_blank"><?php echo $ss_email; ?></a>
+                            <i class="fa fa-envelope fa-lg" aria-hidden="true"></i> &nbsp;  <a href="mailto:<?php echo $ss_email; ?>" target="_blank"><?php echo $ss_email; ?></a>
                         </p>
                         <hr />
-                        <p>Rank or Title:<br /><?php echo $partner_rank_or_title; ?></p>
-                        <p>Employing Agency:<br /><?php echo $partner_employing_agency; ?></p>
+                        <p>Rank or Title:<br /><?php echo $ss_rank; ?></p>
+                        <p>Employing Agency:<br /><?php echo $ss_agency; ?></p>
                         <hr />
-                        <p>Bio:<br /><?php echo $partner_bio; ?></p>
+                        <p>Bio:<br /><?php echo $ss_bio; ?></p>
                     </div>
 
                     <?php //get_sidebar('portal'); ?>
