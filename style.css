@@ -1617,6 +1617,10 @@ table.partner-table th.role-select select {
 		width: 100%;
 		max-width: 120px;
 	}
+	table.partner-table th.state-select-spanish select {
+		width: 100%;
+		max-width: 190px;
+	}
 
 }
 

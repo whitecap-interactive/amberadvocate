@@ -12,10 +12,10 @@
 <table id="partner-table" class="partner-table">
     <thead><tr>
         <th class="name-search"><input type="text" id="partner-name-search" onkeyup="partnerSearch('name')" placeholder="Busque el nombre de un socio" title="Type in a name"></th>
-        <th class="role-select">
+        <!-- <th class="role-select"> -->
             <!-- email column -->
-        </th>
-        <th class="state-select">
+        <!--  </th> -->
+        <th class="state-select-spanish">
             <select id="partner-state-search" onchange="partnerSearch('state')">
                 <option value="">Seleccione un Estado</option>
                 <option value="AMBER Alert Staff/Associates">AMBER Alert Staff/Associates</option>
@@ -87,7 +87,7 @@
     foreach ( $partners as $partner ) {
     	echo '<tr>' .
     		 '<td class="partner-name"><a href="' . get_permalink( $partner['post_id'] ) . '">' . $partner['name'] . '</a></td>'.
-    		 '<td class="partner-role">' . $partner['email'] . '</td>' .
+    		 //'<td class="partner-role">' . $partner['email'] . '</td>' .
              '<td class="partner-state">' . $partner['state'] . '</td>' . 
     		 '</tr>';
     }  
