@@ -11,13 +11,13 @@
 <div class="partner-table-container">
 <table id="partner-table" class="partner-table">
     <thead><tr>
-        <th class="name-search"><input type="text" id="partner-name-search" onkeyup="partnerSearch('name')" placeholder="Search for Partner Name" title="Type in a name"></th>
+        <th class="name-search"><input type="text" id="partner-name-search" onkeyup="partnerSearch('name')" placeholder="Busque el nombre de un socio" title="Type in a name"></th>
         <th class="role-select">
             <!-- email column -->
         </th>
         <th class="state-select">
             <select id="partner-state-search" onchange="partnerSearch('state')">
-                <option value="">Select a State</option>
+                <option value="">Seleccione un Estado</option>
                 <option value="AMBER Alert Staff/Associates">AMBER Alert Staff/Associates</option>
                 <option value="Internation Centre for Missing and Exploited Children">Internation Centre for Missing and Exploited Children</option>
                 <option value="National Criminal Justice Training Center Staff/Associates">National Criminal Justice Training Center Staff/Associates</option>
