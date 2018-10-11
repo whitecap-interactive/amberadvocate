@@ -78,7 +78,7 @@ get_header(); ?>
 					/*echo '<pre>';
 					var_dump($files);
 					echo '</pre>';*/
-					usort($docArray, create_function('$a, $b', 'return strnatcasecmp($a["state"], $b["state"]);'));
+					usort($docArray, create_function('$a, $b', 'return strnatcasecmp($a["title"], $b["title"]);'));
 					/*echo '<pre>';
 					var_dump($docArray);
 					echo '</pre>';*/
@@ -88,6 +88,9 @@ get_header(); ?>
 					    	<th>
 					    		<button id="reset-button"><i class="fa fa-refresh" aria-hidden="true"></i></button>
 					    	</th>
+					        <th>
+					        	<input type="text" id="partner-name-search" onkeyup="partnerSearch('name')" placeholder="Search for Doc Name" title="Type in a name">
+					        </th>
 					        <th>
 					            <select id="partner-region-search" onchange="partnerSearch('region')">
 					                <option value="">Region</option>
@@ -227,9 +230,6 @@ get_header(); ?>
 					            </select>
 					        </th>
 					        <th>
-					        	<input type="text" id="partner-name-search" onkeyup="partnerSearch('name')" placeholder="Search for Doc Name" title="Type in a name">
-					        </th>
-					        <th>
 					        	Upload Date
 					        </th>
 					        <th>
@@ -242,6 +242,7 @@ get_header(); ?>
 								foreach ($docArray as $doc) {
 									echo '<tr>';
 									echo '<td></td>';
+									echo '<td class="partner-name"><a target="_blank" href="' . esc_url( $doc['url'] ) . '" rel="bookmark">' . $doc['title'] . '</a></td>';
 									echo '<td class="partner-region">';
 									echo $doc['region'];
 									echo '</td>';
@@ -251,7 +252,6 @@ get_header(); ?>
 									echo '<td class="partner-topic">';
 									echo $doc['topic'];
 									echo '</td>';
-									echo '<td class="partner-name"><a target="_blank" href="' . esc_url( $doc['url'] ) . '" rel="bookmark">' . $doc['title'] . '</a></td>';
 									echo '<td>';
 									echo $doc['date'];
 									echo '</td>';
