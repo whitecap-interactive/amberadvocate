@@ -86,11 +86,10 @@ get_header(); ?>
 					<table id="partner-table" class="partner-table">				    
 						<tr>
 					    	<th>
-					    		<!--<button id="reset-button"><i class="fa fa-refresh" aria-hidden="true"></i></button>-->
-					    		<button id="reset-button" onclick="location.reload()"><i class="fa fa-refresh" aria-hidden="true"></i></button>
+					    		<button id="reset-button"><i class="fa fa-refresh" aria-hidden="true"></i></button>
 					    	</th>
 					        <th>
-					        	<input type="text" id="partner-name-search" onkeyup="resourceSearch('name')" onchange="sortTable(1)" placeholder="Search for Doc Name" title="Type in a name">
+					        	<input type="text" id="partner-name-search" onkeyup="resourceSearch('name')" placeholder="Search for Doc Name" title="Type in a name">
 					        </th>
 					        <th>
 					            <select id="partner-region-search" onchange="resourceSearch('region')">
