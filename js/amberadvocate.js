@@ -6,6 +6,7 @@ jQuery(function() {
 	    jQuery('#partner-state-search').val('').trigger('change');
 	    /*jQuery('#partner-region-search').val('').trigger('change');*/
 	    jQuery('#partner-topic-search').val('').trigger('change');
+      //sortTable(1);
 	})
 
     jQuery('ul#primary-menu > li').click(function(event) {
@@ -100,6 +101,29 @@ function partnerSearch(searchParam) {
     }
     //jQuery('table.partner-list tr:visible').removeClass('odd').filter(':odd').addClass('odd');
 }
+
+function resourceSearch(searchParam) {
+    var input, filter, table, tr, td, i;
+    if (searchParam == 'name') { jQuery('select#partner-region-search').val(""); jQuery('select#partner-state-search').val(""); }
+    if (searchParam == 'region') { jQuery('input#partner-name-search').attr('placeholder', "Search for Doc Name"); jQuery('select#partner-state-search').val(""); }
+    if (searchParam == 'state') { jQuery('input#partner-name-search').attr('placeholder', "Search for Doc Name"); jQuery('select#partner-region-search').val(""); }
+    input = document.getElementById("partner-" + searchParam + "-search");
+    filter = input.value.toUpperCase();
+    table = document.getElementById("partner-table");
+    tr = table.getElementsByTagName("tr");
+    for (i = 0; i < tr.length; i++) {
+        td = tr[i].getElementsByClassName('partner-' + searchParam )[0];
+        if (td) {
+            if (td.innerHTML.toUpperCase().indexOf(filter) > -1) {
+                tr[i].style.display = "";
+            } else {
+                tr[i].style.display = "none";
+            }
+        }       
+    }
+    //jQuery('table.partner-list tr:visible').removeClass('odd').filter(':odd').addClass('odd');
+}
+
 jQuery(document).on('ready', function() {
     jQuery(".lazy").slick({
         accessibility: true, 

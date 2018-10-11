@@ -86,13 +86,14 @@ get_header(); ?>
 					<table id="partner-table" class="partner-table">				    
 						<tr>
 					    	<th>
-					    		<button id="reset-button"><i class="fa fa-refresh" aria-hidden="true"></i></button>
+					    		<!--<button id="reset-button"><i class="fa fa-refresh" aria-hidden="true"></i></button>-->
+					    		<button id="reset-button" onclick="location.reload()"><i class="fa fa-refresh" aria-hidden="true"></i></button>
 					    	</th>
 					        <th>
-					        	<input type="text" id="partner-name-search" onkeyup="partnerSearch('name')" placeholder="Search for Doc Name" title="Type in a name">
+					        	<input type="text" id="partner-name-search" onkeyup="resourceSearch('name')" onchange="sortTable(1)" placeholder="Search for Doc Name" title="Type in a name">
 					        </th>
 					        <th>
-					            <select id="partner-region-search" onchange="partnerSearch('region')">
+					            <select id="partner-region-search" onchange="resourceSearch('region')">
 					                <option value="">Region</option>
 					                <option value="1">1</option>
 					                <option value="2">2</option>
@@ -103,7 +104,7 @@ get_header(); ?>
 					            </select>
 					        </th>
 					        <th class="partner-state-header">
-					            <select id="partner-state-search" onchange="partnerSearch('state')">
+					            <select id="partner-state-search" onchange="resourceSearch('state')">
 					                <option value="">Select a State</option>
 					                <option value="AMBER Alert Staff/Associates">AMBER Alert Staff/Associates</option>
 									<option value="Internation Centre for Missing and Exploited Children">Internation Centre for Missing and Exploited Children</option>
@@ -217,7 +218,7 @@ get_header(); ?>
 					            </select>	                                          
 					        </th>
 					        <th>
-					        	<select id="partner-topic-search" onchange="partnerSearch('topic')">
+					        	<select id="partner-topic-search" onchange="resourceSearch('topic')">
 					                <option value="">Topic</option>
 					                <option value="AMBER Alert Plan">AMBER Alert Plan</option>
 					                <option value="AMBER in Indian Country">AMBER in Indian Country</option>
