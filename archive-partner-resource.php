@@ -229,7 +229,7 @@ get_header(); ?>
 					                <option value="Other">Other</option>
 					            </select>
 					        </th>
-					        <th>
+					        <th onclick="sortTable(5)">
 					        	Upload Date
 					        </th>
 					        <th>
