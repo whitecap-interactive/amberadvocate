@@ -147,7 +147,7 @@ jQuery(document).ready(function() {
 		callbacks: {
             interval: function() {
                 var time = clock.getTime().time;
-                if(time > 922) { //change this number
+                if(time > 932) { //change this number
                 clock.stop();
                 } 
             }
