@@ -384,6 +384,30 @@ function amber_register_meta_boxes( $meta_boxes ) {
 				'type'  => 'text',
 				'desc'  => 'Please include http:// or https:// in the URL',
 			),
+			// DIVIDER
+			array(
+				'type' => 'divider',
+				'id'   => 'fake_divider_id', // Not used, but needed
+			),
+			// TEXT
+			array(
+				'name' => __( 'AMBER Alert in Indian Country Phone Number', $prefix ),
+				'id'   => "{$prefix}amberic_phone",
+				'type' => 'text',
+			),
+			// EMAIL
+			array(
+				'name' => __( 'AMBER Alert in Indian Country Email', $prefix ),
+				'id'   => "{$prefix}amberic_email",
+				'type' => 'email',
+			),
+			// TEXT
+			array(
+				'name'  => esc_html__( 'AMBER Alert in Indian Country Website', $prefix ),
+				'id'    => "{$prefix}amberic_website",
+				'type'  => 'text',
+				'desc'  => 'Please include http:// or https:// in the URL',
+			),
 			// SUBHEAD TEXT
 			array(
 				'name' => __( 'Additional Notes', $prefix ),
