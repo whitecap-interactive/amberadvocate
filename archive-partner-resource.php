@@ -21,6 +21,7 @@ get_header(); ?>
 
 					<header class="post-entry-header green">
 						<h1>Partner Resources</h1>
+						<h3>Resources are shown in alpha-order by title. Search by doc name, or sort by region, state or topic.</h3>
 						<?php
 							//the_archive_title( '<h1 class="page-title">', '</h1>' );
 							the_archive_description( '<div class="archive-description">', '</div>' );
@@ -86,7 +87,7 @@ get_header(); ?>
 					<table id="partner-table" class="partner-table">				    
 						<tr>
 					    	<th>
-					    		<button id="reset-button"><i class="fa fa-refresh" aria-hidden="true"></i></button>
+					    		<button id="reset-button" onclick="location.reload()"><i class="fa fa-refresh" aria-hidden="true"></i></button>
 					    	</th>
 					        <th>
 					        	<input type="text" id="partner-name-search" onkeyup="resourceSearch('name')" placeholder="Search for Doc Name" title="Type in a name">
