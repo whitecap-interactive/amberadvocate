@@ -92,6 +92,25 @@
 				</table>
 				<?php } ?>
 
+				<?php if (!empty(rwmb_meta('amber_amberic_phone')) || !empty(rwmb_meta('amber_amberic_email')) || !empty(rwmb_meta('amber_amberic_website'))) { ?>
+					<table cellpadding="0" cellspacing="0" border="0" class="partner-table">
+						<tr>
+							<th colspan="2"><strong>Amber Alert In Indian Country Contact</strong></th>
+						</tr>
+						<tr>
+							<td>Amber Alert In Indian Country Phone Number</td>
+							<td><?php echo rwmb_meta('amber_amberic_phone');?></td>
+						</tr>
+						<tr>
+							<td>Amber Alert In Indian Country Email</td>
+							<td><?php echo rwmb_meta('amber_amberic_email');?></td>
+						</tr>
+						<tr>
+							<td>Amber Alert In Indian Country Website</td>
+							<td><?php echo rwmb_meta('amber_amberic_website');?></td>
+						</tr>
+					</table>
+				<?php } ?>
 			</div>
 
 			<!-- <div class="col-sm-3">
