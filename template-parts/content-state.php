@@ -81,17 +81,7 @@
 						</td>
 					</tr>
 				</table>
-				<?php if (!empty(rwmb_meta('amber_notes'))) { ?>
-				<table cellpadding="0" cellspacing="0" border="0" class="partner-table">
-					<tr>
-						<th><strong>Additional Notes</strong></th>
-					</tr>
-					<tr>
-						<td><?php echo rwmb_meta('amber_notes');?></td>
-					</tr>
-				</table>
-				<?php } ?>
-
+				
 				<?php if (!empty(rwmb_meta('amber_amberic_phone')) || !empty(rwmb_meta('amber_amberic_email')) || !empty(rwmb_meta('amber_amberic_website'))) { ?>
 					<table cellpadding="0" cellspacing="0" border="0" class="partner-table">
 						<tr>
@@ -103,13 +93,26 @@
 						</tr>
 						<tr>
 							<td>Amber Alert In Indian Country Email</td>
-							<td><?php echo rwmb_meta('amber_amberic_email');?></td>
+							<td><a href="mailto:<?php echo rwmb_meta('amber_amberic_email');?>" target="_blank"><?php echo rwmb_meta('amber_amberic_email');?></a></td>
 						</tr>
 						<tr>
 							<td>Amber Alert In Indian Country Website</td>
-							<td><?php echo rwmb_meta('amber_amberic_website');?></td>
+							<td>
+							<?php if (!empty(rwmb_meta('amber_amberic_website'))) { echo '<a class="button light-orange" href="' . rwmb_meta('amber_amberic_website') . '" target="_blank">Website</a>'; } ?>
+						</td>
 						</tr>
 					</table>
+				<?php } ?>
+
+				<?php if (!empty(rwmb_meta('amber_notes'))) { ?>
+				<table cellpadding="0" cellspacing="0" border="0" class="partner-table">
+					<tr>
+						<th><strong>Additional Notes</strong></th>
+					</tr>
+					<tr>
+						<td><?php echo rwmb_meta('amber_notes');?></td>
+					</tr>
+				</table>
 				<?php } ?>
 			</div>
 
