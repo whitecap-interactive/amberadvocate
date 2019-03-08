@@ -187,7 +187,7 @@ function create_post_type() {
 		//'rewrite' => array('slug' => 'states'),  
 		'supports' => array(
             'title',
-            'excerpt',
+            //'excerpt',
             'editor',
             'custom-fields',
             'revisions',
@@ -806,12 +806,7 @@ function amber_register_meta_boxes( $meta_boxes ) {
 				'id'   => "{$cart}_email",
 				'type' => 'email',
 			),
-			// DIVIDER
-			//array(
-			//	'type' => 'divider',
-			//	'id'   => 'fake_divider_id', // Not used, but needed
-			//),
-			// TEXT
+			// TEXTAREA
 			array(
 				'name'  => __( 'CART Physical Address', $cart  ),
 				'id'    => "{$cart}_address",
@@ -916,7 +911,7 @@ function amber_register_meta_boxes( $meta_boxes ) {
 			),			
 			// RADIO
 			array(
-				'name'        => esc_html__( 'Is CART Active', $cart ),
+				'name'        => esc_html__( 'Is CART Active?', $cart ),
 				'id'          => "{$cart}_active",
 				'type'        => 'radio',
 				// Array of 'value' => 'Label' pairs for select box
@@ -927,7 +922,7 @@ function amber_register_meta_boxes( $meta_boxes ) {
 			),
 			// RADIO
 			array(
-				'name'        => esc_html__( 'Is CART Certified', $cart ),
+				'name'        => esc_html__( 'Is CART Certified?', $cart ),
 				'id'          => "{$cart}_certified",
 				'type'        => 'radio',
 				// Array of 'value' => 'Label' pairs for select box
@@ -935,7 +930,257 @@ function amber_register_meta_boxes( $meta_boxes ) {
 					'Yes' => esc_html__( 'Yes', $cart ),
                     'No' => esc_html__( 'No', $cart )
 				),
-			),							
+			),	
+			// DATE
+			array(
+			    'name'       => esc_html__( 'Date of Original CART Certification', $cart ),
+			    'id'         => "{$cart}_certification_date",
+			    'type'       => 'date',
+			    // Date picker options. See here http://api.jqueryui.com/datepicker
+			    'js_options' => array(
+			        'dateFormat'      => 'yy-mm-dd',
+			        'showButtonPanel' => false,
+			    ),
+			    // Display inline?
+			    'inline' => false,
+			    // Save value as timestamp?
+			    'timestamp' => false,
+			),
+			// RADIO
+			array(
+				'name'        => esc_html__( 'Has the CART Recertified?', $cart ),
+				'id'          => "{$cart}_recertified",
+				'type'        => 'radio',
+				// Array of 'value' => 'Label' pairs for select box
+				'options'     => array(
+					'Yes' => esc_html__( 'Yes', $cart ),
+                    'No' => esc_html__( 'No', $cart )
+				),
+			),			
+			// DATE
+			array(
+			    'name'       => esc_html__( 'Date of CART Recertification', $cart ),
+			    'id'         => "{$cart}_recertification_date",
+			    'type'       => 'date',
+			    // Date picker options. See here http://api.jqueryui.com/datepicker
+			    'js_options' => array(
+			        'dateFormat'      => 'yy-mm-dd',
+			        'showButtonPanel' => false,
+			    ),
+			    // Display inline?
+			    'inline' => false,
+			    // Save value as timestamp?
+			    'timestamp' => false,
+			),
+			// SELECT BOX
+			array(
+				'name'        => __( 'CART Type', $cart ),
+				'id'          => "{$cart}_type",
+				'type'        => 'select',
+				// Array of 'value' => 'Label' pairs for select box
+				'options'     => array(
+					'Regional' => __( 'Regional', $cart ),
+					'Statewide' => __( 'Statewide', $cart ),
+					'County Wide' => __( 'County Wide', $cart ),
+					'Single Agency' => __( 'Single Agency', $cart ),
+					'Tribal' => __( 'Tribal', $cart ),
+				),
+				// Select multiple values, optional. Default is false.
+				'multiple'    => false,
+				'std'         => 'value2',
+				'placeholder' => __( 'Select CART Type', $cart ),
+			),	
+			// RADIO
+			array(
+				'name'        => esc_html__( 'Is your CART affiliated with a Tribal Organization?', $cart ),
+				'id'          => "{$cart}_tribal_affiliation",
+				'type'        => 'radio',
+				// Array of 'value' => 'Label' pairs for select box
+				'options'     => array(
+					'Yes' => esc_html__( 'Yes', $cart ),
+                    'No' => esc_html__( 'No', $cart )
+				),
+			),	
+			// TEXTAREA
+			array(
+				'name'  => __( 'If yes, please provide Tribal Organization name', $cart  ),
+				'id'    => "{$cart}_tribal_organization",
+				'type' => 'textarea',
+				'cols' => 10,
+				'rows' => 1,
+			),	
+			// RADIO
+			array(
+				'name'        => esc_html__( 'Number of agencies in CART Program', $cart ),
+				'id'          => "{$cart}_number_agencies",
+				'type'        => 'radio',
+				// Array of 'value' => 'Label' pairs for select box
+				'options'     => array(
+					'1-10' => esc_html__( '1-10', $cart ),
+                    '10-20' => esc_html__( '10-20', $cart ),
+                    '20-30' => esc_html__( '20-30', $cart ),
+				),
+			),
+			// TEXTAREA
+			array(
+				'name'  => __( 'List the names of agencies included in the CART', $cart  ),
+				'id'    => "{$cart}_agency_names",
+				'type' => 'textarea',
+				'cols' => 10,
+				'rows' => 5,
+			),	
+			// DIVIDER
+			//array(
+			//	'type' => 'divider',
+			//	'id'   => 'fake_divider_id', // Not used, but needed
+			//),
+
+        )
+    );
+
+    $meta_boxes[] = array(
+        'title'      => __( 'AATAP Liason Activity Reporting', $cart ),
+        'post_types' => 'cart',
+        'fields'     => array(	
+			// GROUP
+	        array(
+	            'name'      => __( 'Annual Activity Reporting', $cart ),
+	            'id' => 'annual_activity_reporting', // ID group
+	            'type' => 'group', // Data of “Group”
+	            'clone' => true,
+	            // List of custom fields
+	            'fields' => array(
+					// TEXT
+					array(
+						'name'  => __( 'Liason Name', $cart  ),
+						'id'    => "{$cart}_liason_name",
+						'type'  => 'text',
+					),
+					// SELECT BOX
+					array(
+						'name'        => esc_html__( 'Region', $cart ),
+						'id'          => "{$cart}_liason_region",
+						'type'        => 'select',
+						// Array of 'value' => 'Label' pairs for select box
+						'options'     => array(
+							'1' => esc_html__( '1', $cart ),
+		                    '2' => esc_html__( '2', $cart ),
+		                    '3' => esc_html__( '3', $cart ),
+		                    '4' => esc_html__( '4', $cart ),
+		                    '5' => esc_html__( '5', $cart )
+						),
+						// Select multiple values, optional. Default is false.
+						'multiple'    => false,
+						'placeholder' => esc_html__( 'Select a Region', $cart ),
+					),	            	
+					// TEXT
+					array(
+						'name'  => __( 'Year', $cart  ),
+						'id'    => "{$cart}_liason_activity_year",
+						'type'  => 'text',
+					),	            	
+					// GROUP
+			        array(
+			            'name'      => __( 'First 6 Months Activity Reporting', $cart ),
+			            'id' => 'first_six_months', // ID group
+			            'type' => 'group', // Data of “Group”
+			            // List of custom fields
+			            'fields' => array(
+							// SELECT BOX
+							array(
+								'name'        => esc_html__( 'Method', $cart ),
+								'id'          => "{$cart}_liason_first_six_method",
+								'type'        => 'select',
+								// Array of 'value' => 'Label' pairs for select box
+								'options'     => array(
+									'Phone' => esc_html__( 'Phone', $cart ),
+				                    'Email' => esc_html__( 'Email', $cart ),
+								),
+								// Select multiple values, optional. Default is false.
+								'multiple'    => false,
+								'placeholder' => esc_html__( 'Select a Method', $cart ),
+							),	
+							// TEXTAREA
+							array(
+								'name'  => __( 'CART Member Contacted', $cart  ),
+								'id'    => "{$cart}_liason_first_six_member",
+								'type' => 'textarea',
+								'cols' => 10,
+								'rows' => 2,
+							),	
+							// RADIO
+							array(
+								'name'        => esc_html__( 'Training Requested?', $cart ),
+								'id'          => "{$cart}_liason_first_six_training",
+								'type'        => 'radio',
+								// Array of 'value' => 'Label' pairs for select box
+								'options'     => array(
+									'Yes' => esc_html__( 'Yes', $cart ),
+				                    'No' => esc_html__( 'No', $cart )
+								),
+							),	
+							// TEXTAREA
+							array(
+								'name'  => __( 'Notes/Summary', $cart  ),
+								'id'    => "{$cart}_liason_first_six_notes",
+								'type' => 'textarea',
+								'cols' => 10,
+								'rows' => 5,
+							),											
+			            ),
+			        ),
+					// GROUP
+			        array(
+			            'name'      => __( 'Second 6 Months Activity Reporting', $cart ),
+			            'id' => 'second_six_months', // ID group
+			            'type' => 'group', // Data of “Group”
+			            // List of custom fields
+			            'fields' => array(
+							// SELECT BOX
+							array(
+								'name'        => esc_html__( 'Method', $cart ),
+								'id'          => "{$cart}_liason_second_six_method",
+								'type'        => 'select',
+								// Array of 'value' => 'Label' pairs for select box
+								'options'     => array(
+									'Phone' => esc_html__( 'Phone', $cart ),
+				                    'Email' => esc_html__( 'Email', $cart ),
+								),
+								// Select multiple values, optional. Default is false.
+								'multiple'    => false,
+								'placeholder' => esc_html__( 'Select a Method', $cart ),
+							),	
+							// TEXTAREA
+							array(
+								'name'  => __( 'CART Member Contacted', $cart  ),
+								'id'    => "{$cart}_liason_second_six_member",
+								'type' => 'textarea',
+								'cols' => 10,
+								'rows' => 2,
+							),	
+							// RADIO
+							array(
+								'name'        => esc_html__( 'Training Requested?', $cart ),
+								'id'          => "{$cart}_liason_second_six_training",
+								'type'        => 'radio',
+								// Array of 'value' => 'Label' pairs for select box
+								'options'     => array(
+									'Yes' => esc_html__( 'Yes', $cart ),
+				                    'No' => esc_html__( 'No', $cart )
+								),
+							),	
+							// TEXTAREA
+							array(
+								'name'  => __( 'Notes/Summary', $cart  ),
+								'id'    => "{$cart}_liason_second_six_notes",
+								'type' => 'textarea',
+								'cols' => 10,
+								'rows' => 5,
+							),											
+			            ),
+			        ),			        													
+	            ),
+	        ),					        
         )
     );
 
