@@ -175,6 +175,28 @@ function create_post_type() {
         
 		)
 	);
+	register_post_type( 'cart',
+		array(
+			'labels' => array(
+				'name' => __( 'CART' ),
+				'singular_name' => __( 'CART' )
+			),
+		'public' => true,
+		'has_archive' => true,
+		'capability_type' => 'post',
+		//'rewrite' => array('slug' => 'states'),  
+		'supports' => array(
+            'title',
+            'excerpt',
+            'editor',
+            'custom-fields',
+            'revisions',
+            'thumbnail',
+            'author'),
+        'taxonomies' => array('category', 'post_tag'),
+        /*'show_in_nav_menus' => true*/
+		)
+	);	
 } 
 
 
@@ -759,6 +781,164 @@ function amber_register_meta_boxes( $meta_boxes ) {
 			),
         )
     );
+
+    // META BOXES FOR CART CUSTOM POST TYPE
+	$cart = 'cart';
+    $meta_boxes[] = array(
+        'title'      => __( 'CART Information', $cart ),
+        'post_types' => 'cart',
+        'fields'     => array(
+			// TEXT
+			array(
+				'name'  => __( 'CART Coordinator First Name', $cart  ),
+				'id'    => "{$cart}_first_name",
+				'type'  => 'text',
+			),
+			// TEXT
+			array(
+				'name'  => __( 'CART Coordinator Last Name', $cart  ),
+				'id'    => "{$cart}_last_name",
+				'type'  => 'text',
+			),
+			// EMAIL
+			array(
+				'name' => __( 'CART Coordinator Email', $cart ),
+				'id'   => "{$cart}_email",
+				'type' => 'email',
+			),
+			// DIVIDER
+			//array(
+			//	'type' => 'divider',
+			//	'id'   => 'fake_divider_id', // Not used, but needed
+			//),
+			// TEXT
+			array(
+				'name'  => __( 'CART Physical Address', $cart  ),
+				'id'    => "{$cart}_address",
+				'type' => 'textarea',
+				'cols' => 10,
+				'rows' => 3,
+			),
+			// TEXT
+			array(
+				'name' => __( 'Program Primary Contact Phone Number', $cart ),
+				'id'   => "{$cart}_primary_phone",
+				'type' => 'text',
+			),
+			// STATE SELECT BOX
+			array(
+				'name'        => __( 'State of CART', $cart ),
+				'id'          => "{$cart}_state_select",
+				'type'        => 'select',
+				// Array of 'value' => 'Label' pairs for select box
+				'options'     => array(
+					'Alabama' => __('Alabama', $cart),
+					'Alaska' => __('Alaska', $cart),
+					'American Samoa' => __('American Samoa', $cart),
+					'Arizona' => __('Arizona', $cart),
+					'Arkansas' => __('Arkansas', $cart),
+					'California' => __('California', $cart),
+					'Colorado' => __('Colorado', $cart),
+					'Connecticut' => __('Connecticut', $cart),
+					'Delaware' => __('Delaware', $cart),
+					'District of Columbia' => __('District of Columbia', $cart),
+					'Federated States of Micronesia' => __('Federated States of Micronesia', $cart),
+					'Florida' => __('Florida', $cart),
+					'Georgia' => __('Georgia', $cart),
+					'Guam' => __('Guam', $cart),
+					'Hawaii' => __('Hawaii', $cart),
+					'Idaho' => __('Idaho', $cart),
+					'Illinois' => __('Illinois', $cart),
+					'Indiana' => __('Indiana', $cart),
+					'Iowa' => __('Iowa', $cart),
+					'Kansas' => __('Kansas', $cart),
+					'Kentucky' => __('Kentucky', $cart),
+					'Louisiana' => __('Louisiana', $cart),
+					'Maine' => __('Maine', $cart),
+					'Marshall Islands' => __('Marshall Islands', $cart),
+					'Maryland' => __('Maryland', $cart),
+					'Massachusetts' => __('Massachusetts', $cart),
+					'Michigan' => __('Michigan', $cart),
+					'Minnesota' => __('Minnesota', $cart),
+					'Mississippi' => __('Mississippi', $cart),
+					'Missouri' => __('Missouri', $cart),
+					'Montana' => __('Montana', $cart),
+					'Nebraska' => __('Nebraska', $cart),
+					'Nevada' => __('Nevada', $cart),
+					'New Hampshire' => __('New Hampshire', $cart),
+					'New Jersey' => __('New Jersey', $cart),
+					'New Mexico' => __('New Mexico', $cart),
+					'New York' => __('New York', $cart),
+					'North Carolina' => __('North Carolina', $cart),
+					'North Dakota' => __('North Dakota', $cart),
+					'Northern Mariana Islands' => __('Northern Mariana Islands', $cart),
+					'Ohio' => __('Ohio', $cart),
+					'Oklahoma' => __('Oklahoma', $cart),
+					'Oregon' => __('Oregon', $cart),
+					'Palau' => __('Palau', $cart),
+					'Pennsylvania' => __('Pennsylvania', $cart),
+					'Puerto Rico' => __('Puerto Rico', $cart),
+					'Rhode Island' => __('Rhode Island', $cart),
+					'South Carolina' => __('South Carolina', $cart),
+					'South Dakota' => __('South Dakota', $cart),
+					'Tennessee' => __('Tennessee', $cart),
+					'Texas' => __('Texas', $cart),
+					'Utah' => __('Utah', $cart),
+					'Vermont' => __('Vermont', $cart),
+					'Virgin Islands' => __('Virgin Islands', $cart),
+					'Virginia' => __('Virginia', $cart),
+					'Washington' => __('Washington', $cart),
+					'West Virginia' => __('West Virginia', $cart),
+					'Wisconsin' => __('Wisconsin', $cart),
+					'Wyoming' => __('Wyoming', $cart),
+				),
+				// Select multiple values, optional. Default is false.
+				'multiple'    => false,
+				'std'         => '',
+				'placeholder' => __( 'Select State', $cart ),
+			),			
+			// SELECT BOX
+			array(
+				'name'        => esc_html__( 'CART AMBER Alert Region', $cart ),
+				'id'          => "{$cart}_region",
+				'type'        => 'select',
+				// Array of 'value' => 'Label' pairs for select box
+				'options'     => array(
+					'1' => esc_html__( '1', $cart ),
+                    '2' => esc_html__( '2', $cart ),
+                    '3' => esc_html__( '3', $cart ),
+                    '4' => esc_html__( '4', $cart ),
+                    '5' => esc_html__( '5', $cart )
+				),
+				// Select multiple values, optional. Default is false.
+				'multiple'    => false,
+				'placeholder' => esc_html__( 'Select a Region', $cart ),
+			),			
+			// RADIO
+			array(
+				'name'        => esc_html__( 'Is CART Active', $cart ),
+				'id'          => "{$cart}_active",
+				'type'        => 'radio',
+				// Array of 'value' => 'Label' pairs for select box
+				'options'     => array(
+					'Yes' => esc_html__( 'Yes', $cart ),
+                    'No' => esc_html__( 'No', $cart )
+				),
+			),
+			// RADIO
+			array(
+				'name'        => esc_html__( 'Is CART Certified', $cart ),
+				'id'          => "{$cart}_certified",
+				'type'        => 'radio',
+				// Array of 'value' => 'Label' pairs for select box
+				'options'     => array(
+					'Yes' => esc_html__( 'Yes', $cart ),
+                    'No' => esc_html__( 'No', $cart )
+				),
+			),							
+        )
+    );
+
     return $meta_boxes;
 }
 
