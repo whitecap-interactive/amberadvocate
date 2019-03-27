@@ -1049,11 +1049,11 @@ function amber_register_meta_boxes( $meta_boxes ) {
 	            'type' => 'group', // Data of “Group”
 	            'clone' => true,
 	            // List of custom fields
-	            'fields' => array(
+	            'fields' => array(	            	
 					// TEXT
 					array(
-						'name'  => __( 'Liason Name', $cart  ),
-						'id'    => "{$cart}_liason_name",
+						'name'  => __( 'Year', $cart  ),
+						'id'    => "{$cart}_liason_activity_year",
 						'type'  => 'text',
 					),
 					// SELECT BOX
@@ -1072,11 +1072,11 @@ function amber_register_meta_boxes( $meta_boxes ) {
 						// Select multiple values, optional. Default is false.
 						'multiple'    => false,
 						'placeholder' => esc_html__( 'Select a Region', $cart ),
-					),	            	
+					),
 					// TEXT
 					array(
-						'name'  => __( 'Year', $cart  ),
-						'id'    => "{$cart}_liason_activity_year",
+						'name'  => __( 'Liason Name', $cart  ),
+						'id'    => "{$cart}_liason_name",
 						'type'  => 'text',
 					),
 					// SELECT BOX
