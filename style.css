@@ -1599,6 +1599,11 @@ table.partner-table th {
 	color: #fff;
 }
 
+table.sub-table th {
+	background: #999!important;
+	color: #fff!important;
+}
+
 table.partner-table th.name-search input {
 	min-width: 120px;
 }

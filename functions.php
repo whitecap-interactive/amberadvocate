@@ -1078,107 +1078,89 @@ function amber_register_meta_boxes( $meta_boxes ) {
 						'name'  => __( 'Year', $cart  ),
 						'id'    => "{$cart}_liason_activity_year",
 						'type'  => 'text',
-					),	            	
-					// GROUP
-			        array(
-			            'name'      => __( 'First 6 Months Activity Reporting', $cart ),
-			            'id' => 'first_six_months', // ID group
-			            'type' => 'group', // Data of “Group”
-			            // List of custom fields
-			            'fields' => array(
-							// SELECT BOX
-							array(
-								'name'        => esc_html__( 'Method', $cart ),
-								'id'          => "{$cart}_liason_first_six_method",
-								'type'        => 'select',
-								// Array of 'value' => 'Label' pairs for select box
-								'options'     => array(
-									'Phone' => esc_html__( 'Phone', $cart ),
-				                    'Email' => esc_html__( 'Email', $cart ),
-								),
-								// Select multiple values, optional. Default is false.
-								'multiple'    => false,
-								'placeholder' => esc_html__( 'Select a Method', $cart ),
-							),	
-							// TEXTAREA
-							array(
-								'name'  => __( 'CART Member Contacted', $cart  ),
-								'id'    => "{$cart}_liason_first_six_member",
-								'type' => 'textarea',
-								'cols' => 10,
-								'rows' => 2,
-							),	
-							// RADIO
-							array(
-								'name'        => esc_html__( 'Training Requested?', $cart ),
-								'id'          => "{$cart}_liason_first_six_training",
-								'type'        => 'radio',
-								// Array of 'value' => 'Label' pairs for select box
-								'options'     => array(
-									'Yes' => esc_html__( 'Yes', $cart ),
-				                    'No' => esc_html__( 'No', $cart )
-								),
-							),	
-							// TEXTAREA
-							array(
-								'name'  => __( 'Notes/Summary', $cart  ),
-								'id'    => "{$cart}_liason_first_six_notes",
-								'type' => 'textarea',
-								'cols' => 10,
-								'rows' => 5,
-							),											
-			            ),
-			        ),
-					// GROUP
-			        array(
-			            'name'      => __( 'Second 6 Months Activity Reporting', $cart ),
-			            'id' => 'second_six_months', // ID group
-			            'type' => 'group', // Data of “Group”
-			            // List of custom fields
-			            'fields' => array(
-							// SELECT BOX
-							array(
-								'name'        => esc_html__( 'Method', $cart ),
-								'id'          => "{$cart}_liason_second_six_method",
-								'type'        => 'select',
-								// Array of 'value' => 'Label' pairs for select box
-								'options'     => array(
-									'Phone' => esc_html__( 'Phone', $cart ),
-				                    'Email' => esc_html__( 'Email', $cart ),
-								),
-								// Select multiple values, optional. Default is false.
-								'multiple'    => false,
-								'placeholder' => esc_html__( 'Select a Method', $cart ),
-							),	
-							// TEXTAREA
-							array(
-								'name'  => __( 'CART Member Contacted', $cart  ),
-								'id'    => "{$cart}_liason_second_six_member",
-								'type' => 'textarea',
-								'cols' => 10,
-								'rows' => 2,
-							),	
-							// RADIO
-							array(
-								'name'        => esc_html__( 'Training Requested?', $cart ),
-								'id'          => "{$cart}_liason_second_six_training",
-								'type'        => 'radio',
-								// Array of 'value' => 'Label' pairs for select box
-								'options'     => array(
-									'Yes' => esc_html__( 'Yes', $cart ),
-				                    'No' => esc_html__( 'No', $cart )
-								),
-							),	
-							// TEXTAREA
-							array(
-								'name'  => __( 'Notes/Summary', $cart  ),
-								'id'    => "{$cart}_liason_second_six_notes",
-								'type' => 'textarea',
-								'cols' => 10,
-								'rows' => 5,
-							),											
-			            ),
-			        ),			        													
+					),
+					// SELECT BOX
+					array(
+						'name'        => esc_html__( 'First Six Months - Method', $cart ),
+						'id'          => "{$cart}_liason_first_six_method",
+						'type'        => 'select',
+						// Array of 'value' => 'Label' pairs for select box
+						'options'     => array(
+							'Phone' => esc_html__( 'Phone', $cart ),
+		                    'Email' => esc_html__( 'Email', $cart ),
+						),
+						// Select multiple values, optional. Default is false.
+						'multiple'    => false,
+						'placeholder' => esc_html__( 'Select a Method', $cart ),
+					),	
+					// TEXTAREA
+					array(
+						'name'  => __( 'First Six Months - CART Member Contacted', $cart  ),
+						'id'    => "{$cart}_liason_first_six_member",
+						'type' => 'textarea',
+						'cols' => 10,
+						'rows' => 2,
+					),	
+					// RADIO
+					array(
+						'name'        => esc_html__( 'First Six Months - Training Requested?', $cart ),
+						'id'          => "{$cart}_liason_first_six_training",
+						'type'        => 'radio',
+						// Array of 'value' => 'Label' pairs for select box
+						'options'     => array(
+							'Yes' => esc_html__( 'Yes', $cart ),
+		                    'No' => esc_html__( 'No', $cart )
+						),
+					),	
+					// TEXTAREA
+					array(
+						'name'  => __( 'First Six Months - Notes/Summary', $cart  ),
+						'id'    => "{$cart}_liason_first_six_notes",
+						'type' => 'textarea',
+						'cols' => 10,
+						'rows' => 5,
+					),
+					// SELECT BOX
+					array(
+						'name'        => esc_html__( 'Second Six Months - Method', $cart ),
+						'id'          => "{$cart}_liason_second_six_method",
+						'type'        => 'select',
+						// Array of 'value' => 'Label' pairs for select box
+						'options'     => array(
+							'Phone' => esc_html__( 'Phone', $cart ),
+		                    'Email' => esc_html__( 'Email', $cart ),
+						),
+						// Select multiple values, optional. Default is false.
+						'multiple'    => false,
+						'placeholder' => esc_html__( 'Select a Method', $cart ),
+					),	
+					// TEXTAREA
+					array(
+						'name'  => __( 'Second Six Months - CART Member Contacted', $cart  ),
+						'id'    => "{$cart}_liason_second_six_member",
+						'type' => 'textarea',
+						'cols' => 10,
+						'rows' => 2,
+					),	
+					// RADIO
+					array(
+						'name'        => esc_html__( 'Second Six Months - Training Requested?', $cart ),
+						'id'          => "{$cart}_liason_second_six_training",
+						'type'        => 'radio',
+						// Array of 'value' => 'Label' pairs for select box
+						'options'     => array(
+							'Yes' => esc_html__( 'Yes', $cart ),
+		                    'No' => esc_html__( 'No', $cart )
+						),
+					),	
+					// TEXTAREA
+					array(
+						'name'  => __( 'Second Six Months - Notes/Summary', $cart  ),
+						'id'    => "{$cart}_liason_second_six_notes",
+						'type' => 'textarea',
+						'cols' => 10,
+						'rows' => 5,
+					),			        													
 	            ),
 	        ),					        
         )

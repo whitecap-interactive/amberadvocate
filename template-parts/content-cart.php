@@ -121,15 +121,17 @@
 					        $liason_region = isset( $annual_report['cart_liason_region'] ) ? $annual_report['cart_liason_region'] : '';
 					        $liason_year = isset( $annual_report['cart_liason_activity_year'] ) ? $annual_report['cart_liason_activity_year'] : '';
 					        $liason_first_six_method = isset ( $annual_report['cart_liason_first_six_method'] ) ? $annual_report['cart_liason_first_six_method'] : '';
-
+					        $liason_first_six_member = isset ( $annual_report['cart_liason_first_six_member'] ) ? $annual_report['cart_liason_first_six_member'] : '';
+					        $liason_first_six_training = isset ( $annual_report['cart_liason_first_six_training'] ) ? $annual_report['cart_liason_first_six_training'] : '';
+					        $liason_first_six_notes = isset ( $annual_report['cart_liason_first_six_notes'] ) ? $annual_report['cart_liason_first_six_notes'] : '';
+					        $liason_second_six_method = isset ( $annual_report['cart_liason_second_six_method'] ) ? $annual_report['cart_liason_second_six_method'] : '';
+					        $liason_second_six_member = isset ( $annual_report['cart_liason_second_six_member'] ) ? $annual_report['cart_liason_second_six_member'] : '';
+					        $liason_second_six_training = isset ( $annual_report['cart_liason_second_six_training'] ) ? $annual_report['cart_liason_second_six_training'] : '';
+					        $liason_second_six_notes = isset ( $annual_report['cart_liason_second_six_notes'] ) ? $annual_report['cart_liason_second_six_notes'] : '';
 					        ?>
-					    <table cellpadding="0" cellspacing="0" border="0" class="partner-table">	
+					    <table cellpadding="0" cellspacing="0" border="0" class="partner-table sub-table">	
 					        <tr>
-								<th colspan="2"><strong>Annual Reporting: <?php echo $liason_year; ?> &nbsp; | Region: <?php echo $liason_region; ?></strong></th>
-							</tr>
-							<tr>
-								<td>Liason Name</td>
-								<td><?php echo $liason_name; ?></td>
+								<th colspan="2"><strong>Annual Reporting: <?php echo $liason_year; ?> &nbsp; | &nbsp; Region: <?php echo $liason_region; ?> &nbsp; | &nbsp; Liason Name: <?php echo $liason_name; ?></strong></th>
 							</tr>
 							<tr>
 								<th colspan="2">First Six Months</th>
@@ -139,8 +141,36 @@
 								<td><?php echo $liason_first_six_method; ?></td>
 							</tr>
 							<tr>
+								<td>CART Member Contacted</td>
+								<td><?php echo $liason_first_six_member; ?></td>
+							</tr>
+							<tr>
+								<td>Training requested?</td>
+								<td><?php echo $liason_first_six_training; ?></td>
+							</tr>
+							<tr>
+								<td>Notes</td>
+								<td><?php echo $liason_first_six_notes; ?></td>
+							</tr>
+							<tr>
 								<th colspan="2">Second Six Months</th>
 							</tr> 
+							<tr>
+								<td>Method</td>
+								<td><?php echo $liason_second_six_method; ?></td>
+							</tr>
+							<tr>
+								<td>CART Member Contacted</td>
+								<td><?php echo $liason_second_six_member; ?></td>
+							</tr>
+							<tr>
+								<td>Training requested?</td>
+								<td><?php echo $liason_second_six_training; ?></td>
+							</tr>
+							<tr>
+								<td>Notes</td>
+								<td><?php echo $liason_second_six_notes; ?></td>
+							</tr>							
 						</table>
 							
 					    <?php 
