@@ -1688,6 +1688,57 @@ table.partner-table strong {
 }
 
 /*--------------------------------------------------------------
+## CART DETAIL PAGE
+--------------------------------------------------------------*/
+
+.cart-meta {
+}
+
+.cart-meta button {
+	background: #FBA026;
+}
+
+/*.region {
+	font-size: 70%;
+	line-height: 3em;
+}*/
+
+.cart-meta table {
+	font-size: 1em;
+	line-height: 1.6em;
+	border: 1px solid #ddd;
+	margin: 0 0 20px 0;
+}
+
+.cart-meta table tr:nth-child(odd) {
+	background: #eee;
+}
+
+.cart-meta table td, .cart-meta table th {
+	padding: 0.5em 0.8em;
+	border: 1px solid #ddd;
+}
+
+.cart-meta table th {
+	background: #646566;
+	color: #fff;
+}
+
+.cart-meta table td:nth-child(odd) {
+	width: 50%;
+	padding: 0.5em 2em 0.5em 0.8em;
+}
+.cart-meta table td:nth-child(even) {
+	width: 50%;
+	/*text-align: center;*/
+}
+
+.cart-meta strong {
+	font-size: 1.3em;
+}
+
+
+/*--------------------------------------------------------------
 ## PARTNER PORTAL HOME/LOGIN
 --------------------------------------------------------------*/
 
