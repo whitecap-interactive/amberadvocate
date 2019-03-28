@@ -1965,3 +1965,14 @@ body.category-briefs header.post-entry-header {
 .sow-video-wrapper iframe { 
 	width: 100%; 
 }
+
+
+
+.cart-list-link {
+	float:right;
+}
+
+.cart-list-link a {
+	color: #fff;
+	text-decoration: underline;
+}

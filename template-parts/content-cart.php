@@ -23,7 +23,7 @@
 <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
 
 	
-	<header class="post-entry-header <?php echo $region_color; ?>">
+	<header class="post-entry-header purple">
 		<?php the_title( '<h1 class="entry-title"><span>', '</span></h1>' ); ?>
 		<?php echo '<h3>Region: ' . rwmb_meta('cart_region') . ' &nbsp; | &nbsp; State: ' . rwmb_meta('cart_state_select') . '</h3>'?>
 	</header><!-- .entry-header -->
@@ -39,7 +39,7 @@
 						<td><?php echo rwmb_meta('amber_region');?></td>
 					</tr> -->
 					<tr>
-						<th colspan="2"><strong>CART Information</strong></th>
+						<th colspan="2"><strong>CART Information</strong><div class="cart-list-link"><a href="/cart-admin/cart-listing/">Back to CART Listing</a></div></th>
 					</tr>
 					<tr>
 						<td>CART Coordinator Name</td>

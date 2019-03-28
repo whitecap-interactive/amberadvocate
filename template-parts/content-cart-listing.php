@@ -11,7 +11,7 @@
 
 <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
 
-    <header class="post-entry-header green">
+    <header class="post-entry-header purple">
         <?php
             $subhead = rwmb_meta('amber_subhead');
             if (!empty($subhead)) { 

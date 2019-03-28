@@ -1022,13 +1022,28 @@ function amber_register_meta_boxes( $meta_boxes ) {
 				),
 			),
 			// TEXTAREA
+			// array(
+			// 	'name'  => __( 'List the names of agencies included in the CART', $cart  ),
+			// 	'id'    => "{$cart}_agency_names",
+			// 	'type' => 'textarea',
+			// 	'cols' => 10,
+			// 	'rows' => 5,
+			// ),	
+			// WYSIWYG
 			array(
-				'name'  => __( 'List the names of agencies included in the CART', $cart  ),
-				'id'    => "{$cart}_agency_names",
-				'type' => 'textarea',
-				'cols' => 10,
-				'rows' => 5,
-			),	
+			    'name'    => __( 'List the names of agencies included in the CART', $cart  ),
+			    'id'      => "{$cart}_agency_names",
+			    'type'    => 'wysiwyg',
+
+			    // Set the 'raw' parameter to TRUE to prevent data being passed through wpautop() on save
+			    'raw'     => false,
+
+			    // Editor settings, see https://codex.wordpress.org/Function_Reference/wp_editor
+			    'options' => array(
+			        'textarea_rows' => 4,
+			        'teeny'         => true,
+			    ),
+			),			
 			// DIVIDER
 			//array(
 			//	'type' => 'divider',
