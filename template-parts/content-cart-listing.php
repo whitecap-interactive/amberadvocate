@@ -40,6 +40,7 @@
                             'post_type' => 'cart',
                         );
                         $the_query = new WP_Query( $args );
+
                     ?>
                     <table cellpadding="0" cellspacing="0" border="0">
                         <thead>
@@ -49,15 +50,18 @@
                                 <td>State</td>
                                 <td>Active/Inactive</td>
                                 <td>Certified/Non-Certified</td>
+                                <td></td>
                             </tr>
                         </thead>
-                    <?php if ( $the_query->have_posts() ) : while ( $the_query->have_posts() ) : $the_query->the_post(); ?>
+                    <?php if ( $the_query->have_posts() ) : while ( $the_query->have_posts() ) : $the_query->the_post(); 
+                        $post_id = get_the_ID(); ?>
                         <tr>
                             <td><a href="<?php the_permalink();?>"><?php the_title() ;?></a></td>
                             <td><?php echo rwmb_meta('cart_region'); ?></td>
                             <td><?php echo rwmb_meta('cart_state_select'); ?></td>
                             <td><?php echo rwmb_meta('cart_active'); ?></td>
                             <td><?php echo rwmb_meta('cart_active'); ?></td>
+                            <td><a href="/cart-admin/add-new-cart/?rwmb_frontend_field_post_id=<?php echo $post_id; ?>">Edit</a></td>
                         </tr>
                     <?php endwhile; else: ?> <p>Sorry, there are no posts to display</p> <?php endif; ?>
                     </table>

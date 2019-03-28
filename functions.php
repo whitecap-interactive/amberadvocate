@@ -786,6 +786,7 @@ function amber_register_meta_boxes( $meta_boxes ) {
 	$cart = 'cart';
     $meta_boxes[] = array(
         'title'      => __( 'CART Information', $cart ),
+        'id'         => 'cart_info_metabox',
         'post_types' => 'cart',
         'fields'     => array(
 			// TEXT
