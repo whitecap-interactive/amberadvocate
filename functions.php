@@ -1044,17 +1044,26 @@ function amber_register_meta_boxes( $meta_boxes ) {
         'fields'     => array(	
 			// GROUP
 	        array(
-	            'name'      => __( 'Annual Activity Reporting', $cart ),
-	            'id' => 'annual_activity_reporting', // ID group
+	            'name'      => __( 'Biannual Activity Reporting', $cart ),
+	            'id' => 'biannual_activity_reporting', // ID group
 	            'type' => 'group', // Data of “Group”
 	            'clone' => true,
 	            // List of custom fields
-	            'fields' => array(	            	
-					// TEXT
+				'fields' => array(	            	
+					// DATE
 					array(
-						'name'  => __( 'Year', $cart  ),
-						'id'    => "{$cart}_liason_activity_year",
-						'type'  => 'text',
+					    'name'       => esc_html__( 'Activity Report Date', $cart ),
+					    'id'         => "{$cart}_liason_report_date",
+					    'type'       => 'date',
+					    // Date picker options. See here http://api.jqueryui.com/datepicker
+					    'js_options' => array(
+					        'dateFormat'      => 'mm-dd-yy',
+					        'showButtonPanel' => false,
+					    ),
+					    // Display inline?
+					    'inline' => false,
+					    // Save value as timestamp?
+					    'timestamp' => false,
 					),
 					// SELECT BOX
 					array(
@@ -1081,8 +1090,8 @@ function amber_register_meta_boxes( $meta_boxes ) {
 					),
 					// SELECT BOX
 					array(
-						'name'        => esc_html__( 'First Six Months - Method', $cart ),
-						'id'          => "{$cart}_liason_first_six_method",
+						'name'        => esc_html__( 'Method', $cart ),
+						'id'          => "{$cart}_liason_method",
 						'type'        => 'select',
 						// Array of 'value' => 'Label' pairs for select box
 						'options'     => array(
@@ -1095,16 +1104,16 @@ function amber_register_meta_boxes( $meta_boxes ) {
 					),	
 					// TEXTAREA
 					array(
-						'name'  => __( 'First Six Months - CART Member Contacted', $cart  ),
-						'id'    => "{$cart}_liason_first_six_member",
+						'name'  => __( 'CART Member Contacted', $cart  ),
+						'id'    => "{$cart}_liason_member",
 						'type' => 'textarea',
 						'cols' => 10,
 						'rows' => 2,
 					),	
 					// RADIO
 					array(
-						'name'        => esc_html__( 'First Six Months - Training Requested?', $cart ),
-						'id'          => "{$cart}_liason_first_six_training",
+						'name'        => esc_html__( 'Training Requested?', $cart ),
+						'id'          => "{$cart}_liason_training",
 						'type'        => 'radio',
 						// Array of 'value' => 'Label' pairs for select box
 						'options'     => array(
@@ -1114,53 +1123,13 @@ function amber_register_meta_boxes( $meta_boxes ) {
 					),	
 					// TEXTAREA
 					array(
-						'name'  => __( 'First Six Months - Notes/Summary', $cart  ),
-						'id'    => "{$cart}_liason_first_six_notes",
+						'name'  => __( 'Notes/Summary', $cart  ),
+						'id'    => "{$cart}_liason_notes",
 						'type' => 'textarea',
 						'cols' => 10,
 						'rows' => 5,
 					),
-					// SELECT BOX
-					array(
-						'name'        => esc_html__( 'Second Six Months - Method', $cart ),
-						'id'          => "{$cart}_liason_second_six_method",
-						'type'        => 'select',
-						// Array of 'value' => 'Label' pairs for select box
-						'options'     => array(
-							'Phone' => esc_html__( 'Phone', $cart ),
-		                    'Email' => esc_html__( 'Email', $cart ),
-						),
-						// Select multiple values, optional. Default is false.
-						'multiple'    => false,
-						'placeholder' => esc_html__( 'Select a Method', $cart ),
-					),	
-					// TEXTAREA
-					array(
-						'name'  => __( 'Second Six Months - CART Member Contacted', $cart  ),
-						'id'    => "{$cart}_liason_second_six_member",
-						'type' => 'textarea',
-						'cols' => 10,
-						'rows' => 2,
-					),	
-					// RADIO
-					array(
-						'name'        => esc_html__( 'Second Six Months - Training Requested?', $cart ),
-						'id'          => "{$cart}_liason_second_six_training",
-						'type'        => 'radio',
-						// Array of 'value' => 'Label' pairs for select box
-						'options'     => array(
-							'Yes' => esc_html__( 'Yes', $cart ),
-		                    'No' => esc_html__( 'No', $cart )
-						),
-					),	
-					// TEXTAREA
-					array(
-						'name'  => __( 'Second Six Months - Notes/Summary', $cart  ),
-						'id'    => "{$cart}_liason_second_six_notes",
-						'type' => 'textarea',
-						'cols' => 10,
-						'rows' => 5,
-					),			        													
+																	
 	            ),
 	        ),					        
         )

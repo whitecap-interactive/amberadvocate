@@ -12,13 +12,18 @@ get_header(); ?>
 	<div id="primary" class="content-area">
 		<main id="main" class="site-main" role="main">
 			
+			<?php 
+				$user = wp_get_current_user();
+				if ( in_array( 'cart_admin', (array) $user->roles ) ) {
+				    while ( have_posts() ) : the_post();
 
-			<?php
-			while ( have_posts() ) : the_post();
+						get_template_part( 'template-parts/content', 'cart' );
 
-				get_template_part( 'template-parts/content', 'cart' );
-
-			endwhile; // End of the loop.
+					endwhile; // End of the loop.
+				}
+				else {
+					echo 'You don\'t have sufficient privileges to view this page.';
+				}
 			?>
 			
 		</main><!-- #main -->

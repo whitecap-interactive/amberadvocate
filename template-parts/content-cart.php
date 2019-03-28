@@ -29,12 +29,6 @@
 	</header><!-- .entry-header -->
 
 	<div class="content-channel channel-padding">
-		
-		<?php
-			
-			// the_content();
-			
-		?>
 
 		<div class="cart-meta row">
 			<div class="col-sm-12">
@@ -109,67 +103,41 @@
 
 				<table cellpadding="0" cellspacing="0" border="0" class="partner-table">
 					<tr>
-						<th colspan="2"><strong>AATTAP Liaison Activity Reporting</strong></th>
+						<th colspan="2"><strong>Biannual AATTAP Liaison Activity Reporting</strong></th>
 					</tr>
 				</table>
 
 				<?php 
-					$annual_reports = rwmb_meta( 'annual_activity_reporting' );
-					if ( ! empty( $annual_reports ) ) {
-					    foreach ( $annual_reports as $annual_report ) {
-					        $liason_name = isset( $annual_report['cart_liason_name'] ) ? $annual_report['cart_liason_name'] : '';
-					        $liason_region = isset( $annual_report['cart_liason_region'] ) ? $annual_report['cart_liason_region'] : '';
-					        $liason_year = isset( $annual_report['cart_liason_activity_year'] ) ? $annual_report['cart_liason_activity_year'] : '';
-					        $liason_first_six_method = isset ( $annual_report['cart_liason_first_six_method'] ) ? $annual_report['cart_liason_first_six_method'] : '';
-					        $liason_first_six_member = isset ( $annual_report['cart_liason_first_six_member'] ) ? $annual_report['cart_liason_first_six_member'] : '';
-					        $liason_first_six_training = isset ( $annual_report['cart_liason_first_six_training'] ) ? $annual_report['cart_liason_first_six_training'] : '';
-					        $liason_first_six_notes = isset ( $annual_report['cart_liason_first_six_notes'] ) ? $annual_report['cart_liason_first_six_notes'] : '';
-					        $liason_second_six_method = isset ( $annual_report['cart_liason_second_six_method'] ) ? $annual_report['cart_liason_second_six_method'] : '';
-					        $liason_second_six_member = isset ( $annual_report['cart_liason_second_six_member'] ) ? $annual_report['cart_liason_second_six_member'] : '';
-					        $liason_second_six_training = isset ( $annual_report['cart_liason_second_six_training'] ) ? $annual_report['cart_liason_second_six_training'] : '';
-					        $liason_second_six_notes = isset ( $annual_report['cart_liason_second_six_notes'] ) ? $annual_report['cart_liason_second_six_notes'] : '';
+					$biannual_reports = rwmb_meta( 'biannual_activity_reporting' );
+					if ( ! empty( $biannual_reports ) ) {
+					    foreach ( $biannual_reports as $biannual_report ) {
+					        $liason_name = isset( $biannual_report['cart_liason_name'] ) ? $biannual_report['cart_liason_name'] : '';
+					        $liason_region = isset( $biannual_report['cart_liason_region'] ) ? $biannual_report['cart_liason_region'] : '';
+					        $liason_report_date = isset( $biannual_report['cart_liason_report_date'] ) ? $biannual_report['cart_liason_report_date'] : '';
+					        $liason_method = isset ( $biannual_report['cart_liason_method'] ) ? $biannual_report['cart_liason_method'] : '';
+					        $liason_member = isset ( $biannual_report['cart_liason_member'] ) ? $biannual_report['cart_liason_member'] : '';
+					        $liason_training = isset ( $biannual_report['cart_liason_training'] ) ? $biannual_report['cart_liason_training'] : '';
+					        $liason_notes = isset ( $biannual_report['cart_liason_notes'] ) ? $biannual_report['cart_liason_notes'] : '';
 					        ?>
 					    <table cellpadding="0" cellspacing="0" border="0" class="partner-table sub-table">	
 					        <tr>
-								<th colspan="2"><strong>Annual Reporting: <?php echo $liason_year; ?> &nbsp; | &nbsp; Region: <?php echo $liason_region; ?> &nbsp; | &nbsp; Liason Name: <?php echo $liason_name; ?></strong></th>
-							</tr>
-							<tr>
-								<th colspan="2">First Six Months</th>
+								<th colspan="2"><strong>Biannual Reporting: <?php echo $liason_report_date; ?> &nbsp; | &nbsp; Region: <?php echo $liason_region; ?> &nbsp; | &nbsp; Liason Name: <?php echo $liason_name; ?></strong></th>
 							</tr>
 							<tr>
 								<td>Method</td>
-								<td><?php echo $liason_first_six_method; ?></td>
+								<td><?php echo $liason_method; ?></td>
 							</tr>
 							<tr>
 								<td>CART Member Contacted</td>
-								<td><?php echo $liason_first_six_member; ?></td>
+								<td><?php echo $liason_member; ?></td>
 							</tr>
 							<tr>
 								<td>Training requested?</td>
-								<td><?php echo $liason_first_six_training; ?></td>
+								<td><?php echo $liason_training; ?></td>
 							</tr>
 							<tr>
 								<td>Notes</td>
-								<td><?php echo $liason_first_six_notes; ?></td>
-							</tr>
-							<tr>
-								<th colspan="2">Second Six Months</th>
-							</tr> 
-							<tr>
-								<td>Method</td>
-								<td><?php echo $liason_second_six_method; ?></td>
-							</tr>
-							<tr>
-								<td>CART Member Contacted</td>
-								<td><?php echo $liason_second_six_member; ?></td>
-							</tr>
-							<tr>
-								<td>Training requested?</td>
-								<td><?php echo $liason_second_six_training; ?></td>
-							</tr>
-							<tr>
-								<td>Notes</td>
-								<td><?php echo $liason_second_six_notes; ?></td>
+								<td><?php echo $liason_notes; ?></td>
 							</tr>							
 						</table>
 							
@@ -184,7 +152,7 @@
 			</div>
 
 			<!-- <div class="col-sm-3">
-				<?php get_sidebar('portal'); ?>
+				<?php get_sidebar('cart'); ?>
 			</div> -->
 
 		</div>
