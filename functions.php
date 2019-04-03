@@ -1050,18 +1050,11 @@ function amber_register_meta_boxes( $meta_boxes ) {
 			    ),
 			),			
 			// DIVIDER
-			//array(
-			//	'type' => 'divider',
-			//	'id'   => 'fake_divider_id', // Not used, but needed
-			//),
-
-        )
-    );
-
-    $meta_boxes[] = array(
-        'title'      => __( 'AATAP Liason Activity Reporting', $cart ),
-        'post_types' => 'cart',
-        'fields'     => array(	
+			array(
+				'type' => 'divider',
+				'id'   => 'fake_divider_id', // Not used, but needed
+			),
+			
 			// GROUP
 	        array(
 	            'name'      => __( 'Biannual Activity Reporting', $cart ),
