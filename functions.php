@@ -1054,13 +1054,14 @@ function amber_register_meta_boxes( $meta_boxes ) {
 				'type' => 'divider',
 				'id'   => 'fake_divider_id', // Not used, but needed
 			),
-			
+
 			// GROUP
 	        array(
 	            'name'      => __( 'Biannual Activity Reporting', $cart ),
 	            'id' => 'biannual_activity_reporting', // ID group
 	            'type' => 'group', // Data of “Group”
 	            'clone' => true,
+	            'sort_clone' => true,
 	            // List of custom fields
 				'fields' => array(	            	
 					// DATE
