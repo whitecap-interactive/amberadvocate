@@ -42,6 +42,9 @@
                         $the_query = new WP_Query( $args );
 
                     ?>
+
+                    <p><a href="/cart-admin/add-new-cart/">Add a New CART</a></p>
+
                     <table cellpadding="0" cellspacing="0" border="0">
                         <thead>
                             <tr>

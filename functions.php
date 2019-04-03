@@ -939,13 +939,14 @@ function amber_register_meta_boxes( $meta_boxes ) {
 			    'type'       => 'date',
 			    // Date picker options. See here http://api.jqueryui.com/datepicker
 			    'js_options' => array(
-			        'dateFormat'      => 'yy-mm-dd',
+			        'dateFormat'      => 'mm-dd-yy',
 			        'showButtonPanel' => false,
 			    ),
 			    // Display inline?
 			    'inline' => false,
 			    // Save value as timestamp?
 			    'timestamp' => false,
+			    'desc' => 'MM-DD-YYYY'
 			),
 			// RADIO
 			array(
@@ -965,13 +966,14 @@ function amber_register_meta_boxes( $meta_boxes ) {
 			    'type'       => 'date',
 			    // Date picker options. See here http://api.jqueryui.com/datepicker
 			    'js_options' => array(
-			        'dateFormat'      => 'yy-mm-dd',
+			        'dateFormat'      => 'mm-dd-yy',
 			        'showButtonPanel' => false,
 			    ),
 			    // Display inline?
 			    'inline' => false,
 			    // Save value as timestamp?
 			    'timestamp' => false,
+			    'desc' => 'MM-DD-YYYY'
 			),
 			// SELECT BOX
 			array(
@@ -1020,6 +1022,8 @@ function amber_register_meta_boxes( $meta_boxes ) {
 					'1-10' => esc_html__( '1-10', $cart ),
                     '10-20' => esc_html__( '10-20', $cart ),
                     '20-30' => esc_html__( '20-30', $cart ),
+                    '30-40' => esc_html__( '30-40', $cart ),
+                    '40+' => esc_html__( '40+', $cart ),
 				),
 			),
 			// TEXTAREA
