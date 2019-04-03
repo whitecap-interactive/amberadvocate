@@ -9,17 +9,6 @@
 
 ?>
 
-<?php
-	$region = rwmb_meta('cart_region'); 
-	if ( $region == '1') { $region_color = 'red'; }
-	else if ( $region == '2') { $region_color = 'green'; }
-	else if ( $region == '3') { $region_color = 'dark-orange'; }
-	else if ( $region == '4') { $region_color = 'blue'; }
-	else if ( $region == '5') { $region_color = 'purple'; }	
-	else { $region_color = 'orange'; }
-
-?>
-
 <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
 
 	
@@ -33,13 +22,21 @@
 		<div class="cart-meta row">
 			<div class="col-sm-12">
 
+				<p style="text-align: center;">
+
+                    <a href="/cart-admin/add-edit-cart/" class="question-button button-lg light-orange" >
+                        <span>
+                            <span style="font-size:1.4em;font-weight:bold;">+</span> &nbsp; Add a New CART    
+                        </span>
+                    </a></p>
+
 				<table cellpadding="0" cellspacing="0" border="0" class="partner-table">
 					<!-- <tr>
 						<td>AMBER Alert Region</td>
 						<td><?php echo rwmb_meta('amber_region');?></td>
 					</tr> -->
 					<tr>
-						<th colspan="2"><strong>CART Information</strong><div class="cart-list-link"><a href="/cart-admin/cart-listing/">Back to CART Listing</a> | <a href="/cart-admin/add-new-cart/?rwmb_frontend_field_post_id=<?php the_ID(); ?>">Edit Cart</a></div></th>
+						<th colspan="2"><strong>CART Information</strong><div class="cart-list-link"><a href="/cart-admin/cart-listing/">Back to CART Listing</a> |  <a href="/cart-admin/add-edit-cart/?rwmb_frontend_field_post_id=<?php the_ID(); ?>">Edit Cart</a></div></th>
 					</tr>
 					<tr>
 						<td>CART Coordinator Name</td>

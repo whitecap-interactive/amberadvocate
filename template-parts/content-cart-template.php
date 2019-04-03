@@ -25,12 +25,12 @@
 		<div class="row">
 			
 
-			<div class="col-sm-9">
+			<div class="col-sm-12">
 				<?php the_content(); ?>
 			</div>
-			<div class="col-sm-3">
-				<?php get_sidebar('portal'); ?>
-			</div>
+			<!-- <div class="col-sm-3">
+				<?php get_sidebar('cart'); ?>
+			</div> -->
 				
 		</div>
 	</div><!-- .entry-content -->

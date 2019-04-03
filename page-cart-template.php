@@ -1,6 +1,6 @@
 <?php
 /**
- * Template Name: Partner Portal Pages
+ * Template Name: CART Database Pages
  *
  * This is the template that displays all pages by default.
  * Please note that this is the WordPress construct of pages
