@@ -32,6 +32,11 @@
 					<div class="col-sm-4 footer-login">
 						<h3>Partner Portal Login</h3>
 						<?php echo do_shortcode('[user-meta-login]');?>
+						<?php 
+							if ( in_array( 'cart_admin', (array) $user->roles ) ) {
+								echo '<a href="/cart-admin/cart-listing/">CART Listing</a>';
+							}
+						?>
 					</div>
 				</div>
 			</div>
