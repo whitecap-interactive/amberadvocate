@@ -33,8 +33,9 @@
 						<h3>Partner Portal Login</h3>
 						<?php echo do_shortcode('[user-meta-login]');?>
 						<?php 
+							$user = wp_get_current_user();
 							if ( in_array( 'cart_admin', (array) $user->roles ) ) {
-								echo '<a href="/cart-admin/cart-listing/">CART Listing</a>';
+								echo '<a class="button" style="margin-top: 4px; display: inline-block; padding: 2px 20px;" href="/cart-admin/cart-listing/">CART Listing</a>';
 							}
 						?>
 					</div>
