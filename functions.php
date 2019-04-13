@@ -118,7 +118,7 @@ function create_post_type() {
 		'public' => true,
 		'has_archive' => true,
 		'capability_type' => 'post',
-		'rewrite' => array('slug' => 'states'),  
+		'rewrite' => array('slug' => 'states'),
 		'supports' => array(
             'title',
             'excerpt',
@@ -140,7 +140,7 @@ function create_post_type() {
 		'public' => true,
 		'has_archive' => true,
 		'capability_type' => 'post',
-		'rewrite' => array('slug' => 'partner-resources'),  
+		'rewrite' => array('slug' => 'partner-resources'),
 		'supports' => array(
             'title',
             'excerpt',
@@ -162,7 +162,7 @@ function create_post_type() {
 		'public' => true,
 		'has_archive' => true,
 		'capability_type' => 'post',
-		'rewrite' => array('slug' => 'enespanol/socio'),  
+		'rewrite' => array('slug' => 'enespanol/socio'),
 		'supports' => array(
             'title',
             'excerpt',
@@ -172,7 +172,7 @@ function create_post_type() {
             'thumbnail',
             'author'),
         'taxonomies' => array(),
-        
+
 		)
 	);
 	register_post_type( 'cart',
@@ -184,7 +184,7 @@ function create_post_type() {
 		'public' => true,
 		'has_archive' => true,
 		'capability_type' => 'post',
-		//'rewrite' => array('slug' => 'states'),  
+		//'rewrite' => array('slug' => 'states'),
 		'supports' => array(
             'title',
             //'excerpt',
@@ -196,8 +196,8 @@ function create_post_type() {
         'taxonomies' => array('category', 'post_tag'),
         /*'show_in_nav_menus' => true*/
 		)
-	);	
-} 
+	);
+}
 
 
 
@@ -290,15 +290,15 @@ add_action( 'wp_enqueue_scripts', 'counter_scripts' );*/
  */
 add_filter( 'rwmb_meta_boxes', 'amber_register_meta_boxes' );
 function amber_register_meta_boxes( $meta_boxes ) {
-    
-    
+
+
     // Get the users to display in the Admin Contact select box
     $amberusers = get_users( 'blog_id=1&orderby=nicename&role=member' );
     // Array of WP_User objects.
-    $amber_admin = array();    
-    foreach ( $amberusers as $amberuser ) $amber_admin[$amberuser->user_nicename] = $amberuser->user_firstname . ' ' . $amberuser->user_lastname;  
-    
-    
+    $amber_admin = array();
+    foreach ( $amberusers as $amberuser ) $amber_admin[$amberuser->user_nicename] = $amberuser->user_firstname . ' ' . $amberuser->user_lastname;
+
+
     $prefix = 'amber_';
     // Add Meta Boxes For Attached Documents (note: this applies to all images, pdfs, doc, and excel files)
     $meta_boxes[] = array(
@@ -892,7 +892,7 @@ function amber_register_meta_boxes( $meta_boxes ) {
 				'multiple'    => false,
 				'std'         => '',
 				'placeholder' => __( 'Select State', $cart ),
-			),			
+			),
 			// SELECT BOX
 			array(
 				'name'        => esc_html__( 'CART AMBER Alert Region', $cart ),
@@ -909,7 +909,7 @@ function amber_register_meta_boxes( $meta_boxes ) {
 				// Select multiple values, optional. Default is false.
 				'multiple'    => false,
 				'placeholder' => esc_html__( 'Select a Region', $cart ),
-			),			
+			),
 			// RADIO
 			array(
 				'name'        => esc_html__( 'Is CART Active?', $cart ),
@@ -931,7 +931,7 @@ function amber_register_meta_boxes( $meta_boxes ) {
 					'Yes' => esc_html__( 'Yes', $cart ),
                     'No' => esc_html__( 'No', $cart )
 				),
-			),	
+			),
 			// DATE
 			array(
 			    'name'       => esc_html__( 'Date of Original CART Certification', $cart ),
@@ -958,7 +958,7 @@ function amber_register_meta_boxes( $meta_boxes ) {
 					'Yes' => esc_html__( 'Yes', $cart ),
                     'No' => esc_html__( 'No', $cart )
 				),
-			),			
+			),
 			// DATE
 			array(
 			    'name'       => esc_html__( 'Date of CART Recertification', $cart ),
@@ -992,7 +992,7 @@ function amber_register_meta_boxes( $meta_boxes ) {
 				'multiple'    => false,
 				'std'         => 'value2',
 				'placeholder' => __( 'Select CART Type', $cart ),
-			),	
+			),
 			// RADIO
 			array(
 				'name'        => esc_html__( 'Is your CART affiliated with a Tribal Organization?', $cart ),
@@ -1003,7 +1003,7 @@ function amber_register_meta_boxes( $meta_boxes ) {
 					'Yes' => esc_html__( 'Yes', $cart ),
                     'No' => esc_html__( 'No', $cart )
 				),
-			),	
+			),
 			// TEXTAREA
 			array(
 				'name'  => __( 'If yes, please provide Tribal Organization name', $cart  ),
@@ -1011,7 +1011,7 @@ function amber_register_meta_boxes( $meta_boxes ) {
 				'type' => 'textarea',
 				'cols' => 10,
 				'rows' => 1,
-			),	
+			),
 			// RADIO
 			array(
 				'name'        => esc_html__( 'Number of agencies in CART Program', $cart ),
@@ -1033,7 +1033,7 @@ function amber_register_meta_boxes( $meta_boxes ) {
 			// 	'type' => 'textarea',
 			// 	'cols' => 10,
 			// 	'rows' => 5,
-			// ),	
+			// ),
 			// WYSIWYG
 			array(
 			    'name'    => __( 'List the names of agencies included in the CART', $cart  ),
@@ -1048,7 +1048,7 @@ function amber_register_meta_boxes( $meta_boxes ) {
 			        'textarea_rows' => 4,
 			        'teeny'         => true,
 			    ),
-			),			
+			),
 			// DIVIDER
 			array(
 				'type' => 'divider',
@@ -1063,7 +1063,7 @@ function amber_register_meta_boxes( $meta_boxes ) {
 	            'clone' => true,
 	            'sort_clone' => true,
 	            // List of custom fields
-				'fields' => array(	            	
+				'fields' => array(
 					// DATE
 					array(
 					    'name'       => esc_html__( 'Activity Report Date', $cart ),
@@ -1115,7 +1115,7 @@ function amber_register_meta_boxes( $meta_boxes ) {
 						// Select multiple values, optional. Default is false.
 						'multiple'    => false,
 						'placeholder' => esc_html__( 'Select a Method', $cart ),
-					),	
+					),
 					// TEXTAREA
 					array(
 						'name'  => __( 'CART Member Contacted', $cart  ),
@@ -1123,7 +1123,7 @@ function amber_register_meta_boxes( $meta_boxes ) {
 						'type' => 'textarea',
 						'cols' => 10,
 						'rows' => 2,
-					),	
+					),
 					// RADIO
 					array(
 						'name'        => esc_html__( 'Training Requested?', $cart ),
@@ -1134,7 +1134,7 @@ function amber_register_meta_boxes( $meta_boxes ) {
 							'Yes' => esc_html__( 'Yes', $cart ),
 		                    'No' => esc_html__( 'No', $cart )
 						),
-					),	
+					),
 					// TEXTAREA
 					array(
 						'name'  => __( 'Notes/Summary', $cart  ),
@@ -1143,9 +1143,9 @@ function amber_register_meta_boxes( $meta_boxes ) {
 						'cols' => 10,
 						'rows' => 5,
 					),
-																	
+
 	            ),
-	        ),					        
+	        ),
         )
     );
 
@@ -1204,8 +1204,8 @@ function global_settings_meta_boxes( $meta_boxes )
                 ),
             ),
         ),
-    );    
-    
+    );
+
 	return $meta_boxes;
 }
 
@@ -1224,7 +1224,7 @@ add_action( 'bbp_template_before_single_forum' , 'rw_singleforum_description');
 
 //ADD DROPDOWN TO USER PROFILE THAT DISPLAYS STATES
 /*add_filter( 'user_meta_field_config', 'user_meta_field_config_populate_categories', 10, 3 );
-function user_meta_field_config_populate_categories( $field, $fieldID, $formName){ 
+function user_meta_field_config_populate_categories( $field, $fieldID, $formName){
 	//get list of states
 	$args = array(
 		'posts_per_page'   => -1,
@@ -1233,24 +1233,24 @@ function user_meta_field_config_populate_categories( $field, $fieldID, $formName
 		'order'            => 'ASC',
 		'post_type'        => 'State',
 		'post_status'      => 'publish',
-		'suppress_filters' => true 
+		'suppress_filters' => true
 	);
 	$posts_array = get_posts( $args );
 
     if( $fieldID != '52') // This has to match the Field ID of the User Meta Dropdown
         return $field;
- 	
+
     $output = null;
     $output .= 'other=Other,';
     foreach( $posts_array as $post ):
         $output .= $post->ID.'='.$post->post_title.',';
     endforeach;
     $output = ',' . trim( $output, ',' );
- 
+
     $field['options'] = $output;
- 
+
     return $field;
-}	
+}
 */
 
 // change base of author pages- need to save permalinks to take effect
@@ -1265,7 +1265,7 @@ function changeUMPAdminEmail( $adminEmails ) {
     //return array( 'amberadvocate@ncjtc.org' );
     return array( 'brian@whitecap.io', 'david@whitecap.io', 'amberadvocate@ncjtc.org' );
 }
-add_filter( 'user_meta_admin_email_recipient', 'changeUMPAdminEmail' );	
+add_filter( 'user_meta_admin_email_recipient', 'changeUMPAdminEmail' );
 
 
 add_filter( 'get_the_archive_title', function ($title) {

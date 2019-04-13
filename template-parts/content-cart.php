@@ -11,7 +11,7 @@
 
 <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
 
-	
+
 	<header class="post-entry-header purple">
 		<?php the_title( '<h1 class="entry-title"><span>', '</span></h1>' ); ?>
 		<?php echo '<h3>Region: ' . rwmb_meta('cart_region') . ' &nbsp; | &nbsp; State: ' . rwmb_meta('cart_state_select') . '</h3>'?>
@@ -26,9 +26,26 @@
 
                     <a href="/cart-admin/add-edit-cart/" class="question-button button-lg light-orange" >
                         <span>
-                            <span style="font-size:1.4em;font-weight:bold;">+</span> &nbsp; Add a New CART    
+                            <span style="font-size:1.4em;font-weight:bold;">+</span> &nbsp; Add a New CART
                         </span>
                     </a></p>
+
+										<div style="float:right; font-style: italic; font-size: 0.9em; color:#ccc;">
+											Last modified by <?php //the_modified_author();
+
+												$modified = get_the_modified_author();
+
+												echo $modified;
+
+												if ($modified) {
+													echo $modified;
+												}
+												else {
+													echo get_the_author();
+												}
+											?>
+											on <?php the_modified_date('F j, Y'); ?> at <?php the_modified_date('g:i a'); ?>
+										</div>
 
 				<table cellpadding="0" cellspacing="0" border="0" class="partner-table">
 					<!-- <tr>
@@ -94,9 +111,31 @@
 						<td>Names of Agencies in CART</td>
 						<td><?php echo rwmb_meta('cart_agency_names');?></td>
 					</tr>
+					<tr>
+						<td>Last Modified By:</td>
+						<td><?php //the_modified_author();
+
+							$modified = get_the_modified_author();
+
+							echo $modified;
+
+							if ($modified) {
+								echo $modified;
+							}
+							else {
+								echo get_the_author();
+							}
+
+						?>
+						</td>
+					</tr>
+					<tr>
+						<td>Timestamp:</td>
+						<td><?php the_modified_date('F j, Y'); ?> at <?php the_modified_date('g:i a'); ?></td>
+					</tr>
 				</table>
 
-				
+
 
 				<table cellpadding="0" cellspacing="0" border="0" class="partner-table">
 					<tr>
@@ -104,7 +143,7 @@
 					</tr>
 				</table>
 
-				<?php 
+				<?php
 					$biannual_reports = rwmb_meta( 'biannual_activity_reporting' );
 					if ( ! empty( $biannual_reports ) ) {
 					    foreach ( $biannual_reports as $biannual_report ) {
@@ -116,7 +155,7 @@
 					        $liason_training = isset ( $biannual_report['cart_liason_training'] ) ? $biannual_report['cart_liason_training'] : '';
 					        $liason_notes = isset ( $biannual_report['cart_liason_notes'] ) ? $biannual_report['cart_liason_notes'] : '';
 					        ?>
-					    <table cellpadding="0" cellspacing="0" border="0" class="partner-table sub-table">	
+					    <table cellpadding="0" cellspacing="0" border="0" class="partner-table sub-table">
 					        <tr>
 								<th colspan="2"><strong>Biannual Reporting: <?php echo $liason_report_date; ?> &nbsp; | &nbsp; Region: <?php echo $liason_region; ?> &nbsp; | &nbsp; Liason Name: <?php echo $liason_name; ?></strong></th>
 							</tr>
@@ -135,17 +174,17 @@
 							<tr>
 								<td>Notes</td>
 								<td><?php echo $liason_notes; ?></td>
-							</tr>							
+							</tr>
 						</table>
-							
-					    <?php 
+
+					    <?php
 					    }
 					}
 
-				?>	
+				?>
 
 				</table>
-				
+
 			</div>
 
 			<!-- <div class="col-sm-3">
@@ -153,9 +192,9 @@
 			</div> -->
 
 		</div>
-			
-	</div><!-- .entry-content -->
-	
 
-	
+	</div><!-- .entry-content -->
+
+
+
 </article><!-- #post-## -->

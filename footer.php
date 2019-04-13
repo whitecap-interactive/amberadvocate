@@ -19,8 +19,8 @@
 				<div class="content-channel row">
 					<div class="col-sm-8">
 						<nav id="bottom-nav" role="navigation">
-							<?php wp_nav_menu( array( 
-								'theme_location' 	=> 'footer', 
+							<?php wp_nav_menu( array(
+								'theme_location' 	=> 'footer',
 								'menu_class' 		=> 'bottom-menu menu-trigger',
 								'container' 		=> false,
 								'before'      => '<h3>',
@@ -32,10 +32,10 @@
 					<div class="col-sm-4 footer-login">
 						<h3>Partner Portal Login</h3>
 						<?php echo do_shortcode('[user-meta-login]');?>
-						<?php 
+						<?php
 							$user = wp_get_current_user();
 							if ( in_array( 'cart_admin', (array) $user->roles ) ) {
-								echo '<a class="button" style="margin-top: 4px; display: inline-block; padding: 2px 20px;" href="/cart-admin/cart-listing/">CART Listing</a>';
+								echo '<a class="button" style="margin-top: 4px; display: inline-block; padding: 2px 20px;" href="/cart-admin/cart-listing/">CART Admin Listing</a>';
 							}
 						?>
 					</div>
@@ -48,7 +48,7 @@
 			</div>
 			<div class="footer-copyright">
 				<!-- &copy; --> <?php echo date("Y");?> AMBER Alert Training and Technical Assistance Program
-				<?php 
+				<?php
 					if (is_front_page()){
 						echo '<p><a href="/terms-of-use-and-privacy-policy/">Terms of Use and Privacy Policy</a></p>';
 					}
