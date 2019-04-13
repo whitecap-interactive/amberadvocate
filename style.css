@@ -1977,3 +1977,6 @@ body.category-briefs header.post-entry-header {
 	color: #fff;
 	text-decoration: underline;
 }
+.cart-list-link a:visited {
+	color: #fff;
+}

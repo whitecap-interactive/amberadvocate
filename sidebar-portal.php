@@ -32,3 +32,7 @@
 	<?php } ?>
 
 </div>
+
+<?php
+	get_sidebar('cart');
+ ?>
