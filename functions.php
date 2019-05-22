@@ -329,6 +329,7 @@ function amber_register_meta_boxes( $meta_boxes ) {
 				'name' => __( 'Submittion Date', 'amber' ),
 				'id'   => "{$prefix}textarea3",
 				'type' => 'date',
+				'desc' => 'YYYY-MM-DD',
 				// jQuery date picker options. See here http://api.jqueryui.com/datepicker
 				'js_options' => array(
 					'appendText'      => __( '(yyyy-mm-dd)', 'your-prefix' ),
@@ -1057,7 +1058,7 @@ function amber_register_meta_boxes( $meta_boxes ) {
 
 			// GROUP
 	        array(
-	            'name'      => __( 'Biannual Activity Reporting', $cart ),
+	            'name'      => __( 'Triannual Activity Reporting', $cart ),
 	            'id' => 'biannual_activity_reporting', // ID group
 	            'type' => 'group', // Data of “Group”
 	            'clone' => true,
@@ -1139,6 +1140,14 @@ function amber_register_meta_boxes( $meta_boxes ) {
 					array(
 						'name'  => __( 'Notes/Summary', $cart  ),
 						'id'    => "{$cart}_liason_notes",
+						'type' => 'textarea',
+						'cols' => 10,
+						'rows' => 5,
+					),
+					// TEXTAREA
+					array(
+						'name'  => __( 'General Notes', $cart  ),
+						'id'    => "{$cart}_general_notes",
 						'type' => 'textarea',
 						'cols' => 10,
 						'rows' => 5,
