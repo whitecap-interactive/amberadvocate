@@ -114,6 +114,11 @@
 					<tr>
 						<td>Requested Training</td>
 						<td><?php	rwmb_the_value( 'cart_training_requested' );?></td>
+					</tr>
+					<tr>
+						<td>Other training needs</td>
+						<td><?php rwmb_meta('cart_training_other');?></td>
+					</tr>
 					<tr>
 						<td>Last Modified By:</td>
 						<td><?php //the_modified_author();

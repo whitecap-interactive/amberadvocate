@@ -1063,7 +1063,7 @@ function amber_register_meta_boxes( $meta_boxes ) {
 			        'cart-commander-online'     				=> 'CART Commander (online)',
 			        'cart-commander-onsite' 						=> 'CART Commander (onsite)',
 			        'cart-certification'     						=> 'CART Certification',
-			        'search-canvas'      								=> 'Search & Canvas',
+			        'search-canvass'      								=> 'Search & Canvass',
 			        'investigative-strategies'      		=> 'Investigative Strategies',
 			        'interview-interrogation'      			=> 'Interview & Interrogation',
 			        'long-term-missing-investigations'  => 'Long Term Missing Investigations',
@@ -1075,6 +1075,14 @@ function amber_register_meta_boxes( $meta_boxes ) {
 			    // 'inline' => true,
 			    // Display "Select All / None" button?
 			    //'select_all_none' => true,
+			),
+			// TEXTAREA
+			array(
+				'name'  => __( 'Any other training needs?', $cart  ),
+				'id'    => "{$cart}_training_other",
+				'type' => 'textarea',
+				'cols' => 10,
+				'rows' => 1,
 			),
 
 			// DIVIDER
