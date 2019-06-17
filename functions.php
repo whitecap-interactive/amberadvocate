@@ -1050,6 +1050,33 @@ function amber_register_meta_boxes( $meta_boxes ) {
 			        'teeny'         => true,
 			    ),
 			),
+
+			array(
+			    'name'    => __( 'Training Requested', $cart  ),
+			    'id'      => "{$cart}_training_requested",
+			    'type'    => 'checkbox_list',
+			    // Options of checkboxes, in format 'value' => 'Label'
+			    'options' => array(
+			        'cart-basic' 												=> 'CART Basic (3 Day Training)',
+			        'cart-table-top' 										=> 'CART Table-Top Exercise',
+			        'cart-new-member'        						=> 'CART for New Members (online)',
+			        'cart-commander-online'     				=> 'CART Commander (online)',
+			        'cart-commander-onsite' 						=> 'CART Commander (onsite)',
+			        'cart-certification'     						=> 'CART Certification',
+			        'search-canvas'      								=> 'Search & Canvas',
+			        'investigative-strategies'      		=> 'Investigative Strategies',
+			        'interview-interrogation'      			=> 'Interview & Interrogation',
+			        'long-term-missing-investigations'  => 'Long Term Missing Investigations',
+			        'child-sex-trafficking'      				=> 'Child Sex Trafficking',
+			        'digital-evidence-investigations'   => 'Digital Evidence Investigations',
+			        //'other'      => 'Swift',
+			    ),
+			    // Display options in a single row?
+			    // 'inline' => true,
+			    // Display "Select All / None" button?
+			    //'select_all_none' => true,
+			),
+
 			// DIVIDER
 			array(
 				'type' => 'divider',

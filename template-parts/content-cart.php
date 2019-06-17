@@ -112,6 +112,9 @@
 						<td><?php echo rwmb_meta('cart_agency_names');?></td>
 					</tr>
 					<tr>
+						<td>Requested Training</td>
+						<td><?php	rwmb_the_value( 'cart_training_requested' );?></td>
+					<tr>
 						<td>Last Modified By:</td>
 						<td><?php //the_modified_author();
 
@@ -139,7 +142,7 @@
 
 				<table cellpadding="0" cellspacing="0" border="0" class="partner-table">
 					<tr>
-						<th colspan="2"><strong>Biannual AATTAP Liaison Activity Reporting</strong></th>
+						<th colspan="2"><strong>Triannual AATTAP Liaison Activity Reporting</strong></th>
 					</tr>
 				</table>
 
