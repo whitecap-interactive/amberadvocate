@@ -1,7 +1,7 @@
 
 jQuery(function() {
 	/*Reset Partner Resources Table Filter*/
-	jQuery('#reset-button').click(function(){ 
+	jQuery('#reset-button').click(function(){
 		jQuery('#partner-name-search').val('').trigger('change');
 	    jQuery('#partner-state-search').val('').trigger('change');
 	    /*jQuery('#partner-region-search').val('').trigger('change');*/
@@ -14,7 +14,7 @@ jQuery(function() {
 		if ( jQuery(this).has('ul').length > 0 ) {
 	  		jQuery('ul#primary-menu ul.sub-menu').hide();
 			jQuery(this).find('ul.sub-menu').show();
-	  	} else { 
+	  	} else {
 	  		var link = jQuery(this).find('a').attr('href');
 	  		console.log(link);
 	  		window.location.href = link;
@@ -29,7 +29,7 @@ jQuery(function() {
 
 	jQuery('html').click(function() {
 	  	jQuery('ul#primary-menu ul.sub-menu').hide();
-	});	
+	});
 
 	jQuery('ul#primary-menu').click(function(event){
 	    event.stopPropagation();
@@ -97,7 +97,7 @@ function partnerSearch(searchParam) {
             } else {
                 tr[i].style.display = "none";
             }
-        }       
+        }
     }
     //jQuery('table.partner-list tr:visible').removeClass('odd').filter(':odd').addClass('odd');
 }
@@ -121,7 +121,7 @@ function cartSearch(searchParam) {
             } else {
                 tr[i].style.display = "none";
             }
-        }       
+        }
     }
     //jQuery('table.partner-list tr:visible').removeClass('odd').filter(':odd').addClass('odd');
 }
@@ -143,14 +143,14 @@ function resourceSearch(searchParam) {
             } else {
                 tr[i].style.display = "none";
             }
-        }       
+        }
     }
     //jQuery('table.partner-list tr:visible').removeClass('odd').filter(':odd').addClass('odd');
 }
 
 jQuery(document).on('ready', function() {
     jQuery(".lazy").slick({
-        accessibility: true, 
+        accessibility: true,
         autoplay: true,
         autoplaySpeed: 5000,
         arrows: true,
@@ -171,9 +171,9 @@ jQuery(document).ready(function() {
 		callbacks: {
             interval: function() {
                 var time = clock.getTime().time;
-                if(time > 955) { //change this number
+                if(time > 965) { //change this number
                 clock.stop();
-                } 
+                }
             }
         }
 	});
@@ -186,7 +186,7 @@ function sortTable(n) {
   table = document.getElementById("partner-table");
   switching = true;
   //Set the sorting direction to ascending:
-  dir = "asc"; 
+  dir = "asc";
   /*Make a loop that will continue until
   no switching has been done:*/
   while (switching) {
@@ -224,7 +224,7 @@ function sortTable(n) {
       rows[i].parentNode.insertBefore(rows[i + 1], rows[i]);
       switching = true;
       //Each time a switch is done, increase this count by 1:
-      switchcount ++;      
+      switchcount ++;
     } else {
       /*If no switching has been done AND the direction is "asc",
       set the direction to "desc" and run the while loop again.*/
