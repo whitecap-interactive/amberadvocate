@@ -1344,8 +1344,18 @@ ul#menu-footer-navigation ul.sub-menu li {
 .site-footer {
 	color: #fff;
 	padding: 0 0 100px 0;
-	background: #000;
+	background: #1c4987;
 	text-align: center;
+}
+
+.footer-content-container {
+	text-align: left;
+}
+
+.footer-address {
+	display: inline-block!important;
+	line-height: 1.4em;
+	padding: 24px 0 0 24px;
 }
 
 .footer-links {
@@ -1355,17 +1365,28 @@ ul#menu-footer-navigation ul.sub-menu li {
 }
 
 .footer-logos {
-	background: #676767;
-	padding: 30px 0;
+	padding: 100px 0 0 0;
+}
+
+.footer-social {
+	padding: 160px 0 0 0;
+}
+
+.footer-right-channel {
+	text-align: right;
 }
 
 .footer-logos div {
 	display: block;
-	margin: 20px;
+	margin: 0 30px 0 0;
+	vertical-align: middle;
 }
 
 .footer-copyright {
-	padding: 40px 0;
+	padding: 60px 0;
+}
+.site-footer a {
+	color: #fff;
 }
 
 .footer-login {
