@@ -24,18 +24,44 @@
 	<a class="skip-link screen-reader-text" href="#content"><?php esc_html_e( 'Skip to content', 'amberadvocate' ); ?></a>
 
 	<header id="masthead" class="site-header" role="banner">
+		<div class="logo-container"><a href="/"><img src="<?php bloginfo('stylesheet_directory'); ?>/images/logo-advocate-large.png" width="250"  border="0" alt="AMBER Advocate" /></a></div>
+		<div class="main-nav-container row">
+			<div class="col-sm-10 main-nav-left">
+				<div class="nav-bar">
 
+					<?php
+							wp_nav_menu( array(
+								'theme_location' => 'primary',
+								'menu_id'        => 'primary-menu',
+							) );
+						?>
+
+				</div>
+			</div>
+			<div class="col-sm-2 main-nav-right">
+				<div class="spanish-link">
+					<a href="/enespanol/">EN ESPAÑOL</a>
+				</div>
+				<div class="search-icon">
+					<a href="/"><img src="<?php bloginfo('stylesheet_directory'); ?>/images/search-icon.png" width="30" border="0" alt="Login" /></a>
+				</div>
+				<div class="human">
+					<a href="/"><img src="<?php bloginfo('stylesheet_directory'); ?>/images/human-icon.png" width="44" border="0" alt="Login" /></a>
+				</div>
+			</div>
+		</div>
+
+<!--
 		<div class="content-channel row">
 			<div class="col-sm-3 header-logos">
-				<div class="logo-justice" title="Department of Justice - Office of Justice Programs Logo"> </div>
-				<div class="logo-amber" title="AMBER Alert Logo"> </div>
+
+			<a href="/"><img src="<?php bloginfo('stylesheet_directory'); ?>/images/logo-advocate-large.png" width="200"  border="0" alt="AMBER Advocate" /></a>
 			</div>
 			<div class="col-sm-6 main-logo">
-				<div class="logo-advocate"><a href="/"><img src="<?php bloginfo('stylesheet_directory'); ?>/images/logo-advocate-large.png" width="500" height="70" border="0" alt="AMBER Advocate" /></a></div>
+				<div class="logo-advocate"><a href="/"><img src="<?php bloginfo('stylesheet_directory'); ?>/images/logo-amber-orange.png" width="140" border="0" alt="AMBER Alert" /></a></div>
 			</div>
 			<div class="col-sm-3">
 				<div class="social-links">
-					<!-- <a href="#"><i class="fa fa-facebook-square fa-2x" aria-hidden="true"></i></a> -->
 					<a href="https://www.facebook.com/AMBERAdvocate/" target="_blank" title="Find us on Facebook"><img src="<?php bloginfo('stylesheet_directory'); ?>/images/FB-FindUsonFacebook-online-144.png" width="72" alt="Find us on Facebook"/></a>
 				</div>
 				<div class="mobile-nav-toggle">
@@ -58,10 +84,8 @@
 					) );
 				?>
 
-		</div>
+		</div>-->
 
 	</header><!-- #masthead -->
 
 	<div id="content" class="site-content">
-
-

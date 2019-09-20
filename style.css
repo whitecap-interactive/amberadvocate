@@ -967,11 +967,11 @@ object {
 
 .nav-bar {
 	width: 100%;
-	text-align: center;
+	text-align: right;
 	display: none;
 	margin: 0;
 	/*height: 60px;*/
-	background: #ccc;
+	background: #1c4987;
 	opacity: 1;
 	text-transform: capitalize;
 	z-index:99;
@@ -984,17 +984,22 @@ object {
 
 a.button {
 	padding: 6px 20px;
-	background: #2e803a;
+	background: #E25A28;
 	color: #fff;
-	border-radius: 3px;
+	border-radius: 30px;
+	box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+	margin: 0 5px;
 }
 
 a.button-lg {
-	padding: 10px 20px;
-	background: #2e803a;
+	padding: 2px 20px;
+	background: #E25A28;
 	color: #fff;
-	border-radius: 3px;
+	border-radius: 30px;
 	margin: 0 20px;
+	box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+	min-width: 205px;
+	display: inline-block;
 }
 
 a.button:visited {
@@ -1002,7 +1007,9 @@ a.button:visited {
 }
 
 .light-orange {
-	background: #FBA026 !important;
+	/*(background: #FBA026 !important;*/
+	background: #E25A28 !important;
+
 }
 
 /*--------------------------------------------------------------
@@ -1010,7 +1017,14 @@ a.button:visited {
 --------------------------------------------------------------*/
 
 .site-header {
+	height: 110px;
+	width: 100%;
+	position: fixed;
+	z-index: 99999;
+}
 
+.site-content {
+	padding: 110px 0 0 0;
 }
 
 .header-logos {
@@ -1042,7 +1056,7 @@ a.button:visited {
 
 .main-logo {
 	text-align: center;
-	padding: 20px 80px 20px 20px;
+	padding: 10px 80px 0 20px;
 }
 
 .main-logo-mobile-nav {
@@ -1073,7 +1087,7 @@ a.button:visited {
 		float: left;
 	}
 	.main-logo {
-		padding: 20px 20px 10px 20px;
+		padding: 10px 20px 0 20px;
 	}
 }
 @media screen and (min-width: 941px) {
@@ -1101,15 +1115,16 @@ ul#primary-menu li {
 	vertical-align: middle;
 	width: 100%;
 	border-top: 1px solid #aaa;
+	text-align: center;
 }
 
 ul#primary-menu li:hover {
-	/*background: #ddd;*/
+	background: #345e9e;
 }
 
 ul#primary-menu a {
 	/*color: #7c7b7b;*/
-	color: #363636;
+	color: #fff;
 	display: block;
 	width: 100%;
 	height: 100%;
@@ -1120,12 +1135,12 @@ ul#primary-menu a {
 }
 
 ul#primary-menu a:hover {
-	color: #000;
-    /*transition-delay: 100ms;*/
-    text-decoration: none;
+	color: #fff;
+  transition-delay: 100ms;
+  text-decoration: none;
 }
 
-ul#primary-menu li:focus {
+ul#primary-menu li:focus, ul#primary-menu a:focus {
 	text-decoration:none;
 }
 
@@ -1133,7 +1148,7 @@ ul#primary-menu ul.sub-menu {
 	display: none;
 	position: relative;
 	padding: 0;
-	background: #ddd;
+	background: #1c4987;
 	z-index: 1;
 	margin: 12px 0 0 -10px;
 }
@@ -1170,16 +1185,24 @@ ul#primary-menu ul.active {
 }
 
 @media screen and (min-width: 901px) {
-    ul#primary-menu li {
+  ul#primary-menu li {
 		max-width: 140px;
 		border: 0;
 		padding: 12px;
 		width: auto;
 	}
 
+	ul#primary-menu li:nth-child(4), ul#primary-menu li:nth-child(5) {
+		padding: 19px 12px;
+	}
+
+	ul#primary-menu li:nth-child(4) ul.sub-menu, ul#primary-menu li:nth-child(5) ul.sub-menu {
+		margin: 19px 0 0 -33px
+	}
+
 	ul#primary-menu ul.sub-menu {
 		position: absolute;
-		background: #ccc;
+		background: #1c4987;
 		margin: 12px 0 0 -33px;
 
 	}
@@ -1196,6 +1219,7 @@ ul#primary-menu ul.active {
 	.nav-bar {
 		display: block;
 		margin: 20px 0 0 0;
+		padding: 0 52px 0 0;
 	}
 	.social-links {
 		display: inline-block;
@@ -1203,7 +1227,65 @@ ul#primary-menu ul.active {
 	}
 }
 
+@media screen and (min-width: 1500px) {
+	.nav-bar {
+		display: block;
+		margin: 20px 0 0 0;
+		padding: 0 111px 0 0;
+	}
+}
 
+@media screen and (min-width: 2000px) {
+	.nav-bar {
+		display: block;
+		margin: 20px 0 0 0;
+		padding: 0 200px 0 0;
+	}
+}
+
+
+.logo-container {
+	position: absolute;
+	top: 10px;
+	text-align: center;
+	z-index:99;
+	left: 50%;
+  margin-left: -129px;
+}
+
+.main-nav-container {
+	height: 110px;
+	box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+}
+
+.main-nav-left {
+	background: #1c4987;
+	padding: 36px 0 0 0;
+}
+
+.main-nav-right {
+	background: #f6561e;
+	height: 100%;
+	color: #fff;
+}
+
+.spanish-link {
+	padding: 10px 0 12px 17px;
+}
+
+.spanish-link a {
+	color: #fff;
+	text-transform: uppercase;
+}
+
+.human {
+	display: inline-block;
+}
+
+.search-icon {
+	display: inline-block;
+	padding: 0 12px 0 18px;
+}
 
 
 
@@ -1343,19 +1425,13 @@ ul#menu-footer-navigation ul.sub-menu li {
 
 .site-footer {
 	color: #fff;
-	padding: 0 0 100px 0;
+	padding: 0 0 50px 0;
 	background: #1c4987;
 	text-align: center;
 }
 
 .footer-content-container {
 	text-align: left;
-}
-
-.footer-address {
-	display: inline-block!important;
-	line-height: 1.4em;
-	padding: 24px 0 0 24px;
 }
 
 .footer-links {
@@ -1369,7 +1445,22 @@ ul#menu-footer-navigation ul.sub-menu li {
 }
 
 .footer-social {
-	padding: 160px 0 0 0;
+	padding: 120px 0 0 0;
+}
+
+.footer-instagram {
+	display: inline-block;
+	padding: 0 22px 10px 0;
+}
+
+.footer-twitter {
+	display: inline-block;
+	padding: 0 10px 0 0;
+}
+
+.footer-facebook {
+	display: inline-block;
+	padding: 0 10px 0 0;
 }
 
 .footer-right-channel {
@@ -1382,8 +1473,16 @@ ul#menu-footer-navigation ul.sub-menu li {
 	vertical-align: middle;
 }
 
+.footer-address {
+	display: inline-block!important;
+	line-height: 1.4em;
+	padding: 4px 0 0 30px;
+	margin: 0!important;
+	border-left: 1px solid #fff;
+}
+
 .footer-copyright {
-	padding: 60px 0;
+	padding: 100px 0 40px 0;
 }
 .site-footer a {
 	color: #fff;
@@ -1398,7 +1497,7 @@ ul#menu-footer-navigation ul.sub-menu li {
 }
 
 .footer-login p {
-	margin-bottom: 0;
+	text-align: center;
 }
 
 
@@ -1422,9 +1521,16 @@ ul#menu-footer-navigation ul.sub-menu li {
 
 .footer-login input[type="submit"] {
 	float: right;
-	margin: -30px 12px 0 0;
+	/*margin: -30px 12px 0 0;*/
 	clear: both;
-	width: 100px;
+	/*width: 100px;*/
+	padding: 10px 20px;
+	background: #E25A28;
+	color: #fff;
+	border-radius: 30px;
+	margin: 0 20px;
+	box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+	min-width: 205px
 }
 
 .footer-login a {
@@ -1950,18 +2056,27 @@ header.post-entry-header {
 
 .question-sidebar-container {
 	width: 100%;
-	background: url(https://www.amberadvocate.org/wp-content/uploads/2017/08/question-bkg.png) no-repeat center;
-	color:#fff;
+	background: url(/wp-content/themes/amberadvocate/images/questions-bg-map.jpg) no-repeat center;
+	color:#7F7F7F;
 	background-size: cover;
-	background-attachment: fixed;
 	text-align: center;
 	padding: 30px 0 50px;
+}
+
+.question-button {
+
 }
 
 .question-line {
 	width:70%;
 	margin: 0 auto;
 	border-top: 1px solid #fff;
+}
+
+.question-headline {
+	font-weight: bold;
+	font-size: 3em;
+	text-align: center;
 }
 
 .question-sub-headline {

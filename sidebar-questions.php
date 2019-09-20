@@ -4,7 +4,7 @@
 	<div class="content-channel row">
 		<div class="col-sm-6">
 			<h1 class='question-headline'><span>Questions?</span></h1>
-			<div class="question-line"></div>
+			<!--<div class="question-line"></div>-->
 			<h3 class='question-sub-headline'>For questions about using the site or your existing membership, please use the 'Contact Us' button. </h3>
 
 			<div class="question-button">
@@ -23,7 +23,7 @@
 			</div>
 		</div>
 		<div class="col-sm-6 footer-login">
-			<h1>Partner Portal Login</h1>
+			<h1 class='question-headline'>Partner Portal Login</h1>
 			<?php echo do_shortcode('[user-meta-login]');?>
 			<?php
 				$user = wp_get_current_user();
@@ -32,12 +32,6 @@
 				}
 			?>
 		</div>
-	</div>
-
-
-
-	<div class="question-button">
-
 	</div>
 
 </div>
