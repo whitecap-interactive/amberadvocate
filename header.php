@@ -26,7 +26,7 @@
 	<header id="masthead" class="site-header" role="banner">
 		<div class="logo-container"><a href="/"><img src="<?php bloginfo('stylesheet_directory'); ?>/images/logo-advocate-large.png" width="250"  border="0" alt="AMBER Advocate" /></a></div>
 		<div class="main-nav-container row">
-			<div class="col-sm-10 main-nav-left">
+			<div class="col-md-10 main-nav-left">
 				<div class="nav-bar">
 
 					<?php
@@ -37,8 +37,16 @@
 						?>
 
 				</div>
+				<div class="mobile-nav-toggle">
+					<div id="nav-icon3">
+						<span></span>
+						<span></span>
+						<span></span>
+						<span></span>
+					</div>
+				</div>
 			</div>
-			<div class="col-sm-2 main-nav-right">
+			<div class="col-md-2 main-nav-right">
 				<div class="spanish-link">
 					<a href="/enespanol/">EN ESPAÑOL</a>
 				</div>

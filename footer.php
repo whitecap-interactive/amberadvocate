@@ -40,27 +40,30 @@
 					</div>
 					<div class="col-sm-3 footer-right-channel">
 						<div class="footer-social">
-							<div class="footer-instagram">
+							<!--<div class="footer-instagram">
 								<img src="<?php bloginfo('stylesheet_directory'); ?>/images/icon-instagram.png" width="32" border="0" alt="Instagram" />
 							</div>
 							<div class="footer-twitter">
 								<img src="<?php bloginfo('stylesheet_directory'); ?>/images/icon-twitter.png" width="32" border="0" alt="Twitter" />
-							</div>
+							</div>-->
 							<div class="footer-facebook">
-								<img src="<?php bloginfo('stylesheet_directory'); ?>/images/icon-facebook.png" width="32" border="0" alt="Facebook" />
+								<a href="https://www.facebook.com/AMBERAdvocate/" target="_blank"><img src="<?php bloginfo('stylesheet_directory'); ?>/images/icon-facebook.png" width="32" border="0" alt="Facebook" /></a>
 							</div>
 						</div>
 						<div class="footer-logo-advocate"><img src="<?php bloginfo('stylesheet_directory'); ?>/images/logo-advocate.png" width="170" border="0" alt="AMBER Advocate" /></div>
 					</div>
 				</div>
-				<div class="content-channel row">
-					<hr />
-					<p style="text-align: center;"><small>This resource was prepared under Cooperative Agreement number 2013-MU-MU-K011 from the Office of Juvenile Justice and Delinquency Prevention (OJJDP), U.S. Department of Justice. Points of view or opinions expressed in this document are those of the authors and do not necessarily represent the official position or policies of OJJDP or the U.S. Department of Justice.</small></p>
+				<?php
+					if (is_front_page()){ ?>
+						<div class="home-legal content-channel row">
+							<hr />
+							<p style="text-align: center;"><small>This resource was prepared under Cooperative Agreement number 2013-MU-MU-K011 from the Office of Juvenile Justice and Delinquency Prevention (OJJDP), U.S. Department of Justice. Points of view or opinions expressed in this document are those of the authors and do not necessarily represent the official position or policies of OJJDP or the U.S. Department of Justice.</small></p>
 
 
-					<hr />
-					<p style="text-align: center;"></p>
-				</div>
+							<hr />
+							<p style="text-align: center;"></p>
+						</div>
+					<?php } ?>
 			</div>
 		</div><!-- .site-info -->
 	</footer><!-- #colophon -->
