@@ -1183,7 +1183,7 @@ ul#primary-menu ul.active {
 	display: block;
 	position: fixed;
 	right: 12px;
-	top: 10px;
+	top: -4px;
 	z-index:99;
 }
 
@@ -1479,11 +1479,12 @@ ul#menu-footer-navigation ul.sub-menu li {
 }
 
 .footer-logos {
-	padding: 100px 0 0 0;
+	padding: 20px 0 0 0;
+	text-align: center;
 }
 
 .footer-social {
-	padding: 110px 0 0 0;
+	padding: 0 0 0 0;
 }
 
 .footer-instagram {
@@ -1502,12 +1503,12 @@ ul#menu-footer-navigation ul.sub-menu li {
 }
 
 .footer-right-channel {
-	text-align: right;
+	text-align: center;
 }
 
 .footer-logos div {
-	display: block;
-	margin: 0 30px 0 0;
+	display: inline-block;
+	margin: 0 30px 30px 0;
 	vertical-align: middle;
 }
 
@@ -1516,11 +1517,12 @@ ul#menu-footer-navigation ul.sub-menu li {
 	line-height: 1.4em;
 	padding: 4px 0 0 30px;
 	margin: 0!important;
-	border-left: 1px solid #fff;
+	border-left: 0;
 }
 
 .footer-copyright {
-	padding: 80px 0 40px 0;
+	padding: 40px 0 40px 0;
+	text-align: center;
 }
 .site-footer a {
 	color: #fff;
@@ -1582,8 +1584,22 @@ ul#menu-footer-navigation ul.sub-menu li {
 
 
 @media (min-width: 500px) {
-	.footer-logos div {
-		display: inline;
+	.footer-logos {
+		padding: 100px 0 0 0;
+		text-align: left;
+	}
+	.footer-address {
+		border-left: 1px solid #fff;
+	}
+	.footer-social {
+		padding: 110px 0 0 0;
+	}
+	.footer-copyright {
+		padding: 80px 0 40px 0;
+		text-align: left;
+	}
+	.footer-right-channel {
+		text-align: right;
 	}
 }
 
