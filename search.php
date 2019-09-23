@@ -11,18 +11,18 @@ get_header(); ?>
 
 	<section id="primary" class="content-area">
 		<main id="main" class="site-main" role="main">
-			<div class="content-channel channel-padding">
+
 
 				<?php
 				if ( have_posts() ) : ?>
 
-					<header class="page-header">
-						<h1 class="page-title"><?php
+					<header class="post-entry-header orange">
+						<h1 class="entry-title"><?php
 							/* translators: %s: search query. */
 							printf( esc_html__( 'Search Results for: %s', 'amberadvocate' ), '<span>' . get_search_query() . '</span>' );
 						?></h1>
 					</header><!-- .page-header -->
-
+					<div class="content-channel channel-padding">
 					<?php
 					/* Start the Loop */
 					while ( have_posts() ) : the_post();
@@ -43,6 +43,12 @@ get_header(); ?>
 					get_template_part( 'template-parts/content', 'none' );
 
 				endif; ?>
+
+				<div class="search-page">
+
+					<?php get_search_form(); ?>
+
+				</div>
 
 			</div>
 		</main><!-- #main -->

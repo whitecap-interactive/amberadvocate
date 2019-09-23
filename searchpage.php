@@ -18,7 +18,7 @@ get_header(); ?>
 
 			<div class="content-channel channel-padding">
 
-				<div class="aligncenter">
+				<div class="search-page">
 
 					<?php get_search_form(); ?>
 
