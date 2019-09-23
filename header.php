@@ -51,10 +51,10 @@
 					<a href="/enespanol/">EN ESPAÑOL</a>
 				</div>
 				<div class="search-icon">
-					<a href="/"><img src="<?php bloginfo('stylesheet_directory'); ?>/images/search-icon.png" width="30" border="0" alt="Login" /></a>
+					<a href="/search/"><img src="<?php bloginfo('stylesheet_directory'); ?>/images/search-icon.png" width="30" border="0" alt="Login" /></a>
 				</div>
 				<div class="human">
-					<a href="/"><img src="<?php bloginfo('stylesheet_directory'); ?>/images/human-icon.png" width="44" border="0" alt="Login" /></a>
+					<a href="/partner-portal/"><img src="<?php bloginfo('stylesheet_directory'); ?>/images/human-icon.png" width="44" border="0" alt="Login" /></a>
 				</div>
 			</div>
 		</div>
