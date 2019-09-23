@@ -663,7 +663,7 @@ a:active {
 	display: block;
 }
 
-@media screen and (min-width: 1000px) {
+@media screen and (min-width: 992px) {
 	.menu-toggle {
 		display: none;
 	}
@@ -1165,7 +1165,7 @@ ul#primary-menu ul.sub-menu li {
 }
 
 ul#primary-menu ul.sub-menu li:hover {
-	/*background: #ddd;*/
+	border-bottom: 2px solid #345e9e!important;
 }
 
 ul#primary-menu ul.active {
@@ -1187,7 +1187,7 @@ ul#primary-menu ul.active {
 	z-index:99;
 }
 
-@media screen and (min-width: 1000px) {
+@media screen and (min-width: 992px) {
   ul#primary-menu li {
 		max-width: 140px;
 		border: 0;
@@ -1295,7 +1295,7 @@ ul#primary-menu ul.active {
 	color: #fff;
 }
 
-@media screen and (min-width: 1000px) {
+@media screen and (min-width: 992px) {
 	.main-nav-left {
 		padding: 35px 0 0 0;
 	}
@@ -1620,9 +1620,17 @@ ul#menu-footer-navigation ul.sub-menu li {
 	color: #fff;
 }
 
+.orange-border {
+	border-left: 15px solid #ff9c3d;
+}
+
 .blue, .category-amber-news header.post-entry-header {
 	background: #1954db !important;
 	color: #fff;
+}
+
+.blue-border {
+	border-left: 15px solid #1954db;
 }
 
 .purple, .category-amber-speaks header.post-entry-header {
@@ -1630,9 +1638,17 @@ ul#menu-footer-navigation ul.sub-menu li {
 	color: #fff;
 }
 
+.purple-border {
+	border-left: 15px solid #5b3160;
+}
+
 .dark-orange {
 	background: #ce6615 !important;
 	color: #fff;
+}
+
+.dark-orange-border {
+	border-left: 15px solid #ce6615;
 }
 
 .green {
@@ -1640,9 +1656,17 @@ ul#menu-footer-navigation ul.sub-menu li {
 	color: #fff;
 }
 
+.green-border {
+	border-left: 15px solid #2e803a;
+}
+
 .yellow, .category-international header.post-entry-header {
 	background: #ffbf34 !important;
 	color: #fff;
+}
+
+.yellow-border {
+	border-left: 15px solid #ffbf34;
 }
 
 .red, .category-on-the-front-lines header.post-entry-header {
@@ -1650,9 +1674,17 @@ ul#menu-footer-navigation ul.sub-menu li {
 	color: #fff;
 }
 
+.red-border {
+	border-left: 15px solid #c42619;
+}
+
 .gray, .category-briefs header.post-entry-header {
 	background: #646566 !important;
 	color: #fff;
+}
+
+.gray-border {
+	border-left: 15px solid #646566;
 }
 
 .btn {
@@ -2022,18 +2054,21 @@ th.partner-state-header, td.partner-state{
 ul.home-page-menu {
 	margin: 0;
 	padding: 0;
+	list-style: none;
 }
 
 .home-page-menu li {
 	width: 100%;
-	font-family: 'Encode Sans Condensed';
+	font-family: 'Arial', sans-serif;
+	font-weight: bold;
 	font-size: 18px;
-	line-height: 0.8em;
+	line-height: 1em;
 	margin: 0 0 0.6em 0;
+	background: #e8e8e8;
 }
 
 .home-page-menu a {
-	color: #fff;
+	color: #7f7f7f;
 	display: inline-block;
 	width: 100%;
 	padding: 0.8em;
