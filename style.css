@@ -318,7 +318,7 @@ input,
 select,
 textarea {
 	color: #404040;
-	font-family: 'Encode Sans Normal', sans-serif;
+	font-family: 'Arial', sans-serif;
 	font-size: 16px;
 	font-size: 1.4rem;
 	line-height: 2;
@@ -1001,6 +1001,7 @@ a.button-lg {
 	box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
 	min-width: 205px;
 	display: inline-block;
+	text-align: center;
 }
 
 a.button:visited {
@@ -2007,7 +2008,7 @@ table.partner-table strong {
 }
 
 .partner-detail-panel h2 {
-	font-family: 'Encode Sans Condensed', sans-serif;
+	font-family: 'Arial', sans-serif;
 	font-size: 2.5em;
 }
 
@@ -2096,7 +2097,7 @@ header.post-entry-header {
 	margin: 0;
 	text-align: center;
     padding: 40px;
-    font-family: 'Encode Sans Condensed';
+    font-family: 'Arial', sans-serif;
     font-size: 36px;
 	color: #fff;
 	line-height: 1.2em;
