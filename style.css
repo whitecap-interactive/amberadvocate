@@ -1190,25 +1190,26 @@ ul#primary-menu ul.active {
 
 @media screen and (min-width: 992px) {
   ul#primary-menu li {
-		max-width: 140px;
+		max-width: 118px;
 		border: 0;
-		padding: 12px;
 		width: auto;
-	}
-
-	ul#primary-menu li:nth-child(4), ul#primary-menu li:nth-child(5) {
 		padding: 19px 12px;
 	}
 
-	ul#primary-menu li:nth-child(4) ul.sub-menu, ul#primary-menu li:nth-child(5) ul.sub-menu {
-		margin: 21px 0 0 -33px
+	ul#primary-menu li:nth-child(6),
+	ul#primary-menu li:nth-child(7) {
+		padding: 12px;
 	}
 
 	ul#primary-menu ul.sub-menu {
 		position: absolute;
 		background: #1c4987;
-		margin: 14px 0 0 -33px;
+		margin: 21px 0 0 -41px;
+	}
 
+	ul#primary-menu li:nth-child(6) ul.sub-menu,
+	ul#primary-menu li:nth-child(7) ul.sub-menu {
+		margin: 14px 0 0 -41px;
 	}
 
 	ul#primary-menu ul.sub-menu li {
@@ -1231,48 +1232,52 @@ ul#primary-menu ul.active {
 	}
 }
 
-@media screen and (min-width: 1100px) {
+@media screen and (min-width: 992px) {
 	.nav-bar {
 		padding: 0;
 	}
 }
 
+@media screen and (min-width: 1200px) {
+	.nav-bar {
+		padding: 0 50px 0 0;
+	}
+}
+
 @media screen and (min-width: 1500px) {
 	.nav-bar {
-		display: block;
-		margin: 20px 0 0 0;
-		padding: 0 111px 0 0;
+		padding: 0 151px 0 0;
+	}
+}
+
+@media screen and (min-width: 1750px) {
+	.nav-bar {
+		padding: 0 200px 0 0;
 	}
 }
 
 @media screen and (min-width: 2000px) {
 	.nav-bar {
-		display: block;
-		margin: 20px 0 0 0;
-		padding: 0 200px 0 0;
+		padding: 0 250px 0 0;
 	}
 }
 
 @media screen and (min-width: 2200px) {
 	.nav-bar {
-		display: block;
-		margin: 20px 0 0 0;
-		padding: 0 300px 0 0;
+		padding: 0 400px 0 0;
 	}
 }
 
 @media screen and (min-width: 2500px) {
 	.nav-bar {
-		display: block;
-		margin: 20px 0 0 0;
-		padding: 0 400px 0 0;
+		padding: 0 500px 0 0;
 	}
 }
 
 
 .logo-container {
 	position: absolute;
-	top: 10px;
+	top: 16px;
 	text-align: center;
 	z-index:99;
 	left: 50%;
@@ -1304,7 +1309,7 @@ ul#primary-menu ul.active {
 		display: inline-block;
 	}
 	.main-nav-container {
-		height: 111px;
+		height: 126px;
 	}
 }
 
