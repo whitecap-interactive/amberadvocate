@@ -1223,7 +1223,7 @@ ul#primary-menu ul.active {
 	}
 	.nav-bar {
 		display: block;
-		margin: 20px 0 0 0;
+		margin: 30px 0 0 0;
 		padding: 0 52px 0 0;
 	}
 	.social-links {
@@ -1277,11 +1277,11 @@ ul#primary-menu ul.active {
 
 .logo-container {
 	position: absolute;
-	top: 16px;
+	top: 10px;
 	text-align: center;
 	z-index:99;
 	left: 50%;
-  margin-left: -129px;
+  margin-left: -142px;
 }
 
 .main-nav-container {
@@ -1302,6 +1302,10 @@ ul#primary-menu ul.active {
 }
 
 @media screen and (min-width: 992px) {
+	.logo-container {
+		top: 18px;
+	  margin-left: -129px;
+	}
 	.main-nav-left {
 		padding: 35px 0 0 0;
 	}
@@ -1309,12 +1313,12 @@ ul#primary-menu ul.active {
 		display: inline-block;
 	}
 	.main-nav-container {
-		height: 126px;
+		height: 136px;
 	}
 }
 
 .spanish-link {
-	padding: 10px 0 12px 17px;
+	padding: 22px 0 12px 17px;
 }
 
 .spanish-link a {
