@@ -1192,7 +1192,7 @@ ul#primary-menu ul.active {
   ul#primary-menu li {
 		max-width: 140px;
 		border: 0;
-		padding: 12px;
+		padding: 12px 8px;
 		width: auto;
 	}
 
@@ -1201,13 +1201,13 @@ ul#primary-menu ul.active {
 	}
 
 	ul#primary-menu li:nth-child(4) ul.sub-menu, ul#primary-menu li:nth-child(5) ul.sub-menu {
-		margin: 21px 0 0 -33px
+		margin: 21px 0 0 -26px
 	}
 
 	ul#primary-menu ul.sub-menu {
 		position: absolute;
 		background: #1c4987;
-		margin: 14px 0 0 -33px;
+		margin: 14px 0 0 -26px;
 
 	}
 
