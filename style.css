@@ -1190,13 +1190,10 @@ ul#primary-menu ul.active {
 
 @media screen and (min-width: 992px) {
   ul#primary-menu li {
-		max-width: 140px;
+		max-width: 118px;
 		border: 0;
 		padding: 12px 8px;
 		width: auto;
-	}
-
-	ul#primary-menu li:nth-child(4), ul#primary-menu li:nth-child(5) {
 		padding: 19px 12px;
 	}
 
@@ -1209,6 +1206,9 @@ ul#primary-menu ul.active {
 		background: #1c4987;
 		margin: 14px 0 0 -26px;
 
+	ul#primary-menu li:nth-child(6) ul.sub-menu,
+	ul#primary-menu li:nth-child(7) ul.sub-menu {
+		margin: 14px 0 0 -41px;
 	}
 
 	ul#primary-menu ul.sub-menu li {
@@ -1222,7 +1222,7 @@ ul#primary-menu ul.active {
 	}
 	.nav-bar {
 		display: block;
-		margin: 20px 0 0 0;
+		margin: 30px 0 0 0;
 		padding: 0 52px 0 0;
 	}
 	.social-links {
@@ -1231,41 +1231,45 @@ ul#primary-menu ul.active {
 	}
 }
 
-@media screen and (min-width: 1100px) {
+@media screen and (min-width: 992px) {
 	.nav-bar {
 		padding: 0;
 	}
 }
 
+@media screen and (min-width: 1200px) {
+	.nav-bar {
+		padding: 0 50px 0 0;
+	}
+}
+
 @media screen and (min-width: 1500px) {
 	.nav-bar {
-		display: block;
-		margin: 20px 0 0 0;
-		padding: 0 111px 0 0;
+		padding: 0 151px 0 0;
+	}
+}
+
+@media screen and (min-width: 1750px) {
+	.nav-bar {
+		padding: 0 200px 0 0;
 	}
 }
 
 @media screen and (min-width: 2000px) {
 	.nav-bar {
-		display: block;
-		margin: 20px 0 0 0;
-		padding: 0 200px 0 0;
+		padding: 0 250px 0 0;
 	}
 }
 
 @media screen and (min-width: 2200px) {
 	.nav-bar {
-		display: block;
-		margin: 20px 0 0 0;
-		padding: 0 300px 0 0;
+		padding: 0 400px 0 0;
 	}
 }
 
 @media screen and (min-width: 2500px) {
 	.nav-bar {
-		display: block;
-		margin: 20px 0 0 0;
-		padding: 0 400px 0 0;
+		padding: 0 500px 0 0;
 	}
 }
 
@@ -1276,7 +1280,7 @@ ul#primary-menu ul.active {
 	text-align: center;
 	z-index:99;
 	left: 50%;
-  margin-left: -129px;
+  margin-left: -142px;
 }
 
 .main-nav-container {
@@ -1297,6 +1301,10 @@ ul#primary-menu ul.active {
 }
 
 @media screen and (min-width: 992px) {
+	.logo-container {
+		top: 18px;
+	  margin-left: -129px;
+	}
 	.main-nav-left {
 		padding: 35px 0 0 0;
 	}
@@ -1304,12 +1312,12 @@ ul#primary-menu ul.active {
 		display: inline-block;
 	}
 	.main-nav-container {
-		height: 111px;
+		height: 136px;
 	}
 }
 
 .spanish-link {
-	padding: 10px 0 12px 17px;
+	padding: 22px 0 12px 17px;
 }
 
 .spanish-link a {
