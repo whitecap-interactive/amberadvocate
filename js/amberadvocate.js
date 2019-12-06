@@ -175,6 +175,10 @@ jQuery(document).on('ready', function() {
 // http://flipclockjs.com/faces/counter
 var clock;
 jQuery(document).ready(function() {
+	var kidsSaved = jQuery('.clock').attr('data-kids');
+	//var kidsSaved = 967;
+	var adjSaved = kidsSaved - 2;
+	//console.log(wpValue);
 	// Instantiate a counter
 	clock = new FlipClock(jQuery('.clock'), {
 		clockFace: 'Counter',
@@ -183,7 +187,7 @@ jQuery(document).ready(function() {
 		callbacks: {
             interval: function() {
                 var time = clock.getTime().time;
-                if(time > 965) { //change this number
+                if(time > adjSaved) { //change this number
                 clock.stop();
                 }
             }
