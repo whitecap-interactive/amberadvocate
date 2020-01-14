@@ -1194,9 +1194,9 @@ function amber_register_meta_boxes( $meta_boxes ) {
 					array(
 						'name'  => __( 'Detailed Notes', $cart  ),
 						'id'    => "{$cart}_detailed_notes",
-						'type' => 'textarea',
+						'type' => 'wysiwyg',
 						'cols' => 10,
-						'rows' => 5,
+						'rows' => 10,
 						'clone' => true,
 		        'sort_clone' => true,
 
