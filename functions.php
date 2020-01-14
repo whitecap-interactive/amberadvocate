@@ -1092,104 +1092,115 @@ function amber_register_meta_boxes( $meta_boxes ) {
 			),
 
 			// GROUP
-	        array(
-	            'name'      => __( 'Triannual Activity Reporting', $cart ),
-	            'id' => 'biannual_activity_reporting', // ID group
-	            'type' => 'group', // Data of “Group”
-	            'clone' => true,
-	            'sort_clone' => true,
-	            // List of custom fields
-				'fields' => array(
-					// DATE
-					array(
-					    'name'       => esc_html__( 'Activity Report Date', $cart ),
-					    'id'         => "{$cart}_liason_report_date",
-					    'type'       => 'date',
-					    // Date picker options. See here http://api.jqueryui.com/datepicker
-					    'js_options' => array(
-					        'dateFormat'      => 'mm-dd-yy',
-					        'showButtonPanel' => false,
-					    ),
-					    // Display inline?
-					    'inline' => false,
-					    // Save value as timestamp?
-					    'timestamp' => false,
-					),
-					// SELECT BOX
-					array(
-						'name'        => esc_html__( 'Region', $cart ),
-						'id'          => "{$cart}_liason_region",
-						'type'        => 'select',
-						// Array of 'value' => 'Label' pairs for select box
-						'options'     => array(
-							'1' => esc_html__( '1', $cart ),
-		                    '2' => esc_html__( '2', $cart ),
-		                    '3' => esc_html__( '3', $cart ),
-		                    '4' => esc_html__( '4', $cart ),
-		                    '5' => esc_html__( '5', $cart )
-						),
-						// Select multiple values, optional. Default is false.
-						'multiple'    => false,
-						'placeholder' => esc_html__( 'Select a Region', $cart ),
-					),
-					// TEXT
-					array(
-						'name'  => __( 'Liason Name', $cart  ),
-						'id'    => "{$cart}_liason_name",
-						'type'  => 'text',
-					),
-					// SELECT BOX
-					array(
-						'name'        => esc_html__( 'Method', $cart ),
-						'id'          => "{$cart}_liason_method",
-						'type'        => 'select',
-						// Array of 'value' => 'Label' pairs for select box
-						'options'     => array(
-							'Phone' => esc_html__( 'Phone', $cart ),
-		                    'Email' => esc_html__( 'Email', $cart ),
-						),
-						// Select multiple values, optional. Default is false.
-						'multiple'    => false,
-						'placeholder' => esc_html__( 'Select a Method', $cart ),
-					),
-					// TEXTAREA
-					array(
-						'name'  => __( 'CART Member Contacted', $cart  ),
-						'id'    => "{$cart}_liason_member",
-						'type' => 'textarea',
-						'cols' => 10,
-						'rows' => 2,
-					),
-					// RADIO
-					array(
-						'name'        => esc_html__( 'Training Requested?', $cart ),
-						'id'          => "{$cart}_liason_training",
-						'type'        => 'radio',
-						// Array of 'value' => 'Label' pairs for select box
-						'options'     => array(
-							'Yes' => esc_html__( 'Yes', $cart ),
-		                    'No' => esc_html__( 'No', $cart )
-						),
-					),
-					// TEXTAREA
-					array(
-						'name'  => __( 'Notes/Summary', $cart  ),
-						'id'    => "{$cart}_liason_notes",
-						'type' => 'textarea',
-						'cols' => 10,
-						'rows' => 5,
-					),
-					// TEXTAREA
-					array(
-						'name'  => __( 'General Notes', $cart  ),
-						'id'    => "{$cart}_general_notes",
-						'type' => 'textarea',
-						'cols' => 10,
-						'rows' => 5,
-					),
+	    array(
+	      'name'      => __( 'Triannual Activity Reporting', $cart ),
+        'id' => 'biannual_activity_reporting', // ID group
+        'type' => 'group', // Data of “Group”
+        'clone' => true,
+        'sort_clone' => true,
 
-	            ),
+        // List of custom fields
+				'fields' => array(
+							// DATE
+							array(
+							    'name'       => esc_html__( 'Activity Report Date', $cart ),
+							    'id'         => "{$cart}_liason_report_date",
+							    'type'       => 'date',
+							    // Date picker options. See here http://api.jqueryui.com/datepicker
+							    'js_options' => array(
+							        'dateFormat'      => 'mm-dd-yy',
+							        'showButtonPanel' => false,
+							    ),
+							    // Display inline?
+							    'inline' => false,
+							    // Save value as timestamp?
+							    'timestamp' => false,
+							),
+							// SELECT BOX
+							array(
+								'name'        => esc_html__( 'Region', $cart ),
+								'id'          => "{$cart}_liason_region",
+								'type'        => 'select',
+								// Array of 'value' => 'Label' pairs for select box
+								'options'     => array(
+									'1' => esc_html__( '1', $cart ),
+				                    '2' => esc_html__( '2', $cart ),
+				                    '3' => esc_html__( '3', $cart ),
+				                    '4' => esc_html__( '4', $cart ),
+				                    '5' => esc_html__( '5', $cart )
+								),
+								// Select multiple values, optional. Default is false.
+								'multiple'    => false,
+								'placeholder' => esc_html__( 'Select a Region', $cart ),
+							),
+							// TEXT
+							array(
+								'name'  => __( 'Liason Name', $cart  ),
+								'id'    => "{$cart}_liason_name",
+								'type'  => 'text',
+							),
+							// SELECT BOX
+							array(
+								'name'        => esc_html__( 'Method', $cart ),
+								'id'          => "{$cart}_liason_method",
+								'type'        => 'select',
+								// Array of 'value' => 'Label' pairs for select box
+								'options'     => array(
+									'Phone' => esc_html__( 'Phone', $cart ),
+				                    'Email' => esc_html__( 'Email', $cart ),
+								),
+								// Select multiple values, optional. Default is false.
+								'multiple'    => false,
+								'placeholder' => esc_html__( 'Select a Method', $cart ),
+							),
+							// TEXTAREA
+							array(
+								'name'  => __( 'CART Member Contacted', $cart  ),
+								'id'    => "{$cart}_liason_member",
+								'type' => 'textarea',
+								'cols' => 10,
+								'rows' => 2,
+							),
+							// RADIO
+							array(
+								'name'        => esc_html__( 'Training Requested?', $cart ),
+								'id'          => "{$cart}_liason_training",
+								'type'        => 'radio',
+								// Array of 'value' => 'Label' pairs for select box
+								'options'     => array(
+									'Yes' => esc_html__( 'Yes', $cart ),
+				                    'No' => esc_html__( 'No', $cart )
+								),
+							),
+							// TEXTAREA
+							array(
+								'name'  => __( 'Notes/Summary', $cart  ),
+								'id'    => "{$cart}_liason_notes",
+								'type' => 'textarea',
+								'cols' => 10,
+								'rows' => 5,
+							),
+							// TEXTAREA
+							array(
+								'name'  => __( 'General Notes', $cart  ),
+								'id'    => "{$cart}_general_notes",
+								'type' => 'textarea',
+								'cols' => 10,
+								'rows' => 5,
+							),
+            ),
 	        ),
+					// TEXTAREA
+					array(
+						'name'  => __( 'Detailed Notes', $cart  ),
+						'id'    => "{$cart}_detailed_notes",
+						'type' => 'textarea',
+						'cols' => 10,
+						'rows' => 5,
+						'clone' => true,
+		        'sort_clone' => true,
+
+					),
         )
     );
 
