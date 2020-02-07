@@ -57,7 +57,7 @@
 					if (is_front_page()){ ?>
 						<div class="home-legal content-channel row">
 							<hr />
-							<p style="text-align: center;"><small>This resource was prepared under Cooperative Agreement number 2013-MU-MU-K011 from the Office of Juvenile Justice and Delinquency Prevention (OJJDP), U.S. Department of Justice. Points of view or opinions expressed in this document are those of the authors and do not necessarily represent the official position or policies of OJJDP or the U.S. Department of Justice.</small></p>
+							<p style="text-align: center;"><small>This resource was prepared under Cooperative Agreement number 2017-MC-FX-K003 from the Office of Justice Programs (OJP), U.S. Department of Justice. Points of view or opinions expressed in this document are those of the authors and do not necessarily represent the official position or policies of OJP or the U.S. Department of Justice.</small></p>
 
 
 							<hr />
