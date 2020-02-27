@@ -1205,7 +1205,19 @@ function amber_register_meta_boxes( $meta_boxes ) {
 						'cols' => 10,
 						'rows' => 10,
 						'clone' => true,
-		        'sort_clone' => true,
+		        		'sort_clone' => true,
+
+					),
+
+					// TEXTAREA
+					array(
+						'name'  => __( 'New Detailed Notes', $cart  ),
+						'id'    => "{$cart}_new_detailed_notes",
+						'type' => 'textarea',
+						'cols' => 10,
+						'rows' => 10,
+						'clone' => true,
+		        		'sort_clone' => true,
 
 					),
         )
