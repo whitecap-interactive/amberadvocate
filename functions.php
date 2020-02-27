@@ -1035,6 +1035,12 @@ function amber_register_meta_boxes( $meta_boxes ) {
 			// 	'cols' => 10,
 			// 	'rows' => 5,
 			// ),
+			//FILE ADVANCED
+			array(
+			    'id'               => "{$cart}_documents",
+			    'name'             => 'Upload documents related to the CART',
+			    'type'             => 'file_advanced'
+			),
 			// WYSIWYG
 			array(
 			    'name'    => __( 'List the names of agencies included in the CART', $cart  ),
@@ -1048,6 +1054,7 @@ function amber_register_meta_boxes( $meta_boxes ) {
 			    'options' => array(
 			        'textarea_rows' => 4,
 			        'teeny'         => true,
+			        'media_buttons' => false,
 			    ),
 			),
 
@@ -1194,7 +1201,7 @@ function amber_register_meta_boxes( $meta_boxes ) {
 					array(
 						'name'  => __( 'Detailed Notes', $cart  ),
 						'id'    => "{$cart}_detailed_notes",
-						'type' => 'wysiwyg',
+						'type' => 'textarea',
 						'cols' => 10,
 						'rows' => 10,
 						'clone' => true,
