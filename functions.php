@@ -197,6 +197,28 @@ function create_post_type() {
         /*'show_in_nav_menus' => true*/
 		)
 	);
+	register_post_type( 'liaison-record',
+		array(
+			'labels' => array(
+				'name' => __( 'Liaison Record' ),
+				'singular_name' => __( 'Liaison Record' )
+			),
+		'public' => true,
+		'has_archive' => true,
+		'capability_type' => 'post',
+		//'rewrite' => array('slug' => 'states'),
+		'supports' => array(
+            'title',
+            //'excerpt',
+            'editor',
+            'custom-fields',
+            'revisions',
+            'thumbnail',
+            'author'),
+        //'taxonomies' => array('category', 'post_tag'),
+        /*'show_in_nav_menus' => true*/
+		)
+	);
 }
 
 
@@ -234,6 +256,19 @@ function change_post_type_labels() {
   $postLabels->not_found = 'No Spanish Speaking Partners found';
   $postLabels->not_found_in_trash = 'No Spanish Speaking Partners found in Trash';
 
+  // Change the liaison post labels
+  $postLabels = $wp_post_types['liaison-record']->labels;
+  $postLabels->name = 'Liaison Record';
+  $postLabels->singular_name = 'Liaison Record';
+  $postLabels->add_new = 'Add New Liaison Record';
+  $postLabels->add_new_item = 'Add New Liaison Record';
+  $postLabels->edit_item = 'Edit Liaison Record';
+  $postLabels->new_item = 'Liaison Record';
+  $postLabels->view_item = 'View Liaison Records';
+  $postLabels->search_items = 'Search Liaison Records';
+  $postLabels->not_found = 'No Liaison Record found';
+  $postLabels->not_found_in_trash = 'No Liaison Record found in Trash';
+
 
   //Remove unnecessary fields
   remove_post_type_support( 'spanish-partner', 'editor');
@@ -244,6 +279,16 @@ function change_post_type_labels() {
   remove_post_type_support( 'spanish-partner', 'comments');
   remove_post_type_support( 'spanish-partner', 'page-attributes');
   remove_post_type_support( 'spanish-partner', 'post-formats');
+
+  //Remove unnecessary fields
+  remove_post_type_support( 'liaison-record', 'editor');
+  remove_post_type_support( 'liaison-record', 'thumbnail');
+  remove_post_type_support( 'liaison-record', 'excerpt');
+  remove_post_type_support( 'liaison-record', 'trackbacks');
+  remove_post_type_support( 'liaison-record', 'custom-fields');
+  remove_post_type_support( 'liaison-record', 'comments');
+  remove_post_type_support( 'liaison-record', 'page-attributes');
+  remove_post_type_support( 'liaison-record', 'post-formats');
 }
 add_action( 'init', 'change_post_type_labels' );
 
@@ -288,6 +333,9 @@ add_action( 'wp_enqueue_scripts', 'counter_scripts' );*/
 /**
  * META BOXES
  */
+
+require get_template_directory() . '/metabox/amber-metabox-constants.php';
+
 add_filter( 'rwmb_meta_boxes', 'amber_register_meta_boxes' );
 function amber_register_meta_boxes( $meta_boxes ) {
 
@@ -301,11 +349,13 @@ function amber_register_meta_boxes( $meta_boxes ) {
 	/**
 	 * Load metabox files.
 	 */
+  
 	require get_template_directory() . '/metabox/amber-main-metabox.php';
 	require get_template_directory() . '/metabox/amber-state-metabox.php';
 	require get_template_directory() . '/metabox/amber-cart-metabox.php';
 	require get_template_directory() . '/metabox/amber-spanish-metabox.php';
 	require get_template_directory() . '/metabox/amber-partner-resource-metabox.php';
+  require get_template_directory() . '/metabox/amber-liaison-metabox.php';
 
     return $meta_boxes;
 }

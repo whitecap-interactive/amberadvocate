@@ -1,4 +1,5 @@
 <?php
+	$allstates = array_merge(AMBERGROUPS, MEXICANSTATES);
 	$prefix = 'amber_';
 	
     // Spanish Speaking Partner CUSTOM POST TYPE meta fields
@@ -12,46 +13,7 @@
 				'id'          => "{$prefix}ss_state_select",
 				'type'        => 'select',
 				// Array of 'value' => 'Label' pairs for select box
-				'options'     => array(
-					'AMBER Alert Staff/Associates' => __('AMBER Alert Staff/Associates', 'amber'),
-					'Internation Centre for Missing and Exploited Children' => __('Internation Centre for Missing and Exploited Children', 'amber'),
-					'National Criminal Justice Training Center Staff/Associates' => __('National Criminal Justice Training Center Staff/Associates', 'amber'),
-					'National Center for Missing and Exploited Children' => __('National Center for Missing and Exploited Children', 'amber'),
-					'US Department of Justice Officials/Staff' => __('US Department of Justice Officials/Staff', 'amber'),
-
-					'Aguascalientes' => __('Aguascalientes', 'amber'),
-					'Baja California' => __('Baja California', 'amber'),
-					'Baja California Sur' => __('Baja California Sur', 'amber'),
-					'Campeche' => __('Campeche', 'amber'),
-					'Chiapas' => __('Chiapas', 'amber'),
-					'Chihuahua' => __('Chihuahua', 'amber'),
-					'Coahuila' => __('Coahuila', 'amber'),
-					'Colima' => __('Colima', 'amber'),
-					'Mexico City' => __('Mexico City', 'amber'),
-					'Durango' => __('Durango', 'amber'),
-					'Guanajuato' => __('Guanajuato', 'amber'),
-					'Guerrero' => __('Guerrero', 'amber'),
-					'Hidalgo' => __('Hidalgo', 'amber'),
-					'Jalisco' => __('Jalisco', 'amber'),
-					'México' => __('México', 'amber'),
-					'Michoacán' => __('Michoacán', 'amber'),
-					'Morelos' => __('Morelos', 'amber'),
-					'Nayarit' => __('Nayarit', 'amber'),
-					'Nuevo León' => __('Nuevo León', 'amber'),
-					'Oaxaca' => __('Oaxaca', 'amber'),
-					'Puebla' => __('Puebla', 'amber'),
-					'Querétaro' => __('Querétaro', 'amber'),
-					'Quintana Roo' => __('Quintana Roo', 'amber'),
-					'San Luis Potosí' => __('San Luis Potosí', 'amber'),
-					'Sinaloa' => __('Sinaloa', 'amber'),
-					'Sonora' => __('Sonora', 'amber'),
-					'Tabasco' => __('Tabasco', 'amber'),
-					'Tamaulipas' => __('Tamaulipas', 'amber'),
-					'Tlaxcala' => __('Tlaxcala', 'amber'),
-					'Veracruz' => __('Veracruz', 'amber'),
-					'Yucatán' => __('Yucatán', 'amber'),
-					'Zacateca' => __('Zacateca', 'amber'),
-				),
+				'options'     => $allstates,
 				// Select multiple values, optional. Default is false.
 				'multiple'    => false,
 				'std'         => 'value2',
