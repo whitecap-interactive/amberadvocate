@@ -1,6 +1,6 @@
 <?php
 	// META BOXES FOR CART CUSTOM POST TYPE
-	$allstates = array_merge(AMBERGROUPS, USSTATES, CANADIANSTATES, MEXICANSTATES);
+	$allstates = array_merge(USSTATES, CANADIANSTATES, MEXICANSTATES);
 	$liaison = 'liaison';
     $meta_boxes[] = array(
         'title'      => __( 'Liaison Record', $liaison ),
@@ -213,7 +213,7 @@
 					    // Allow to select multiple value?
 					    'multiple'        => false,
 					    // Placeholder text
-					    'placeholder'     => 'Select a Region',
+					    'placeholder'     => 'Select a State',
 					    // Display "Select All / None" button?
 					    'select_all_none' => false,
 					    'visible'      => array( 'liaison_training_requested_radio', '=', 'yes' )
@@ -244,9 +244,10 @@
 					    'type'            => 'checkbox_list',
 					    // Array of 'value' => 'Label' pairs
 					    'options'         => array(
+					    	'aiic' => esc_html__( 'AIIC', $liaison ),
 					        'cart' => esc_html__( 'CART', $liaison ),
 		                    'cst/hrv' => esc_html__( 'CST/HRV', $liaison ),
-		                    'aiic' => esc_html__( 'AIIC', $liaison ),
+		                    'first_responder' => esc_html__( 'First Responder (IRST, TELMAC, PATMAC)', $liaison ),
 		                    'other' => esc_html__( 'Other', $liaison ),
 					    ),
 					    // Allow to select multiple value?
