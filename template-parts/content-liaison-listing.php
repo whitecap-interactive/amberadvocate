@@ -15,6 +15,7 @@ $author_last_name =  $author_obj->last_name;
 
 ?>
 
+
 <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
 
     <header class="post-entry-header purple">
@@ -26,11 +27,15 @@ $author_last_name =  $author_obj->last_name;
             } else { the_title( '<h1 class="entry-title">', '</h1>' ); }
         ?>
     </header><!-- .entry-header -->
-    <style type="text/css">
-        
-    </style>
-	<div class="content-channel channel-padding">
 
+	<div class="content-channel channel-padding">
+        <?php 
+            $user = wp_get_current_user();
+            if( is_user_logged_in() && 
+                in_array( 'aattap_liaison', (array) $user->roles)  ||
+                in_array( 'administrator', (array) $user->roles)
+            ){ 
+        ?>
         <?php
             echo '<h2>Hello '. $author_first_name . $author_last_name .  '! These are your open liaison records.</h2>';
         ?>
@@ -115,6 +120,10 @@ $author_last_name =  $author_obj->last_name;
 			?>
 				
 		</div>
+        <?php }else{echo "<h2>Sorry, you don't have permission to view this page</h2>";}?>
 	</div><!-- .entry-content -->
 
 </article><!-- #post-## -->
+
+
+
