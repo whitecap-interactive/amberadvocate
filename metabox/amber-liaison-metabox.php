@@ -82,7 +82,9 @@
 			    'options'         => array(
 			        'phone' => esc_html__( 'Phone', $liaison ),
                     'single_email' => esc_html__( 'Single Email', $liaison ),
-                    'group_email' => esc_html__( 'Group Email', $liaison )
+                    'group_email' => esc_html__( 'Group Email', $liaison ),
+                    'in_person' => esc_html__( 'In Person / Onsite', $liaison ),
+                    'n_a' => esc_html__( 'N/A - No Contact', $liaison )
 			    ),
 			    // Allow to select multiple value?
 			    'multiple'        => false,

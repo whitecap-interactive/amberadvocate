@@ -1192,19 +1192,20 @@ ul#primary-menu ul.active {
   ul#primary-menu li {
 		max-width: 118px;
 		border: 0;
-		padding: 12px 8px;
 		width: auto;
 		padding: 19px 12px;
 	}
 
-	ul#primary-menu li:nth-child(4) ul.sub-menu, ul#primary-menu li:nth-child(5) ul.sub-menu {
-		margin: 21px 0 0 -26px
+	ul#primary-menu li:nth-child(6),
+	ul#primary-menu li:nth-child(7) {
+		padding: 12px;
 	}
 
 	ul#primary-menu ul.sub-menu {
 		position: absolute;
 		background: #1c4987;
-		margin: 14px 0 0 -26px;
+		margin: 21px 0 0 -41px;
+	}
 
 	ul#primary-menu li:nth-child(6) ul.sub-menu,
 	ul#primary-menu li:nth-child(7) ul.sub-menu {
