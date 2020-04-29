@@ -96,7 +96,7 @@ if (in_array( 'liaison_admin', (array) $user->roles)) {
                             if (!$show_all) { ?>
                                 <a href="/liaison/liaison-listing/?show_all=true" class="question-button button-lg light-orange" >
                                     <span>
-                                        <span style="font-size:1.4em;font-weight:bold;">+</span> &nbsp; View All Liaison Records
+                                        <span style="font-size:1.4em;font-weight:bold;">+</span> &nbsp; View All Open and Closed Liaison Records
                                     </span>
                                 </a>
                         <?php }else {?>
