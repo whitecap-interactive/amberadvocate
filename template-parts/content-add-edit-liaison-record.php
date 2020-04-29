@@ -6,7 +6,7 @@
  *
  * @package amberadvocate
  */
-
+$user = wp_get_current_user();
 ?>
 
 	<article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
@@ -24,11 +24,11 @@
 		<div class="content-channel channel-padding">
 			<div class="row">
 				<?php 
-				    $user = wp_get_current_user();
 				    if( is_user_logged_in() && 
-					 	in_array( 'aattap_liaison', (array) $user->roles)  ||
-					 	in_array( 'administrator', (array) $user->roles)
-				    ){ 
+		                in_array( 'aattap_liaison', (array) $user->roles)  ||
+		                in_array( 'administrator', (array) $user->roles) ||
+		                in_array( 'liaison_admin', (array) $user->roles)
+		            ){ 
 			    ?>
 
 				<div class="col-sm-12">
@@ -41,11 +41,13 @@
 					?>
 
 					<?php the_content(); ?>
+					<p style="text-align: center;"><a href="/liaison/liaison-listing/" class="question-button button-lg light-orange" ><span><span style="font-size:1.4em;font-weight:bold;">&#171;</span> &nbsp; Back to your open liaison records</span></a></p>
 				</div>
 				<!-- <div class="col-sm-3">
 					<?php get_sidebar('cart'); ?>
 				</div> -->
-				<?php }else{echo "<h2>Sorry, you don't have permission to view this page</h2>";}?>	
+				<?php }else{echo "<h2>Sorry, you don't have permission to view this page</h2>";
+			}?>	
 			</div>
 		</div><!-- .entry-content -->
 

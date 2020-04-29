@@ -26,3 +26,20 @@
 		</div>
 
 <?php } ?>
+
+<?php
+	if ( in_array( 'aattap_liaison', (array) $user->roles) ) { ?>
+
+		<div class="partner-links-container">
+
+			<h3>Liaison Database Links</h3>
+
+			<ul class="partner-links">
+				<li><i class="fa fa-address-book" aria-hidden="true"></i><a href="/liaison/liaison-listing">Liaison Listing</a></li>
+				<li><i class="fa fa-file-o" aria-hidden="true"></i><a href="/liaison/add-edit-liaison-record">Add a Liaison Record</a></li>
+			</ul>
+
+
+		</div>
+
+<?php } ?>

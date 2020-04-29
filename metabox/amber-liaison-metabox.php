@@ -259,7 +259,7 @@
 					    'visible'      => array( 'liaison_training_requested_radio', '=', 'yes' ),
 					),
 					array(
-					    'name'    => 'Was this activity one of your tri-annual regioanl contacts?',
+					    'name'    => 'Was this activity one of your tri-annual regional contacts?',
 					    'id'      => $liaison . '_tri_annual_contact_radio',
 					    'type'    => 'radio',
 					    'options' => array(

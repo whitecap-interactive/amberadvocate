@@ -7,11 +7,32 @@
  * @package amberadvocate
  */
 
-$current_user_id = get_current_user_id();
-$author_obj = get_user_by('id', $current_user_id);
-$author_first_name =  $author_obj->first_name;
-$author_last_name =  $author_obj->last_name;
 
+$user = wp_get_current_user();
+$current_role = $user->roles;
+$current_id = $user->ID;
+$author_first_name =  $user->first_name;
+$author_last_name =  $user->last_name;
+$show_all = $_GET['show_all'] ?? '';
+
+
+
+if (in_array( 'aattap_liaison', (array) $user->roles)) {
+   if ($show_all) { //if show all is set to true, then show all
+       $only_show_open_records = array();
+   }else{ //otherwise define your metaquery to only pull "open" records
+        $only_show_open_records = array(
+            array(
+                'key' => 'liaison_final_submit_checkbox',
+                'value' => '0',
+            ),
+        );
+   }
+}
+if (in_array( 'liaison_admin', (array) $user->roles)) {
+   //show everything for all liaisons
+    $current_id = -1;
+}
 
 ?>
 
@@ -30,63 +51,83 @@ $author_last_name =  $author_obj->last_name;
 
 	<div class="content-channel channel-padding">
         <?php 
-            $user = wp_get_current_user();
+            
             if( is_user_logged_in() && 
                 in_array( 'aattap_liaison', (array) $user->roles)  ||
-                in_array( 'administrator', (array) $user->roles)
+                in_array( 'administrator', (array) $user->roles) ||
+                in_array( 'liaison_admin', (array) $user->roles)
             ){ 
         ?>
         <?php
-            echo '<h2>Hello '. $author_first_name . $author_last_name .  '! These are your open liaison records.</h2>';
+            if (in_array( 'liaison_admin', (array) $user->roles)) {
+                echo '<h2>Hello '. $author_first_name . ' ' . $author_last_name .  '! These are liaison records for the last 90 days.</h2>';
+            }elseif ($show_all === 'true') {
+                echo '<h2>Hello '. $author_first_name . ' ' . $author_last_name .  '! Here are all of your liaison records for the last 90 days.</h2>';
+            }else{
+                echo '<h2>Hello '. $author_first_name . ' ' . $author_last_name .  '! These are your open liaison records.</h2>';
+            }
+            
         ?>
 
 		<div class="row change-direction">
 			<?php if ( is_user_logged_in() ) { ?>
 
 				<div class="col-sm-12">
-					<?php 
-                        // get_sidebar('cart-table'); 
-                    ?> 
-
-
                     <?php 
-
-
                         $args = array( 
-                            'author'    =>  $current_user_id,
+                            'author'    =>  $current_id,
                             'orderby'   => 'title',
                             'post_type' => 'liaison-record',
                             'order'     => 'ASC',
-                            'meta_query' => array(
-                                array(
-                                    'key' => 'liaison_final_submit_checkbox',
-                                    'value' => '0',
-                                ),
-                            ),
+                            'meta_query' => $only_show_open_records,
+                            
                         );
                         $the_query = new WP_Query( $args );
 
                     ?>
 
                     <p style="text-align: center;">
-
-                    <a href="/liaison/add-liaison-record/" class="question-button button-lg light-orange" >
-                        <span>
-                            <span style="font-size:1.4em;font-weight:bold;">+</span> &nbsp; Add a New Liaison Record    
-                        </span>
-                    </a></p>
+                        <a href="/liaison/add-edit-liaison-record/" class="question-button button-lg light-orange" >
+                            <span>
+                                <span style="font-size:1.4em;font-weight:bold;">+</span> &nbsp; Add a New Liaison Record    
+                            </span>
+                        </a>
+                        <?php
+                            if (!$show_all) { ?>
+                                <a href="/liaison/liaison-listing/?show_all=true" class="question-button button-lg light-orange" >
+                                    <span>
+                                        <span style="font-size:1.4em;font-weight:bold;">+</span> &nbsp; View All Liaison Records    
+                                    </span>
+                                </a>
+                        <?php }else {?> 
+                                <a href="/liaison/liaison-listing/" class="question-button button-lg light-orange" >
+                                    <span>
+                                        <span style="font-size:1.4em;font-weight:bold;">+</span> &nbsp; View Open Liaison Records    
+                                    </span>
+                                </a>
+                        <?php } ?>
+                        
+                    </p>
 
                     
 
-                    <table cellpadding="0" cellspacing="0" border="0" class="partner-table" id="cart-table">
+                    <table cellpadding="0" cellspacing="0" border="0" class="partner-table" id="liaison-table">
                         <tr>
                             <th>
-                                Title
+                                <button id="reset-button" onclick="location.reload()"><i class="fa fa-refresh" aria-hidden="true"></i></button>
+                            </th>
+                            <th>
+                                Activity
+                            </th>
+                            <th style="cursor: pointer;" onclick="sortLiaisonTable(1)">
+                                Date
+                            </th>
+                            <th>
+                                Region
                             </th>
                             <th>
                                 Status
                             </th>
-
                             <th>
                                 
                             </th>
@@ -98,21 +139,23 @@ $author_last_name =  $author_obj->last_name;
                         $record_status = rwmb_meta('liaison_final_submit_checkbox');
                         if ($record_status === '0' ) {
                             $status = '<span style="color:green;">Open</span>';
+                        }elseif ($record_status === '1') {
+                            $status = '<span style="color:red;">Closed</span>';
                         }
                     ?>
                         <tr>
-                            <td class="cart-name"><a href="<?php the_permalink();?>"><?php the_title() ;?></a></td>
-                            <td class="cart-region"><?php echo $status; ?></td>
-                            <td><a href="/liaison/add-liaison-record/?rwmb_frontend_field_post_id=<?php echo $post_id; ?>">Edit</a></td>
+                            <td></td>
+                            <td class="liaison-name"><?php the_title() ;?></td>
+                            <td class="liaison-date"><?php echo rwmb_meta('liaison_activity_date');  ?></td>
+                            <td class="liaison-region"><?php echo rwmb_meta('liaison_region_select');  ?></td>
+                            <td class="liaison-status"><?php echo $status; ?></td>
+                            <td><a href="/liaison/add-edit-liaison-record/?rwmb_frontend_field_post_id=<?php echo $post_id; ?>">View/Edit</a></td>
                         </tr>
-                    <?php endwhile; else: ?> <p>Sorry, there are no posts to display</p> <?php endif; ?>
+                    <?php endwhile; else: ?> <p>Sorry, there are no records to display</p> <?php endif; ?>
                     </table>
                     <?php wp_reset_query(); ?>
 
-
-
 				</div>
-
 
 			<?php } else { 
 				get_sidebar('authenticate'); 

@@ -8,7 +8,7 @@ get_header(); ?>
 			<?php
 				while ( have_posts() ) : the_post();
 
-					get_template_part( 'template-parts/content', 'add-liaison-record' );
+					get_template_part( 'template-parts/content', 'add-edit-liaison-record' );
 
 				endwhile; // End of the loop.
 			?>

@@ -26,7 +26,7 @@
 						if ( in_array( 'cart_admin', (array) $user->roles ) ) {
 							echo '<p><a class="button" style="margin-top: 4px; display: inline-block; padding: 2px 20px;" href="/cart-admin/cart-listing/">CART Admin Listing</a></p>';
 						}
-						if ( in_array( 'aattap_liaison', (array) $user->roles ) ) {
+						if ( in_array( 'aattap_liaison', (array) $user->roles ) || in_array( 'liaison_admin', (array) $user->roles ) ) {
 							echo '<p><a class="button" style="margin-top: 4px; display: inline-block; padding: 2px 20px;" href="/liaison/liaison-listing/">Liaison Listing</a></p>';
 						}
 					?>
@@ -40,7 +40,7 @@
 						if ( in_array( 'cart_admin', (array) $user->roles ) ) {
 							echo '<p><a class="button" style="margin-top: 4px; display: inline-block; padding: 2px 20px;" href="/cart-admin/cart-listing/">CART Admin Listing</a></p>';
 						}
-						if ( in_array( 'aattap_liaison', (array) $user->roles ) ) {
+						if ( in_array( 'aattap_liaison', (array) $user->roles ) || in_array( 'liaison_admin', (array) $user->roles ) ) {
 							echo '<p><a class="button" style="margin-top: 4px; display: inline-block; padding: 2px 20px;" href="/liaison/liaison-listing/">Liaison Listing</a></p>';
 						}
 					?>
