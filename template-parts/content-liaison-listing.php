@@ -42,21 +42,21 @@ if (in_array( 'liaison_admin', (array) $user->roles)) {
     <header class="post-entry-header purple">
         <?php
             $subhead = rwmb_meta('amber_subhead');
-            if (!empty($subhead)) { 
-                the_title( '<h1 class="entry-title"><span>', '</span></h1>' ); 
-                echo '<h3>' . rwmb_meta('amber_subhead') . '</h3>'; 
+            if (!empty($subhead)) {
+                the_title( '<h1 class="entry-title"><span>', '</span></h1>' );
+                echo '<h3>' . rwmb_meta('amber_subhead') . '</h3>';
             } else { the_title( '<h1 class="entry-title">', '</h1>' ); }
         ?>
     </header><!-- .entry-header -->
 
 	<div class="content-channel channel-padding">
-        <?php 
-            
-            if( is_user_logged_in() && 
+        <?php
+
+            if( is_user_logged_in() &&
                 in_array( 'aattap_liaison', (array) $user->roles)  ||
                 in_array( 'administrator', (array) $user->roles) ||
                 in_array( 'liaison_admin', (array) $user->roles)
-            ){ 
+            ){
         ?>
         <?php
             if (in_array( 'liaison_admin', (array) $user->roles)) {
@@ -66,21 +66,21 @@ if (in_array( 'liaison_admin', (array) $user->roles)) {
             }else{
                 echo '<h2>Hello '. $author_first_name . ' ' . $author_last_name .  '! These are your open liaison records.</h2>';
             }
-            
+
         ?>
 
 		<div class="row change-direction">
 			<?php if ( is_user_logged_in() ) { ?>
 
 				<div class="col-sm-12">
-                    <?php 
-                        $args = array( 
+                    <?php
+                        $args = array(
                             'author'    =>  $current_id,
                             'orderby'   => 'title',
                             'post_type' => 'liaison-record',
                             'order'     => 'ASC',
                             'meta_query' => $only_show_open_records,
-                            
+
                         );
                         $the_query = new WP_Query( $args );
 
@@ -89,52 +89,52 @@ if (in_array( 'liaison_admin', (array) $user->roles)) {
                     <p style="text-align: center;">
                         <a href="/liaison/add-edit-liaison-record/" class="question-button button-lg light-orange" >
                             <span>
-                                <span style="font-size:1.4em;font-weight:bold;">+</span> &nbsp; Add a New Liaison Record    
+                                <span style="font-size:1.4em;font-weight:bold;">+</span> &nbsp; Add a New Liaison Record
                             </span>
                         </a>
                         <?php
                             if (!$show_all) { ?>
                                 <a href="/liaison/liaison-listing/?show_all=true" class="question-button button-lg light-orange" >
                                     <span>
-                                        <span style="font-size:1.4em;font-weight:bold;">+</span> &nbsp; View All Liaison Records    
+                                        <span style="font-size:1.4em;font-weight:bold;">+</span> &nbsp; View All Liaison Records
                                     </span>
                                 </a>
-                        <?php }else {?> 
+                        <?php }else {?>
                                 <a href="/liaison/liaison-listing/" class="question-button button-lg light-orange" >
                                     <span>
-                                        <span style="font-size:1.4em;font-weight:bold;">+</span> &nbsp; View Open Liaison Records    
+                                        <span style="font-size:1.4em;font-weight:bold;">+</span> &nbsp; View Open Liaison Records
                                     </span>
                                 </a>
                         <?php } ?>
-                        
+
                     </p>
 
-                    
+
 
                     <table cellpadding="0" cellspacing="0" border="0" class="partner-table" id="liaison-table">
                         <tr>
                             <th>
                                 <button id="reset-button" onclick="location.reload()"><i class="fa fa-refresh" aria-hidden="true"></i></button>
                             </th>
-                            <th>
+                            <th style="cursor: pointer;" onclick="sortLiaisonTable(1)">
                                 Activity
                             </th>
-                            <th style="cursor: pointer;" onclick="sortLiaisonTable(1)">
+                            <th style="cursor: pointer;" onclick="sortLiaisonTable(2)">
                                 Date
                             </th>
-                            <th>
+                            <th style="cursor: pointer;" onclick="sortLiaisonTable(3)">
                                 Region
                             </th>
-                            <th>
+                            <th style="cursor: pointer;" onclick="sortLiaisonTable(4)">
                                 Status
                             </th>
                             <th>
-                                
+
                             </th>
                         </tr>
-                        
-                    <?php if ( $the_query->have_posts() ) : while ( $the_query->have_posts() ) : $the_query->the_post(); 
-                        $post_id = get_the_ID(); 
+
+                    <?php if ( $the_query->have_posts() ) : while ( $the_query->have_posts() ) : $the_query->the_post();
+                        $post_id = get_the_ID();
 
                         $record_status = rwmb_meta('liaison_final_submit_checkbox');
                         if ($record_status === '0' ) {
@@ -157,16 +157,13 @@ if (in_array( 'liaison_admin', (array) $user->roles)) {
 
 				</div>
 
-			<?php } else { 
-				get_sidebar('authenticate'); 
+			<?php } else {
+				get_sidebar('authenticate');
 			}
 			?>
-				
+
 		</div>
         <?php }else{echo "<h2>Sorry, you don't have permission to view this page</h2>";}?>
 	</div><!-- .entry-content -->
 
 </article><!-- #post-## -->
-
-
-
