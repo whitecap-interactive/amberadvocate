@@ -43,3 +43,20 @@
 		</div>
 
 <?php } ?>
+
+
+<?php
+	if ( in_array( 'liaison_admin', (array) $user->roles) ) { ?>
+
+		<div class="partner-links-container">
+
+			<h3>Liaison Admin Links</h3>
+
+			<ul class="partner-links">
+				<li><i class="fa fa-address-book" aria-hidden="true"></i><a href="/liaison/liaison-listing">Liaison Listing</a></li>
+			</ul>
+
+
+		</div>
+
+<?php } ?>
