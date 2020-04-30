@@ -37,7 +37,7 @@ $user = wp_get_current_user();
 					<hr />
 
 					<?php 
-						echo do_shortcode('[mb_frontend_form id="liaison_record_metabox" edit="true" post_fields="title" label_title="Title"]');
+						echo do_shortcode('[mb_frontend_form id="liaison_record_metabox" allow_delete="true" delete_confirmation="Your post has been deleted." edit="true" post_fields="title" label_title="Title"]');
 					?>
 
 					<?php the_content(); ?>

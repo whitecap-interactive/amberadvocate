@@ -199,25 +199,45 @@ function create_post_type() {
 	);
 	register_post_type( 'liaison-record',
 		array(
-			'labels' => array(
-				'name' => __( 'Liaison Record' ),
-				'singular_name' => __( 'Liaison Record' )
-			),
-		'public' => true,
-		'has_archive' => true,
-		'capability_type' => 'post',
-		//'rewrite' => array('slug' => 'states'),
-		'supports' => array(
-            'title',
-            //'excerpt',
-            'editor',
-            'custom-fields',
-            'revisions',
-            'thumbnail',
-            'author'),
-        //'taxonomies' => array('category', 'post_tag'),
-        /*'show_in_nav_menus' => true*/
-		)
+  			'labels' => array(
+  				'name' => __( 'Liaison Record' ),
+  				'singular_name' => __( 'Liaison Record' )
+  			),
+    		'public' => true,
+    		'has_archive' => true,
+    		'capability_type' => 'post',
+    		'supports' => array(
+          'title',
+          //'excerpt',
+          'editor',
+          'custom-fields',
+          'revisions',
+          'thumbnail',
+          'author'
+        ),
+        // 'capabilities' => array(
+        //   // meta caps (don't assign these to roles)
+        //   'edit_post'              => 'edit_liaison-record',
+        //   'read_post'              => 'read_liaison-record',
+        //   'delete_post'            => 'delete_liaison-record',
+        //   // primitive/meta caps
+        //   'create_posts'           => 'create_liaison-records',
+        //   // primitive caps used outside of map_meta_cap()
+        //   'edit_posts'             => 'edit_liaison-records',
+        //   'read_posts'             => 'read_liaison-records',
+        //   'edit_others_posts'      => 'manage_liaison-records',
+        //   'publish_posts'          => 'manage_liaison-recordes',
+        //   'read_private_posts'     => 'read_private_liaison-records',
+        //   // primitive caps used inside of map_meta_cap()
+        //   'delete_posts'           => 'manage_liaison-records',
+        //   'delete_private_posts'   => 'manage_liaison-records',
+        //   'delete_published_posts' => 'manage_liaison-records',
+        //   'delete_others_posts'    => 'manage_liaison-records',
+        //   'edit_private_posts'     => 'edit_liaison-records',
+        //   'edit_published_posts'   => 'edit_liaison-records'
+        // ),
+        // 'map_meta_cap' => true,
+	  )
 	);
 }
 
