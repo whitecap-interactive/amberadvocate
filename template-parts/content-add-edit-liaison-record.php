@@ -33,7 +33,7 @@ $user = wp_get_current_user();
 
 				<div class="col-sm-12">
 					
-					<?php if (in_array( 'aattap_liaison', (array) $user->roles)) {?>
+					<?php if (in_array( 'liaison_admin', (array) $user->roles)) {?>
 						<p style="text-align: center;"><a href="/liaison/liaison-listing/" class="question-button button-lg light-orange" ><span><span style="font-size:1.4em;font-weight:bold;">&#171;</span> &nbsp; Back to liaison records</span></a></p>
 					 <?php }else{ ?>
 						<p style="text-align: center;"><a href="/liaison/liaison-listing/" class="question-button button-lg light-orange" ><span><span style="font-size:1.4em;font-weight:bold;">&#171;</span> &nbsp; Back to your liaison records</span></a></p> 
@@ -49,7 +49,7 @@ $user = wp_get_current_user();
 
 					<?php the_content(); ?>
 					
-					<?php if (in_array( 'aattap_liaison', (array) $user->roles)) {?>
+					<?php if (in_array( 'liaison_admin', (array) $user->roles)) {?>
 						<p style="text-align: center;"><a href="/liaison/liaison-listing/" class="question-button button-lg light-orange" ><span><span style="font-size:1.4em;font-weight:bold;">&#171;</span> &nbsp; Back to liaison records</span></a></p>
 					 <?php }else{ ?>
 						<p style="text-align: center;"><a href="/liaison/liaison-listing/" class="question-button button-lg light-orange" ><span><span style="font-size:1.4em;font-weight:bold;">&#171;</span> &nbsp; Back to your liaison records</span></a></p> 
