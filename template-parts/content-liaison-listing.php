@@ -85,7 +85,7 @@ if (in_array( 'liaison_admin', (array) $user->roles)) {
                         $the_query = new WP_Query( $args );
 
                     ?>
-
+                  
                     <p style="text-align: center;">
                         <a href="/liaison/add-edit-liaison-record/" class="question-button button-lg light-orange" >
                             <span>
@@ -93,22 +93,25 @@ if (in_array( 'liaison_admin', (array) $user->roles)) {
                             </span>
                         </a>
                         <?php
+                        if (!in_array( 'liaison_admin', (array) $user->roles)) {
                             if (!$show_all) { ?>
                                 <a href="/liaison/liaison-listing/?show_all=true" class="question-button button-lg light-orange" >
                                     <span>
                                         <span style="font-size:1.4em;font-weight:bold;">+</span> &nbsp; View All Open and Closed Records
                                     </span>
                                 </a>
-                        <?php }else {?>
-                                <a href="/liaison/liaison-listing/" class="question-button button-lg light-orange" >
-                                    <span>
-                                        <span style="font-size:1.4em;font-weight:bold;">+</span> &nbsp; View Open Liaison Records
-                                    </span>
-                                </a>
-                        <?php } ?>
-
+                            <?php }else {?>
+                                    <a href="/liaison/liaison-listing/" class="question-button button-lg light-orange" >
+                                        <span>
+                                            <span style="font-size:1.4em;font-weight:bold;">+</span> &nbsp; View Open Liaison Records
+                                        </span>
+                                    </a>
+                            <?php } ?> <!-- end if show all = true -->
+                         <?php } ?> <!-- end if !liaison admin -->
                     </p>
 
+                   
+                    
 
 
                     <table cellpadding="0" cellspacing="0" border="0" class="partner-table" id="liaison-table">
