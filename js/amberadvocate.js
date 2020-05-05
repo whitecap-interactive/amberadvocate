@@ -86,6 +86,15 @@ jQuery(document).ready(function(){
 	});
 
 
+  //change delete button color and text
+  var delBtn = document.getElementsByClassName("rwmb-button--delete");
+  if (delBtn.length > 0) { // if delBtn (htmlcollection) isn't empty
+    var deleteButton = delBtn[0];
+    deleteButton.innerHTML = "Delete Record! Warning: This Can't Be Undone!";
+    deleteButton.style.backgroundColor = '#c90000';
+  }
+  
+
 });
 
 function stateSelect(state) {

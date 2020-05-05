@@ -2225,6 +2225,29 @@ body.category-briefs header.post-entry-header {
 	color: #fff;
 }
 
+/*cart submit button*/
+
+.rwmb-form-submit .rwmb-button{
+	padding: 16px 20px !important;
+    /*background: #E25A28;*/
+    color: #fff;
+    border-radius: 30px;
+    margin: 0 20px;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+    min-width: 205px;
+    display: inline-block;
+    text-align: center;
+}
+
+.rwmb-form-submit .rwmb-button:hover, .rwmb-form-submit .rwmb-button:active{
+   text-decoration: underline;
+}
+
+.rwmb-form-submit{
+	margin-bottom: 25px;
+}
+
+
 .search-page {
 	text-align: center;
 	margin: 100px 0;
