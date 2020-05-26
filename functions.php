@@ -369,7 +369,7 @@ function amber_register_meta_boxes( $meta_boxes ) {
 	/**
 	 * Load metabox files.
 	 */
-  
+
 	require get_template_directory() . '/metabox/amber-main-metabox.php';
 	require get_template_directory() . '/metabox/amber-state-metabox.php';
 	require get_template_directory() . '/metabox/amber-cart-metabox.php';
@@ -491,7 +491,7 @@ add_action('init','wpa_82004');
 //List of admin email notification recipients
 function changeUMPAdminEmail( $adminEmails ) {
     //return array( 'amberadvocate@ncjtc.org' );
-    return array( 'brian@whitecap.io', 'david@whitecap.io', 'amberadvocate@ncjtc.org' );
+    return array( 'brian@whitecap.io', 'david@whitecap.io', 'askamber@fvtc.edu' );
 }
 add_filter( 'user_meta_admin_email_recipient', 'changeUMPAdminEmail' );
 
