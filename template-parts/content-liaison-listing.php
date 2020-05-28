@@ -14,6 +14,10 @@ $current_id = $user->ID;
 $author_first_name =  $user->first_name;
 $author_last_name =  $user->last_name;
 $show_all = $_GET['show_all'] ?? '';
+$today = date("Y-m-d");
+$curr_date = date_create($today);
+date_sub($curr_date, date_interval_create_from_date_string('90 days'));
+$ninety_days_ago = date_format($curr_date, 'Y-m-d');
 
 
 
@@ -32,6 +36,7 @@ if (in_array( 'aattap_liaison', (array) $user->roles)) {
 if (in_array( 'liaison_admin', (array) $user->roles)) {
    //show everything for all liaisons
     $current_id = -1;
+    //$only_show_open_records = array();
 }
 
 ?>
@@ -79,28 +84,38 @@ if (in_array( 'liaison_admin', (array) $user->roles)) {
                             'orderby'   => 'title',
                             'post_type' => 'liaison-record',
                             'order'     => 'ASC',
-                            'meta_query' => $only_show_open_records,
+                            'orderby' => 'meta_value', //for order by date
+                            'meta_key' => 'liaison_activity_date', //for order by date
+                            'meta_query' => array(
+                                array(
+                                    'key' => 'liaison_activity_date',
+                                    'value' => array($ninety_days_ago, $today),
+                                    'compare' => 'BETWEEN',
+                                    'type' => 'DATE'
+                                ),
+                                $only_show_open_records,
+                            )
 
                         );
                         $the_query = new WP_Query( $args );
 
                     ?>
-                  
+                  <!-- Conditional Header Messaging -->
                     <p style="text-align: center;">
                         <a href="/liaison/add-edit-liaison-record/" class="question-button button-lg light-orange" >
                             <span>
-                                <span style="font-size:1.4em;font-weight:bold;">+</span> &nbsp; Add a New Liaison Record
+                                <span style="font-size:1.4em;font-weight:bold;">+</span> &nbsp; Add a New Liaison Record <!--for liaison admin and liaison-->
                             </span>
                         </a>
                         <?php
-                        if (!in_array( 'liaison_admin', (array) $user->roles)) {
+                        if (!in_array( 'liaison_admin', (array) $user->roles)) { //for regular liaisons
                             if (!$show_all) { ?>
                                 <a href="/liaison/liaison-listing/?show_all=true" class="question-button button-lg light-orange" >
                                     <span>
                                         <span style="font-size:1.4em;font-weight:bold;">+</span> &nbsp; View All Open and Closed Records
                                     </span>
                                 </a>
-                            <?php }else {?>
+                            <?php }else {?> <!-- if show all = true -->
                                     <a href="/liaison/liaison-listing/" class="question-button button-lg light-orange" >
                                         <span>
                                             <span style="font-size:1.4em;font-weight:bold;">+</span> &nbsp; View Open Liaison Records
@@ -138,6 +153,9 @@ if (in_array( 'liaison_admin', (array) $user->roles)) {
 
                     <?php if ( $the_query->have_posts() ) : while ( $the_query->have_posts() ) : $the_query->the_post();
                         $post_id = get_the_ID();
+                        $activity_date = rwmb_meta('liaison_activity_date');
+                        $record_date = date_create($activity_date);
+                        $display_date = date_format($record_date,"M j, Y");
 
                         $record_status = rwmb_meta('liaison_final_submit_checkbox');
                         if ($record_status === '0' ) {
@@ -149,7 +167,7 @@ if (in_array( 'liaison_admin', (array) $user->roles)) {
                         <tr>
                             <td></td>
                             <td class="liaison-name"><?php the_title() ;?></td>
-                            <td class="liaison-date"><?php echo rwmb_meta('liaison_activity_date');  ?></td>
+                            <td class="liaison-date"><?php echo $display_date; ?></td>
                             <td class="liaison-region"><?php echo rwmb_meta('liaison_region_select');  ?></td>
                             <td class="liaison-status"><?php echo $status; ?></td>
                             <td><a href="/liaison/add-edit-liaison-record/?rwmb_frontend_field_post_id=<?php echo $post_id; ?>">View/Edit</a></td>

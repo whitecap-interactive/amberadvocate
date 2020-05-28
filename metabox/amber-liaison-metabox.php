@@ -26,6 +26,10 @@
 			    'placeholder'     => 'Select a Region',
 			    // Display "Select All / None" button?
 			    'select_all_none' => false,
+			    'admin_columns' => array(
+                    'title'    => 'Region', 
+                    'sort'       => true,
+                ),
 			),
         	//Activity Date
 			array(
@@ -44,6 +48,11 @@
 
 			    // Save value as timestamp?
 			    'timestamp' => false,
+			    'admin_columns' => array(
+                    'title'    => 'Activity Date', 
+                    'sort'       => true,
+                    'position'   => 'replace date',
+                ),
 			),
 			//Activity Type
         	array(
@@ -116,7 +125,8 @@
                     'regional_teleconference' => esc_html__( 'Regional Teleconference/Update', $liaison ),
                     'onsite_meeting' => esc_html__( 'Onsite Meeting', $liaison ),
                     'national_symposium' => esc_html__( 'National Symposium/Conference', $liaison ),
-                    'resource_work' => esc_html__( 'Resource Work/Distributed', $liaison ),
+					'resource_work' => esc_html__( 'Resource Work/Distributed', $liaison ),
+					'alert_activation_assistance' => esc_html__( 'Alert Activation Assistance', $liaison ),
                     'tow_other' => esc_html__( 'Other (describe in notes field below)', $liaison ),
 			    ),
 			    // Allow to select multiple value?
@@ -125,6 +135,10 @@
 			    'placeholder'     => 'Select Type of Work Performed',
 			    // Display "Select All / None" button?
 			    'select_all_none' => false,
+			    'admin_columns' => true,
+			    'admin_columns' => array(
+                    'sort'       => true,
+                ), 
 			),
 			//Number of contacts on email
 			array(
