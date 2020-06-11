@@ -493,7 +493,7 @@ function changeUMPAdminEmail( $adminEmails ) {
     //return array( 'amberadvocate@ncjtc.org' );
     return array( 'brian@whitecap.io', 'david@whitecap.io', 'askamber@fvtc.edu' );
 }
-add_filter( 'user_meta_admin_email_recipient', 'changeUMPAdminEmail' );
+// add_filter( 'user_meta_admin_email_recipient', 'changeUMPAdminEmail' );
 
 
 add_filter( 'get_the_archive_title', function ($title) {
@@ -542,8 +542,8 @@ add_filter( 'manage_users_custom_column', 'new_modify_user_table_row', 10, 3 );
 //hide everything in the admin menu from BYRON except the amber reporting tab
 add_action( 'admin_init', function () {
     $my_menu_slugs = $GLOBALS[ 'menu' ];
-    $curr_id = get_current_user_id(); 
-    if ($curr_id === 186 ) {  
+    $curr_id = get_current_user_id();
+    if ($curr_id === 186 ) {
         foreach($my_menu_slugs as $slug){
             if (!empty($slug[2]) && $slug[2] != 'amber-export-page') {
                 remove_menu_page( $slug[2] );
