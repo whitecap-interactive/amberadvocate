@@ -69,7 +69,11 @@
 			    // Placeholder text
 			    'placeholder'     => 'Select Activity Type',
 			    // Display "Select All / None" button?
-			    'select_all_none' => false,
+				'select_all_none' => false,
+				'admin_columns' => true,
+			    'admin_columns' => array(
+                    'sort'       => true,
+                ), 
 			),
 			// Tribal Contact
 			array(
@@ -100,7 +104,11 @@
 			    // Placeholder text
 			    'placeholder'     => 'Select Type of Contact',
 			    // Display "Select All / None" button?
-			    'select_all_none' => false,
+				'select_all_none' => false,
+				'admin_columns' => true,
+			    'admin_columns' => array(
+                    'sort'       => true,
+                ), 
 			),
 			//Number of contacts on email
 			array(
