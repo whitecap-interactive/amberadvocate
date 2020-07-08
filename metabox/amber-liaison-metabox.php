@@ -73,7 +73,7 @@
 				'admin_columns' => true,
 			    'admin_columns' => array(
                     'sort'       => true,
-                ), 
+                ),
 			),
 			// Tribal Contact
 			array(
@@ -108,7 +108,7 @@
 				'admin_columns' => true,
 			    'admin_columns' => array(
                     'sort'       => true,
-                ), 
+                ),
 			),
 			//Number of contacts on email
 			array(
