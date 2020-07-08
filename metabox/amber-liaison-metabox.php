@@ -27,7 +27,7 @@
 			    // Display "Select All / None" button?
 			    'select_all_none' => false,
 			    'admin_columns' => array(
-                    'title'    => 'Region', 
+                    'title'    => 'Region',
                     'sort'       => true,
                 ),
 			),
@@ -49,7 +49,7 @@
 			    // Save value as timestamp?
 			    'timestamp' => false,
 			    'admin_columns' => array(
-                    'title'    => 'Activity Date', 
+                    'title'    => 'Activity Date',
                     'sort'       => true,
                     'position'   => 'replace date',
                 ),
@@ -93,7 +93,7 @@
 			    'type'            => 'select',
 			    // Array of 'value' => 'Label' pairs
 			    'options'         => array(
-			        'phone' => esc_html__( 'Phone', $liaison ),
+			        'phone' => esc_html__( 'Phone/Web Meeting', $liaison ),
                     'single_email' => esc_html__( 'Single Email', $liaison ),
                     'group_email' => esc_html__( 'Group Email', $liaison ),
                     'in_person' => esc_html__( 'In Person / Onsite', $liaison ),
@@ -146,7 +146,7 @@
 			    'admin_columns' => true,
 			    'admin_columns' => array(
                     'sort'       => true,
-                ), 
+                ),
 			),
 			//Number of contacts on email
 			array(
@@ -295,7 +295,7 @@
                         'id' => $liaison . '_general_notes_text_area',
                         'type' => 'textarea',
                         'name' => 'General Notes',
-                        'rows' => 10, 
+                        'rows' => 10,
                     ),
                     array(
 					    'name' => 'I AM SUBMITTING THIS ENTRY AS FINAL',
