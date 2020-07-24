@@ -93,7 +93,7 @@ jQuery(document).ready(function(){
     deleteButton.innerHTML = "Delete Record! Warning: This Can't Be Undone!";
     deleteButton.style.backgroundColor = '#c90000';
   }
-  
+
 
 });
 
@@ -213,7 +213,7 @@ jQuery(document).ready(function() {
 	clock = new FlipClock(jQuery('.clock'), {
 		clockFace: 'Counter',
 		autoStart: true,
-		minimumDigits: 3,
+		minimumDigits: 4,
 		callbacks: {
             interval: function() {
                 var time = clock.getTime().time;
