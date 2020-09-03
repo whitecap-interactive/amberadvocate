@@ -18,6 +18,7 @@
                 <option value="AAC and CHM">AAC and CHM</option>
                 <option value="AAC">AAC</option>
                 <option value="CHM">CHM</option>
+                <option value="MMIP">Tribal or MMIP</option>
                 <option value="CART">CART Program Member</option>
                 <option value="NCMEC">NCMEC</option>
                 <option value="ICMEC">ICMEC</option>
@@ -140,7 +141,7 @@
                 <option value="Veracruz">Veracruz</option>
                 <option value="Yucatán">Yucatán</option>
                 <option value="Zacateca">Zacateca</option>
-            </select>	                                          
+            </select>
         </th>
         <!-- <th>
             <select id="partner-region-search" onchange="partnerSearch('region')">
@@ -168,6 +169,7 @@
         if ($partner_role == 'AMBER Alert Coordinator/Co-Coordinator and Missing Person Clearinghouse Manager') { $partner_role_abbr = 'AAC and CHM'; }
         else if ($partner_role == 'AMBER Alert Coordinator/Co-Coordinator') { $partner_role_abbr = 'AAC'; }
         else if ($partner_role == 'Missing Person Clearinghouse Manager' || $partner_role == 'Missing Person Clearinghouse Manager/Coordinator') { $partner_role_abbr = 'CHM'; }
+        else if ($partner_role == 'Tribal or MMIP Coordinator') { $partner_role_abbr = 'MMIP'; }
         else if ($partner_role == 'NCMEC Partner') { $partner_role_abbr = 'NCMEC'; }
         else if ($partner_role == 'ICMEC Partner') { $partner_role_abbr = '(ICMEC)'; }
         else if ($partner_role == 'International Partner-AMBER Alert/Missing Persons') { $partner_role_abbr = 'International Partner'; }
@@ -181,19 +183,19 @@
 
 		if ( $post = get_page_by_path( $partner_state_name, OBJECT, 'state' ) ){
 			$state_id = $post->ID;
-		}    
+		}
 		else{
 			$state_id = 0;
-		}	
+		}
 		$region = rwmb_meta( 'amber_region', $args = array(), $state_id );
     	echo '<tr>' .
     		 '<td class="partner-name"><a href="' . get_author_posts_url( $partner->ID ) . '">' . $partner->user_firstname . ' ' . $partner->user_lastname . '</a></td>'.
     		 '<td class="partner-role">' . $partner_role_abbr . '</td>' .
-             '<td class="partner-state"><a href="/states/' . $partner_state_name . '">' . $partner_state_name . '</a></td>' . 
+             '<td class="partner-state"><a href="/states/' . $partner_state_name . '">' . $partner_state_name . '</a></td>' .
     		 //'<td>State ID: ' . $state_id . '</td>' .
     		 // '<td class="partner-region">' . $region . '</td>' .
     		 '</tr>';
-    }  
+    }
 ?>
 </tbody>
 </table>
