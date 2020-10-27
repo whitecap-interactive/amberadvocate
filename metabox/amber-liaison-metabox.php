@@ -75,6 +75,33 @@
                     'sort'       => true,
                 ),
 			),
+			// CART Contact
+			array(
+				'name'    => ' Was this activity related to CART record?',
+				'id'      => $liaison . '_related_cart_radio',
+				'type'    => 'radio',
+				'options' => array(
+					'yes' => 'Yes',
+					'no' => 'No',
+				),
+				'inline' => true,
+			),
+			//CART ID
+			array(
+			    'name' => 'Cart ID (Copy and paste here. ID can be located in cart record)',
+			    'id'   => $liaison . '_related_cart_id',
+			    'type' => 'text',
+			    'visible'      => array( 'liaison_related_cart_radio', '=', 'yes' )
+			),
+			array(
+				// Field name: usually not used
+				'type' => 'custom_html',
+				// HTML content
+				'std'  => '<span id="cartLink"></span>',
+				// PHP function to show custom HTML
+				// 'callback' => 'display_warning',
+			),
+			
 			// Tribal Contact
 			array(
 			    'name'    => ' Was this activity related to Indian Country and/or with a tribal member/contact? ',

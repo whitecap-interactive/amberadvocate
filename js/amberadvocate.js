@@ -336,3 +336,24 @@ function sortLiaisonTable(n) {
     }
   }
 }
+
+// Liaison form  - ajax update cart link
+jq2 = jQuery.noConflict();
+jq2(function( $ ) {
+  function getUrlFromPostId(postId) {
+    // submit the data
+			$.post(amberDataObject.amberAjaxUrl, {
+				nonce:     amberDataObject.nonce,
+				action:    'amber_public_hook',
+				post_id: postId
+			}, function(data) {
+        // display data
+        $('#cartLink').html(data);
+      });
+  }
+  getUrlFromPostId($('#liaison_related_cart_id').val());
+
+  $("#liaison_related_cart_id").keyup(function(){
+    getUrlFromPostId(this.value);
+  });
+});

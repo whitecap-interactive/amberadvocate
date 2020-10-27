@@ -325,10 +325,10 @@ function amberadvocate_scripts() {
 	wp_enqueue_style( 'amberadvocate-style', get_stylesheet_uri() );
 
 	/*wp_enqueue_script( 'amberadvocate-navigation', get_template_directory_uri() . '/js/navigation.js', array(), '20151215', true );*/
-	wp_enqueue_script('jquery');
-	wp_enqueue_script( 'amberadvocate-global', get_template_directory_uri() . '/js/amberadvocate.js', array(), '20170811', true );
+    wp_enqueue_script('jquery');
+    wp_enqueue_script( 'amberadvocate-global', get_template_directory_uri() . '/js/amberadvocate.js', array(), '20170811', true );
 	wp_enqueue_script( 'amberadvocate-skip-link-focus-fix', get_template_directory_uri() . '/js/skip-link-focus-fix.js', array(), '20151215', true );
-	wp_enqueue_script( 'slick-js', get_template_directory_uri() . '/js/slick.min.js', array('jquery'), '20151215', true );
+    wp_enqueue_script( 'slick-js', get_template_directory_uri() . '/js/slick.min.js', array('jquery'), '20151215', true );
 
 	if ( is_singular() && comments_open() && get_option( 'thread_comments' ) ) {
 		wp_enqueue_script( 'comment-reply' );
@@ -336,6 +336,14 @@ function amberadvocate_scripts() {
 
 	wp_enqueue_script( 'amberadvocate-flipclock', get_template_directory_uri() . '/js/flipclock.js', array(), '20170811', true );
     wp_enqueue_style('flipclock-css',get_template_directory_uri().'/css/flipclock.css');
+
+    //AJAX Stuff for updating cart link in liaison record
+	$nonce = wp_create_nonce( 'amberAjaxNonce' ); //needs to match check_ajax_referer( 'amberAjaxNonce', 'nonce' ); in amber-ajax.php
+    $ajax_url = admin_url('admin-ajax.php'); 
+	$data_to_be_passed = array( 'nonce' => $nonce, 'amberAjaxUrl' => $ajax_url ); //data to  be passed
+    wp_localize_script( 'amberadvocate-global', 'amberDataObject', $data_to_be_passed ); // amberadvocate-global (1st param must match the script handle)
+    
+    
 
 }
 add_action( 'wp_enqueue_scripts', 'amberadvocate_scripts' );
@@ -552,6 +560,19 @@ add_action( 'admin_init', function () {
     }
 } );
 
+// Display CART Id in metabox in top right corner of page
+function amber_cart_id_metabox_top_right() {
+    add_meta_box( 'after-title-help', 'CART ID Number', 'amber_cart_id_metabox_content', 'cart', 'side', 'high' );
+}
+// callback function to populate CART Id metabox
+function amber_cart_id_metabox_content() { 
+    global $post;
+    $cartID = $post->ID;
+    echo '<h1>' . $cartID . '</h1>';
+}
+add_action( 'add_meta_boxes', 'amber_cart_id_metabox_top_right' );
+
+
 /**
  * Implement the Custom Header feature.
  */
@@ -576,3 +597,8 @@ require get_template_directory() . '/inc/customizer.php';
  * Load Jetpack compatibility file.
  */
 require get_template_directory() . '/inc/jetpack.php';
+
+/**
+ * Load ajax php file
+ */
+require get_template_directory() . '/inc/amber-ajax.php';

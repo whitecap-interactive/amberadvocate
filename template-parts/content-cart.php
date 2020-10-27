@@ -56,6 +56,10 @@
 						<th colspan="2"><strong>CART Information</strong><div class="cart-list-link"><a href="/cart-admin/cart-listing/">Back to CART Listing</a> |  <a href="/cart-admin/add-edit-cart/?rwmb_frontend_field_post_id=<?php the_ID(); ?>">Edit Cart</a></div></th>
 					</tr>
 					<tr>
+						<td>CART Record ID</td>
+						<td><?php the_ID(); ?></td>
+					</tr>
+					<tr>
 						<td>CART Coordinator Name</td>
 						<td><?php echo rwmb_meta('cart_first_name');?> <?php echo rwmb_meta('cart_last_name');?></td>
 					</tr>
@@ -107,6 +111,26 @@
 						<td>Number of Agencies</td>
 						<td><?php echo rwmb_meta('cart_number_agencies');?></td>
 					</tr>
+					<tr>
+						<td>Documents Related to CART</td>
+						<td>
+							<?php
+								$files = rwmb_meta( 'cart_documents' );
+								if (!empty($files)) {
+									echo '<ul style="margin-left: 13px;">';
+									foreach ( $files as $file ) {
+									    ?>
+									    	<li><a target="_blank" href="<?php echo $file['url']; ?>"><?php echo $file['name']; ?></a></li>
+									    <?php
+									}
+									echo '</ul>';
+								}
+								
+							?>
+						</td>
+					</tr>
+					
+
 					<tr>
 						<td>Names of Agencies in CART</td>
 						<td><?php echo rwmb_meta('cart_agency_names');?></td>
