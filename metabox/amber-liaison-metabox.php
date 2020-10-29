@@ -77,7 +77,7 @@
 			),
 			// CART Contact
 			array(
-				'name'    => ' Was this activity related to CART record?',
+				'name'    => ' Was this activity related to a CART record creation / update?',
 				'id'      => $liaison . '_related_cart_radio',
 				'type'    => 'radio',
 				'options' => array(

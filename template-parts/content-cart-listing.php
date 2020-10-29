@@ -151,6 +151,7 @@
                                 </select>
 
                             </th>
+                            <th>ID</th>
                             <th></th>
                         </tr>
                         
@@ -162,6 +163,7 @@
                             <td class="cart-state"><?php echo rwmb_meta('cart_state_select'); ?></td>
                             <td class="cart-active"><?php echo rwmb_meta('cart_active'); ?></td>
                             <td class="cart-certified"><?php echo rwmb_meta('cart_certified'); ?></td>
+                            <td class="cart-certified"><?php echo $post_id; ?></td>
                             <td><a href="/cart-admin/add-edit-cart/?rwmb_frontend_field_post_id=<?php echo $post_id; ?>">Edit</a></td>
                         </tr>
                     <?php endwhile; else: ?> <p>Sorry, there are no posts to display</p> <?php endif; ?>
