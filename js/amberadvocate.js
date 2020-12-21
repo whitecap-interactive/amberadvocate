@@ -120,7 +120,7 @@ function partnerSearch(searchParam) {
             }
         }
     }
-    //jQuery('table.partner-list tr:visible').removeClass('odd').filter(':odd').addClass('odd');
+    jQuery('table.partner-table tr:visible').css('background-color','#fff').filter(':even').css('background-color', '#eee');
 }
 
 function cartSearch(searchParam) {
@@ -144,7 +144,7 @@ function cartSearch(searchParam) {
             }
         }
     }
-    //jQuery('table.partner-list tr:visible').removeClass('odd').filter(':odd').addClass('odd');
+    jQuery('table.partner-table tr:visible').css('background-color','#fff').filter(':even').css('background-color', '#eee');
 }
 
 function resourceSearch(searchParam) {
@@ -166,7 +166,7 @@ function resourceSearch(searchParam) {
             }
         }
     }
-    //jQuery('table.partner-list tr:visible').removeClass('odd').filter(':odd').addClass('odd');
+    jQuery('table.partner-table tr:visible').css('background-color','#fff').filter(':even').css('background-color', '#eee');
 }
 
 function liaisonSearch(searchParam) {
@@ -188,6 +188,7 @@ function liaisonSearch(searchParam) {
             }
         }
     }
+		jQuery('table.partner-table tr:visible').css('background-color','#fff').filter(':even').css('background-color', '#eee');
 }
 
 jQuery(document).on('ready', function() {
