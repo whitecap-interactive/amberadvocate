@@ -28,8 +28,8 @@
 
 		<p>Portal accounts are reserved for use by State AMBER Alert Coordinators, State Missing Persons Clearinghouse Coordinators, members of official Child Abduction Response Teams, Tribal/MMIP Coordinators, associate NCJTC employees and USDOJ/OJP/OJJDP grantor partners.</p>
 		<p>If you are officially serving in one of the above roles through a recent personnel transition or assignment and have not been invited to create an account, please email us at <a href="mailto:askamber@fvtc.edu">askamber@fvtc.edu</a> for assistance.</p>
-		<!--<p><a class="button logged-out-links" href="/patner-portal/request-access/">Request Access</a></p>-->
-		<p><a class="button logged-out-links" href="/patner-portal/contact-us/">Contact us</a></p>
+		<!--<p><a class="button logged-out-links" href="/patner-portal/request-access/">Request Access</a></p>
+		<p><a class="button logged-out-links" href="/patner-portal/contact-us/">Contact us</a></p>-->
 
 	<?php } ?>
 
