@@ -11,12 +11,12 @@ get_header(); ?>
 
 	<div id="primary" class="content-area">
 		<main id="main" class="site-main" role="main">
-            
+
 
 		<?php
 		if ( have_posts() ) : ?>
 
-		
+
 
 			<header class="page-header">
 				<?php
@@ -31,10 +31,69 @@ get_header(); ?>
 
                     <?php get_sidebar('state-select'); ?>
 
-                </div>                    
+                </div>
 
                 <div class="row">
-                    <?php echo do_shortcode('[usahtml5map id="0"]');?>
+                    <?php //echo do_shortcode('[usahtml5map id="0"]');?>
+
+										<div id="html5-map-container"></div>
+										<!-- /container -->
+
+										<script src="/wp-content/themes/amberadvocate/js/raphael-min.js"></script>
+										<script src="/wp-content/themes/amberadvocate/js/us-map-svg.js"></script>
+										<script>
+										  window.onload = function () {
+										    var R = Raphael("html5-map-container", 1000, 900),
+										      attr = {
+										      "fill": "#d3d3d3",
+										      "stroke": "#fff",
+										      "stroke-opacity": "1",
+										      "stroke-linejoin": "round",
+										      "stroke-miterlimit": "4",
+										      "stroke-width": "0.75",
+										      "stroke-dasharray": "none"
+										    },
+										    usRaphael = {};
+
+										    //Draw Map and store Raphael paths
+										    for (var state in usMap) {
+										      usRaphael[state] = R.path(usMap[state]).attr(attr);
+										    }
+
+										    //Do Work on Map
+										    for (var state in usRaphael) {
+										      //usRaphael[state].color = Raphael.getColor();
+										      usRaphael.ut.color = 'red';
+										      usRaphael.ut.link = 'https://google.com';
+
+										      (function (st, state) {
+
+										        st[0].style.cursor = "pointer";
+
+										        st[0].onmouseover = function () {
+										          st.animate({fill: st.color}, 500);
+										          st.toFront();
+										          R.safari();
+										        };
+
+										        st[0].onmouseout = function () {
+										          st.animate({fill: "#d3d3d3"}, 500);
+										          st.toFront();
+										          R.safari();
+										        };
+
+										        st[0].onclick = function () {
+										          location.href = st.link;
+										        }
+
+
+										      })(usRaphael[state], state);
+										    }
+
+										  };
+										</script>										
+
+
                 </div>
 
     			<table id="organization-table" class="organization-list">
