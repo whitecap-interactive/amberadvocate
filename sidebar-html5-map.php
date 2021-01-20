@@ -9,29 +9,6 @@
 
 ?>
 
-<div>
-  <div style="display:inline; float:left; width: 75%;">
-    <!-- <h3>Select a state from the dropdown or click on the map below.</h3> -->
-    <?php get_sidebar('state-select') ?>
-  </div>
-  <div style="display:inline; float:left;">
-    <h3 class="widget-title">Legend</h3>
-    <div style="display: inline; float: left; width: 30px; height: 30px; background: #B61C1C;"></div>
-    <div style="display: inline; padding: 0 0 0 6px;">Region 1</div>
-    <div class="clearfix"></div>
-    <div style="display: inline; float: left; width: 30px; height: 30px; background: #1B7E3B;"></div>
-    <div style="display: inline; padding: 0 0 0 6px;">Region 2</div>
-    <div class="clearfix"></div>
-    <div style="display: inline; float: left; width: 30px; height: 30px; background: #CE6615;"></div>
-    <div style="display: inline; padding: 0 0 0 6px;">Region 3</div>
-    <div class="clearfix"></div>
-    <div style="display: inline; float: left; width: 30px; height: 30px; background: #1954DB;"></div>
-    <div style="display: inline; padding: 0 0 0 6px;">Region 4</div>
-    <div class="clearfix"></div>
-    <div style="display: inline; float: left; width: 30px; height: 30px; background: #5B3160;"></div>
-    <div style="display: inline; padding: 0 0 0 6px;">Region 5</div>
-  </div>
-</div>
 
 <div id="html5-map-container"></div>
 <!-- /container -->
