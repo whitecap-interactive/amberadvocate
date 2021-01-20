@@ -25,7 +25,7 @@
     var region5Color = '#5B3160';
 
 
-    var R = Raphael("html5-map-container", 1000, 900),
+    var R = Raphael("html5-map-container", 1000, 600),
       //attr = {
       //"fill": "#d3d3d3",
       //"stroke": "#fff",

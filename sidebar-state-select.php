@@ -9,7 +9,7 @@
 
 ?>
 
-<select onchange="stateSelect(this.value)">
+<select onchange="stateSelect(this.value)" style="font-size:16px; padding: 6px 18px 6px 12px; margin: 30px;">
     <option value="">Select a State</option>
     <option value="Alabama">Alabama</option>
     <option value="Alaska">Alaska</option>
@@ -62,4 +62,4 @@
     <option value="West Virginia">West Virginia</option>
     <option value="Wisconsin">Wisconsin</option>
     <option value="Wyoming">Wyoming</option>
-</select> 
+</select>

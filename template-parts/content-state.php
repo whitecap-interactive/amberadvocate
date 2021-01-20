@@ -10,30 +10,30 @@
 ?>
 
 <?php
-	$region = rwmb_meta('amber_region'); 
+	$region = rwmb_meta('amber_region');
 	if ( $region == '1') { $region_color = 'red'; }
 	else if ( $region == '2') { $region_color = 'green'; }
 	else if ( $region == '3') { $region_color = 'dark-orange'; }
 	else if ( $region == '4') { $region_color = 'blue'; }
-	else if ( $region == '5') { $region_color = 'purple'; }	
+	else if ( $region == '5') { $region_color = 'purple'; }
 	else { $region_color = 'orange'; }
 
 ?>
 
 <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
 
-	
+
 	<header class="post-entry-header <?php echo $region_color; ?>">
 		<?php the_title( '<h1 class="entry-title"><span>', '</span></h1>' ); ?>
 		<?php echo '<h3>Region: ' . rwmb_meta('amber_region') . '</h3>'; ?>
 	</header><!-- .entry-header -->
 
 	<div class="content-channel channel-padding">
-		
+
 		<?php
-			
+
 			the_content();
-			
+
 		?>
 
 		<div class="state-meta row">
@@ -81,7 +81,7 @@
 						</td>
 					</tr>
 				</table>
-				
+
 				<?php if (!empty(rwmb_meta('amber_amberic_phone')) || !empty(rwmb_meta('amber_amberic_email')) || !empty(rwmb_meta('amber_amberic_website'))) { ?>
 					<table cellpadding="0" cellspacing="0" border="0" class="partner-table">
 						<tr>
@@ -121,14 +121,39 @@
 			</div> -->
 
 		</div>
-			
+
 	</div><!-- .entry-content -->
-	
+
 
 	<div class="full-width-channel select-a-state">
 		<h2>Select a state from the map or the dropdown below to see the AMBER Alert Partner information for that state</h2>
-		<?php get_sidebar('state-select'); ?>
-		<?php echo do_shortcode( '[usahtml5map id="0"]' );?>
+
+		<div>
+		  <div style="display:inline; float:left; width: 75%;">
+		    <!-- <h3>Select a state from the dropdown or click on the map below.</h3> -->
+		    <?php get_sidebar('state-select') ?>
+		  </div>
+		  <div style="display:inline; float:left;">
+		    <h3 class="widget-title">Legend</h3>
+		    <div style="display: inline; float: left; width: 30px; height: 30px; background: #B61C1C;"></div>
+		    <div style="display: inline; padding: 0 0 0 6px;">Region 1</div>
+		    <div class="clearfix"></div>
+		    <div style="display: inline; float: left; width: 30px; height: 30px; background: #1B7E3B;"></div>
+		    <div style="display: inline; padding: 0 0 0 6px;">Region 2</div>
+		    <div class="clearfix"></div>
+		    <div style="display: inline; float: left; width: 30px; height: 30px; background: #CE6615;"></div>
+		    <div style="display: inline; padding: 0 0 0 6px;">Region 3</div>
+		    <div class="clearfix"></div>
+		    <div style="display: inline; float: left; width: 30px; height: 30px; background: #1954DB;"></div>
+		    <div style="display: inline; padding: 0 0 0 6px;">Region 4</div>
+		    <div class="clearfix"></div>
+		    <div style="display: inline; float: left; width: 30px; height: 30px; background: #5B3160;"></div>
+		    <div style="display: inline; padding: 0 0 0 6px;">Region 5</div>
+		  </div>
+		</div>
+		<?php //get_sidebar('state-select'); ?>
+		<?php get_sidebar('html5-map'); ?>
+		<?php //echo do_shortcode( '[usahtml5map id="0"]' );?>
 	</div>
-	
+
 </article><!-- #post-## -->
