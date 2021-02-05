@@ -1,21 +1,23 @@
-<?php 
+<?php
 
 get_header(); ?>
 
 <div id="primary" class="content-area">
     <main id="main" class="site-main" role="main">
 
-        
+
 
             <header class="post-entry-header green">
                 <h1 class="entry-title">Partner Listing & Contact Info</h1>
-            </header><!-- .entry-header --> 
+            </header><!-- .entry-header -->
 
             <div class="content-channel channel-padding">
 
+              <?php if ( is_user_logged_in() ) { ?>
+
                 <div class="row">
                     <div class="col-sm-7" id="partner-list">
-                        <?php get_sidebar('partner-table'); ?> 
+                        <?php get_sidebar('partner-table'); ?>
                     </div>
                     <div class="col-sm-5" id="partner-info">
 
@@ -94,12 +96,18 @@ get_header(); ?>
 
                 </div>
 
+
+              <?php } else {
+        				get_sidebar('authenticate');
+        			}
+        			?>
+
                 <div class="row">
                     &nbsp;
                 </div>
 
             </div>
-        
+
 
     </main>
 </div>
