@@ -339,11 +339,11 @@ function amberadvocate_scripts() {
 
     //AJAX Stuff for updating cart link in liaison record
 	$nonce = wp_create_nonce( 'amberAjaxNonce' ); //needs to match check_ajax_referer( 'amberAjaxNonce', 'nonce' ); in amber-ajax.php
-    $ajax_url = admin_url('admin-ajax.php'); 
+    $ajax_url = admin_url('admin-ajax.php');
 	$data_to_be_passed = array( 'nonce' => $nonce, 'amberAjaxUrl' => $ajax_url ); //data to  be passed
     wp_localize_script( 'amberadvocate-global', 'amberDataObject', $data_to_be_passed ); // amberadvocate-global (1st param must match the script handle)
-    
-    
+
+
 
 }
 add_action( 'wp_enqueue_scripts', 'amberadvocate_scripts' );
@@ -565,12 +565,24 @@ function amber_cart_id_metabox_top_right() {
     add_meta_box( 'after-title-help', 'CART ID Number', 'amber_cart_id_metabox_content', 'cart', 'side', 'high' );
 }
 // callback function to populate CART Id metabox
-function amber_cart_id_metabox_content() { 
+function amber_cart_id_metabox_content() {
     global $post;
     $cartID = $post->ID;
     echo '<h1>' . $cartID . '</h1>';
 }
 add_action( 'add_meta_boxes', 'amber_cart_id_metabox_top_right' );
+
+
+add_filter('manage_cart_posts_columns', function($columns) {
+	return array_merge($columns, ['cartID' => __('CART ID', 'textdomain')]);
+});
+
+add_action('manage_cart_posts_custom_column', function($column_key, $post_id) {
+	if ($column_key == 'cartID') {
+		echo $post_id;
+	}
+}, 10, 2);
+
 
 
 /**
