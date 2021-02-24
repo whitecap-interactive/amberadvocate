@@ -573,6 +573,7 @@ function amber_cart_id_metabox_content() {
 add_action( 'add_meta_boxes', 'amber_cart_id_metabox_top_right' );
 
 
+// Add CART ID column to CART list view
 add_filter('manage_cart_posts_columns', function($columns) {
 	return array_merge($columns, ['cartID' => __('CART ID', 'textdomain')]);
 });
@@ -582,6 +583,13 @@ add_action('manage_cart_posts_custom_column', function($column_key, $post_id) {
 		echo $post_id;
 	}
 }, 10, 2);
+
+// Make CART ID column sortable
+add_filter( 'manage_edit-cart_sortable_columns', 'cart_sortable_columns');
+function cart_sortable_columns( $columns ) {
+  $columns['cartID'] = 'ID';
+  return $columns;
+}
 
 
 
